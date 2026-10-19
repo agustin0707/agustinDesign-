@@ -10,7 +10,7 @@ Portafolio en HTML, CSS y JS vanilla. Sin frameworks: decisión de autor, se man
 - Cada caso tiene identidad propia con CSS/JS scopeado por prefijo: `.tp-` Tap In, `.lc-` La Columna, `.mi-` Mido.
 - Páginas con template genérico pendiente: Entrena Po, HAI Group, Posters y Afiches, Anco.
 - Proyecto nuevo: Llegó Farma (submarca de logística last mile, pitch ganado al incumbente). Hay más por confirmar.
-- Producción se publica con GitHub Pages desde `agustin0707/agustinDesign-` (rama `main`). Esta carpeta local todavía no es un clon de ese repo (ver `redesign/00-auditoria.md`).
+- Producción se publica con GitHub Pages desde `agustin0707/agustinDesign-` (rama `main`, `origin` en esta carpeta). El repo es público. DNS en Cloudflare, dominio registrado en NIC Chile. Nunca hacer push a `main` sin aprobación explícita: es el sitio en vivo.
 
 ## Objetivo
 Rediseñar el portafolio completo y crear la marca personal Agustín Design, plasmada en la web. Mostrar a un diseñador UX/UI con criterio de marca. Estética minimalista, moderna, de autor; nada que se vea a plantilla. Todos los proyectos con el mismo rigor visual.

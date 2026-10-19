@@ -213,5 +213,14 @@ Clasificación preliminar por disciplina y material de proceso disponible. El ma
 - Antes del traspaso se hizo un respaldo `--mirror` del repo.
 - `agustin070702` quedó como colaborador del repo nuevo.
 
-### DNS (corrección)
-El apex usa los A records de GitHub Pages y no cambia. Pero `www.agustindesign.cl` es un CNAME a `agustin070702.github.io`. Hoy funciona igual, porque GitHub enruta por dominio, pero conviene cambiarlo a `agustin0707.github.io` en NIC Chile para no depender de la cuenta UC. De paso, verificar el dominio en la cuenta personal (ítems S.5 y S.6 del plan).
+### DNS y dominio (hecho el 19 oct 2026)
+- El dominio se registra en NIC Chile, pero el DNS se administra en **Cloudflare** (cuenta de agus.avendano@gmail.com). Todos los registros en "DNS only", sin proxy.
+- `www` pasó de `agustin070702.github.io` a `agustin0707.github.io`.
+- Se agregó el TXT `_github-pages-challenge-agustin0707` y el dominio quedó **verificado** en `agustin0707`. Eso impide que otra cuenta de GitHub publique en agustindesign.cl.
+- Comprobado en vivo: apex 200 con HTTPS, `www` redirige al apex por http y https.
+- **El dominio vence el 20 nov 2026.** La renovación se paga en NIC Chile (ítem S.7).
+
+### Repo local (hecho el 19 oct 2026)
+- Esta carpeta ahora tiene `origin` = `agustin0707/agustinDesign-`.
+- `main` es idéntico a producción. `redesign` sale de ahí con dos commits: los cambios locales que nunca se publicaron (Mido completo, ajustes en La Columna y otros casos, imágenes nuevas) y los docs del rediseño.
+- Ningún archivo de producción se perdió (incluido `CNAME`). `core.fileMode` queda en `false` porque los archivos locales tenían permisos de ejecución.

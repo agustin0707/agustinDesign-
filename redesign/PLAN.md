@@ -11,9 +11,10 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | S.1 | `CLAUDE.md` en la raíz con lo esencial del brief | Hecho |
 | S.2 | Rama `redesign` y carpeta `/redesign/` con este plan | Hecho |
 | S.3 | Transferir el repo de GitHub Pages de la cuenta UC a la cuenta personal | Hecho · `agustin0707/agustinDesign-`, sitio verificado en vivo |
-| S.4 | Clonar el repo (ya en la cuenta personal) y traer la rama `redesign` encima | Pendiente · antes de la Fase 7 |
-| S.5 | Actualizar el CNAME de `www` en NIC Chile a `agustin0707.github.io` | Pendiente · lo haces tú, no es urgente (hoy funciona) |
-| S.6 | Verificar `agustindesign.cl` en la cuenta `agustin0707` (Settings → Pages → Verified domains) | Pendiente · protege el dominio, requiere un TXT en NIC Chile |
+| S.4 | Conectar esta carpeta al repo: `main` = producción, `redesign` encima con los cambios locales sin publicar | Hecho · falta decidir si se sube `redesign` a GitHub (el repo es público) |
+| S.5 | CNAME de `www` en Cloudflare apuntando a `agustin0707.github.io` | Hecho |
+| S.6 | Dominio `agustindesign.cl` verificado en la cuenta `agustin0707` (TXT en Cloudflare) | Hecho |
+| S.7 | Renovar `agustindesign.cl` en NIC Chile (vence el 20 nov 2026) | Pendiente · lo haces tú, requiere pago |
 
 ## Fase 0 · Auditoría → `00-auditoria.md`
 | # | Ítem | Estado |
