@@ -38,7 +38,7 @@ Anco se elimina del portafolio. El proyecto de título siguió y hoy es **Mend**
 - **Por qué es clave:** es el único caso que muestra el ciclo completo que se quiere vender: investigación, marca, UX y producto construido.
 - **Pendiente:** confirmar qué se puede mostrar públicamente (datos ficticios, permisos de la U) y si habrá demo navegable.
 
-## 1.1 Audiencia principal (propuesta, por confirmar)
+## 1.1 Audiencia principal (aprobado)
 
 **Primaria:** founders y equipos chicos en Chile (startups, PYMEs, submarcas de empresas medianas) que lanzan o renuevan su marca y necesitan una web a la altura. Decide el fundador o el gerente de marketing. No es diseñador: juzga por confianza, ejemplos parecidos a su caso y claridad.
 
@@ -52,7 +52,7 @@ Anco se elimina del portafolio. El proyecto de título siguió y hoy es **Mend**
 3. Cómo trabajas (proceso corto y claro).
 4. Cómo escribirte.
 
-## 1.2 Propuesta de valor (propuesta, por confirmar)
+## 1.2 Propuesta de valor (aprobado)
 
 > **Diseño marcas y construyo los sitios donde viven.**
 
@@ -60,7 +60,7 @@ Bajada: *Identidad, experiencia y código, de la primera idea al sitio publicado
 
 Por qué esta: nombra las dos cosas que haces, deja la web como protagonista ("construyo"), y el "en las mismas manos" ataca el dolor real del cliente, que es coordinar diseñador, programador y agencia por separado. Es corta, no suena a plantilla y funciona igual de bien leída por un cliente que por un equipo de producto.
 
-## 1.3 Tipo de trabajo a atraer (propuesta, por confirmar)
+## 1.3 Tipo de trabajo a atraer (aprobado)
 
 | Prioridad | Tipo de proyecto | Por qué |
 |---|---|---|
@@ -71,5 +71,24 @@ Por qué esta: nombra las dos cosas que haces, deja la web como protagonista ("c
 
 **Lo que no se busca atraer** (y por eso no se destaca en el sitio): logos sueltos, manejo de redes sociales, piezas gráficas aisladas.
 
-## 1.4 Curaduría
-_Pendiente_
+## 1.4 Curaduría (propuesta, por confirmar)
+
+Criterio: un caso es destacado si demuestra lo que se quiere vender (marca + web, con proceso). El resto va a un archivo con el mismo rigor visual pero sin narrativa larga.
+
+### Destacados (4)
+| Orden | Caso | Qué demuestra | Prueba viva | Falta para contarlo |
+|---|---|---|---|---|
+| 1 | **Llegó Farma** | Marca + one page para un cliente real, pitch ganado al incumbente | One page en preview (GitHub Pages), aún sin dominio propio | Saber si se publica antes del lanzamiento del portafolio; permiso del cliente para mostrar el proceso del pitch |
+| 2 | **Mend** | Ciclo completo: investigación, marca, UX y web app construida | Web app en desarrollo, propuesta de identidad publicada | Qué se puede mostrar (1.5b) y si habrá demo navegable |
+| 3 | **Tap In** | Marca + producto + landing publicada para el mismo cliente | **tapin.cl en vivo** con tu landing | Definir el relato: hoy hay cuatro versiones de qué es Tap In (estadios, alta afluencia, descuentos universitarios, gestión de colegios). Respaldo del 65% |
+| 4 | **Mido** | Marca + UI de producto (domótica) | Página `.mi-` completa en local | Proceso de UI (flujos, decisiones) |
+
+**1.6 resuelto en la propuesta:** la landing de Tap In va **dentro** del caso Tap In. Mostrar marca → app → web para un mismo cliente es exactamente la oferta, y tapin.cl en vivo es la mejor prueba del portafolio.
+
+**Candidato a 5° caso, después del lanzamiento:** el propio Agustín Design (marca personal + sitio hecho a mano). Se arma en la Fase 7 junto con el brandbook.
+
+### Archivo
+La Columna, HAI Group, Entrena Po, Posters y Afiches. Fichas compactas: set de imágenes, contexto en 3 líneas, rol y año. La Columna queda fuera de destacados porque su fuerte es redes y editorial, que está en "lo que no se busca atraer".
+
+### Pendiente de evaluar
+La Familia (práctica), más adelante.
