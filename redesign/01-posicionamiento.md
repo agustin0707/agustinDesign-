@@ -78,17 +78,17 @@ Criterio: un caso es destacado si demuestra lo que se quiere vender (marca + web
 ### Destacados (4)
 | Orden | Caso | Qué demuestra | Prueba viva | Falta para contarlo |
 |---|---|---|---|---|
-| 1 | **Llegó Farma** | Marca + one page para un cliente real, pitch ganado al incumbente | One page en preview (GitHub Pages), aún sin dominio propio | Saber si se publica antes del lanzamiento del portafolio; permiso del cliente para mostrar el proceso del pitch |
+| 1 | **Llegó Farma** | Marca + one page para un cliente real, pitch ganado al incumbente | One page se publica en su dominio la semana del 19 oct 2026 | Permiso del cliente para mostrar el proceso del pitch |
 | 2 | **Mend** | Ciclo completo: investigación, marca, UX y web app construida | Web app en desarrollo, propuesta de identidad publicada | Qué se puede mostrar (1.5b) y si habrá demo navegable |
-| 3 | **Tap In** | Marca + producto + landing publicada para el mismo cliente | **tapin.cl en vivo** con tu landing | Definir el relato: hoy hay cuatro versiones de qué es Tap In (estadios, alta afluencia, descuentos universitarios, gestión de colegios). Respaldo del 65% |
-| 4 | **Mido** | Marca + UI de producto (domótica) | Página `.mi-` completa en local | Proceso de UI (flujos, decisiones) |
+| 3 | **Tap In** | Marca + producto + landing publicada para el mismo cliente | **tapin.cl en vivo** con tu landing | Relato propuesto en `notas-casos.md`; el 65% no tiene respaldo y se recomienda sacarlo |
+| 4 | _Por definir_ | Mido sale de destacados (Agustín no está 100% conforme con el proyecto) y pasa al archivo | | Ver candidatos en `notas-casos.md` |
 
 **1.6 resuelto en la propuesta:** la landing de Tap In va **dentro** del caso Tap In. Mostrar marca → app → web para un mismo cliente es exactamente la oferta, y tapin.cl en vivo es la mejor prueba del portafolio.
 
 **Candidato a 5° caso, después del lanzamiento:** el propio Agustín Design (marca personal + sitio hecho a mano). Se arma en la Fase 7 junto con el brandbook.
 
 ### Archivo
-La Columna, HAI Group, Entrena Po, Posters y Afiches. Fichas compactas: set de imágenes, contexto en 3 líneas, rol y año. La Columna queda fuera de destacados porque su fuerte es redes y editorial, que está en "lo que no se busca atraer".
+La Columna, HAI Group, Entrena Po, Posters y Afiches, Mido. Fichas compactas: set de imágenes, contexto en 3 líneas, rol y año. La Columna queda fuera de destacados porque su fuerte es redes y editorial, que está en "lo que no se busca atraer".
 
 ### Pendiente de evaluar
 La Familia (práctica), más adelante.

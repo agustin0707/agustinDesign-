@@ -34,9 +34,10 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | 1.3 | Tipo de trabajo a atraer | Hecho |
 | 1.4 | Curaduría: 4 a 6 casos destacados + archivo | En curso |
 | 1.5 | Aclarar relación entre proyecto de título y Anco | Hecho · Anco ahora es Mend; Anco sale del portafolio |
-| 1.5b | Confirmar qué se puede mostrar de Mend y si habrá demo navegable | Pendiente |
+| 1.5b | Confirmar qué se puede mostrar de Mend y si habrá demo navegable | En curso · preguntas en `notas-casos.md` |
 | 1.6 | Decidir si la landing de Tap In va dentro del caso Tap In o como caso propio | En curso · propuesta: dentro del caso |
-| 1.6b | Definir el relato de Tap In (qué es hoy el producto) | Pendiente |
+| 1.6b | Definir el relato de Tap In (qué es hoy el producto) | En curso · propuesta en `notas-casos.md` |
+| 1.8 | Elegir el 4° destacado en reemplazo de Mido | En curso · candidatos en `notas-casos.md` |
 | 1.7 | Evaluar juntos La Familia (práctica) | Pendiente · más adelante |
 
 ## Fase 2 · Referencias → `02-referencias.md` + moodboard
