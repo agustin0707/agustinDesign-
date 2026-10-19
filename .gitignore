@@ -1,0 +1,11 @@
+# Sistema
+.DS_Store
+
+# Archivos fuente pesados (no los usa el sitio)
+*.ai
+*.psd
+Mockups/
+Tap In Referencias/
+
+# Herramientas locales
+.claude/
