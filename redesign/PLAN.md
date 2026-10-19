@@ -28,12 +28,13 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 ## Fase 1 · Posicionamiento → `01-posicionamiento.md`
 | # | Ítem | Estado |
 |---|------|--------|
-| 1.0 | Debatir y definir el objetivo principal (producto UX/UI, freelance de branding o agencia) | Pendiente |
-| 1.1 | Audiencia principal | Pendiente |
-| 1.2 | Propuesta de valor en una frase | Pendiente |
-| 1.3 | Tipo de trabajo a atraer | Pendiente |
+| 1.0 | Debatir y definir el objetivo principal (producto UX/UI, freelance de branding o agencia) | Hecho · clientes de marca + web, con la web como especialidad (revisado) |
+| 1.1 | Audiencia principal | En curso · propuesta en el doc |
+| 1.2 | Propuesta de valor en una frase | En curso · propuesta en el doc |
+| 1.3 | Tipo de trabajo a atraer | En curso · propuesta en el doc |
 | 1.4 | Curaduría: 4 a 6 casos destacados + archivo | Pendiente |
-| 1.5 | Aclarar relación entre proyecto de título y Anco (mismo caso o dos) | Pendiente |
+| 1.5 | Aclarar relación entre proyecto de título y Anco | Hecho · Anco ahora es Mend; Anco sale del portafolio |
+| 1.5b | Confirmar qué se puede mostrar de Mend y si habrá demo navegable | Pendiente |
 | 1.6 | Decidir si la landing de Tap In va dentro del caso Tap In o como caso propio | Pendiente |
 | 1.7 | Evaluar juntos La Familia (práctica) | Pendiente · más adelante |
 
