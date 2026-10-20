@@ -53,8 +53,8 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 ## Fase 3 · Núcleo de marca → `03-marca.md` + tokens + exploraciones
 | # | Ítem | Estado |
 |---|------|--------|
-| 3.1 | Personalidad y tono verbal | Pendiente |
-| 3.2 | Firma: logotipo, monograma o ambos | Pendiente |
+| 3.1 | Personalidad y tono verbal | En curso · núcleo común propuesto |
+| 3.2 | Firma: logotipo, monograma o ambos | En curso · 3 direcciones para elegir |
 | 3.3 | Tipografía de sistema | Pendiente |
 | 3.4 | Paleta | Pendiente |
 | 3.5 | Grilla | Pendiente |
