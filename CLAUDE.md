@@ -10,6 +10,7 @@ Portafolio en HTML, CSS y JS vanilla. Sin frameworks: decisión de autor, se man
 - Cada caso tiene identidad propia con CSS/JS scopeado por prefijo: `.tp-` Tap In, `.lc-` La Columna, `.mi-` Mido.
 - Páginas con template genérico pendiente: Entrena Po, HAI Group, Posters y Afiches. Anco sale del portafolio.
 - Proyectos nuevos: Llegó Farma (submarca de logística last mile, pitch ganado al incumbente), landing de Tap In y Mend (proyecto de título, ex Anco: app de salud articular, marca + web app construida por mí). La Familia se evalúa más adelante.
+- Curaduría (Fase 1): 3 destacados, Llegó Farma, Tap In (con su landing) y Mend. Archivo: La Columna, HAI Group, Entrena Po, Posters, Mido. Un 4° destacado solo si aparece algo que lo merezca (HAI, si toma el área de marca y marketing). Página corta "Sobre este sitio" al final de la Fase 7.
 - Producción se publica con GitHub Pages desde `agustin0707/agustinDesign-` (rama `main`, `origin` en esta carpeta). El repo es público. DNS en Cloudflare, dominio registrado en NIC Chile. Nunca hacer push a `main` sin aprobación explícita: es el sitio en vivo.
 
 ## Objetivo

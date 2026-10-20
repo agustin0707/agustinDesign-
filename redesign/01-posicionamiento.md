@@ -71,24 +71,28 @@ Por qué esta: nombra las dos cosas que haces, deja la web como protagonista ("c
 
 **Lo que no se busca atraer** (y por eso no se destaca en el sitio): logos sueltos, manejo de redes sociales, piezas gráficas aisladas.
 
-## 1.4 Curaduría (propuesta, por confirmar)
+## 1.4 Curaduría (decidido el 19 oct 2026)
 
-Criterio: un caso es destacado si demuestra lo que se quiere vender (marca + web, con proceso). El resto va a un archivo con el mismo rigor visual pero sin narrativa larga.
+Criterio: un caso es destacado si demuestra lo que se quiere vender (marca + web, con proceso). Destacar no es valorar más: es decidir la profundidad del relato. Todos los casos llevan el mismo rigor visual; los destacados se cuentan completos y el archivo en formato corto. El número lo decide la calidad: un cliente juzga el portafolio por el caso más débil que ve.
 
-### Destacados (4)
-| Orden | Caso | Qué demuestra | Prueba viva | Falta para contarlo |
+### Destacados (3)
+| Orden | Caso | Qué demuestra | Prueba viva | Pendiente |
 |---|---|---|---|---|
-| 1 | **Llegó Farma** | Marca + one page para un cliente real, pitch ganado al incumbente | One page se publica en su dominio la semana del 19 oct 2026 | Permiso del cliente para mostrar el proceso del pitch |
-| 2 | **Mend** | Ciclo completo: investigación, marca, UX y web app construida | Web app en desarrollo, propuesta de identidad publicada | Qué se puede mostrar (1.5b) y si habrá demo navegable |
-| 3 | **Tap In** | Marca + producto + landing publicada para el mismo cliente | **tapin.cl en vivo** con tu landing | Relato propuesto en `notas-casos.md`; el 65% no tiene respaldo y se recomienda sacarlo |
-| 4 | _Por definir_ | Mido sale de destacados (Agustín no está 100% conforme con el proyecto) y pasa al archivo | | Ver candidatos en `notas-casos.md` |
+| 1 | **Llegó Farma** | Pitch ganado al incumbente; marca + one page para un cliente real | One page se publica en su dominio la semana del 19 oct 2026 | Permiso del cliente para mostrar el proceso del pitch |
+| 2 | **Tap In** | Un cliente durante 18 meses, a través de un pivote completo, hasta una web en producción hecha por Agustín | **tapin.cl en vivo** | Relato en `notas-casos.md`. Sacar el 65% (sin respaldo). Evitar cifras secretas |
+| 3 | **Mend** | Profundidad: investigación, accesibilidad medida, marca y producto construido | App con clave de acceso; propuesta de identidad publicada | Resultados del testeo con pacientes (después del 23 nov). Demo o video, se decide más adelante (Agustín se inclina por demo) |
 
-**1.6 resuelto en la propuesta:** la landing de Tap In va **dentro** del caso Tap In. Mostrar marca → app → web para un mismo cliente es exactamente la oferta, y tapin.cl en vivo es la mejor prueba del portafolio.
+**1.6:** la landing de Tap In va **dentro** del caso Tap In.
 
-**Candidato a 5° caso, después del lanzamiento:** el propio Agustín Design (marca personal + sitio hecho a mano). Se arma en la Fase 7 junto con el brandbook.
+### Un 4° destacado, solo si aparece algo que lo merezca
+- **HAI Group** es el candidato más probable. Es posible que HAI le encargue el área completa de marca y marketing (estudiar qué funciona, crear, publicar y medir). Si pasa, sumaría una arista nueva al portafolio: **marketing con medición**.
+- Si HAI llega a tener web construida por Agustín, también calza como marca + web.
 
 ### Archivo
-La Columna, HAI Group, Entrena Po, Posters y Afiches, Mido. Fichas compactas: set de imágenes, contexto en 3 líneas, rol y año. La Columna queda fuera de destacados porque su fuerte es redes y editorial, que está en "lo que no se busca atraer".
+La Columna, HAI Group (mientras no suba), Entrena Po, Posters y Afiches, Mido. Fichas compactas: set de imágenes, contexto en 3 líneas, rol y año.
+
+### "Sobre este sitio" (se hace al final)
+Página corta, enlazada desde el footer, que cuenta que el sitio fue diseñado y programado por Agustín. No es un caso. Va en la Fase 7, después del lanzamiento de los casos (ítem 7.11 del plan).
 
 ### Pendiente de evaluar
 La Familia (práctica), más adelante.

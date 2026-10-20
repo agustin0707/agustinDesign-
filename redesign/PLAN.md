@@ -32,12 +32,13 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | 1.1 | Audiencia principal | Hecho |
 | 1.2 | Propuesta de valor en una frase | Hecho |
 | 1.3 | Tipo de trabajo a atraer | Hecho |
-| 1.4 | Curaduría: 4 a 6 casos destacados + archivo | En curso |
+| 1.4 | Curaduría: casos destacados + archivo | Hecho · 3 destacados (Llegó Farma, Tap In, Mend); 4° solo si aparece algo que lo merezca |
 | 1.5 | Aclarar relación entre proyecto de título y Anco | Hecho · Anco ahora es Mend; Anco sale del portafolio |
-| 1.5b | Confirmar qué se puede mostrar de Mend y si habrá demo navegable | En curso · preguntas en `notas-casos.md` |
-| 1.6 | Decidir si la landing de Tap In va dentro del caso Tap In o como caso propio | En curso · propuesta: dentro del caso |
-| 1.6b | Definir el relato de Tap In (qué es hoy el producto) | En curso · propuesta en `notas-casos.md` |
-| 1.8 | Elegir el 4° destacado en reemplazo de Mido | En curso · candidatos en `notas-casos.md` |
+| 1.5b | Confirmar qué se puede mostrar de Mend | Hecho · todo menos datos de pacientes, médicos y FONIS |
+| 1.5c | Demo o video de Mend | Pendiente · más adelante, Agustín se inclina por demo |
+| 1.6 | Decidir si la landing de Tap In va dentro del caso Tap In o como caso propio | Hecho · dentro del caso |
+| 1.6b | Definir el relato de Tap In | Hecho · "De la cafetería del campus a la plataforma del colegio" |
+| 1.8 | Elegir el 4° destacado en reemplazo de Mido | Hecho · se queda en 3; HAI candidato si toma el área de marca y marketing |
 | 1.7 | Evaluar juntos La Familia (práctica) | Pendiente · más adelante |
 
 ## Fase 2 · Referencias → `02-referencias.md` + moodboard
@@ -100,3 +101,4 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | 7.8 | OG images con la marca | Pendiente |
 | 7.9 | Brandbook final | Pendiente |
 | 7.10 | Lanzamiento | Pendiente |
+| 7.11 | Página corta "Sobre este sitio" (enlazada desde el footer, no es un caso) | Pendiente · va al final |
