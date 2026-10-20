@@ -63,6 +63,14 @@ Agustín eligió la C porque es la más parecida a lo que busca y a lo que ya ti
 
 **Cambio de alcance que viene con la decisión:** el objetivo no es rehacer el portafolio desde cero, sino **rediseñarlo y mejorarlo notoriamente**. Agustín tiene una idea de cómo hacerlo y la va a compartir antes de refinar.
 
+### Ajustes de Agustín a la C (20 oct 2026)
+- **Se queda:** el juego entre negro, gris y blanco; Geist y Geist Mono; la paleta; el nombre "agustín.design" o "agustín design".
+- **Geist con tracking más cerrado** en titulares, para que las letras queden más pegadas y la marca se sienta más propia.
+- **Sin verde.** El estado "disponible" pasa a resolverse en blanco y negro.
+- **Fuera la cabecera de caso y la interacción del índice.** La entrada a los proyectos se rediseña por completo: tiene que ser atractivo presionar un proyecto y que lleve a una página muy única.
+- **Forma de trabajo:** sección por sección, empezando por el hero.
+- **Referencias de hero:** retrato B/N con el nombre gigante cruzándose con la persona (Alex Graham), afiche con datos chicos repartidos en la grilla (DARK), grilla visible sobre la foto con reloj en la navegación (Forty Seven · Columns & Rows).
+
 ### La C es la evolución del ADN actual
 | Sitio actual | Dirección C |
 |---|---|

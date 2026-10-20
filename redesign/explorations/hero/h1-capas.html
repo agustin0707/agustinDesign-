@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero 1 · Capas · agustín.design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hero-base.css">
+    <style>
+        /* =======================================================
+           HERO 1 · CAPAS
+           ======================================================= */
+        /* Nombre gigante que invierte su color al cruzar el retrato (referencia Alex Graham) */
+        .hero { --fondo-hero: var(--gris-claro); background: var(--fondo-hero); color: var(--negro); }
+
+        /* --- 1. RETRATO --- */
+        /* Recorte con fondo transparente, anclado al borde inferior */
+        .retrato { position: absolute; left: 0; bottom: 0; width: 100%; z-index: 1; }
+        .retrato img { animation: entraRetrato 1400ms var(--ease) 200ms both; }
+
+        /* --- 2. NOMBRE CON INVERSIÓN --- */
+        /* Encima del retrato con mix-blend-mode: negro sobre el fondo, claro sobre la foto */
+        .nombre { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-58%); z-index: 2; padding-inline: var(--margen); color: #fff; mix-blend-mode: difference; pointer-events: none; }
+        .nombre h1 { font-size: clamp(64px, 15.4vw, 290px); white-space: nowrap; text-align: center; }
+
+        /* --- 3. PIE DEL HERO --- */
+        .pie-hero { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); padding: 0 var(--margen) var(--margen); align-items: end; }
+        .redes { grid-column: 1 / span 3; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+        .rol { grid-column: 8 / -1; justify-self: end; text-align: left; font-size: clamp(26px, 3.3vw, 54px); font-weight: 500; letter-spacing: -0.045em; line-height: 0.98; color: #fff; mix-blend-mode: difference; }
+        .rol .barra { color: var(--gris-medio); margin-right: 0.08em; }
+
+        @media (max-width: 768px) {
+            .retrato { width: 220vw; left: -49vw; }
+            .nombre { top: 44%; }
+            .nombre h1 { font-size: 21vw; white-space: normal; line-height: 0.82; text-align: left; }
+            .redes { display: none; }
+            .rol { grid-column: 1 / -1; justify-self: start; font-size: 26px; color: #fff; mix-blend-mode: difference; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" data-parallax>
+        <nav class="nav">
+            <a href="#" class="logo">agustín<span class="punto">.</span>design<span class="cursor"></span></a>
+            <ul class="links"><li><a href="#">Trabajo</a></li><li><a href="#">Sobre mí</a></li><li><a href="#">Contacto</a></li></ul>
+            <span class="mono der"><span class="disponible">Disponible</span><span class="reloj" data-reloj>Santiago 00:00</span></span>
+        </nav>
+
+        <div class="retrato" data-capa="0.6"><img src="../../../img/fotodeperfilgus5.webp" alt="Agustín Avendaño" fetchpriority="high"></div>
+
+        <div class="nombre" data-capa="1.4"><h1 class="display" data-letras>agustín design</h1></div>
+
+        <div class="pie-hero">
+            <ul class="redes mono"><li><a href="#" class="subraya">LinkedIn ↗</a></li><li><a href="#" class="subraya">Behance ↗</a></li><li><a href="#" class="subraya">Instagram ↗</a></li></ul>
+            <p class="rol"><span class="barra">//</span>Diseño marcas<br>y construyo sus sitios</p>
+        </div>
+    </section>
+
+    <section class="nota-exploracion">
+        <p class="mono">Hero 1 · Capas</p>
+        <p>El nombre ocupa todo el ancho y cambia de color al cruzar tu retrato: negro sobre el fondo, claro sobre la foto. Se mueven a distinta velocidad con el mouse para dar profundidad.</p>
+        <p class="mono"><a href="index.html" class="subraya">← Comparar heros</a> · <a href="h2-afiche.html" class="subraya">Hero 2 →</a></p>
+    </section>
+
+    <script src="hero-base.js"></script>
+</body>
+</html>

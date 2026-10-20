@@ -55,7 +55,7 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 |---|------|--------|
 | 3.1 | Personalidad y tono verbal | En curso · núcleo común propuesto |
 | 3.2 | Firma: logotipo, monograma o ambos | En curso · dirección C elegida; falta resolver "agustín.design" vs dominio .cl |
-| 3.0 | Recibir la idea de Agustín para el rediseño (mejorar, no rehacer de cero) | Pendiente |
+| 3.0 | Recibir la idea de Agustín para el rediseño (mejorar, no rehacer de cero) | Hecho · referencias de hero y ajustes a la C en `03-marca.md` |
 | 3.3 | Tipografía de sistema | Pendiente |
 | 3.4 | Paleta | Pendiente |
 | 3.5 | Grilla | Pendiente |
@@ -72,6 +72,17 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | 4.5 | Verificar datos duros de cada caso (ej. el 65% de Tap In) | Pendiente |
 
 ## Fase 5 · Diseño UI → `/redesign/explorations/`
+
+A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca y arquitectura de cada una en el camino.
+
+| # | Sección | Estado |
+|---|------|--------|
+| S1 | Hero | En curso · 3 exploraciones |
+| S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | Pendiente |
+| S3 | Página de caso | Pendiente |
+| S4 | Sobre mí | Pendiente |
+| S5 | Contacto y footer | Pendiente |
+
 | # | Ítem | Estado |
 |---|------|--------|
 | 5.1 | Wireframes de home y caso | Pendiente |
