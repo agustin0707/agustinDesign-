@@ -16,6 +16,14 @@ Portafolio en HTML, CSS y JS vanilla. Sin frameworks: decisión de autor, se man
 ## Objetivo
 Rediseñar el portafolio completo y crear la marca personal Agustín Design, plasmada en la web. Objetivo principal: conseguir clientes directos para proyectos de marca + web, con la web como especialidad. Diseño y construyo; el UX es el método, el código el diferencial principal y la marca el segundo (ver `redesign/01-posicionamiento.md`). Estética minimalista, moderna, de autor; nada que se vea a plantilla. Todos los proyectos con el mismo rigor visual.
 
+## Principios de diseño (Fase 2, aprobados)
+Filtran toda decisión de marca, arquitectura y UI (detalle en `redesign/02-referencias.md`):
+1. **El marco calla, el trabajo habla.** La marca Agustín Design es sobria y constante; la identidad de cada proyecto vive adentro y tiene todo el espacio.
+2. **Cada decisión, contada.** Casos como decisiones con su porqué, en lenguaje de cliente, con la pieza al lado y resultados verificables.
+3. **El detalle es la prueba.** El sitio demuestra que sabe construir web: rápido, preciso, micro interacciones pensadas, ningún efecto sin razón.
+
+Anti referencias a evitar: el patrón Dennis Snellenberg (lo más clonado), 3D pesado como portada, bento de links, hero con degradé + WhatsApp, plantillas de Framer/Webflow.
+
 ## Hipótesis (validar, no dar por hechas)
 1. El salto es de posicionamiento, no solo estético: los casos se cuentan desde proceso y decisiones.
 2. Mi marca es el marco, el proyecto es el contenido: nav, tipografía, grilla, ritmo, motion y estructura de caso son Agustín Design; la identidad de cada proyecto vive adentro (hero, piezas).

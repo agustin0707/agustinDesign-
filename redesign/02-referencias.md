@@ -1,6 +1,6 @@
 # Fase 2 · Referencias
 
-En curso · rama `redesign` · 19 oct 2026
+Hecho · aprobada el 19 oct 2026 · rama `redesign`
 
 Criterio de selección: portafolios de autor (personas o estudios chicos) donde el sitio se siente hecho a mano, y estudios grandes solo cuando su **estructura de caso** sirve. Todos los sitios se visitaron y capturaron el 19 oct 2026. Las capturas están en `explorations/moodboard/capturas/` (fuera del repo, porque son trabajo de terceros) y el moodboard visual en `explorations/moodboard/index.html`.
 
@@ -98,7 +98,7 @@ Ver `explorations/moodboard/index.html`. Resumen:
 
 ---
 
-## 2.5 Principios de diseño (propuesta)
+## 2.5 Principios de diseño (aprobados)
 
 1. **El marco calla, el trabajo habla.** La marca Agustín Design es sobria y constante: tipografía, grilla, ritmo. La identidad de cada proyecto vive adentro y tiene todo el espacio. *(Order, Pentagram, Emil)*
 2. **Cada decisión, contada.** Los casos se cuentan como decisiones con su porqué, en lenguaje de cliente, con la pieza al lado y un cierre honesto con resultados verificables. *(Anton & Irene, Collins)*
