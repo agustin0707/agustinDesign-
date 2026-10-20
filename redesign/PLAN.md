@@ -44,11 +44,11 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 ## Fase 2 · Referencias → `02-referencias.md` + moodboard
 | # | Ítem | Estado |
 |---|------|--------|
-| 2.1 | Benchmark de portafolios de autor (UX/UI y brand) con links | Pendiente |
-| 2.2 | Moodboard por ejes: tipografía, layout, motion, estructura de caso | Pendiente |
-| 2.3 | Análisis profundo de 3 a 5 referencias | Pendiente |
-| 2.4 | Anti referencias | Pendiente |
-| 2.5 | 3 principios de diseño | Pendiente |
+| 2.1 | Benchmark de portafolios de autor (UX/UI y brand) con links | En curso · propuesta lista, falta tu visto bueno |
+| 2.2 | Moodboard por ejes: tipografía, layout, motion, estructura de caso | En curso · propuesta lista, falta tu visto bueno |
+| 2.3 | Análisis profundo de 3 a 5 referencias | En curso · propuesta lista, falta tu visto bueno |
+| 2.4 | Anti referencias | En curso · propuesta lista, falta tu visto bueno |
+| 2.5 | 3 principios de diseño | En curso · propuesta lista, falta tu visto bueno |
 
 ## Fase 3 · Núcleo de marca → `03-marca.md` + tokens + exploraciones
 | # | Ítem | Estado |
