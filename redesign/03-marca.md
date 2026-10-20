@@ -1,6 +1,6 @@
 # Fase 3 · Núcleo de marca
 
-En curso · rama `redesign` · 20 oct 2026
+En curso · rama `redesign` · 20 oct 2026 · **dirección elegida: C · Índice**
 
 Exploraciones en `explorations/marca/`: comparador en `index.html` y una página por dirección (`a-oficio.html`, `b-autor.html`, `c-indice.html`). Cada una tiene firma, voz, tipografía, paleta, grilla, motion en vivo y aplicaciones: home, índice de proyectos, cabecera de caso (Tap In) y tarjeta para compartir. Se ven con el servidor de preview (`http://localhost:4321/redesign/explorations/marca/`).
 
@@ -57,7 +57,26 @@ Se parte desde cero, sin la firma "av" anterior.
 
 ---
 
-## Recomendación: A · Oficio
+## Decisión: C · Índice (20 oct 2026)
+
+Agustín eligió la C porque es la más parecida a lo que busca y a lo que ya tiene, pero más atractiva y con más marca personal. La recomendación original era la A (se deja abajo como registro).
+
+**Cambio de alcance que viene con la decisión:** el objetivo no es rehacer el portafolio desde cero, sino **rediseñarlo y mejorarlo notoriamente**. Agustín tiene una idea de cómo hacerlo y la va a compartir antes de refinar.
+
+### La C es la evolución del ADN actual
+| Sitio actual | Dirección C |
+|---|---|
+| Inter (24 usos) | Geist |
+| Space Mono para detalles (4 usos) | Geist Mono para todos los datos |
+| Grises `#dddddd` y `#202020` | Escala de grises afinada con roles |
+| Punto de estado y reloj de Santiago en contacto | "Disponible" y hora en vivo en la navegación |
+| Hero con el nombre en minúscula | Firma en minúscula con cursor |
+| Sección About en oscuro | Modo oscuro de primera clase |
+
+### Detalle a resolver en la firma
+La firma "agustín.design" sugiere un dominio `.design`, pero el sitio es `agustindesign.cl`. Opciones: escribir "agustín design" con el cursor, o registrar `agustin.design` (en la consulta WHOIS del 20 oct 2026 no aparece registrado). Se decide en 3.2.
+
+## Recomendación original: A · Oficio
 
 Es la que mejor dice "diseño y construyo". La tipografía que cambia de ancho y la grilla visible son sistema hecho a mano, y el minio cuenta el proceso sin decorar. Cumple el primer principio (el marco calla) y aun así tiene una firma propia que no se confunde con una plantilla.
 

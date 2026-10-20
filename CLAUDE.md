@@ -24,11 +24,14 @@ Filtran toda decisión de marca, arquitectura y UI (detalle en `redesign/02-refe
 
 Anti referencias a evitar: el patrón Dennis Snellenberg (lo más clonado), 3D pesado como portada, bento de links, hero con degradé + WhatsApp, plantillas de Framer/Webflow.
 
+## Dirección de marca (Fase 3)
+**C · Índice**, elegida el 20 oct 2026: Geist + Geist Mono, blanco y negro con grises, verde solo para "disponible", modo oscuro de primera clase, motion instantáneo y útil (120 a 200 ms), hora en vivo y atajos de teclado. Es la evolución del ADN actual del sitio (Inter, Space Mono, grises, punto de estado y reloj). Exploración en `redesign/explorations/marca/c-indice.html`.
+
 ## Hipótesis (validar, no dar por hechas)
 1. El salto es de posicionamiento, no solo estético: los casos se cuentan desde proceso y decisiones.
 2. Mi marca es el marco, el proyecto es el contenido: nav, tipografía, grilla, ritmo, motion y estructura de caso son Agustín Design; la identidad de cada proyecto vive adentro (hero, piezas).
 3. Núcleo de marca primero, brandbook al final.
-4. Código: reconstruir el shell desde cero y migrar los casos rescatando su trabajo pulido.
+4. Código: reconstruir el shell desde cero y migrar los casos rescatando su trabajo pulido. **En revisión (20 oct 2026):** Agustín quiere rediseñar y mejorar notoriamente el sitio, no rehacerlo completamente de cero. La estrategia se define en la Fase 6.
 
 ## Cómo trabajar
 - `redesign/PLAN.md` es la columna vertebral: fases e ítems con estado (`Pendiente`, `En curso`, `Bloqueado`, `Hecho`). Actualizarlo al cerrar cada ítem.
