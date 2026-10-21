@@ -49,7 +49,7 @@
         /* --q: cuánto lo cubrió el siguiente (0 a 1), lo escribe el JS */
         .panel { --q: 0; --tinte: var(--negro); position: sticky; top: 0; height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 64px var(--margen) var(--margen); background: var(--tinte); overflow: hidden; }
         .panel, .pila + .archivo { border-radius: 18px 18px 0 0; box-shadow: 0 -30px 60px -12px rgba(0, 0, 0, 0.65); }
-        .panel > :not(.velo) { transform: scale(calc(1 - var(--q) * 0.05)); transform-origin: 50% 0; }
+        .panel > :not(.velo) { transform: scale(calc(1 - var(--q) * 0.05)); transform-origin: 50% 0; will-change: transform; }
         .panel .velo { position: absolute; inset: 0; z-index: 8; background: #000; opacity: calc(var(--q) * 0.7); pointer-events: none; }
 
         /* --- 1. FILA SUPERIOR CON MINI ÍNDICE --- */
@@ -59,19 +59,21 @@
         .mi a.actual { color: var(--blanco); }
         .mi a.actual .mi-n::before { content: '●'; margin-right: 6px; font-size: 8px; vertical-align: 2px; }
         @media (hover: hover) { .mi a:hover { color: var(--blanco); } }
-        .tope .disc { grid-column: 7 / span 3; }
+        .tope .disc { grid-column: 6 / span 4; white-space: nowrap; }
+        .tope .vivo { white-space: nowrap; }
         .tope .vivo { grid-column: 10 / -1; justify-self: end; }
-        .tope a.vivo { border-bottom: 1px solid rgba(245, 245, 243, 0.4); }
+        .tope .vivo a { border-bottom: 1px solid rgba(245, 245, 243, 0.4); }
 
         /* =======================================================
            3. LÁMINA: LA ESCENA DEL PROYECTO
            ======================================================= */
         .lamina { position: relative; border-radius: 8px; overflow: hidden; cursor: pointer; isolation: isolate; }
         .lamina:focus-visible { outline: 1px solid var(--blanco); outline-offset: 6px; }
-        .lamina .ver { position: absolute; right: 18px; top: 18px; z-index: 4; padding: 9px 15px; border-radius: 999px; background: var(--blanco); color: var(--negro); opacity: 0; translate: 0 -8px; transition: opacity 700ms var(--hover-lento), translate 800ms var(--hover-lento); }
-        .lamina .recorre { position: absolute; left: 18px; top: 18px; z-index: 4; padding: 8px 13px; border-radius: 999px; background: rgba(11, 11, 11, 0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: opacity 600ms var(--hover-lento); }
+        .lamina .ver { position: absolute; left: 0; top: 0; z-index: 4; padding: 9px 15px; border-radius: 999px; background: var(--blanco); color: var(--negro); opacity: 0; scale: 0.85; transform: translate(var(--vx, 50%), var(--vy, 50%)) translate(-50%, -50%); transition: opacity 600ms var(--hover-lento), scale 700ms var(--hover-lento); pointer-events: none; white-space: nowrap; }
+        /* La pastilla sigue al cursor con inercia (JS escribe --vx y --vy) */
+        .lamina .recorre { position: absolute; left: 18px; top: 18px; z-index: 4; padding: 8px 13px; border-radius: 999px; background: rgba(11, 11, 11, 0.62); transition: opacity 600ms var(--hover-lento); }
         @media (hover: hover) {
-            .lamina:hover .ver { opacity: 1; translate: 0 0; }
+            .lamina:hover .ver { opacity: 1; scale: 1; }
             .lamina:hover .recorre { opacity: 0; }
         }
 
@@ -115,8 +117,10 @@
         .telefono { position: absolute; right: 15%; top: 8%; height: 106%; aspect-ratio: 390 / 844; border-radius: max(18px, 3cqw); border: max(4px, 0.5cqw) solid #0B0B0B; background: #0B0B0B; overflow: hidden; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.65); transition: translate 1200ms var(--hover-lento); }
         .telefono .pantalla { top: 0; background: #244A53; }
         .telefono .larga { display: block; translate: 0 0; transition: translate 1800ms var(--hover-lento); }
-        .telefono .splash { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; transition: opacity 700ms var(--hover-lento); }
-        .lamina.arranca .telefono .splash { opacity: 0; transition-delay: 1100ms; }
+        .telefono .splash { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+        /* En reposo se ve la app; al pasar el mouse la pantalla de carga aparece y se desvanece, como al abrirla */
+        .lamina.arranca .telefono .splash { animation: arranque 1500ms ease forwards; }
+        @keyframes arranque { 0%, 65% { opacity: 1; } 100% { opacity: 0; } }
         .lamina.arranca .telefono .larga { translate: 0 calc(-100% + 100cqh); transition: translate 11s cubic-bezier(0.45, 0, 0.25, 1) 1500ms; }
         .escena.quieta * { transition: none !important; animation: none !important; }
 
@@ -128,7 +132,7 @@
         .pie .nombre { grid-column: 1 / -1; font-size: clamp(64px, min(12.4vw, 26svh), 260px); font-weight: 500; letter-spacing: -0.065em; line-height: 0.8; word-spacing: -0.06em; white-space: nowrap; color: #fff; mix-blend-mode: difference; translate: 0 -0.5em; margin-bottom: -0.5em; margin-left: -0.04em; }
         .pie .bajada { grid-column: 10 / -1; grid-row: 1; align-self: end; justify-self: end; text-align: right; max-width: 30ch; color: var(--gris-medio); font-size: 14px; padding-bottom: 6px; }
 
-        .archivo { position: relative; z-index: 5; background: var(--negro); }
+        .archivo { position: relative; z-index: 5; min-height: 100svh; align-content: start; background: var(--negro); }
 
         /* =======================================================
            VISTA MÓVIL
@@ -141,19 +145,19 @@
             .gigante { font-size: 31vw; margin-top: 12vh; }
             .apertura .manifiesto, .apertura .indice-proyectos, .apertura .num-seccion { grid-column: 1 / -1; }
             .apertura .num-seccion { display: none; }
-            .panel { padding-top: 60px; grid-template-rows: auto auto auto; align-content: center; }
+            .panel { padding-top: 60px; grid-template-rows: auto 1fr auto; }
             .tope, .pie { grid-template-columns: repeat(4, 1fr); }
             .mi { grid-column: 1 / -1; gap: 14px; }
             .mi a:not(.actual) .mi-t { display: none; }
             .tope .disc { display: none; }
             .tope .vivo { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
-            .lamina { aspect-ratio: 4 / 4.6; }
+            .lamina { min-height: 0; }
             .navegador { left: 8%; right: 8%; top: 14%; }
             .telefono { right: 50%; translate: 50% 0; top: 10%; }
             .pantalla .poster { display: none; }
             .pantalla .larga { display: block; translate: 0 0; transition: translate 1800ms var(--hover-lento); }
             .lamina.viendo .navegador .larga { translate: 0 calc(-100% + 100cqh); transition: translate 11s cubic-bezier(0.45, 0, 0.25, 1); }
-            .lamina .ver { opacity: 1; translate: 0 0; }
+            .lamina .ver { opacity: 1; scale: 1; left: auto; top: 14px; right: 14px; transform: none; }
             .lamina .recorre { display: none; }
             .pie .nombre { font-size: 17vw; white-space: normal; }
             .pie .bajada { grid-column: 1 / -1; grid-row: auto; justify-self: start; text-align: left; margin-top: 12px; }
@@ -186,8 +190,8 @@
         <section class="panel" id="p-llego" data-id="llego" style="--tinte:#0A1415">
             <div class="tope mono">
                 <nav class="mi" aria-label="Proyectos"><a href="#p-llego" class="actual" data-salto><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" data-salto><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" data-salto><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
-                <span class="disc">Marca · One page · 2026</span>
-                <span class="vivo gris">Pronto en línea</span>
+                <span class="disc">Marca · One page</span>
+                <span class="vivo gris">2026 · Pronto en línea</span>
             </div>
             <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Llegó Farma" data-sitio="sitios/llego/index.html">
                 <div class="escena escena-llego">
@@ -204,8 +208,8 @@
         <section class="panel" id="p-tapin" data-id="tapin" style="--tinte:#110E22">
             <div class="tope mono">
                 <nav class="mi" aria-label="Proyectos"><a href="#p-llego" data-salto><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" class="actual" data-salto><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" data-salto><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
-                <span class="disc">Marca · Producto · Web · 2025–26</span>
-                <a class="vivo" href="https://tapin.cl" target="_blank" rel="noopener">tapin.cl ↗</a>
+                <span class="disc">Marca · Producto · Web</span>
+                <span class="vivo"><span class="gris">2025–26 · </span><a href="https://tapin.cl" target="_blank" rel="noopener">tapin.cl ↗</a></span>
             </div>
             <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Tap In" data-sitio="sitios/tapin/index.html">
                 <div class="escena escena-tapin">
@@ -222,8 +226,8 @@
         <section class="panel" id="p-mend" data-id="mend" style="--tinte:#0D2024">
             <div class="tope mono">
                 <nav class="mi" aria-label="Proyectos"><a href="#p-llego" data-salto><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" data-salto><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" class="actual" data-salto><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
-                <span class="disc">Investigación · Marca · Web app · 2026</span>
-                <span class="vivo gris">Prototipo con acceso</span>
+                <span class="disc">Investigación · Marca · Web app</span>
+                <span class="vivo gris">2026 · Prototipo con acceso</span>
             </div>
             <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Mend" data-app>
                 <div class="escena escena-mend">

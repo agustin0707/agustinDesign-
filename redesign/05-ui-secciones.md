@@ -105,6 +105,34 @@ Las escenas usan unidades de contenedor (`cqw`, `cqh`): el navegador y el teléf
 | Títulos con el efecto del nombre del hero, sin la ola | Títulos más grandes, en Geist cerrada, cruzando el borde de la lámina con `mix-blend-mode: difference`, y entrada letra a letra cuando aparecen en pantalla. Sin reacción al cursor |
 | Mejorar la parte de arriba de Works | **Apertura tipo afiche:** "works" gigante con "(03)" en mono, como el ".design" del hero, y entrada letra a letra. Debajo, el manifiesto ("Marcas y sitios web, diseñados y construidos por mí. Cada proyecto, contado desde sus decisiones.") y un índice de los tres proyectos más el archivo, con saltos directos |
 
+### Audit exhaustivo de la v3 (21 oct 2026)
+Herramientas nuevas en `redesign/herramientas/`: `auditar-textos.cjs` (cortes, desbordes y choques en 6 anchos) y `medir-fluidez.cjs` (cuadros lentos durante el scroll y el hover).
+
+**Fluidez** (navegador de prueba sin GPU; sirve para comparar, en un Mac real los números son más altos):
+
+| Momento | Antes | Después |
+|---|---|---|
+| Scroll por la pila | 44 fps · 48 cuadros lentos | **60 fps · 0 cuadros lentos** |
+| Hover con sitio en vivo | 31 fps | **44 fps** |
+| Scroll después del hover | 35 fps (el sitio seguía corriendo) | **60 fps · 0 cuadros lentos** |
+
+| Hallazgo | Corrección |
+|---|---|
+| **Texto partido:** entre 1024 y 1279 px "Investigación · Marca · Web app · 2026" bajaba a dos líneas y dejaba "· 2026" huérfano | La disciplina va en una línea (`nowrap`) y el año pasa a la columna derecha ("2026 · Prototipo con acceso") |
+| **Bug:** al terminar la página, el último panel ("Mend") asomaba sobre el archivo | El archivo ocupa al menos una pantalla |
+| **Bug:** el teléfono de Mend en reposo mostraba solo la pantalla de carga | En reposo se ve la app; la pantalla de carga aparece y se va solo al pasar el mouse |
+| **Bug:** en el primer hover se recargaba un iframe recién creado (podía quedar en blanco) | El sitio siempre se carga de cero asignando su dirección, sin recargas |
+| **Bug de continuidad:** al abrir el caso después de dejar bajar el sitio, la portada saltaba al inicio | El clon muestra la captura larga en el mismo punto donde iba la web |
+| **Fluidez:** los sitios se precargaban completos cerca de la pantalla y seguían ejecutándose en segundo plano | Solo se precarga el HTML; el sitio se monta al pasar el mouse y se desmonta al salir |
+| **Fluidez:** cruzar una lámina de pasada al hacer scroll cargaba el sitio | Espera de 180 ms antes de montar el sitio (intención de hover) |
+| **Fluidez:** el contenido del panel cubierto se volvía a rasterizar en cada cuadro | `will-change: transform`: se escala como capa |
+| **Fluidez:** el desenfoque de fondo de la etiqueta se recalculaba en cada cuadro | Fondo semitransparente sólido |
+| **Fluidez:** `--q` se escribía en todos los paneles en cada cuadro | Solo se escribe si cambió |
+| **Interacción:** "Ver caso" fijo en una esquina, lejos de la mano | La pastilla sigue al cursor con inercia dentro de la lámina |
+| **Interacción:** con teclado no había vista previa | Al enfocar una lámina se monta el sitio (o arranca la app), igual que con el mouse |
+| **Interacción:** el enlace "Archivo" saltaba sin transición | Scroll suave, como los saltos a los proyectos |
+| **Móvil:** sobraba negro sobre las láminas | La lámina llena el alto disponible del panel |
+
 **Nota técnica para la Fase 6:** para controlar el scroll dentro de los sitios, el navegador necesita que estén en el mismo dominio que el portafolio. En la exploración se usan copias locales (`explorations/works/sitios/`, fuera del repo). En producción hay dos caminos: publicar copias de las landings bajo `agustindesign.cl` (con permiso de cada cliente) o grabar un video del recorrido de cada sitio. El video pesa menos y funciona igual en móvil; la copia es más fiel. Se decide en la Fase 6.
 
 

@@ -80,10 +80,21 @@
     const escenaDe = el => {
         const e = el.querySelector('.escena'); if (!e) return null;
         const c = e.cloneNode(true); c.classList.add('quieta');
-        /* Los sitios en vivo no viajan (serían otra carga completa): el clon muestra la portada */
+        /* El sitio en vivo no viaja (sería otra carga completa): se recuerda hasta dónde había bajado */
+        let bajado = 0;
+        const vivo = e.querySelector('iframe');
+        try { bajado = vivo && vivo.contentWindow ? vivo.contentWindow.scrollY : 0; } catch (err) { bajado = 0; }
         c.querySelectorAll('iframe').forEach(f => f.remove());
         const orig = e.querySelectorAll('img'), copias = c.querySelectorAll('img');
         copias.forEach((img, i) => { const cs = getComputedStyle(orig[i]); img.style.translate = cs.translate; img.style.scale = cs.scale; if (!img.classList.contains('poster')) img.style.opacity = cs.opacity; });
+        /* Continuidad: si el sitio había bajado, el clon muestra la captura larga en ese mismo punto en vez de la portada */
+        const largaOrig = e.querySelector('.larga'), larga = c.querySelector('.larga');
+        if (bajado > 0 && larga && largaOrig && largaOrig.complete && largaOrig.naturalHeight) {
+            const altoSitio = largaOrig.naturalHeight * 1440 / largaOrig.naturalWidth;
+            larga.style.display = 'block';
+            larga.style.translate = `0 ${-(bajado / altoSitio) * 100}%`;
+            const poster = c.querySelector('.poster'); if (poster) poster.style.opacity = '0';
+        }
         return c;
     };
 
