@@ -111,7 +111,8 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 .bloque { min-height: 76svh; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 40px 0; opacity: 0.38; transition: opacity 600ms var(--c-curva); }
 .bloque.actual { opacity: 1; }
 .bloque:first-child { min-height: 60svh; justify-content: flex-start; padding-top: 8px; }
-.bloque .num { display: flex; align-items: center; gap: 10px; }
+.bloque .num { display: flex; align-items: center; gap: 8px; }
+.bloque .num .de { color: var(--c-texto-3); }
 .bloque h3 { max-width: 16ch; font-family: var(--c-f-display); font-size: clamp(28px, 2.7vw, 44px); font-weight: var(--c-titulo-peso); letter-spacing: var(--c-titulo-track); line-height: 1.02; }
 .bloque p { max-width: 42ch; font-size: 16px; line-height: 1.55; }
 .bloque .porque { display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 1px solid var(--c-linea); color: var(--c-texto-2); font-size: 15px; }
@@ -148,12 +149,27 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 .vitrina.cargado iframe { opacity: 1; }
 .vitrina.cargado .pantalla > img { opacity: 0; }
 
-/* --- 4. RESALTE: LA CAJA QUE SEÑALA LA PARTE DEL SITIO --- */
-/* Una sola caja que viaja entre decisiones (top, left, width y height); afuera, el sitio se atenúa */
-.resalte { position: absolute; z-index: 3; left: var(--x, 0); top: var(--y, 0); width: var(--w, 0); height: var(--h, 0); border: 1.5px solid var(--c-acento); border-radius: var(--c-radio-resalte, 10px); box-shadow: 0 0 0 9999px var(--c-velo); opacity: 0; pointer-events: none; transition: top 700ms var(--c-curva), left 700ms var(--c-curva), width 700ms var(--c-curva), height 700ms var(--c-curva), opacity 400ms var(--c-curva); }
-.resalte.on { opacity: 1; }
-.resalte .r-txt { position: absolute; left: -1.5px; top: -1.5px; padding: 4px 9px; border-radius: var(--c-radio-resalte, 10px) 0 8px 0; background: var(--c-acento); color: var(--c-sobre-acento); font: var(--c-etiqueta-tam) var(--c-f-etiqueta); letter-spacing: var(--c-etiqueta-track); text-transform: var(--c-etiqueta-caja); white-space: nowrap; }
-.resalte .esq { display: none; }
+/* --- 4. FOCO SOBRE LA PARTE DEL SITIO --- */
+/* Cuatro paneles cubren todo menos la parte marcada: afuera el sitio se desenfoca y se apaga, adentro queda
+   nítido. Esquinas que se dibujan y una etiqueta pegada por fuera. Todo viaja entre decisiones con --x --y --w --h */
+.resalte { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.resalte .rv { position: absolute; background: var(--c-velo); backdrop-filter: blur(2.5px) saturate(0.85); -webkit-backdrop-filter: blur(2.5px) saturate(0.85); opacity: 0; transition: opacity 500ms var(--c-curva), top 700ms var(--c-curva), left 700ms var(--c-curva), width 700ms var(--c-curva), height 700ms var(--c-curva); }
+.resalte .rv-t { left: 0; right: 0; top: 0; height: var(--y, 0); }
+.resalte .rv-b { left: 0; right: 0; top: calc(var(--y, 0) + var(--h, 0)); bottom: 0; }
+.resalte .rv-l { left: 0; top: var(--y, 0); width: var(--x, 0); height: var(--h, 0); }
+.resalte .rv-r { left: calc(var(--x, 0) + var(--w, 0)); right: 0; top: var(--y, 0); height: var(--h, 0); }
+.resalte .r-caja { position: absolute; left: var(--x, 0); top: var(--y, 0); width: var(--w, 0); height: var(--h, 0); border-radius: var(--c-radio-resalte, 10px); box-shadow: 0 0 0 1px color-mix(in srgb, var(--c-acento) 40%, transparent); opacity: 0; transition: opacity 400ms var(--c-curva), top 700ms var(--c-curva), left 700ms var(--c-curva), width 700ms var(--c-curva), height 700ms var(--c-curva); }
+.resalte.on .rv, .resalte.on .r-caja { opacity: 1; }
+/* Esquinas en L que se dibujan desde afuera */
+.resalte .esq { position: absolute; width: 16px; height: 16px; border: 0 solid var(--c-acento); transform: scale(0.4); opacity: 0; transition: transform 600ms var(--c-curva) 200ms, opacity 300ms 200ms; }
+.resalte .e1 { left: -5px; top: -5px; border-left-width: 2px; border-top-width: 2px; border-top-left-radius: 8px; transform-origin: 100% 100%; }
+.resalte .e2 { right: -5px; top: -5px; border-right-width: 2px; border-top-width: 2px; border-top-right-radius: 8px; transform-origin: 0 100%; }
+.resalte .e3 { left: -5px; bottom: -5px; border-left-width: 2px; border-bottom-width: 2px; border-bottom-left-radius: 8px; transform-origin: 100% 0; }
+.resalte .e4 { right: -5px; bottom: -5px; border-right-width: 2px; border-bottom-width: 2px; border-bottom-right-radius: 8px; transform-origin: 0 0; }
+.resalte.on .esq { transform: none; opacity: 1; }
+.resalte .r-txt { position: absolute; left: -5px; bottom: calc(100% + 10px); padding: 6px 11px; border-radius: 999px; background: var(--c-acento); color: var(--c-sobre-acento); font: var(--c-etiqueta-tam) var(--c-f-etiqueta); font-weight: 600; letter-spacing: var(--c-etiqueta-track); text-transform: var(--c-etiqueta-caja); white-space: nowrap; box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.35); transform: translateY(6px); opacity: 0; transition: transform 500ms var(--c-curva) 250ms, opacity 300ms 250ms; }
+.resalte.etq-abajo .r-txt { bottom: auto; top: calc(100% + 10px); }
+.resalte.on .r-txt { transform: none; opacity: 1; }
 
 /* --- 5. PIE DEL ESCENARIO --- */
 .pie-ev { display: flex; justify-content: space-between; gap: 16px; min-height: 18px; }
@@ -361,14 +377,23 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 .sig-escena > * { transform: scale(calc(1.08 - var(--p) * 0.08)); }
 .sig-txt { position: absolute; left: var(--margen); right: var(--margen); bottom: clamp(88px, 12svh, 140px); z-index: 3; display: flex; flex-direction: column; gap: 14px; pointer-events: none; }
 .sig-fila { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font: 12px var(--mono); opacity: calc(0.4 + var(--e) * 0.6); }
-.sig-nombre { font-size: clamp(96px, 19vw, 340px); font-weight: 500; letter-spacing: -0.075em; line-height: 0.78; margin-left: -0.05em; transform: translateY(calc((1 - var(--e)) * 30%)); transition: transform 700ms var(--hover-lento), opacity 500ms; }
+.sig-nombre { font-family: var(--sig-f, var(--sans)); font-size: clamp(96px, 19vw, 340px); font-weight: 500; letter-spacing: -0.075em; line-height: 0.78; margin-left: -0.05em; transform: translateY(calc((1 - var(--e)) * 30%)); transition: transform 700ms var(--hover-lento), opacity 500ms; }
 .sig-bajada { max-width: 34ch; font-size: clamp(16px, 1.3vw, 19px); opacity: 0.8; }
-.sig-progreso { position: absolute; right: var(--margen); bottom: 28px; z-index: 3; display: flex; align-items: center; gap: 14px; padding: 9px 14px; border-radius: 999px; background: rgba(0, 0, 0, 0.28); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font: 12px var(--mono); }
-.sig-barra { position: relative; width: clamp(120px, 14vw, 220px); height: 2px; background: rgba(255, 255, 255, 0.25); overflow: hidden; border-radius: 2px; }
-.sig-barra i { position: absolute; inset: 0; background: #FFFFFF; transform: scaleX(var(--p)); transform-origin: 0 50%; }
+.sig-info { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.sig-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.sig-chips i { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.35); font: 12px var(--mono); font-style: normal; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+/* Avance: un anillo que se llena; al completarse la flecha gira y el caso se abre */
+.sig-progreso { position: absolute; right: var(--margen); top: 92px; z-index: 3; display: flex; align-items: center; gap: 14px; font: 12px var(--mono); }
+.sig-anillo { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgba(0, 0, 0, 0.22); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.sig-anillo svg { position: absolute; inset: 0; rotate: -90deg; }
+.sig-anillo circle { fill: none; stroke: rgba(255, 255, 255, 0.25); stroke-width: 2; }
+.sig-anillo .lleno { stroke: #FFFFFF; stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--p)); }
+.sig-flecha { font-size: 18px; transition: transform 500ms var(--hover-lento); }
+.sig-panel.abriendo .sig-flecha { transform: rotate(-90deg); }
 .sig-panel.abriendo .sig-nombre { transform: translateY(-12%); opacity: 0; }
 .sig-panel.abriendo .sig-escena { clip-path: inset(0); }
-@media (hover: hover) { .sig-panel:hover .sig-barra { background: rgba(255, 255, 255, 0.45); } }
+.sig-panel.abriendo .sig-splash { opacity: 1; }
+@media (hover: hover) { .sig-panel:hover .sig-anillo { background: rgba(0, 0, 0, 0.36); } }
 
 /* --- 1. ESCENA MEND --- */
 .sig-e-mend .sig-campo { position: absolute; inset: 0; background:
@@ -397,6 +422,11 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 /* El teléfono con la app sube a medida que se avanza hacia el caso */
 .sig-e-mend .sig-tel { position: absolute; right: 12%; top: 9svh; width: clamp(180px, 16vw, 280px); aspect-ratio: 390 / 844; border: 6px solid #0B0B0B; border-radius: 40px; overflow: hidden; background: #0B0B0B; box-shadow: 0 50px 120px -30px rgba(0, 0, 0, 0.55); translate: 0 calc((1 - var(--p)) * 38svh); }
 .sig-e-mend .sig-tel img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.sig-e-mend .sig-tel .sig-splash { position: absolute; inset: 0; opacity: 0; transition: opacity 500ms ease; }
+/* Una luz suave que sigue el avance: el campo de Mend se ilumina hacia el caso */
+.sig-e-mend .sig-luz { position: absolute; inset: 0; background: radial-gradient(40% 50% at 78% 40%, rgba(201, 233, 232, 0.55), transparent 70%); opacity: var(--p); }
+/* El nombre de Mend en su tipografía (Neue Haas Grotesk; en el Mac, Helvetica Neue como respaldo) */
+.sig:has(.sig-e-mend) { --sig-f: "Neue Haas Grotesk Display Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* --- 2. ESCENA TAP IN --- */
 .sig-e-tapin { background: radial-gradient(120% 90% at 70% 0%, #6B5CE7 0%, #4A3CAE 38%, #2D2560 100%); }
@@ -412,7 +442,8 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 @media (max-width: 768px) {
     .sig-e-mend .sig-tel { right: 50%; translate: 50% calc((1 - var(--p)) * 30svh); top: 22svh; width: 46vw; }
     .sig-mend-logo { top: 9svh; width: 62vw; }
-    .sig-progreso { left: var(--margen); right: auto; }
+    .sig-progreso { top: auto; bottom: 24px; }
+    .sig-info { flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) {
     .sig-escena { clip-path: none; }
@@ -428,3 +459,95 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 body[data-barra="claro"] .barra { color: var(--c-barra-claro, #111111); }
 /* Los enlaces internos del caso (como "Ver el proyecto") bajan suave */
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+
+/* =======================================================
+   16. PORTADA DE CAPÍTULO
+   ======================================================= */
+/* Cada capítulo abre a todo el ancho: número gigante de fondo, título, una línea y su visual */
+.cap-portada { position: relative; min-height: 86svh; align-items: center; overflow: hidden; }
+.cap-texto { position: relative; z-index: 2; grid-column: 1 / span 5; display: flex; flex-direction: column; gap: 22px; }
+.cap-pill { align-self: start; }
+.cap-texto h2 { font-family: var(--c-f-display); font-size: clamp(48px, 6vw, 104px); font-weight: var(--c-titulo-peso); letter-spacing: var(--c-titulo-track); line-height: 0.95; }
+.cap-texto p { max-width: 30ch; font-size: clamp(17px, 1.4vw, 21px); color: var(--c-texto-2); }
+.cap-visual { position: relative; z-index: 1; grid-column: 7 / -1; }
+.cap-num { position: absolute; right: var(--margen); bottom: -0.18em; z-index: 0; font-family: var(--c-f-display); font-size: clamp(240px, 34vw, 560px); font-weight: var(--c-display-peso); letter-spacing: -0.06em; line-height: 1; color: var(--c-texto); opacity: 0.05; pointer-events: none; }
+
+/* =======================================================
+   17. MAPA DEL PROYECTO
+   ======================================================= */
+/* Una pista con las etapas a escala de tiempo; los hitos se abren al pasar el mouse o al enfocarlos.
+   Al entrar, la pista se dibuja y los hitos aparecen en orden */
+.mapa-pista { grid-column: 1 / -1; position: relative; height: 340px; margin-top: 20px; }
+.mapa-fases { position: absolute; left: 0; right: 0; top: 50%; height: 16px; translate: 0 -50%; }
+.mapa-fase { position: absolute; top: 0; bottom: 0; left: var(--a); width: calc(var(--b) - var(--a)); border-radius: 999px; background: var(--fase); transform: scaleX(0); transform-origin: 0 50%; transition: transform 900ms var(--ease) calc(var(--k) * 260ms), filter 300ms; }
+.mapa-pista.visto .mapa-fase { transform: none; }
+/* Leyenda de las etapas: color, nombre y período; lleva a cada capítulo */
+.mapa-leyenda { grid-column: 1 / -1; display: flex; gap: clamp(16px, 3vw, 48px); list-style: none; }
+.mapa-leyenda a { display: grid; grid-template-columns: 14px auto; column-gap: 10px; row-gap: 2px; align-items: center; }
+.mapa-leyenda i { grid-row: 1 / span 2; width: 14px; height: 14px; border-radius: 50%; background: var(--fase); }
+.mapa-leyenda b { font-family: var(--c-f-display); font-size: 16px; font-weight: var(--c-titulo-peso); letter-spacing: -0.02em; }
+@media (hover: hover) { .mapa-leyenda a:hover b { color: var(--c-acento-2, var(--c-acento)); } }
+@media (hover: hover) { .mapa-fase:hover { filter: brightness(1.15); } }
+.mapa-hitos { list-style: none; }
+.mapa-hito { position: absolute; left: var(--x); top: 50%; width: 0; outline: none; }
+.mapa-hito > i { position: absolute; left: -7px; top: -7px; z-index: 2; box-shadow: 0 0 0 4px var(--c-fondo); width: 14px; height: 14px; border-radius: 50%; background: var(--c-fondo); border: 2px solid var(--c-texto); transform: scale(0); transition: transform 500ms var(--c-curva) calc(600ms + var(--k) * 90ms), background-color 300ms; }
+.mapa-pista.visto .mapa-hito > i { transform: none; }
+/* La tarjeta del hito: arriba o abajo, alternadas; se abre al pasar */
+.mh-txt { position: absolute; left: -7px; bottom: 34px; width: max-content; max-width: 190px; display: flex; flex-direction: column; gap: 4px; padding-left: 10px; border-left: 1px solid var(--c-linea); opacity: 0; transform: translateY(8px); transition: opacity 500ms var(--ease) calc(700ms + var(--k) * 90ms), transform 600ms var(--ease) calc(700ms + var(--k) * 90ms); }
+.mapa-hito.abajo .mh-txt { bottom: auto; top: 34px; }
+.mapa-pista.visto .mh-txt { opacity: 1; transform: none; }
+.mh-txt b { font-family: var(--c-f-display); font-size: 15px; font-weight: var(--c-titulo-peso); line-height: 1.2; }
+.mh-detalle { max-height: 0; overflow: hidden; font-size: 13px; color: var(--c-texto-2); transition: max-height 500ms var(--c-curva); }
+.mapa-hito:hover .mh-detalle, .mapa-hito:focus-visible .mh-detalle { max-height: 80px; }
+.mapa-hito:hover > i, .mapa-hito:focus-visible > i { background: var(--c-texto); }
+.mapa-hoy { position: absolute; right: 0; top: calc(50% - 40px); }
+
+/* =======================================================
+   18. RESULTADO EN VIVO
+   ======================================================= */
+/* Una lista de módulos a la izquierda (avanza sola con una barra de tiempo) y el elegido funcionando a la derecha */
+.en-vivo { grid-column: 1 / -1; display: grid; grid-template-columns: 4fr 8fr; gap: clamp(20px, 3vw, 48px); align-items: center; margin-bottom: clamp(48px, 5vw, 80px); }
+.ev-lista { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.ev-lista button { position: relative; width: 100%; display: grid; grid-template-columns: 32px 1fr; gap: 8px; padding: 16px 16px 18px; border-radius: var(--c-radio-pieza); text-align: left; color: var(--c-texto-2); transition: background-color 400ms var(--c-curva), color 400ms; }
+.ev-lista button.on { background: var(--c-superficie); color: var(--c-texto); }
+.ev-t { display: flex; flex-direction: column; gap: 4px; }
+.ev-t b { font-family: var(--c-f-display); font-size: clamp(17px, 1.4vw, 21px); font-weight: var(--c-titulo-peso); letter-spacing: -0.02em; }
+.ev-q { font-size: 13px; color: var(--c-texto-2); }
+.ev-barra { position: absolute; left: 16px; right: 16px; bottom: 8px; height: 2px; border-radius: 2px; background: var(--c-linea); overflow: hidden; opacity: 0; }
+.ev-barra::after { content: ''; position: absolute; inset: 0; background: var(--c-acento); transform: scaleX(0); transform-origin: 0 50%; }
+.ev-lista button.on .ev-barra { opacity: 1; }
+.ev-lista button.on .ev-barra::after { animation: evTiempo var(--ev-dur, 9s) linear forwards; }
+.en-vivo.pausa .ev-lista button.on .ev-barra::after { animation-play-state: paused; }
+@keyframes evTiempo { to { transform: scaleX(1); } }
+@media (hover: hover) { .ev-lista button:hover { color: var(--c-texto); } }
+.ev-pantalla { position: relative; aspect-ratio: 900 / 600; }
+.ev-cuadro { position: absolute; inset: 0; opacity: 0; transform: translateY(14px) scale(0.98); transition: opacity 600ms var(--c-curva), transform 800ms var(--c-curva); }
+.ev-cuadro.on { opacity: 1; transform: none; }
+.ev-cuadro .mk-marco { height: 100%; aspect-ratio: auto; }
+
+/* =======================================================
+   19. APRENDIZAJE QUE SE ENCIENDE
+   ======================================================= */
+[data-luz] .w { color: var(--c-texto-3); transition: color 400ms ease; }
+[data-luz] .w.on { color: var(--c-texto); }
+
+@media (max-width: 900px) {
+    .cap-texto, .cap-visual { grid-column: 1 / -1; }
+    .cap-visual { margin-top: 32px; }
+    .cap-portada { min-height: 0; padding-bottom: 64px; }
+    .en-vivo { grid-template-columns: 1fr; }
+    .mapa-pista { height: auto; display: flex; flex-direction: column; gap: 18px; }
+    .mapa-leyenda { flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .mapa-fases { position: relative; top: 0; translate: none; display: flex; gap: 6px; height: 10px; margin-bottom: 8px; }
+    .mapa-fase { position: relative; left: auto; flex: calc(var(--b) - var(--a)); width: auto; }
+    .mapa-hitos { display: flex; flex-direction: column; gap: 16px; }
+    .mapa-hito { position: relative; left: 0; top: 0; width: auto; padding-left: 24px; }
+    .mapa-hito > i { left: 0; top: 4px; }
+    .mh-txt, .mapa-hito.abajo .mh-txt { position: static; max-width: none; }
+    .mh-detalle { max-height: none; }
+    .mapa-hoy { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mapa-pista .mapa-fase, .mapa-pista .mapa-hito > i, .mapa-pista .mh-txt { transform: none; opacity: 1; transition: none; }
+}

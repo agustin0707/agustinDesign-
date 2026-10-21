@@ -80,7 +80,7 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 |---|------|--------|
 | S1 | Hero | Hecho · Hero 1 · Capas v4 final, con tres audits (ver `05-ui-secciones.md`) |
 | S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | Hecho · Pila de cortinas v5, con visto bueno el 21 oct 2026 (ver `05-ui-secciones.md`) |
-| S3 | Página de caso | En curso · Tap In a fondo (hero propio, escaparate en vivo, 3 capítulos, invitación al siguiente), falta tu visto bueno; Llegó después con su md |
+| S3 | Página de caso | En curso · Tap In segunda pasada (relato en capítulos, 4 portadas para elegir, piezas nuevas), falta elegir portada y tu visto bueno; Llegó después con su md |
 | S4 | Sobre mí | Pendiente |
 | S5 | Contacto y footer | Pendiente |
 

@@ -74,10 +74,11 @@
 
 /* --- 6. ESCENARIO DE PRECISIÓN: LÍNEAS Y NODOS --- */
 .tema-lf .vitrina .marco-nav { border: 1px solid var(--c-linea); }
-.tema-lf .resalte { border-width: 1px; }
-.tema-lf .resalte .esq { display: block; position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--c-acento); }
+/* El foco de Llegó: línea fina sin radio y nodos en las esquinas, como la retícula del manual */
+.tema-lf .resalte .r-caja { box-shadow: 0 0 0 1px var(--c-acento); }
+.tema-lf .resalte .esq { width: 7px; height: 7px; border: 0; border-radius: 50%; background: var(--c-acento); }
 .tema-lf .resalte .e1 { left: -4px; top: -4px; } .tema-lf .resalte .e2 { right: -4px; top: -4px; } .tema-lf .resalte .e3 { left: -4px; bottom: -4px; } .tema-lf .resalte .e4 { right: -4px; bottom: -4px; }
-.tema-lf .resalte .r-txt { left: 10px; top: 10px; border-radius: 0; }
+.tema-lf .resalte .r-txt { left: 0; border-radius: 0; }
 /* Riel como nodos sobre una línea: contorno pendiente, relleno pasado, acento el actual */
 .tema-lf .riel-ev ol { position: relative; gap: 0; }
 .tema-lf .riel-ev ol::before { content: ''; position: absolute; left: 6px; right: 6px; top: 50%; height: 1px; background: var(--c-linea); }

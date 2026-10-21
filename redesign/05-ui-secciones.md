@@ -259,3 +259,24 @@ Fuente: `~/Documents/Illustrator/Tap In/Portafolio/tapin-caso-de-estudio.md` y l
 | Fluidez | 60 fps en el scroll por las decisiones con el sitio cargado |
 
 **Por decidir contigo:** las dos citas de los cofundadores (suavizadas, marcadas "por aprobar"); el contexto de tracción de la empresa (marcado "por confirmar"); si se cuenta que tú propusiste el "acceso denegado" y te lo rechazaron (hoy se cuenta, porque muestra criterio y empatía).
+
+### Tap In, segunda pasada (21 oct 2026)
+**Relato en cuatro tiempos, con mucho menos texto:** hero → resumen en una frase → **mapa del proyecto** (las tres etapas a escala de tiempo, con hitos que se abren) → **El origen** (Campus) → **El Rebirth** (la marca) → **La web** (tapin.cl) → **resultado** con el producto en vivo → aprendizaje → siguiente. Cada capítulo abre con una portada a todo el ancho y tiene su propio escenario. Cada decisión: título, una frase y un porqué de una línea.
+
+| Tu observación | Qué se hizo |
+|---|---|
+| La portada no convence: 3 a 5 propuestas | **4 portadas** en `caso/portadas-tapin.html` (y `tapin.html?portada=a\|b\|c\|d`): A tiras de la paleta, B antes y después que se arrastra (Campus 2025 contra Connect 2026), C ecosistema claro con los módulos flotando, D de Forky al cerebro al bajar |
+| El "tap in" del hero muy grande | De 54 a 38 % del ancho |
+| La sección 00 no deben ser los módulos | Los módulos en vivo pasaron al **resultado**: lista de los cuatro a la izquierda (avanza sola con barra de tiempo, se pausa con el mouse) y el elegido funcionando a la derecha |
+| Tamaños y pesos | Escala de cinco niveles (portada de capítulo, título de sección, título de decisión, bajada, texto); el porqué con línea de acento y en primer plano |
+| Capítulo 01: no toda la exploración | Exploración breve y coherente: cubiertos, en movimiento, el cuerpo, casi, y Forky corriendo |
+| Decisión 02: resultados, no imprimibles | Bento con estudiantes usando la app, las promociones de Red Bull y Banco de Chile y el stand en la UC, más los datos (60 QR, 2 alianzas) |
+| Capítulo 02 más atractivo | Lockups sobre tarjetas con el degradado de cada tono, líneas que cuelgan de la madre y se dibujan, hover que levanta la tarjeta y muestra su uso, el lugar del cuarto producto latiendo |
+| Hover en la decisión 04 | El tono se ensancha y muestra HEX, RGB y su uso |
+| Decisión 05 mucho mejor | Lámina del manual: cerebro blanco sobre el morado de Connect con grilla de construcción; alterna entre el cerebro y sus cuatro piezas numeradas; prueba de escala a 60, 32 y 24 px |
+| Mejor forma de destacar la web | **Foco:** fuera de la parte marcada el sitio se desenfoca y se apaga (cuatro paneles con backdrop-filter), esquinas que se dibujan y una etiqueta pegada por fuera. Aplica a todos los casos (en Llegó, con nodos) |
+| La gráfica de la decisión 11 | Se quitó: la escala del código vive en las cifras del resultado |
+| Proceso, resultado y aprendizaje | Mapa interactivo al inicio; resultado con el producto en vivo, cifras en vidrio y citas; aprendizaje que se enciende palabra por palabra al bajar |
+| Auditar el paso al siguiente proyecto | Anillo de avance en vez de la barra, disciplinas de Mend en píldoras, el nombre en la tipografía de Mend, una luz que crece con el avance y, al completar, la app muestra su pantalla de inicio antes de abrir |
+
+**Bugs del audit:** la portada D perdía el sticky por `overflow: hidden` (ahora `clip`); las etiquetas de etapas chocaban con los hitos del mapa (ahora leyenda); la mecánica de evidencia pasó a funcionar por tramo (cada capítulo con su escenario; J y K saltan entre todos). Fluidez: 60 fps sin cuadros lentos.

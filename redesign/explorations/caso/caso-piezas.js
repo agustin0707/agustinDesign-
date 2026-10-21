@@ -90,6 +90,43 @@
             window.addEventListener('resize', escalar);
             alVerse(marco, on, off);
         });
+
+        /* Resultado en vivo: los mockups se montan al llegar a la sección; solo el elegido anima.
+           Avanza solo cada 9 s (la barra marca el tiempo) y se pausa con el mouse encima */
+        document.querySelectorAll('[data-en-vivo]').forEach(ev => {
+            const botones = [...ev.querySelectorAll('.ev-lista button')], cuadros = [...ev.querySelectorAll('.ev-cuadro')];
+            const DUR = 9000;
+            let k = 0, t = null, visto = false, encima = false;
+            const iframes = [];
+            const msj = (f, tipo) => { try { f && f.contentWindow && f.contentWindow.postMessage({ type: tipo }, '*'); } catch (err) { /* nada */ } };
+            const escalar = () => cuadros.forEach((c, j) => { const f = iframes[j]; if (f) f.style.setProperty('--escala', (c.clientWidth / 900).toFixed(4)); });
+            const montar = () => cuadros.forEach((c, j) => {
+                const marco = c.querySelector('.mk-marco');
+                const f = document.createElement('iframe');
+                f.title = 'Mockup animado'; f.setAttribute('tabindex', '-1'); f.setAttribute('aria-hidden', 'true');
+                f.src = marco.dataset.mockupManual + '?frameless';
+                f.onload = () => { marco.classList.add('listo'); if (j === k && visto) msj(f, 'mockup-start'); };
+                marco.appendChild(f); iframes[j] = f;
+            });
+            const ir = j => {
+                msj(iframes[k], 'mockup-stop');
+                k = j;
+                botones.forEach((b, i) => b.classList.toggle('on', i === k));
+                cuadros.forEach((c, i) => c.classList.toggle('on', i === k));
+                msj(iframes[k], 'mockup-start');
+                programar();
+            };
+            const programar = () => { clearTimeout(t); if (quieto || encima || !visto) return; t = setTimeout(() => ir((k + 1) % cuadros.length), DUR); };
+            ev.style.setProperty('--ev-dur', DUR / 1000 + 's');
+            botones.forEach((b, i) => b.addEventListener('click', () => ir(i)));
+            ev.addEventListener('mouseenter', () => { encima = true; ev.classList.add('pausa'); clearTimeout(t); });
+            ev.addEventListener('mouseleave', () => { encima = false; ev.classList.remove('pausa'); programar(); });
+            window.addEventListener('resize', escalar);
+            new IntersectionObserver(es => es.forEach(e => {
+                if (e.isIntersecting) { if (!iframes.length) { montar(); escalar(); } visto = true; msj(iframes[k], 'mockup-start'); programar(); }
+                else { visto = false; clearTimeout(t); msj(iframes[k], 'mockup-stop'); }
+            }), { threshold: 0.3 }).observe(ev);
+        });
     });
 })();
 /* =======================================================
