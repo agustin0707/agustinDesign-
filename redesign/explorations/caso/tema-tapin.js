@@ -1,7 +1,7 @@
 /* =======================================================
    INICIO JS · TEMA TAP IN (.tp-)
    ======================================================= */
-/* Lo propio del caso Tap In: cuatro portadas para elegir (?portada=a|b|c|d), los visuales de cada capítulo
+/* Lo propio del caso Tap In: el hero con el resultado final, los visuales de cada capítulo
    y las piezas de marca construidas en código: la exploración de Forky, la marca en el campus, la
    arquitectura, la paleta y el cerebro de cuatro piezas */
 (function () {
@@ -15,67 +15,36 @@
     /* Una marca coloreable: el SVG (o PNG con transparencia) se usa como máscara y toma el color del texto */
     const marca = (src, clase = '') => `<span class="tp-marca ${clase}" style="--svg:url('${M}${src}')" aria-hidden="true"></span>`;
     const pendiente = '<i class="tp-pendiente"></i>';
-    const parametro = new URLSearchParams(location.search).get('portada');
 
-    /* --- 1. CUATRO PORTADAS --- */
-    const cuerpo = (C, extra = '') => `
+    /* --- 1. HERO: EL RESULTADO FINAL EN LA PRIMERA PANTALLA --- */
+    /* Sobre el degradado de la marca, tapin.cl en un navegador (bajando solo) y el mockup del comedor
+       funcionando encima. El wordmark y la bajada a la izquierda */
+    window.CASO_HERO = (C, { franja, vivo }) => `
+        <section class="seccion portada oscuro tp-hero" data-tp-hero>
+            <div class="tp-h-fondo" aria-hidden="true"></div>
+            <div class="grilla tp-hero-arriba">${franja(`${C.numero} · ${C.nombre}`, C.disciplinas, `${C.anio} · ${vivo}`)}</div>
+            <div class="tp-h-escena" aria-hidden="true">
+                <div class="tp-h-nav"><div class="barra-nav"><i></i><i></i><i></i><span class="url">tapin.cl</span></div><div class="tp-h-pantalla"><img src="${M}tp-larga.jpg" alt="" decoding="async"></div></div>
+                <div class="tp-h-mk"><div class="mk-marco" data-mockup="${C.heroMockup}"></div></div>
+                <span class="tp-h-pill"><i></i>En producción · tapin.cl</span>
+            </div>
             <div class="grilla tp-hero-cuerpo">
                 <h1 class="tp-titulo" aria-label="${C.nombre}">${marca('tp-wordmark.svg', 'tp-wm')}</h1>
                 <p class="tp-hero-bajada">${C.bajada}</p>
                 <dl class="tp-hero-meta">${C.heroMeta.map(([k, v]) => `<div><dt class="etiqueta">${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
-                ${extra}
-            </div>`;
-    const portadas = {
-        /* A · Tiras: la paleta del manual en tiras diagonales, un producto por tira con su isotipo */
-        a: (C, f) => `
-        <section class="seccion portada oscuro tp-hero tp-p-a" data-tp-hero>
-            <div class="tp-escena" aria-hidden="true"><div class="tp-tiras">${TONOS.map((t, i) => `
-                <div class="tp-tira" style="--tono:#${t.hex};--i:${i}"><span class="tp-tira-iso">${t.iso ? marca(t.iso) : i === 0 ? marca('tp-wordmark.svg', 'tp-wm-chico') : pendiente}</span><span class="tp-tira-txt"><b>${t.nombre}</b> · #${t.hex}</span></div>`).join('')}
-            </div></div>
-            <div class="grilla tp-hero-arriba">${f}</div>${cuerpo(C)}
-        </section>`,
-        /* B · Antes y después: Campus 2025 contra Connect 2026, separados por un corte que se arrastra */
-        b: (C, f) => `
-        <section class="seccion portada oscuro tp-hero tp-p-b" data-tp-hero>
-            <div class="tp-ad" data-ad style="--corte:52%" aria-hidden="true">
-                <div class="tp-ad-lado tp-ad-antes"><img src="${M}tapin_contenido3.webp" alt=""><span class="tp-ad-etq">${marca('tp-forky.svg', 'tp-ad-iso')}Campus · 2025</span></div>
-                <div class="tp-ad-lado tp-ad-despues"><img class="tp-ad-mk m1" src="${M}tp-mk-comedor.png" alt=""><img class="tp-ad-mk m2" src="${M}tp-mk-cpa.png" alt=""><span class="tp-ad-etq">${marca('tp-cerebro.svg', 'tp-ad-iso')}Connect · 2026</span></div>
             </div>
-            <button type="button" class="tp-ad-mango" data-ad-mango aria-label="Mover el corte entre Campus y Connect"><span>‹ ›</span></button>
-            <div class="grilla tp-hero-arriba">${f}</div>${cuerpo(C)}
-        </section>`,
-        /* C · Ecosistema: claro como tapin.cl, con los cuatro módulos flotando alrededor del wordmark */
-        c: (C, f) => `
-        <section class="seccion portada claro tp-hero tp-p-c" data-tp-hero>
-            <div class="tp-eco" aria-hidden="true">${[['comedor', 1], ['cpa', 2], ['gestion', 3], ['talleres', 4]].map(([n, k]) => `<img class="tp-eco-mk e${k}" src="${M}tp-mk-${n}.png" alt="" style="--k:${k}">`).join('')}</div>
-            <div class="grilla tp-hero-arriba">${f}</div>
-            ${cuerpo(C, `<ul class="tp-eco-prod">${TONOS.slice(1).map(t => `<li style="--tono:#${t.hex}">${t.iso ? marca(t.iso) : pendiente}${t.nombre}</li>`).join('')}</ul>`)}
-        </section>`,
-        /* D · De Forky al cerebro: al bajar, el isotipo de Campus se transforma en el de Connect */
-        d: (C, f) => `
-        <section class="seccion portada oscuro tp-hero tp-p-d" data-tp-hero data-tp-giro>
-            <div class="tp-d-fijo">
-                <div class="grilla tp-hero-arriba">${f}</div>
-                <div class="tp-d-escena" aria-hidden="true">
-                    <div class="tp-d-circulo">${marca('tp-forky.svg', 'tp-d-forky')}${marca('tp-cerebro.svg', 'tp-d-cerebro')}</div>
-                    <div class="tp-d-anio"><span>2025</span><span>2026</span></div>
-                    <div class="tp-d-pie"><span class="a"><b>Campus</b> Una app para no hacer fila</span><span class="b"><b>Connect</b> Un sistema para colegios</span></div>
-                </div>
-                ${cuerpo(C, '<span class="tp-d-guia etiqueta">Baja para ver el cambio ↓</span>')}
-            </div>
-        </section>`
-    };
-    window.CASO_HERO = (C, { franja, vivo }) => {
-        const f = franja(`${C.numero} · ${C.nombre}`, C.disciplinas, `${C.anio} · ${vivo}`);
-        return (portadas[parametro] || portadas[C.portada] || portadas.a)(C, f);
-    };
+        </section>`;
 
     /* --- 2. VISUALES DE CAPÍTULO --- */
     window.CASO_CAP_VISUAL = cap => ({
-        campus: `<div class="tp-cv tp-cv-campus"><img class="v1" src="${M}tapin_contenido8.webp" alt="" loading="lazy"><img class="v2" src="${M}tapin_contenido3.webp" alt="" loading="lazy"><span class="tp-cv-sello">${marca('tp-forky.svg')}</span></div>`,
+        campus: `<div class="tp-cv tp-cv-campus"><img class="v1" src="${M}tapin_contenido8.webp" alt="" loading="lazy"><img class="v2" src="${M}tapin_contenido3.webp" alt="" loading="lazy"><img class="v3" src="${M}tap_in_mockup_hero.webp" alt="" loading="lazy"><span class="tp-cv-sello">${marca('tp-forky.svg')}</span></div>`,
         rebirth: `<div class="tp-cv tp-cv-rebirth">${TONOS.map((t, i) => `<span class="tp-cv-tira" style="--tono:#${t.hex};--i:${i}">${t.iso ? marca(t.iso) : i === 0 ? marca('tp-wordmark.svg', 'tp-wm-chico') : pendiente}<b>${t.nombre}</b></span>`).join('')}</div>`,
         web: `<div class="tp-cv tp-cv-web"><div class="tp-cv-nav"><div class="barra-nav"><i></i><i></i><i></i><span class="url">tapin.cl</span></div><img src="${M}tp-hero.jpg" alt="" loading="lazy"></div><img class="tp-cv-mk" src="${M}tp-mk-comedor.png" alt="" loading="lazy"></div>`
     })[cap.visual] || '';
+
+    /* Aprendizaje: el giro del proyecto en dos isotipos, de Forky (2025) al cerebro (2026) */
+    window.CASO_AP_VISUAL = () => `
+        <div class="tp-ap"><span class="tp-ap-iso a"><span class="tp-ap-c">${marca('tp-forky.svg')}</span><b>2025 · Campus</b></span><span class="tp-ap-flecha">→</span><span class="tp-ap-iso b"><span class="tp-ap-c">${marca('tp-cerebro.svg')}</span><b>2026 · Connect</b></span></div>`;
 
     /* --- 3. PIEZAS PROPIAS --- */
     window.CASO_PIEZAS = window.CASO_PIEZAS || {};
@@ -86,9 +55,11 @@
             <div class="tp-fk-final">${marca('tp-forky.svg', 'tp-fk-forky')}<span class="tp-fk-nombre">Forky</span><span class="etiqueta">${p.final}</span></div>
         </figure>`;
     /* Campus: la marca funcionando en la calle (fotos y piezas de las alianzas), no los imprimibles */
+    /* Las promos de las marcas van dentro de teléfonos con la barra de la app: así se vieron, dentro de Tap In */
     window.CASO_PIEZAS['tp-campus'] = p => `
         <figure class="pz tp-cp">
             ${p.fotos.map(([src, t], i) => `<div class="tp-cp-c c${i + 1}" style="--i:${i}"><img src="${src}" alt="" loading="lazy" decoding="async">${t ? `<span class="etiqueta">${t}</span>` : ''}</div>`).join('')}
+            ${p.promos.map(([src, t], i) => `<div class="tp-cp-tel t${i + 1}" style="--i:${i + 2}"><div class="tp-cp-app">${marca('tp-wordmark.svg', 'tp-wm-mini')}<span>Promos</span></div><img src="${src}" alt="" loading="lazy" decoding="async"><span class="etiqueta">${t}</span></div>`).join('')}
             <ul class="tp-cp-datos">${p.datos.map(([n, t]) => `<li><b>${n}</b><span>${t}</span></li>`).join('')}</ul>
         </figure>`;
     /* Arquitectura: la madre arriba y los productos que cuelgan de ella; un lugar libre para el cuarto */
@@ -130,8 +101,8 @@
         const hero = document.querySelector('[data-tp-hero]');
         requestAnimationFrame(() => hero.classList.add('entra'));
         const conMouse = window.matchMedia('(hover: hover)').matches;
-        /* Parallax suave con inercia (portadas A y C) */
-        if (!quieto && conMouse && (hero.classList.contains('tp-p-a') || hero.classList.contains('tp-p-c'))) {
+        /* Parallax suave con inercia: el navegador y el mockup siguen al cursor a distinta profundidad */
+        if (!quieto && conMouse) {
             let tx = 0, ty = 0, x = 0, y = 0, corre = false;
             const paso = () => {
                 x += (tx - x) * 0.06; y += (ty - y) * 0.06;
@@ -141,28 +112,6 @@
             const ir = (a, b) => { tx = a; ty = b; if (!corre) { corre = true; requestAnimationFrame(paso); } };
             hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); ir((e.clientX - r.left) / r.width - 0.5, (e.clientY - r.top) / r.height - 0.5); });
             hero.addEventListener('pointerleave', () => ir(0, 0));
-        }
-        /* Portada B: el corte se arrastra (mouse, dedo o flechas) y al cargar hace un gesto de invitación */
-        const ad = hero.querySelector('[data-ad]');
-        if (ad) {
-            const mango = hero.querySelector('[data-ad-mango]');
-            let corte = 52, arrastrando = false;
-            const poner = v => { corte = Math.min(Math.max(v, 6), 94); hero.style.setProperty('--corte', corte + '%'); };
-            const desde = e => { const r = hero.getBoundingClientRect(); poner((e.clientX - r.left) / r.width * 100); };
-            mango.addEventListener('pointerdown', e => { arrastrando = true; mango.setPointerCapture(e.pointerId); hero.classList.add('arrastra'); });
-            mango.addEventListener('pointermove', e => { if (arrastrando) desde(e); });
-            mango.addEventListener('pointerup', () => { arrastrando = false; hero.classList.remove('arrastra'); });
-            mango.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') poner(corte - 4); if (e.key === 'ArrowRight') poner(corte + 4); });
-            poner(52);
-            if (!quieto) setTimeout(() => { hero.classList.add('invita'); setTimeout(() => hero.classList.remove('invita'), 1800); }, 1400);
-        }
-        /* Portada D: el progreso del scroll dentro del hero mueve el giro de Forky al cerebro */
-        const giro = hero.hasAttribute('data-tp-giro') ? hero : null;
-        if (giro) {
-            let pend = false;
-            const pintar = () => { pend = false; const r = giro.getBoundingClientRect(); const p = quieto ? 1 : Math.min(Math.max(-r.top / (r.height - window.innerHeight), 0), 1); giro.style.setProperty('--p', p.toFixed(3)); giro.classList.toggle('girado', p > 0.5); };
-            window.addEventListener('scroll', () => { if (!pend) { pend = true; requestAnimationFrame(pintar); } }, { passive: true });
-            pintar();
         }
 
         /* Forky: los pasos se encienden en orden y al final aparece Forky corriendo */

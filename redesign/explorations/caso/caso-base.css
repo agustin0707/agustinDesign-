@@ -105,7 +105,9 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
    de la que habla cada decisión y la señala. Las decisiones de marca cambian el escenario a sus piezas */
 .evidencia { align-items: start; }
 .relato { grid-column: 1 / span 5; }
-.escenario { grid-column: 6 / -1; position: sticky; top: 72px; height: calc(100svh - 96px); display: grid; grid-template-rows: auto 1fr auto; gap: 16px; }
+.escenario { grid-column: 6 / -1; position: sticky; top: 72px; height: calc(100svh - 96px); display: grid; grid-template-rows: auto 1fr auto; gap: 16px; transition: top 450ms var(--hover-lento), height 450ms var(--hover-lento); }
+/* Sin barra, el escenario aprovecha el alto completo */
+body.sin-barra .escenario { top: 24px; height: calc(100svh - 48px); }
 
 /* --- 1. BLOQUES DEL RELATO --- */
 .bloque { min-height: 76svh; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 40px 0; opacity: 0.38; transition: opacity 600ms var(--c-curva); }
@@ -306,11 +308,16 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
    12. CONTEXTO, CITAS Y VERIFICACIÓN
    ======================================================= */
 .contexto-cifras { grid-column: 1 / span 8; display: flex; flex-direction: column; gap: 8px; margin-top: 36px; max-width: 70ch; color: var(--c-texto-2); font-size: 15px; }
-.citas { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--medianil); margin-top: clamp(56px, 6vw, 96px); }
-.cita { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: 28px; border: 1px solid var(--c-linea); border-radius: var(--c-radio-pieza); }
-.cita blockquote { font-family: var(--c-f-display); font-size: clamp(22px, 2vw, 32px); font-weight: var(--c-intro-peso, 500); letter-spacing: -0.025em; line-height: 1.2; }
-.cita blockquote::before { content: '“'; display: block; height: 0.5em; font-size: 2.2em; line-height: 1; color: var(--c-acento); }
-.citas > .verificar { grid-column: 1 / -1; }
+/* Una cita grande a la vez, que se alterna: se lee como testimonio, no como dos cajas */
+.citas { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 18px; margin-top: clamp(56px, 6vw, 96px); }
+.citas-pista { display: grid; }
+.cita { grid-area: 1 / 1; display: flex; flex-direction: column; gap: 22px; opacity: 0; transform: translateY(12px); transition: opacity 700ms var(--c-curva), transform 900ms var(--c-curva); pointer-events: none; }
+.cita.on { opacity: 1; transform: none; pointer-events: auto; }
+.cita blockquote { max-width: 26ch; font-family: var(--c-f-display); font-size: clamp(30px, 3.6vw, 60px); font-weight: var(--c-intro-peso, 500); letter-spacing: -0.035em; line-height: 1.08; }
+.cita blockquote::before { content: '“'; display: block; height: 0.42em; font-size: 1.8em; line-height: 1; color: var(--c-acento-2, var(--c-acento)); }
+.citas-puntos { display: flex; gap: 8px; }
+.citas-puntos button { width: 28px; height: 4px; border-radius: 4px; background: var(--c-linea); transition: background-color 300ms, width 400ms var(--c-curva); }
+.citas-puntos button.on { width: 44px; background: var(--c-texto); }
 .verificar { display: inline-flex; align-items: center; gap: 6px; font: 11px var(--mono); color: #B8901C; }
 .verificar::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
@@ -455,8 +462,13 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
    ======================================================= */
 /* En los casos la barra no usa difference (sobre colores de marca da tonos ajenos, como verde sobre morado):
    toma el color que corresponde a la sección que tiene debajo, como la navbar de tapin.cl */
-.barra { mix-blend-mode: normal; color: #FFFFFF; transition: color 300ms ease; }
+.barra { mix-blend-mode: normal; color: #FFFFFF; transition: color 300ms ease, transform 450ms var(--hover-lento), background-color 300ms ease, padding 300ms ease; }
 body[data-barra="claro"] .barra { color: var(--c-barra-claro, #111111); }
+/* Se esconde al bajar y reaparece al subir: en un caso largo no tapa el relato ni compite con el escenario fijo.
+   Cuando reaparece a mitad de página lleva un fondo de vidrio para leerse sobre cualquier sección */
+.barra.oculta { transform: translateY(-110%); }
+.barra.flota { padding-top: 12px; padding-bottom: 12px; background: rgba(17, 14, 34, 0.55); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); }
+body[data-barra="claro"] .barra.flota { background: rgba(255, 255, 255, 0.6); }
 /* Los enlaces internos del caso (como "Ver el proyecto") bajan suave */
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
@@ -550,4 +562,47 @@ body[data-barra="claro"] .barra { color: var(--c-barra-claro, #111111); }
 }
 @media (prefers-reduced-motion: reduce) {
     .mapa-pista .mapa-fase, .mapa-pista .mapa-hito > i, .mapa-pista .mh-txt { transform: none; opacity: 1; transition: none; }
+}
+
+/* =======================================================
+   20. FONDOS DEL CASO: TRES VARIANTES
+   ======================================================= */
+/* --- 1. FUNDIDO --- */
+/* Cada sección nace del color de la anterior: un degradado en su franja superior (el aire de su padding) */
+body.fondo-1 [data-caso] > .seccion::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: min(var(--c-seccion), 220px); background: linear-gradient(180deg, var(--fondo-prev, transparent), transparent); pointer-events: none; z-index: 0; }
+:where(body.fondo-1 [data-caso] > .seccion > *) { position: relative; z-index: 1; }
+
+/* --- 2. LÁMINAS --- */
+/* Cada sección se apoya sobre la anterior con esquinas redondeadas y sombra: el cambio de fondo es una lámina nueva */
+body.fondo-2 [data-caso] > .seccion + .seccion { margin-top: -40px; border-radius: 40px 40px 0 0; box-shadow: 0 -30px 60px -24px rgba(8, 5, 24, 0.45); }
+
+/* --- 3. FONDO QUE FLUYE --- */
+/* Las secciones no pintan fondo ni redefinen colores: heredan del body, que cambia de modo con el scroll.
+   Los colores están registrados con @property, así que todo se interpola en vez de cortar */
+body.fondo-3 [data-caso] > .seccion:not(.tp-hero) { background: transparent; --c-fondo: inherit; --c-texto: inherit; --c-texto-2: inherit; --c-texto-3: inherit; --c-linea: inherit; --c-acento: inherit; --c-acento-2: inherit; --c-superficie: inherit; --c-velo: inherit; --c-sobre-acento: inherit; }
+body.fondo-3 { background-color: var(--c-fondo); transition: --c-fondo 900ms ease, --c-texto 900ms ease, --c-texto-2 900ms ease, --c-texto-3 900ms ease, --c-linea 900ms ease, --c-acento 900ms ease, --c-acento-2 900ms ease, --c-superficie 900ms ease, --c-velo 900ms ease, --c-sobre-acento 900ms ease, --g-claro 900ms ease, --g-marca 900ms ease; }
+body.fondo-3::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(60% 50% at 85% 8%, rgb(155 142 240 / calc(var(--g-claro) * 0.32)), transparent 70%), radial-gradient(50% 40% at 8% 60%, rgb(107 92 231 / calc(var(--g-claro) * 0.14)), transparent 70%), radial-gradient(110% 80% at 50% 0%, rgb(107 92 231 / var(--g-marca)), rgb(74 60 174 / var(--g-marca)) 42%, rgb(45 37 96 / var(--g-marca)) 100%); }
+body.fondo-3.m-claro { --g-claro: 1; --g-marca: 0; }
+body.fondo-3.m-marca { --g-claro: 0; --g-marca: 1; }
+body.fondo-3.m-oscuro { --g-claro: 0; --g-marca: 0; }
+
+
+/* =======================================================
+   21. FICHA DEL RESUMEN, AÑOS DEL MAPA Y CRÉDITOS
+   ======================================================= */
+/* La ficha ocupa la columna derecha del resumen: el dato duro al lado de la frase */
+.resumen-ficha { grid-column: 9 / -1; grid-row: 2 / span 2; align-self: start; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: var(--c-radio-pieza); background: var(--c-superficie); border: 1px solid var(--c-linea); }
+.resumen-ficha dl { display: flex; flex-direction: column; }
+.resumen-ficha dl div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 11px 0; border-top: 1px solid var(--c-linea); font-size: 14px; }
+.resumen-ficha dd a { border-bottom: 1px solid var(--c-texto-3); }
+.mapa-anios { position: absolute; left: 0; right: 0; top: calc(50% + 22px); }
+.mapa-anios span { position: absolute; left: var(--x); display: flex; flex-direction: column; gap: 4px; font: 11px var(--mono); color: var(--c-texto-3); }
+.mapa-anios i { width: 1px; height: 8px; background: var(--c-texto-3); }
+.creditos-lista { grid-column: 1 / span 7; margin-top: 56px; border-top: 1px solid var(--c-linea); }
+.creditos-lista div { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--c-linea); font-size: 14px; }
+.ap-visual { grid-column: 9 / -1; grid-row: 2 / span 2; align-self: end; }
+@media (max-width: 900px) {
+    .resumen-ficha, .ap-visual, .creditos-lista { grid-column: 1 / -1; grid-row: auto; margin-top: 32px; }
+    .creditos-lista div { grid-template-columns: 1fr; gap: 4px; }
+    .mapa-anios { display: none; }
 }

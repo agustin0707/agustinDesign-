@@ -280,3 +280,18 @@ Fuente: `~/Documents/Illustrator/Tap In/Portafolio/tapin-caso-de-estudio.md` y l
 | Auditar el paso al siguiente proyecto | Anillo de avance en vez de la barra, disciplinas de Mend en píldoras, el nombre en la tipografía de Mend, una luz que crece con el avance y, al completar, la app muestra su pantalla de inicio antes de abrir |
 
 **Bugs del audit:** la portada D perdía el sticky por `overflow: hidden` (ahora `clip`); las etiquetas de etapas chocaban con los hitos del mapa (ahora leyenda); la mecánica de evidencia pasó a funcionar por tramo (cada capítulo con su escenario; J y K saltan entre todos). Fluidez: 60 fps sin cuadros lentos.
+
+### Tap In, tercera pasada (21 oct 2026)
+| Tu observación | Qué se hizo |
+|---|---|
+| Ninguna portada convence: degradado y el mockup del capítulo 03, animado | **Hero del resultado:** degradado de la marca con dos luces y grano; a la derecha, tapin.cl en un navegador que baja solo de arriba abajo (captura nueva en alta) y el mockup del comedor funcionando encima, sin marco. Parallax suave. Se quitaron las cuatro portadas anteriores |
+| Wordmark más chico | De 38 a 26 % del ancho |
+| La barra de arriba | **Se esconde al bajar y reaparece al subir**, con fondo de vidrio cuando vuelve a mitad de página (claro u oscuro según la sección). Arriba del todo, sin fondo. El escenario fijo crece cuando la barra no está y el sitio embebido se reescala |
+| Cortes drásticos de fondo: tres variantes | `caso/fondos-tapin.html` (y `tapin.html?fondo=1\|2\|3`): **1 fundido** (cada sección nace del color de la anterior), **2 láminas** (cada sección se apoya redondeada sobre la anterior, como el índice), **3 fondo que fluye** (un solo fondo que interpola color y texto según la sección que se lee, con @property) |
+| Resumen | La ficha del proyecto ocupa la columna derecha que quedaba vacía |
+| Mapa | Leyenda de etapas, marcas de año y tarjetas que se abren |
+| Capítulo 01 | El teléfono con la app de Campus entre las dos fotos y el sello de Forky |
+| Decisión 02 | Las promos de Red Bull y Banco de Chile dentro de teléfonos con la barra de la app, junto a las fotos del campus |
+| Capítulo 02 | Las tiras suben en escalera al aparecer y responden al mouse |
+| Resultado | Cifras en una franja limpia; una cita grande a la vez que se alterna sola |
+| Aprendizaje | Se enciende palabra por palabra; al lado, el giro en dos isotipos (Forky 2025 → cerebro 2026) y los créditos ordenados |

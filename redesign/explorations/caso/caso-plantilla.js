@@ -32,6 +32,7 @@
             ${franja('01', 'Resumen', C.anio)}
             <p class="resumen-intro" data-aparece>${clave(C.intro)}</p>
             <div class="resumen-cols">${C.resumen.map(([k, v], i) => `<div data-aparece style="--retraso:${i * 90}ms"><span class="etiqueta">${k}</span><p>${v}</p></div>`).join('')}</div>
+            ${C.fichaEnResumen ? `<aside class="resumen-ficha" data-aparece style="--retraso:200ms"><span class="etiqueta">Ficha</span><dl>${C.ficha.map(([k, v]) => `<div><dt class="etiqueta">${k}</dt><dd>${k === 'En vivo' && C.vivo.publicado ? vivo : v}</dd></div>`).join('')}</dl></aside>` : ''}
         </section>`;
 
     /* Un bloque del relato y el escenario de un tramo de decisiones (todas o las de un capítulo) */
@@ -89,6 +90,7 @@
             <div class="mapa-pista" data-mapa>
                 <div class="mapa-fases">${M.fases.map((f, k) => `<a class="mapa-fase" href="#cap-${f.cap}" aria-label="${f.nombre}" style="--a:${pos(f.desde)}%;--b:${pos(f.hasta)}%;--fase:${f.color};--k:${k}"></a>`).join('')}</div>
                 <ol class="mapa-hitos">${M.hitos.map(([f, t, d], k) => `<li class="mapa-hito${k % 2 ? ' abajo' : ''}" style="--x:${pos(f)}%;--k:${k}" tabindex="0"><i></i><span class="mh-txt"><span class="mh-fecha etiqueta">${M.etiquetas[k]}</span><b>${t}</b><span class="mh-detalle">${d}</span></span></li>`).join('')}</ol>
+                <div class="mapa-anios">${(M.anios || []).map(a => `<span style="--x:${pos(a + '-01')}%"><i></i>${a}</span>`).join('')}</div>
                 <span class="mapa-hoy etiqueta">Hoy</span>
             </div>
         </section>`;
@@ -114,7 +116,7 @@
             ${enVivo()}
             <div class="cifras">${C.resultados.map(([c, t, v], i) => `<div data-aparece style="--retraso:${i * 90}ms"><b${C.contar ? ` data-contar="${c}"` : ''}>${c}</b><p>${t}</p>${v ? `<span class="verificar">${v}</span>` : ''}</div>`).join('')}</div>
             ${C.contexto ? `<p class="contexto-cifras" data-aparece><span class="etiqueta">Contexto del producto</span>${C.contexto.texto}${C.contexto.verificar ? ` <span class="verificar">${C.contexto.verificar}</span>` : ''}</p>` : ''}
-            ${C.citas ? `<div class="citas">${C.citas.map(([t, quien], i) => `<figure class="cita" data-aparece style="--retraso:${i * 120}ms"><blockquote>${t}</blockquote><figcaption class="etiqueta">${quien}</figcaption></figure>`).join('')}${C.citasNota ? `<span class="verificar">${C.citasNota}</span>` : ''}</div>` : ''}
+            ${C.citas ? `<div class="citas" data-citas data-aparece><div class="citas-pista">${C.citas.map(([t, quien], i) => `<figure class="cita${i === 0 ? ' on' : ''}"><blockquote>${t}</blockquote><figcaption class="etiqueta">${quien}</figcaption></figure>`).join('')}</div>${C.citas.length > 1 ? `<div class="citas-puntos">${C.citas.map((_, i) => `<button type="button" class="${i === 0 ? 'on' : ''}" data-k="${i}" aria-label="Cita ${i + 1}"></button>`).join('')}</div>` : ''}${C.citasNota ? `<span class="verificar">${C.citasNota}</span>` : ''}</div>` : ''}
             ${C.galeria ? `<div class="galeria">${C.galeria.imgs.map((src, i) => `<figure data-aparece style="--retraso:${i * 90}ms"><img src="${src}" alt="" loading="lazy" decoding="async"></figure>`).join('')}<span class="etiqueta">${C.galeria.nota}</span></div>` : ''}
         </section>`;
 
@@ -123,7 +125,8 @@
         <section class="seccion grilla aprendizaje ${ritmo('aprendizaje')}">
             ${franja('05', 'Aprendizaje')}
             <blockquote data-luz>${C.aprendizaje}</blockquote>
-            <p class="creditos" data-aparece>${C.creditos}</p>
+            ${window.CASO_AP_VISUAL ? `<div class="ap-visual" data-aparece>${window.CASO_AP_VISUAL(C)}</div>` : ''}
+            ${C.creditosLista ? `<dl class="creditos-lista" data-aparece>${C.creditosLista.map(([k, v]) => `<div><dt class="etiqueta">${k}</dt><dd>${v}</dd></div>`).join('')}</dl>` : `<p class="creditos" data-aparece>${C.creditos}</p>`}
         </section>`;
 
     const siguiente = () => (window.CASO_SIGUIENTE ? window.CASO_SIGUIENTE(C) : `<a class="siguiente" href="#" style="--sig:${C.siguiente.tinte}">
@@ -186,12 +189,42 @@
         pintar();
     });
 
-    /* --- 6. BARRA SEGÚN LA SECCIÓN --- */
+    /* --- 6. CITAS QUE SE ALTERNAN --- */
+    /* Una cita grande a la vez; cambian solas cada 7 s y con los puntos */
+    main.querySelectorAll('[data-citas]').forEach(box => {
+        const citas = [...box.querySelectorAll('.cita')], puntos = [...box.querySelectorAll('.citas-puntos button')];
+        if (citas.length < 2) return;
+        let k = 0, t = null;
+        const ir = j => { k = j; citas.forEach((c, i) => c.classList.toggle('on', i === k)); puntos.forEach((b, i) => b.classList.toggle('on', i === k)); };
+        const andar = () => { clearInterval(t); if (!quieto) t = setInterval(() => ir((k + 1) % citas.length), 7000); };
+        puntos.forEach((b, i) => b.addEventListener('click', () => { ir(i); andar(); }));
+        andar();
+    });
+
+    /* --- 6B. BARRA SEGÚN LA SECCIÓN --- */
     /* La sección que cruza la franja de la barra (los primeros 60 px) decide si la barra va clara u oscura */
     const ioBarra = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) document.body.dataset.barra = e.target.classList.contains('claro') ? 'claro' : 'oscuro'; }), { rootMargin: '0px 0px -94% 0px' });
     main.querySelectorAll('.seccion, .sig').forEach(s => ioBarra.observe(s));
 
-    /* --- 7. ARRANQUE DE LOS TEMAS --- */
+    /* --- 7. BARRA QUE SE ESCONDE AL BAJAR --- */
+    /* Visible arriba; se esconde al bajar más de 8 px y vuelve al subir. El escenario fijo sube con ella */
+    const barra = document.querySelector('.barra');
+    if (barra) {
+        let ultimoY = window.scrollY, pend = false;
+        const revisar = () => {
+            pend = false;
+            const y = window.scrollY, d = y - ultimoY;
+            if (Math.abs(d) < 8 && y > 80) return;
+            const oculta = y > 120 && d > 0;
+            barra.classList.toggle('oculta', oculta);
+            barra.classList.toggle('flota', y > 120 && !oculta);
+            document.body.classList.toggle('sin-barra', oculta);
+            ultimoY = y;
+        };
+        window.addEventListener('scroll', () => { if (!pend) { pend = true; requestAnimationFrame(revisar); } }, { passive: true });
+    }
+
+    /* --- 8. ARRANQUE DE LOS TEMAS --- */
     (window.CASO_INICIOS || []).forEach(f => f(C, { quieto, main }));
 })();
 /* =======================================================

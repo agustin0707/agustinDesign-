@@ -8,12 +8,15 @@
 (function () {
     const M = 'media/', MK = '../works/sitios/tapin/mockups/';
     window.CASO = {
-        id: 'tapin', nombre: 'Tap In', numero: '02', portada: 'a',
+        id: 'tapin', nombre: 'Tap In', numero: '02',
+        heroMockup: '../works/sitios/tapin/mockups/mockup-comedor-modulo.html',
         disciplinas: 'Marca · Producto · Web', anio: '2025–26',
         vivo: { texto: 'tapin.cl', url: 'https://tapin.cl', publicado: true },
         sitio: '../works/sitios/tapin/index.html', introSitio: 2400,
         poster: '../works/media/tapin-poster.jpg',
         orden: ['resumen', 'mapa', 'decisiones', 'resultado', 'aprendizaje'],
+        fichaEnResumen: true,
+        ficha: [['Cliente', 'Tap In · Chile y Perú'], ['Rol', 'Diseñador fundador'], ['Período', 'Ene 2025 a hoy'], ['Equipo', 'Cofundadores y su equipo de desarrollo'], ['Stack', 'HTML, CSS y JS vanilla'], ['En vivo', 'tapin.cl']],
         ritmo: { resumen: 'claro', proceso: 'claro', decisiones: 'claro', resultados: 'marca', aprendizaje: 'oscuro' },
         bajada: 'De la cafetería del campus a la plataforma del colegio.',
         heroMeta: [['Rol', 'Diseñador fundador'], ['Período', 'Ene 2025 a hoy'], ['Alcance', 'Marca, UX/UI y código']],
@@ -27,7 +30,7 @@
         titulos: { proceso: 'Dieciocho meses, *tres etapas*', resultados: 'Lo que *quedó andando*' },
 
         mapa: {
-            desde: '2025-01', hasta: '2026-10', der: '18 meses · 3 etapas',
+            desde: '2025-01', hasta: '2026-10', der: '18 meses · 3 etapas', anios: ['2025', '2026'],
             fases: [
                 { nombre: 'El origen', periodo: '2025 · Campus', desde: '2025-01', hasta: '2025-12', color: '#4A3CAE', cap: 0 },
                 { nombre: 'El Rebirth', periodo: 'Feb a abr 2026 · Marca', desde: '2026-02', hasta: '2026-04', color: '#6B5CE7', cap: 1 },
@@ -57,7 +60,7 @@
             { cap: 0, id: 'campus', titulo: 'La marca salió al campus',
                 texto: '60 QR en los locales de la UC y promociones con Red Bull y Banco de Chile dentro de la app.',
                 porque: 'La entrada era un QR: tenía que entenderse de pie, con hambre y frente al mesón.',
-                pieza: { tipo: 'tp-campus', nota: 'Campus UC, 2025', fotos: [[M + 'tapin_contenido8.webp', ''], [M + 'tp-redbull.jpg', 'Promo Red Bull'], [M + 'tp-bancochile.jpg', 'Promo Banco de Chile'], [M + 'tapin_contenido6.webp', 'Stand en la UC']], datos: [['60', 'QR en locales de la UC'], ['2', 'alianzas: Red Bull y Banco de Chile']] }, ancla: null },
+                pieza: { tipo: 'tp-campus', nota: 'Campus UC, 2025', fotos: [[M + 'tapin_contenido8.webp', ''], [M + 'tapin_contenido6.webp', 'Stand en la UC']], promos: [[M + 'tp-redbull-v.jpg', 'Red Bull'], [M + 'tp-bancochile.jpg', 'Banco de Chile']], datos: [['60', 'QR en locales de la UC'], ['2', 'alianzas: Red Bull y Banco de Chile']] }, ancla: null },
 
             { cap: 1, id: 'madre', titulo: 'Una madre que lidera',
                 texto: 'tap in arriba; Campus, Connect y Health cuelgan de ella con su nombre y su tono.',
@@ -121,6 +124,7 @@
         citasNota: 'Citas suavizadas de reuniones internas: publicar solo con tu aprobación y la de ellos',
         aprendizaje: 'Diseñar con información que cambia. A mitad del camino llegó la realidad del producto: cambiaron la estructura y el contenido, el lenguaje visual se sostuvo.',
         creditos: 'Marca, UX/UI y desarrollo front end: Agustín Avendaño. Con los cofundadores de Tap In y su equipo de desarrollo, a cargo del producto y del deploy.',
+        creditosLista: [['Marca, UX/UI y front end', 'Agustín Avendaño'], ['Producto y deploy', 'Equipo de desarrollo de Tap In'], ['Con', 'Los cofundadores de Tap In']],
         siguiente: { id: 'mend', nombre: 'Mend', numero: '03', disciplinas: ['Investigación', 'Marca', 'Web app', '2026'], bajada: 'Salud articular para Atención Primaria, de la investigación al producto.', tinte: '#0D2024', url: '../works/w3-pila.html' }
     };
 })();

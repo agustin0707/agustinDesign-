@@ -141,6 +141,11 @@
             return true;
         };
         botones.forEach(b => b.addEventListener('click', () => ir(+b.dataset.ir)));
+        /* Si el marco cambia de tamaño (la barra se esconde y el escenario crece), el sitio se reescala y se vuelve a marcar */
+        if (pantalla && 'ResizeObserver' in window) {
+            let espera;
+            new ResizeObserver(() => { clearTimeout(espera); espera = setTimeout(() => { if (!iframe) return; escalar(); const a = actual; if (a >= 0 && C.decisiones[a].ancla && listo) { actual = -1; activar(a); } }, 480); }).observe(pantalla);
+        }
         return { sec, pintar, ir, actual: () => actual, escalar: () => { escalar(); const a = actual; actual = -1; activar(a); } };
     };
 
