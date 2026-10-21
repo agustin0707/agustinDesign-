@@ -6,11 +6,11 @@
     <title>Hero 1 · Capas · agustín.design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Inter:ital,wght@1,200;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hero-base.css">
     <style>
         /* =======================================================
-           HERO 1 · CAPAS
+           HERO 1 · CAPAS (V2)
            ======================================================= */
         /* Nombre gigante que invierte su color al cruzar el retrato (referencia Alex Graham) */
         .hero { --fondo-hero: var(--gris-claro); background: var(--fondo-hero); color: var(--negro); }
@@ -25,18 +25,54 @@
         .nombre { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-58%); z-index: 2; padding-inline: var(--margen); color: #fff; mix-blend-mode: difference; pointer-events: none; }
         .nombre h1 { font-size: clamp(64px, 15.4vw, 290px); white-space: nowrap; text-align: center; }
 
+        /* =======================================================
+           NAVEGACIÓN Y BOTÓN CON LA ESTÉTICA DEL SITIO ACTUAL
+           ======================================================= */
+        /* Inter Thin en cursiva, como hoy: contrapunto liviano frente a la Geist del nombre */
+
+        /* --- 1. LINKS CENTRALES --- */
+        /* Mismos valores del sitio actual: 1.1rem, peso 200, cursiva, subrayado que crece y leve subida */
+        .links-actual { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 60px; list-style: none; }
+        .links-actual a { position: relative; display: inline-block; font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 200; font-style: italic; letter-spacing: -0.05em; color: #202020; transition: transform 0.3s ease; }
+        /* La entrada anima el li (wrapper) para no pisar el hover del link */
+        .links-actual li { opacity: 0; animation: apareceNav 1.5s var(--ease) 300ms forwards; }
+        .links-actual li:nth-child(2) { animation-delay: 400ms; }
+        .links-actual li:nth-child(3) { animation-delay: 500ms; }
+        .links-actual a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px; background: #202020; transition: width 0.3s ease; }
+        @media (hover: hover) {
+            .links-actual a:hover::after { width: 100%; }
+            .links-actual a:hover { transform: translateY(-2px); }
+        }
+
+        /* --- 2. BOTÓN "VER PROYECTOS" --- */
+        /* Píldora con borde, se llena de izquierda a derecha y flota al pasar el mouse */
+        .cta-hero { position: absolute; z-index: 5; right: var(--margen); top: calc(50% + 5.4vw + 40px); opacity: 0; animation: apareceNav 1.6s var(--ease) 1100ms forwards; }
+        .btn-proyectos { position: relative; overflow: hidden; z-index: 1; display: block; padding: 15px 45px; border: 2px solid #202020; border-radius: 25px; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 300; font-style: italic; letter-spacing: 1px; text-transform: uppercase; color: #202020; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.6s ease, box-shadow 0.6s ease; }
+        .btn-proyectos::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #202020; transition: left 0.6s cubic-bezier(0.25, 1, 0.5, 1); z-index: -1; }
+        @media (hover: hover) {
+            .btn-proyectos:hover::before { left: 0; }
+            .btn-proyectos:hover { color: var(--gris-claro); transform: translateY(-10px); box-shadow: 0 15px 25px rgba(32, 32, 32, 0.2); }
+        }
+        @keyframes apareceNav { from { opacity: 0; filter: blur(6px); transform: translateY(12px); } to { opacity: 1; filter: blur(0); transform: none; } }
+
         /* --- 3. PIE DEL HERO --- */
         .pie-hero { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); padding: 0 var(--margen) var(--margen); align-items: end; }
-        .redes { grid-column: 1 / span 3; list-style: none; display: flex; flex-direction: column; gap: 6px; }
-        .rol { grid-column: 8 / -1; justify-self: end; text-align: left; font-size: clamp(26px, 3.3vw, 54px); font-weight: 500; letter-spacing: -0.045em; line-height: 0.98; color: #fff; mix-blend-mode: difference; }
-        .rol .barra { color: var(--gris-medio); margin-right: 0.08em; }
+        .redes { grid-column: 1 / span 3; list-style: none; display: flex; flex-direction: column; gap: 6px; color: #fff; mix-blend-mode: difference; }
 
+        /* =======================================================
+           VISTA MÓVIL
+           ======================================================= */
         @media (max-width: 768px) {
             .retrato { width: 220vw; left: -49vw; }
             .nombre { top: 44%; }
             .nombre h1 { font-size: 21vw; white-space: normal; line-height: 0.82; text-align: left; }
+            /* Como en el sitio actual: links en columna, arriba a la derecha */
+            .links-actual { left: auto; right: var(--margen); top: 22px; transform: none; flex-direction: column; align-items: flex-end; gap: 12px; }
+            .links-actual a { font-size: 1rem; line-height: 1; }
+            .nav .der { display: none; }
+            .cta-hero { left: var(--margen); right: auto; top: calc(44% + 20vw + 12px); }
+            .btn-proyectos { padding: 12px 30px; font-size: 0.75rem; border-width: 1px; }
             .redes { display: none; }
-            .rol { grid-column: 1 / -1; justify-self: start; font-size: 26px; color: #fff; mix-blend-mode: difference; }
         }
     </style>
 </head>
@@ -44,23 +80,24 @@
     <section class="hero" data-parallax>
         <nav class="nav">
             <a href="#" class="logo">agustín<span class="punto">.</span>design<span class="cursor"></span></a>
-            <ul class="links"><li><a href="#">Trabajo</a></li><li><a href="#">Sobre mí</a></li><li><a href="#">Contacto</a></li></ul>
             <span class="mono der"><span class="disponible">Disponible</span><span class="reloj" data-reloj>Santiago 00:00</span></span>
         </nav>
+        <ul class="links-actual"><li><a href="#">Sobre mí</a></li><li><a href="#">Trabajo</a></li><li><a href="#">Contacto</a></li></ul>
 
         <div class="retrato" data-capa="0.6"><img src="../../../img/fotodeperfilgus5.webp" alt="Agustín Avendaño" fetchpriority="high"></div>
 
         <div class="nombre" data-capa="1.4"><h1 class="display" data-letras>agustín design</h1></div>
 
+        <div class="cta-hero"><a href="#" class="btn-proyectos">ver proyectos</a></div>
+
         <div class="pie-hero">
             <ul class="redes mono"><li><a href="#" class="subraya">LinkedIn ↗</a></li><li><a href="#" class="subraya">Behance ↗</a></li><li><a href="#" class="subraya">Instagram ↗</a></li></ul>
-            <p class="rol"><span class="barra">//</span>Diseño marcas<br>y construyo sus sitios</p>
         </div>
     </section>
 
     <section class="nota-exploracion">
-        <p class="mono">Hero 1 · Capas</p>
-        <p>El nombre ocupa todo el ancho y cambia de color al cruzar tu retrato: negro sobre el fondo, claro sobre la foto. Se mueven a distinta velocidad con el mouse para dar profundidad.</p>
+        <p class="mono">Hero 1 · Capas · v2</p>
+        <p>Links centrales y botón "ver proyectos" con la estética de tu sitio actual (Inter liviana en cursiva, píldora que se llena y flota). El nombre sigue cambiando de color al cruzar tu retrato.</p>
         <p class="mono"><a href="index.html" class="subraya">← Comparar heros</a> · <a href="h2-afiche.html" class="subraya">Hero 2 →</a></p>
     </section>
 
