@@ -13,9 +13,9 @@ Rama `redesign`. A pedido de Agustín, la UI se trabaja sección por sección. E
 | Nombre | "agustín design" en Geist 500, tracking -0.065em, a todo el ancho. Encima del retrato con `mix-blend-mode: difference`: negro sobre el fondo, claro sobre la foto |
 | Retrato | El recorte actual (`img/fotodeperfilgus5.webp`), anclado abajo, a todo el ancho |
 | Logo | "agustín.design" arriba a la izquierda con cursor que parpadea. A Agustín le gusta mucho este detalle |
-| Links | **About · Works · Contact**, en la tipografía del sitio actual (Inter 200 en cursiva, 1.1rem, tracking -0.05em) con el hover de la marca: la línea entra por la izquierda y sale por la derecha. Centrados en desktop; en columna arriba a la derecha en móvil |
+| Links | **About · Works · Contact**, en la tipografía del sitio actual (Inter en cursiva, 1.1rem), con el peso subido levemente de 200 a 270. **Hover: letras que ruedan** en cascada (cada letra sube y la reemplaza una copia de sí misma). Centrados en desktop; en columna arriba a la derecha en móvil |
 | Llamado | **Botón "ver proyectos" como el actual** (píldora con borde, se llena de izquierda a derecha y flota). Reemplaza la frase "Diseño marcas y construyo sus sitios", que Agustín sentía mejorable |
-| Arriba a la derecha | Punto "disponible" que late (sin color) y hora de Santiago en vivo, en Geist Mono |
+| Arriba a la derecha | Hora de Santiago en vivo, en Geist Mono, con los dos puntos que parpadean. "Disponible" se eliminó (Agustín sentía que sobraba) |
 | Abajo a la izquierda | Redes en mono, con inversión de color sobre la foto |
 | Motion | Letras del nombre que suben en cascada, links y botón que aparecen con desenfoque, parallax entre nombre y retrato con el mouse y el scroll. Respeta reducir movimiento |
 | Fondo | Gris claro `#D9D9D6`, cercano al `#dddddd` actual |
@@ -46,9 +46,14 @@ Revisado en 1024, 1280, 1440, 1920 y 390 px, durante la carga y al hacer scroll.
 | Hora estática | Los dos puntos de la hora parpadean cada segundo |
 | El `h1` solo decía "agustín design" | Texto oculto para buscadores y lectores de pantalla: "Agustín Avendaño, diseño de marca y desarrollo web en Santiago de Chile" |
 
+### Ajustes de Agustín sobre la v4 (21 oct 2026)
+- Hover nuevo y peso levemente mayor en About, Works y Contact.
+- El parallax dejaba un borde vacío a la izquierda al llevar el mouse a la derecha: la caja del retrato ahora sobresale 32 px por lado y 16 px abajo.
+- Se eliminó el descriptor ("Diseño de marca y desarrollo web · Independiente · Santiago, CL") y la palabra "Disponible": sobraban.
+
 **Pendientes del hero:**
 - Los links quedan en inglés ("About, Works, Contact") por decisión de Agustín, como excepción a la regla de voz.
-- La propuesta de valor sale del hero: se ubica en la siguiente sección, junto al índice de trabajos.
+- La propuesta de valor y el estado de disponibilidad salen del hero: se ubican en la siguiente sección o en contacto.
 - Técnico para la Fase 6: los links y el botón animan el wrapper (`li`, `.cta-hero`) para no pisar el hover, según los aprendizajes del repo.
 
 ---

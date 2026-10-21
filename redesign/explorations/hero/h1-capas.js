@@ -6,7 +6,15 @@
     if (!hero) return;
     const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* --- 1. PROGRESO DE SALIDA --- */
+    /* --- 1. LINKS CON LETRAS QUE RUEDAN --- */
+    /* Separa cada link en letras con su índice para el hover en cascada. El link conserva su nombre accesible */
+    hero.querySelectorAll('.links-actual a').forEach(a => {
+        const texto = a.textContent.trim();
+        a.setAttribute('aria-label', texto);
+        a.innerHTML = [...texto].map((c, i) => `<span class="c" aria-hidden="true" style="--i:${i}">${c}</span>`).join('');
+    });
+
+    /* --- 2. PROGRESO DE SALIDA --- */
     /* Escribe --p (0 a 1) según cuánto se ha scrolleado: el CSS oscurece, escala la foto y apaga el nombre */
     let pendiente = false;
     const salida = () => {
@@ -17,7 +25,7 @@
     window.addEventListener('scroll', () => { if (!pendiente) { pendiente = true; requestAnimationFrame(salida); } }, { passive: true });
     salida();
 
-    /* --- 2. NOMBRE VIVO --- */
+    /* --- 3. NOMBRE VIVO --- */
     /* Las letras cercanas al cursor suben un poco, como una ola. Solo con mouse y sin reducir movimiento */
     if (quieto || !window.matchMedia('(hover: hover)').matches) return;
     const letras = [...hero.querySelectorAll('.nombre .l')];
