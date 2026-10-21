@@ -24,12 +24,12 @@
     const dur = ms => (quieto ? 1 : ms);
     const EASE_MORPH = 'cubic-bezier(0.76, 0, 0.24, 1)';
 
-    /* --- 2. ARCHIVO CON VISTA PREVIA --- */
-    /* Cada fila muestra una miniatura que sigue al cursor con inercia (solo con mouse) */
+    /* --- 2. ARCHIVO --- */
     const listaArchivo = document.querySelector('[data-archivo]');
     if (listaArchivo) {
         listaArchivo.innerHTML = archivo.map(([n, d, a, img]) => `<li><a href="#" data-img="${img}"><span class="a-nombre">${n}</span><span class="a-disc mono gris">${d}</span><span class="a-anio mono gris">${a}</span></a></li>`).join('');
-        if (conMouse && !quieto) {
+        /* Sin miniatura al pasar el mouse: el archivo se mantiene tipográfico (pedido de Agustín) */
+        if (false) {
             document.body.insertAdjacentHTML('beforeend', '<div class="miniatura" aria-hidden="true"><img alt=""></div>');
             const mini = document.querySelector('.miniatura'), miniImg = mini.querySelector('img');
             let tx = 0, ty = 0, x = 0, y = 0, corre = false;
@@ -80,8 +80,10 @@
     const escenaDe = el => {
         const e = el.querySelector('.escena'); if (!e) return null;
         const c = e.cloneNode(true); c.classList.add('quieta');
+        /* Los sitios en vivo no viajan (serían otra carga completa): el clon muestra la portada */
+        c.querySelectorAll('iframe').forEach(f => f.remove());
         const orig = e.querySelectorAll('img'), copias = c.querySelectorAll('img');
-        copias.forEach((img, i) => { img.style.translate = getComputedStyle(orig[i]).translate; img.style.scale = getComputedStyle(orig[i]).scale; });
+        copias.forEach((img, i) => { const cs = getComputedStyle(orig[i]); img.style.translate = cs.translate; img.style.scale = cs.scale; if (!img.classList.contains('poster')) img.style.opacity = cs.opacity; });
         return c;
     };
 

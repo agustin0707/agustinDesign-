@@ -77,7 +77,7 @@ Casos borde: 2560 px, laptop 1366×650, iPhone SE, celular horizontal, movimient
 
 **En curso: 3 exploraciones** en `explorations/works/` (comparador en `index.html`, 21 oct 2026). Se rehace desde cero: presionar un proyecto tiene que ser atractivo y llevar a una página muy única.
 
-**Elegida: 3 · Pila de cortinas** (21 oct 2026), mejorada a la v2 en `explorations/works/w3-pila.html`.
+**Elegida: 3 · Pila de cortinas** (21 oct 2026), hoy en su v3: `explorations/works/w3-pila.html` + `w3-pila.js`.
 
 ### Audit de la Pila (v1 → v2)
 | Hallazgo en la v1 | Mejora en la v2 |
@@ -96,6 +96,16 @@ Casos borde: 2560 px, laptop 1366×650, iPhone SE, celular horizontal, movimient
 | — | Movimiento reducido: se apilan sin escala, velo ni scroll automático |
 
 Las escenas usan unidades de contenedor (`cqw`, `cqh`): el navegador y el teléfono se ven proporcionados en la lámina, durante el viaje y en la portada del caso.
+
+### Ajustes de Agustín sobre la v2 → v3 (21 oct 2026)
+| Pedido | Cómo se resolvió |
+|---|---|
+| Sin foto al pasar el mouse por el archivo | Eliminada: el archivo queda tipográfico |
+| Mejor resolución y que las webs aparezcan con sus animaciones de carga | **Sitios reales dentro del navegador.** En reposo se ve una portada nítida (captura a 1,4x). Al pasar el mouse, el sitio real se recarga dentro del navegador, con una barra de carga como la de un navegador de verdad, muestra su propia animación de entrada y después baja solo durante 12 s. En Mend, el teléfono parte en la pantalla de carga de la app y luego baja la pantalla Explorar (captura a 2x) |
+| Títulos con el efecto del nombre del hero, sin la ola | Títulos más grandes, en Geist cerrada, cruzando el borde de la lámina con `mix-blend-mode: difference`, y entrada letra a letra cuando aparecen en pantalla. Sin reacción al cursor |
+| Mejorar la parte de arriba de Works | **Apertura tipo afiche:** "works" gigante con "(03)" en mono, como el ".design" del hero, y entrada letra a letra. Debajo, el manifiesto ("Marcas y sitios web, diseñados y construidos por mí. Cada proyecto, contado desde sus decisiones.") y un índice de los tres proyectos más el archivo, con saltos directos |
+
+**Nota técnica para la Fase 6:** para controlar el scroll dentro de los sitios, el navegador necesita que estén en el mismo dominio que el portafolio. En la exploración se usan copias locales (`explorations/works/sitios/`, fuera del repo). En producción hay dos caminos: publicar copias de las landings bajo `agustindesign.cl` (con permiso de cada cliente) o grabar un video del recorrido de cada sitio. El video pesa menos y funciona igual en móvil; la copia es más fiel. Se decide en la Fase 6.
 
 
 **Común a las tres:**

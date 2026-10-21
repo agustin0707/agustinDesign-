@@ -78,7 +78,7 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 | # | Sección | Estado |
 |---|------|--------|
 | S1 | Hero | Hecho · Hero 1 · Capas v4 final, con tres audits (ver `05-ui-secciones.md`) |
-| S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | En curso · Pila de cortinas v2, falta tu visto bueno (ver `05-ui-secciones.md`) |
+| S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | En curso · Pila de cortinas v3 con sitios en vivo, falta tu visto bueno (ver `05-ui-secciones.md`) |
 | S3 | Página de caso | Pendiente |
 | S4 | Sobre mí | Pendiente |
 | S5 | Contacto y footer | Pendiente |

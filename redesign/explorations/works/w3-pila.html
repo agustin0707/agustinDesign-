@@ -10,31 +10,49 @@
     <link rel="stylesheet" href="works-base.css">
     <style>
         /* =======================================================
-           WORKS 3 · PILA DE CORTINAS (V2)
+           WORKS 3 · PILA DE CORTINAS (V3)
            ======================================================= */
-        /* Cada proyecto es una pantalla teñida con su marca; el siguiente la cubre como una hoja */
-
-        /* --- 1. CABECERA --- */
-        .cabecera .cuenta { grid-column: 10 / -1; justify-self: end; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-        .cabecera .cuenta a { border-bottom: 1px solid currentColor; }
 
         /* =======================================================
-           PANEL
+           1. APERTURA DE LA SECCIÓN (AFICHE "WORKS")
+           ======================================================= */
+        /* Mismo lenguaje del hero: una palabra gigante en Geist cerrada que entra letra a letra */
+        .apertura { position: relative; z-index: 1; min-height: 100svh; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto 1fr auto; column-gap: var(--medianil); padding: 72px var(--margen) var(--margen); }
+        .apertura .fila-top { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); padding-bottom: 14px; border-bottom: 1px solid #262625; }
+        .apertura .fila-top span:nth-child(1) { grid-column: 1 / span 3; }
+        .apertura .fila-top span:nth-child(2) { grid-column: 4 / span 5; }
+        .apertura .fila-top span:nth-child(3) { grid-column: 10 / -1; justify-self: end; }
+
+        /* --- 1. PALABRA GIGANTE --- */
+        .gigante { grid-column: 1 / -1; align-self: center; position: relative; font-size: clamp(120px, min(29vw, 52svh), 560px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.78; margin-left: -0.05em; }
+        .gigante sup { position: absolute; top: 0.08em; font-family: var(--mono); font-size: max(12px, 0.06em); letter-spacing: 0; font-weight: 400; margin-left: 0.15em; color: var(--gris-medio); }
+
+        /* --- 2. PIE DE LA APERTURA --- */
+        .apertura .manifiesto { grid-column: 4 / span 5; align-self: end; font-size: clamp(20px, 1.9vw, 30px); font-weight: 500; letter-spacing: -0.03em; line-height: 1.18; }
+        .apertura .manifiesto span { color: var(--gris-medio); }
+        .apertura .indice-proyectos { grid-column: 10 / -1; align-self: end; list-style: none; border-top: 1px solid #262625; }
+        .apertura .indice-proyectos a { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; padding: 10px 0; border-bottom: 1px solid #262625; transition: padding 700ms var(--hover-lento), color 500ms var(--hover-lento); }
+        .apertura .indice-proyectos a .mono { color: var(--gris-medio); }
+        @media (hover: hover) { .apertura .indice-proyectos a:hover { padding-left: 10px; } }
+        .apertura .num-seccion { grid-column: 1 / span 3; align-self: end; }
+
+        /* --- 3. LETRAS QUE SUBEN (HERO) --- */
+        /* Las letras quedan abajo de su línea hasta que el título entra en pantalla */
+        [data-letras] .palabra { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.18em 0 0.22em; margin: -0.18em 0 -0.22em; }
+        [data-letras] .l { display: inline-block; transform: translateY(130%); }
+        [data-letras].entra .l { animation: subeLetra 1000ms var(--ease) forwards; }
+        @keyframes subeLetra { to { transform: translateY(0); } }
+
+        /* =======================================================
+           2. PANEL
            ======================================================= */
         /* --q: cuánto lo cubrió el siguiente (0 a 1), lo escribe el JS */
         .panel { --q: 0; --tinte: var(--negro); position: sticky; top: 0; height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 64px var(--margen) var(--margen); background: var(--tinte); overflow: hidden; }
-
-        /* --- 1. HOJA QUE SUBE --- */
-        /* Cada panel nuevo llega con esquinas redondeadas y sombra arriba, como una hoja sobre la anterior */
-        .panel + .panel, .pila + .archivo { border-radius: 18px 18px 0 0; box-shadow: 0 -30px 60px -12px rgba(0, 0, 0, 0.65); }
-
-        /* --- 2. PANEL CUBIERTO --- */
-        /* El contenido se achica levemente y un velo lo oscurece, sin perder sus colores */
+        .panel, .pila + .archivo { border-radius: 18px 18px 0 0; box-shadow: 0 -30px 60px -12px rgba(0, 0, 0, 0.65); }
         .panel > :not(.velo) { transform: scale(calc(1 - var(--q) * 0.05)); transform-origin: 50% 0; }
         .panel .velo { position: absolute; inset: 0; z-index: 8; background: #000; opacity: calc(var(--q) * 0.7); pointer-events: none; }
 
-        /* --- 3. FILA SUPERIOR CON MINI ÍNDICE --- */
-        /* Los tres proyectos siempre a la vista, con el actual destacado: se sabe dónde estás y se puede saltar */
+        /* --- 1. FILA SUPERIOR CON MINI ÍNDICE --- */
         .tope { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); align-items: end; padding-bottom: 14px; }
         .mi { grid-column: 1 / span 6; display: flex; gap: 22px; }
         .mi a { display: inline-flex; gap: 8px; color: rgba(245, 245, 243, 0.38); transition: color 600ms var(--hover-lento); }
@@ -46,66 +64,83 @@
         .tope a.vivo { border-bottom: 1px solid rgba(245, 245, 243, 0.4); }
 
         /* =======================================================
-           LÁMINA: LA ESCENA DEL PROYECTO
+           3. LÁMINA: LA ESCENA DEL PROYECTO
            ======================================================= */
         .lamina { position: relative; border-radius: 8px; overflow: hidden; cursor: pointer; isolation: isolate; }
         .lamina:focus-visible { outline: 1px solid var(--blanco); outline-offset: 6px; }
         .lamina .ver { position: absolute; right: 18px; top: 18px; z-index: 4; padding: 9px 15px; border-radius: 999px; background: var(--blanco); color: var(--negro); opacity: 0; translate: 0 -8px; transition: opacity 700ms var(--hover-lento), translate 800ms var(--hover-lento); }
-        .lamina .recorre { position: absolute; left: 18px; top: 18px; z-index: 4; padding: 8px 13px; border-radius: 999px; background: rgba(11, 11, 11, 0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0.9; transition: opacity 600ms var(--hover-lento); }
+        .lamina .recorre { position: absolute; left: 18px; top: 18px; z-index: 4; padding: 8px 13px; border-radius: 999px; background: rgba(11, 11, 11, 0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: opacity 600ms var(--hover-lento); }
         @media (hover: hover) {
             .lamina:hover .ver { opacity: 1; translate: 0 0; }
             .lamina:hover .recorre { opacity: 0; }
         }
 
         /* --- 1. ESCENA --- */
-        /* Fondo de marca + dispositivo. Usa unidades de contenedor: se ve igual en la lámina, en el viaje y en el caso */
         .escena { position: absolute; inset: 0; overflow: hidden; container-type: size; --barra: clamp(14px, 2.3cqw, 34px); }
         .escena .fondo { position: absolute; inset: 0; }
         .escena .fondo img { width: 100%; height: 100%; object-fit: cover; scale: 1.05; transition: scale 1600ms var(--hover-lento); }
         @media (hover: hover) { .lamina:hover .escena .fondo img { scale: 1; } }
+        .escena-llego .fondo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 20, 21, 0.1), rgba(10, 20, 21, 0.5)); }
+        .escena-tapin .fondo { background: radial-gradient(120% 95% at 50% 0%, #9A8CFA 0%, #4A3CAE 46%, #16113A 100%); }
+        .escena-mend .fondo img { object-position: 0 50%; }
 
         /* --- 2. NAVEGADOR --- */
         .navegador { position: absolute; left: 15%; right: 15%; top: 12%; bottom: -3%; border-radius: max(6px, 0.7cqw) max(6px, 0.7cqw) 0 0; background: #fff; overflow: hidden; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6); transition: translate 1200ms var(--hover-lento); }
         .barra-nav { position: relative; height: var(--barra); display: flex; align-items: center; gap: max(4px, 0.45cqw); padding: 0 max(8px, 1cqw); background: #F1F1EF; border-bottom: 1px solid #E2E2DF; }
         .barra-nav i { width: max(6px, 0.7cqw); height: max(6px, 0.7cqw); border-radius: 50%; background: #CFCFCB; }
         .barra-nav .url { position: absolute; left: 50%; translate: -50% 0; font-size: max(9px, 0.85cqw); color: #77736B; background: #fff; padding: 0.2em 1.4em; border-radius: 999px; }
-        .pantalla { position: absolute; top: var(--barra); left: 0; right: 0; bottom: 0; overflow: hidden; container-type: size; }
-        .telefono .pantalla { top: 0; }
 
-        /* --- 3. LA WEB HACE SCROLL ADENTRO --- */
-        /* Al pasar el mouse (o al verla en móvil) la captura completa del sitio baja despacio; al salir vuelve más rápido */
-        .pantalla img { width: 100%; height: auto; translate: 0 0; transition: translate 1800ms var(--hover-lento); }
-        .lamina.viendo .pantalla img { translate: 0 calc(-100% + 100cqh); transition-duration: 11s; transition-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
-        @media (hover: hover) {
-            .lamina:hover .pantalla img { translate: 0 calc(-100% + 100cqh); transition-duration: 11s; transition-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
-            .lamina:hover .navegador, .lamina:hover .telefono { translate: 0 -1.5%; }
-        }
-        .escena.quieta * { transition: none !important; }
+        /* --- 3. BARRA DE CARGA --- */
+        /* Línea fina bajo la barra del navegador mientras el sitio real carga, como en un navegador de verdad */
+        .barra-nav .carga { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: #4A3CAE; transform: scaleX(0); transform-origin: 0 50%; opacity: 0; }
+        .escena-llego .barra-nav .carga { background: #178181; }
+        .lamina.cargando .barra-nav .carga { opacity: 1; animation: carga 1400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        .lamina.listo .barra-nav .carga { opacity: 0; transform: scaleX(1); transition: opacity 400ms 200ms; }
+        @keyframes carga { to { transform: scaleX(0.85); } }
 
-        /* --- 4. TELÉFONO (MEND) --- */
+        /* --- 4. PANTALLA: PORTADA, SITIO EN VIVO Y CAPTURA LARGA --- */
+        /* En reposo se ve una portada nítida. Con mouse, el sitio real carga con sus animaciones y baja solo.
+           En móvil se usa la captura larga que hace scroll, sin cargar sitios completos */
+        .pantalla { position: absolute; top: var(--barra); left: 0; right: 0; bottom: 0; overflow: hidden; container-type: size; background: #fff; }
+        .pantalla .poster, .pantalla .larga { width: 100%; height: auto; }
+        .pantalla .poster { position: absolute; inset: 0 0 auto 0; z-index: 2; transition: opacity 500ms var(--hover-lento); }
+        .pantalla .larga { display: none; }
+        .pantalla iframe { position: absolute; top: 0; left: 0; width: 1440px; border: 0; transform-origin: 0 0; transform: scale(var(--escala, 0.5)); pointer-events: none; z-index: 1; opacity: 0; transition: opacity 300ms ease; }
+        .lamina.vivo .pantalla iframe { opacity: 1; }
+        .lamina.vivo .pantalla .poster { opacity: 0; }
+        @media (hover: hover) { .lamina:hover .navegador, .lamina:hover .telefono { translate: 0 -1.5%; } }
+
+        /* --- 5. TELÉFONO (MEND): ARRANQUE DE LA APP --- */
+        /* La pantalla de carga de Mend se desvanece y la app baja, como al abrirla */
         .telefono { position: absolute; right: 15%; top: 8%; height: 106%; aspect-ratio: 390 / 844; border-radius: max(18px, 3cqw); border: max(4px, 0.5cqw) solid #0B0B0B; background: #0B0B0B; overflow: hidden; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.65); transition: translate 1200ms var(--hover-lento); }
-
-        /* --- 5. FONDOS DE CADA MARCA --- */
-        .escena-llego .fondo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 20, 21, 0.1), rgba(10, 20, 21, 0.5)); }
-        .escena-tapin .fondo { background: radial-gradient(120% 95% at 50% 0%, #9A8CFA 0%, #4A3CAE 46%, #16113A 100%); }
-        .escena-mend .fondo img { object-position: 0 50%; }
+        .telefono .pantalla { top: 0; background: #244A53; }
+        .telefono .larga { display: block; translate: 0 0; transition: translate 1800ms var(--hover-lento); }
+        .telefono .splash { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; transition: opacity 700ms var(--hover-lento); }
+        .lamina.arranca .telefono .splash { opacity: 0; transition-delay: 1100ms; }
+        .lamina.arranca .telefono .larga { translate: 0 calc(-100% + 100cqh); transition: translate 11s cubic-bezier(0.45, 0, 0.25, 1) 1500ms; }
+        .escena.quieta * { transition: none !important; animation: none !important; }
 
         /* =======================================================
-           PIE DEL PANEL
+           4. PIE DEL PANEL: TÍTULO CON EL EFECTO DEL HERO
            ======================================================= */
-        /* El nombre sube sobre el borde de la lámina y se invierte al cruzarla, como el nombre del hero */
+        /* Grande, en Geist cerrada, cruzando la lámina e invertido sobre ella como el nombre del hero. Sin la ola del cursor */
         .pie { position: relative; z-index: 5; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); align-items: end; pointer-events: none; }
-        .pie .nombre { grid-column: 1 / span 9; font-size: clamp(56px, 8.6vw, 156px); font-weight: 500; letter-spacing: var(--tracking-display); line-height: 0.82; color: #fff; mix-blend-mode: difference; translate: 0 -0.32em; margin-bottom: -0.32em; }
-        .pie .bajada { grid-column: 10 / -1; color: var(--gris-medio); font-size: 14px; padding-bottom: 4px; }
+        .pie .nombre { grid-column: 1 / -1; font-size: clamp(64px, min(12.4vw, 26svh), 260px); font-weight: 500; letter-spacing: -0.065em; line-height: 0.8; word-spacing: -0.06em; white-space: nowrap; color: #fff; mix-blend-mode: difference; translate: 0 -0.5em; margin-bottom: -0.5em; margin-left: -0.04em; }
+        .pie .bajada { grid-column: 10 / -1; grid-row: 1; align-self: end; justify-self: end; text-align: right; max-width: 30ch; color: var(--gris-medio); font-size: 14px; padding-bottom: 6px; }
 
-        .cabecera { position: relative; z-index: 1; }
         .archivo { position: relative; z-index: 5; background: var(--negro); }
 
         /* =======================================================
            VISTA MÓVIL
            ======================================================= */
         @media (max-width: 768px) {
-            .cabecera .cuenta { grid-column: 1 / -1; justify-self: start; align-items: flex-start; margin-top: 16px; }
+            .apertura { grid-template-columns: repeat(4, 1fr); min-height: auto; padding-top: 72px; row-gap: 28px; }
+            .apertura .fila-top { grid-template-columns: repeat(4, 1fr); }
+            .apertura .fila-top span:nth-child(2) { display: none; }
+            .apertura .fila-top span:nth-child(3) { grid-column: 3 / -1; }
+            .gigante { font-size: 31vw; margin-top: 12vh; }
+            .apertura .manifiesto, .apertura .indice-proyectos, .apertura .num-seccion { grid-column: 1 / -1; }
+            .apertura .num-seccion { display: none; }
             .panel { padding-top: 60px; grid-template-rows: auto auto auto; align-content: center; }
             .tope, .pie { grid-template-columns: repeat(4, 1fr); }
             .mi { grid-column: 1 / -1; gap: 14px; }
@@ -115,79 +150,90 @@
             .lamina { aspect-ratio: 4 / 4.6; }
             .navegador { left: 8%; right: 8%; top: 14%; }
             .telefono { right: 50%; translate: 50% 0; top: 10%; }
+            .pantalla .poster { display: none; }
+            .pantalla .larga { display: block; translate: 0 0; transition: translate 1800ms var(--hover-lento); }
+            .lamina.viendo .navegador .larga { translate: 0 calc(-100% + 100cqh); transition: translate 11s cubic-bezier(0.45, 0, 0.25, 1); }
             .lamina .ver { opacity: 1; translate: 0 0; }
             .lamina .recorre { display: none; }
-            .pie .nombre { grid-column: 1 / -1; font-size: 15vw; }
-            .pie .bajada { grid-column: 1 / -1; margin-top: 12px; }
+            .pie .nombre { font-size: 17vw; white-space: normal; }
+            .pie .bajada { grid-column: 1 / -1; grid-row: auto; justify-self: start; text-align: left; margin-top: 12px; }
         }
         @media (prefers-reduced-motion: reduce) {
             .panel > :not(.velo) { transform: none; }
             .panel .velo { display: none; }
             .pantalla img { transition: none !important; translate: 0 0 !important; }
+            [data-letras] .l { transform: none; }
         }
     </style>
 </head>
 <body>
     <header class="barra"><a href="#" class="logo">agustín<span>.</span>design</a><ul><li><a href="#">About</a></li><li><a href="#">Works</a></li><li><a href="#">Contact</a></li></ul><span class="der mono">Santiago</span></header>
 
-    <section class="cabecera">
-        <span class="num mono gris">02 · Works</span>
-        <h2>Trabajo seleccionado</h2>
-        <div class="cuenta mono"><span class="gris">03 proyectos · 2025–2026</span><a href="#archivo">Archivo ↓</a></div>
+    <section class="apertura">
+        <div class="fila-top mono"><span class="gris">02 · Works</span><span class="gris">Trabajo seleccionado</span><span class="gris">2025–2026</span></div>
+        <h2 class="gigante"><span data-letras>works</span><sup>(03)</sup></h2>
+        <span class="num-seccion mono gris">Desliza para ver cada proyecto ↓</span>
+        <p class="manifiesto">Marcas y sitios web, diseñados y construidos por mí. <span>Cada proyecto, contado desde sus decisiones.</span></p>
+        <ul class="indice-proyectos">
+            <li><a href="#p-llego" data-salto><span class="mono">01</span><span>Llegó Farma</span><span class="mono">2026</span></a></li>
+            <li><a href="#p-tapin" data-salto><span class="mono">02</span><span>Tap In</span><span class="mono">2025–26</span></a></li>
+            <li><a href="#p-mend" data-salto><span class="mono">03</span><span>Mend</span><span class="mono">2026</span></a></li>
+            <li><a href="#archivo"><span class="mono">→</span><span>Archivo</span><span class="mono">2022–25</span></a></li>
+        </ul>
     </section>
 
     <div class="pila" id="pila">
         <section class="panel" id="p-llego" data-id="llego" style="--tinte:#0A1415">
             <div class="tope mono">
-                <nav class="mi" aria-label="Proyectos"><a href="#p-llego" class="actual"><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin"><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend"><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
+                <nav class="mi" aria-label="Proyectos"><a href="#p-llego" class="actual" data-salto><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" data-salto><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" data-salto><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
                 <span class="disc">Marca · One page · 2026</span>
                 <span class="vivo gris">Pronto en línea</span>
             </div>
-            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Llegó Farma">
+            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Llegó Farma" data-sitio="sitios/llego/index.html">
                 <div class="escena escena-llego">
                     <div class="fondo"><img src="media/llego-foto.jpg" alt="" decoding="async"></div>
-                    <div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url mono">llegofarma.cl</span></div><div class="pantalla"><img src="media/llego-larga.jpg" alt="Sitio de Llegó Farma" decoding="async"></div></div>
+                    <div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url mono">llegofarma.cl</span><span class="carga"></span></div><div class="pantalla"><img class="poster" src="media/llego-poster.jpg" alt="Sitio de Llegó Farma" decoding="async"><img class="larga" src="media/llego-larga.jpg" alt="" loading="lazy" decoding="async"></div></div>
                 </div>
                 <span class="recorre mono">Sitio · diseño y código</span>
                 <span class="ver mono">Ver caso ↗</span>
             </div>
-            <div class="pie"><h3 class="nombre">Llegó Farma</h3><p class="bajada">Submarca de logística farmacéutica. Pitch ganado al diseñador de la marca madre.</p></div>
+            <div class="pie"><h3 class="nombre" data-letras>Llegó Farma</h3><p class="bajada">Submarca de logística farmacéutica. Pitch ganado al diseñador de la marca madre.</p></div>
             <div class="velo" aria-hidden="true"></div>
         </section>
 
         <section class="panel" id="p-tapin" data-id="tapin" style="--tinte:#110E22">
             <div class="tope mono">
-                <nav class="mi" aria-label="Proyectos"><a href="#p-llego"><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" class="actual"><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend"><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
+                <nav class="mi" aria-label="Proyectos"><a href="#p-llego" data-salto><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" class="actual" data-salto><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" data-salto><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
                 <span class="disc">Marca · Producto · Web · 2025–26</span>
                 <a class="vivo" href="https://tapin.cl" target="_blank" rel="noopener">tapin.cl ↗</a>
             </div>
-            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Tap In">
+            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Tap In" data-sitio="sitios/tapin/index.html">
                 <div class="escena escena-tapin">
                     <div class="fondo"></div>
-                    <div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url mono">tapin.cl</span></div><div class="pantalla"><img src="media/tapin-larga.jpg" alt="Sitio de Tap In" loading="lazy" decoding="async"></div></div>
+                    <div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url mono">tapin.cl</span><span class="carga"></span></div><div class="pantalla"><img class="poster" src="media/tapin-poster.jpg" alt="Sitio de Tap In" loading="lazy" decoding="async"><img class="larga" src="media/tapin-larga.jpg" alt="" loading="lazy" decoding="async"></div></div>
                 </div>
                 <span class="recorre mono">Sitio en vivo · diseño y código</span>
                 <span class="ver mono">Ver caso ↗</span>
             </div>
-            <div class="pie"><h3 class="nombre">Tap In</h3><p class="bajada">De la cafetería del campus a la plataforma del colegio.</p></div>
+            <div class="pie"><h3 class="nombre" data-letras>Tap In</h3><p class="bajada">De la cafetería del campus a la plataforma del colegio.</p></div>
             <div class="velo" aria-hidden="true"></div>
         </section>
 
         <section class="panel" id="p-mend" data-id="mend" style="--tinte:#0D2024">
             <div class="tope mono">
-                <nav class="mi" aria-label="Proyectos"><a href="#p-llego"><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin"><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" class="actual"><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
+                <nav class="mi" aria-label="Proyectos"><a href="#p-llego" data-salto><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" data-salto><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" class="actual" data-salto><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
                 <span class="disc">Investigación · Marca · Web app · 2026</span>
                 <span class="vivo gris">Prototipo con acceso</span>
             </div>
-            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Mend">
+            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Mend" data-app>
                 <div class="escena escena-mend">
                     <div class="fondo"><img src="media/mend-web.jpg" alt="" loading="lazy" decoding="async"></div>
-                    <div class="telefono"><div class="pantalla"><img src="media/mend-app-larga.jpg" alt="App de Mend" loading="lazy" decoding="async"></div></div>
+                    <div class="telefono"><div class="pantalla"><img class="splash" src="media/mend-splash.jpg" alt="" loading="lazy" decoding="async"><img class="larga" src="media/mend-app-larga.jpg" alt="App de Mend" loading="lazy" decoding="async"></div></div>
                 </div>
                 <span class="recorre mono">Web app · diseño y código</span>
                 <span class="ver mono">Ver caso ↗</span>
             </div>
-            <div class="pie"><h3 class="nombre">Mend</h3><p class="bajada">Salud articular para Atención Primaria, de la investigación al producto.</p></div>
+            <div class="pie"><h3 class="nombre" data-letras>Mend</h3><p class="bajada">Salud articular para Atención Primaria, de la investigación al producto.</p></div>
             <div class="velo" aria-hidden="true"></div>
         </section>
     </div>
@@ -195,59 +241,6 @@
     <section class="archivo" id="archivo"><span class="num mono gris">Archivo</span><ul data-archivo></ul></section>
 
     <script src="works-base.js"></script>
-    <script>
-        /* =======================================================
-           INICIO JS · WORKS 3
-           ======================================================= */
-        (function () {
-            const pila = document.getElementById('pila');
-            const paneles = [...pila.querySelectorAll('.panel')];
-            const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            /* --- 1. CUÁNTO CUBRE EL SIGUIENTE --- */
-            /* Para cada panel, el progreso del siguiente subiendo sobre él define --q */
-            let pendiente = false;
-            const pintar = () => {
-                pendiente = false;
-                const h = window.innerHeight;
-                paneles.forEach((p, i) => {
-                    const sig = paneles[i + 1] || document.querySelector('.archivo');
-                    const q = Math.min(Math.max(1 - sig.getBoundingClientRect().top / h, 0), 1);
-                    p.style.setProperty('--q', quieto ? 0 : q.toFixed(3));
-                });
-            };
-            window.addEventListener('scroll', () => { if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); } }, { passive: true });
-            window.addEventListener('resize', pintar);
-            pintar();
-
-            /* --- 2. MINI ÍNDICE: SALTAR A UN PROYECTO --- */
-            /* Los paneles son sticky: su lugar real en el flujo es el inicio de la pila más n pantallas */
-            pila.querySelectorAll('.mi a').forEach(a => a.addEventListener('click', e => {
-                e.preventDefault();
-                const i = paneles.findIndex(p => '#' + p.id === a.getAttribute('href'));
-                const inicio = pila.getBoundingClientRect().top + window.scrollY;
-                window.scrollTo({ top: inicio + i * window.innerHeight, behavior: quieto ? 'auto' : 'smooth' });
-            }));
-
-            /* --- 3. VISTA PREVIA EN MÓVIL --- */
-            /* Sin mouse, la web hace scroll sola cuando la lámina está casi completa en pantalla */
-            if (!window.matchMedia('(hover: hover)').matches && !quieto) {
-                const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('viendo', e.intersectionRatio > 0.75)), { threshold: [0, 0.75, 1] });
-                pila.querySelectorAll('.lamina').forEach(l => io.observe(l));
-            }
-
-            /* --- 4. ENTRAR AL CASO --- */
-            /* La escena completa viaja y se abre a sangre como portada del caso */
-            paneles.forEach(p => {
-                const lamina = p.querySelector('.lamina');
-                const abrir = () => window.abrirCaso(p.dataset.id, lamina, p.querySelector('.nombre'), { clonar: true });
-                lamina.addEventListener('click', abrir);
-                lamina.addEventListener('keydown', e => { if (e.key === 'Enter') abrir(); });
-            });
-        })();
-        /* =======================================================
-           FIN JS · WORKS 3
-           ======================================================= */
-    </script>
+    <script src="w3-pila.js"></script>
 </body>
 </html>
