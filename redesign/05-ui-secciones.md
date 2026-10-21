@@ -144,6 +144,19 @@ Herramientas nuevas en `redesign/herramientas/`: `auditar-textos.cjs` (cortes, d
 | **Archivo poco atractivo** | Hoja de contactos: cada fila mantiene el índice tipográfico y suma una tira con 5 a 8 piezas reales, siempre visibles (sin foto flotante). Al pasar el mouse la tira se desliza para mostrar el resto y las demás filas se atenúan; al entrar en pantalla las tiras se revelan en cascada. En móvil la tira se recorre con el dedo |
 | Bug al abrir Mend | Si se presionaba apenas al pasar el mouse, la portada del caso quedaba congelada en la pantalla de carga de la app |
 
+### Ajustes v5 (tus observaciones, 21 oct 2026)
+| Observación | Qué se hizo |
+|---|---|
+| **El sitio de Tap In parpadeaba** | Al pasar el mouse, la portada (con las tarjetas) se cambiaba por el sitio recargando desde cero: las tarjetas desaparecían y volvían a entrar. Ahora el sitio se carga en segundo plano cuando el panel queda quieto en pantalla (nunca durante el scroll, que comparte el hilo principal), espera a que termine su entrada y recién ahí está listo: el paso de portada a sitio es invisible y el recorrido parte de inmediato. Se desmonta cuando el panel sale o queda cubierto |
+| **Recorrido completo, Llegó más lento** | Baja hasta el final del sitio a velocidad casi constante (acelera y frena solo en los extremos, sin el centro apurado de la curva anterior): Llegó a 300 px/s (unos 26 s) y Tap In a 380 px/s (unos 12 s), así las animaciones de cada sección alcanzan a aparecer. En móvil, la captura larga de Llegó también baja más lento |
+| **Pastilla "Ver caso" en el cursor** | Eliminada. La etiqueta fija de la esquina ("Sitio · diseño y código") se releva subiendo por "Ver caso ↗" al pasar el mouse o enfocar con teclado. En móvil se mantiene la pastilla fija |
+| **Archivo, un paso más** | Cada fila suma una línea de contexto en lenguaje de cliente y el número de piezas. La tira se recorre siguiendo la posición horizontal del mouse sobre la fila, con inercia (borde izquierdo, primera pieza; borde derecho, la última), y una flecha entra junto al nombre |
+| Mend en desarrollo | La app aún no está terminada: el mockup del índice se actualiza cuando esté lista (PLAN 1.5d) |
+
+| Fluidez (navegador de prueba) | v4 | v5 |
+|---|---|---|
+| Hover con sitio en vivo | 43 fps | **50 fps** |
+
 **Nota técnica para la Fase 6:** para controlar el scroll dentro de los sitios, el navegador necesita que estén en el mismo dominio que el portafolio. En la exploración se usan copias locales (`explorations/works/sitios/`, fuera del repo). En producción hay dos caminos: publicar copias de las landings bajo `agustindesign.cl` (con permiso de cada cliente) o grabar un video del recorrido de cada sitio. El video pesa menos y funciona igual en móvil; la copia es más fiel. Se decide en la Fase 6.
 
 

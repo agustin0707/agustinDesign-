@@ -36,6 +36,7 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | 1.5 | Aclarar relación entre proyecto de título y Anco | Hecho · Anco ahora es Mend; Anco sale del portafolio |
 | 1.5b | Confirmar qué se puede mostrar de Mend | Hecho · todo menos datos de pacientes, médicos y FONIS |
 | 1.5c | Demo o video de Mend | Pendiente · más adelante, Agustín se inclina por demo |
+| 1.5d | Actualizar el mockup de Mend en el índice (app aún en desarrollo) | Pendiente · cuando la app esté terminada |
 | 1.6 | Decidir si la landing de Tap In va dentro del caso Tap In o como caso propio | Hecho · dentro del caso |
 | 1.6b | Definir el relato de Tap In | Hecho · "De la cafetería del campus a la plataforma del colegio" |
 | 1.8 | Elegir el 4° destacado en reemplazo de Mido | Hecho · se queda en 3; HAI candidato si toma el área de marca y marketing |
@@ -78,7 +79,7 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 | # | Sección | Estado |
 |---|------|--------|
 | S1 | Hero | Hecho · Hero 1 · Capas v4 final, con tres audits (ver `05-ui-secciones.md`) |
-| S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | En curso · Pila v4 (cortes, Tap In, Mend, archivo como hoja de contactos), falta tu visto bueno (ver `05-ui-secciones.md`) |
+| S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | En curso · Pila v5 (sitios sin parpadeo y con recorrido completo, sin pastilla, archivo con contexto), falta tu visto bueno (ver `05-ui-secciones.md`) |
 | S3 | Página de caso | Pendiente |
 | S4 | Sobre mí | Pendiente |
 | S5 | Contacto y footer | Pendiente |

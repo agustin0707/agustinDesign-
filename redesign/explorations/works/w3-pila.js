@@ -48,9 +48,10 @@
     document.querySelectorAll('[data-letras]').forEach(el => ioLetras.observe(el));
 
     /* --- 4. SITIOS EN VIVO DENTRO DEL NAVEGADOR --- */
-    /* Solo con mouse o teclado. El HTML se precarga cerca de la pantalla; el sitio se monta al pasar el mouse
-       (con una pequeña espera para no cargarlo al cruzar la lámina de pasada), muestra su animación de entrada,
-       baja solo y se desmonta al salir para no consumir recursos en segundo plano */
+    /* Solo con mouse o teclado. El sitio se carga en segundo plano cuando el panel queda quieto en pantalla y
+       espera a que termine su animación de entrada: al pasar el mouse ya está idéntico a la portada, el cambio
+       no se nota (sin parpadeo) y baja solo de inmediato, con las animaciones de cada sección a su ritmo.
+       Se desmonta cuando el panel sale o queda cubierto, para no consumir recursos en segundo plano */
     const laminasSitio = [...pila.querySelectorAll('.lamina[data-sitio]')];
     const escalar = l => {
         const pantalla = l.querySelector('.navegador .pantalla'), iframe = pantalla.querySelector('iframe');
@@ -59,79 +60,101 @@
         iframe.style.setProperty('--escala', escala.toFixed(4));
         iframe.style.height = Math.ceil(pantalla.clientHeight / escala) + 'px';
     };
-    const iframeDe = l => {
-        let iframe = l.querySelector('iframe');
-        if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.title = 'Vista previa del sitio';
-            iframe.setAttribute('tabindex', '-1');
-            iframe.setAttribute('aria-hidden', 'true');
-            l.querySelector('.navegador .pantalla').appendChild(iframe);
-        }
-        escalar(l);
-        return iframe;
-    };
+    /* Velocidad casi constante: acelera y frena en los extremos (8% del tiempo cada uno) y es pareja al medio,
+       para que ninguna sección pase demasiado rápido */
+    const A = 0.08;
+    const avance = t => (t < A ? t * t / (2 * A * (1 - A)) : t > 1 - A ? 1 - (1 - t) * (1 - t) / (2 * A * (1 - A)) : (t - A / 2) / (1 - A));
     const recorrer = l => {
         const iframe = l.querySelector('iframe');
         let win, doc;
         try { win = iframe.contentWindow; doc = iframe.contentDocument; } catch (err) { return; }
         if (!win || !doc) return;
-        /* Baja hasta la sección indicada en data-hasta (para terminar en un lugar limpio del sitio) o hasta el 82% */
-        const max = Math.max(doc.documentElement.scrollHeight - win.innerHeight, 0);
-        const meta = l.dataset.hasta && doc.querySelector(l.dataset.hasta);
-        const destino = meta ? Math.min(meta.getBoundingClientRect().top + win.scrollY, max) : max * 0.82;
-        const inicio = performance.now(), duracion = 12000;
-        const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+        /* Baja hasta el final del sitio a la velocidad de data-velocidad (px de sitio por segundo) */
+        const desde = win.scrollY, hasta = Math.max(doc.documentElement.scrollHeight - win.innerHeight, 0);
+        const duracion = Math.max((hasta - desde) / (+l.dataset.velocidad || 320), 0.5) * 1000;
+        const inicio = performance.now();
         const paso = ahora => {
             const t = Math.min((ahora - inicio) / duracion, 1);
             /* "instant" evita que el scroll suave propio del sitio reinicie el movimiento en cada cuadro */
-            win.scrollTo({ top: destino * ease(t), behavior: 'instant' });
+            win.scrollTo({ top: desde + (hasta - desde) * avance(t), behavior: 'instant' });
             if (t < 1 && l.classList.contains('vivo')) l._raf = requestAnimationFrame(paso);
         };
         l._raf = requestAnimationFrame(paso);
     };
+    const mostrar = l => {
+        l.classList.remove('cargando');
+        l.classList.add('vivo', 'listo');
+        clearTimeout(l._espera);
+        l._espera = setTimeout(() => { if (l.classList.contains('vivo')) recorrer(l); }, 450);
+    };
+    const montar = l => {
+        if (l._montado) return;
+        l._montado = true; l._preparado = false;
+        const iframe = document.createElement('iframe');
+        iframe.title = 'Vista previa del sitio';
+        iframe.setAttribute('tabindex', '-1');
+        iframe.setAttribute('aria-hidden', 'true');
+        l.querySelector('.navegador .pantalla').appendChild(iframe);
+        escalar(l);
+        const larga = l.querySelector('.larga'); if (larga) larga.loading = 'eager';
+        iframe.onload = () => {
+            if (!l._montado) return;
+            /* Sin barra de scroll dentro del mockup (con mouse conectado, macOS la muestra siempre) */
+            try {
+                const estilo = iframe.contentDocument.createElement('style');
+                estilo.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}';
+                iframe.contentDocument.head.appendChild(estilo);
+            } catch (err) { /* sitio de otro dominio: se deja como está */ }
+            /* Espera a que la entrada del sitio termine antes de darlo por listo */
+            l._intro = setTimeout(() => { l._preparado = true; if (l._quiere) mostrar(l); }, +l.dataset.intro || 2400);
+        };
+        iframe.src = l.dataset.sitio;
+    };
+    const desmontar = l => {
+        if (!l._montado) return;
+        l._montado = l._preparado = false;
+        clearTimeout(l._intro); clearTimeout(l._espera); cancelAnimationFrame(l._raf);
+        l.classList.remove('vivo', 'listo', 'cargando');
+        const f = l.querySelector('iframe'); if (f) f.remove();
+    };
     const encender = l => {
-        clearTimeout(l._intento); clearTimeout(l._apagar);
-        l._intento = setTimeout(() => {
-            const iframe = iframeDe(l);
-            const larga = l.querySelector('.larga');
-            if (larga) larga.loading = 'eager';
-            cancelAnimationFrame(l._raf); clearTimeout(l._espera);
-            l.classList.remove('listo');
-            l.classList.add('cargando', 'vivo');
-            iframe.onload = () => {
-                if (iframe.src.endsWith('about:blank')) return;
-                /* Sin barra de scroll dentro del mockup (con mouse conectado, macOS la muestra siempre) */
-                try {
-                    const estilo = iframe.contentDocument.createElement('style');
-                    estilo.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}';
-                    iframe.contentDocument.head.appendChild(estilo);
-                } catch (err) { /* sitio de otro dominio: se deja como está */ }
-                l.classList.remove('cargando'); l.classList.add('listo');
-                l._espera = setTimeout(() => { if (l.classList.contains('vivo')) recorrer(l); }, 1700);
-            };
-            /* Siempre carga de cero: así se ve la animación de entrada del sitio */
-            iframe.src = l.dataset.sitio;
-        }, 180);
+        l._quiere = true;
+        if (l._preparado) { mostrar(l); return; }
+        l.classList.add('cargando');
+        montar(l);
     };
     const apagar = l => {
-        clearTimeout(l._intento); clearTimeout(l._espera); cancelAnimationFrame(l._raf);
-        l.classList.remove('vivo', 'cargando', 'listo');
-        l._apagar = setTimeout(() => { const f = l.querySelector('iframe'); if (f && !l.classList.contains('vivo')) f.src = 'about:blank'; }, 450);
+        l._quiere = false;
+        clearTimeout(l._espera); cancelAnimationFrame(l._raf);
+        l.classList.remove('vivo', 'listo', 'cargando');
+        /* Detrás de la portada, el sitio vuelve arriba para la próxima pasada */
+        clearTimeout(l._volver);
+        l._volver = setTimeout(() => {
+            const f = l.querySelector('iframe');
+            try { if (f && !l._quiere) f.contentWindow.scrollTo({ top: 0, behavior: 'instant' }); } catch (err) { /* nada */ }
+        }, 500);
     };
-    if (!quieto) {
-        const ioCerca = new IntersectionObserver(es => es.forEach(e => {
-            if (!e.isIntersecting) return;
-            const link = document.createElement('link');
-            link.rel = 'prefetch'; link.href = e.target.dataset.sitio;
-            document.head.appendChild(link);
-            ioCerca.unobserve(e.target);
-        }), { rootMargin: '100% 0px' });
+    if (!quieto && conMouse) {
+        /* Se monta solo con el panel completo en pantalla y el scroll detenido: cargar un sitio durante el
+           scroll comparte el hilo principal y haría saltar el movimiento de la pila */
+        const enVista = new Set();
+        let quietud;
+        const revisar = () => laminasSitio.forEach(l => { if (enVista.has(l)) montar(l); });
+        const io = new IntersectionObserver(es => es.forEach(e => {
+            if (e.intersectionRatio >= 0.9) enVista.add(e.target);
+            else { enVista.delete(e.target); if (!e.isIntersecting) desmontar(e.target); }
+        }), { threshold: [0, 0.9] });
+        laminasSitio.forEach(l => io.observe(l));
+        window.addEventListener('scroll', () => { clearTimeout(quietud); quietud = setTimeout(revisar, 350); }, { passive: true });
+        setTimeout(revisar, 350);
+        /* Un panel cubierto por el siguiente sigue "en pantalla" para el observador: se desmonta por --q */
+        window.addEventListener('scroll', () => laminasSitio.forEach(l => {
+            const q = parseFloat(l.closest('.panel').style.getPropertyValue('--q')) || 0;
+            if (q > 0.6) { enVista.delete(l); desmontar(l); }
+        }), { passive: true });
         laminasSitio.forEach(l => {
-            ioCerca.observe(l);
-            if (conMouse) { l.addEventListener('mouseenter', () => encender(l)); l.addEventListener('mouseleave', () => apagar(l)); }
-            l.addEventListener('focus', () => encender(l));
-            l.addEventListener('blur', () => apagar(l));
+            l.addEventListener('mouseenter', () => encender(l)); l.addEventListener('mouseleave', () => apagar(l));
+            l.addEventListener('focus', () => encender(l)); l.addEventListener('blur', () => apagar(l));
         });
         window.addEventListener('resize', () => laminasSitio.forEach(escalar));
     }
@@ -151,23 +174,7 @@
         }), { threshold: [0, 0.6] }).observe(laminaApp);
     }
 
-    /* --- 6. "VER CASO" QUE SIGUE AL CURSOR --- */
-    /* Se mueve con inercia dentro de la lámina: la invitación a presionar está donde está la mano */
-    if (conMouse && !quieto) {
-        pila.querySelectorAll('.lamina').forEach(l => {
-            const ver = l.querySelector('.ver');
-            let tx = 0, ty = 0, x = 0, y = 0, corre = false;
-            const paso = () => {
-                x += (tx - x) * 0.16; y += (ty - y) * 0.16;
-                ver.style.setProperty('--vx', x.toFixed(1) + 'px'); ver.style.setProperty('--vy', y.toFixed(1) + 'px');
-                if (Math.abs(tx - x) + Math.abs(ty - y) > 0.4) requestAnimationFrame(paso); else corre = false;
-            };
-            l.addEventListener('mouseenter', e => { const r = l.getBoundingClientRect(); x = tx = e.clientX - r.left; y = ty = e.clientY - r.top; paso(); });
-            l.addEventListener('mousemove', e => { const r = l.getBoundingClientRect(); tx = e.clientX - r.left; ty = e.clientY - r.top; if (!corre) { corre = true; requestAnimationFrame(paso); } });
-        });
-    }
-
-    /* --- 7. VISTA PREVIA EN MÓVIL --- */
+    /* --- 6. VISTA PREVIA EN MÓVIL --- */
     /* Sin mouse: la captura larga baja sola y la app de Mend arranca cuando la lámina está casi completa */
     if (!conMouse && !quieto) {
         const io = new IntersectionObserver(es => es.forEach(e => {
@@ -178,25 +185,52 @@
         pila.querySelectorAll('.lamina').forEach(l => io.observe(l));
     }
 
-    /* --- 8. ARCHIVO: HOJA DE CONTACTOS --- */
-    /* Cada fila con su tira de piezas. --corre es cuánto debe deslizarse la tira para mostrar la última pieza */
+    /* --- 7. ARCHIVO: HOJA DE CONTACTOS --- */
+    /* Cada fila con su línea de contexto y su tira de piezas. Con mouse, la tira se recorre siguiendo la posición
+       horizontal del cursor sobre la fila, con inercia: borde izquierdo es la primera pieza, borde derecho la última */
     const hoja = document.querySelector('[data-hoja]');
     if (hoja) {
-        hoja.innerHTML = window.WORKS.archivo.map(([nombre, disc, anio, , piezas], i) => `
+        hoja.innerHTML = window.WORKS.archivo.map(([nombre, disc, anio, , piezas, contexto], i) => `
             <li class="ficha" style="--retraso:${i * 90}ms"><a href="#">
                 <span class="f-num mono gris">${String(i + 1).padStart(2, '0')}</span>
-                <span class="f-texto"><span class="f-nombre">${nombre}</span><span class="f-disc mono gris">${disc}</span></span>
+                <span class="f-texto">
+                    <span class="f-nombre">${nombre}<span class="f-flecha" aria-hidden="true">↗</span></span>
+                    <span class="f-contexto">${contexto}</span>
+                    <span class="f-disc mono gris">${disc}</span>
+                </span>
                 <span class="f-tira" aria-hidden="true"><span class="f-tira-in">${piezas.map(([archivo, ancho]) => `<img src="media/archivo/${archivo}.webp" width="${ancho}" height="440" alt="" loading="lazy" decoding="async">`).join('')}</span></span>
-                <span class="f-anio mono gris">${anio}</span>
+                <span class="f-anio mono"><span>${anio}</span><span class="gris">${String(piezas.length).padStart(2, '0')} piezas</span></span>
             </a></li>`).join('');
         const fichas = [...hoja.querySelectorAll('.ficha')];
         const medir = () => fichas.forEach(f => {
             const tira = f.querySelector('.f-tira'), interior = f.querySelector('.f-tira-in');
-            f.style.setProperty('--corre', Math.max(interior.scrollWidth - tira.clientWidth + 24, 0) + 'px');
+            f._corre = Math.max(interior.scrollWidth - tira.clientWidth + 24, 0);
         });
         medir();
         window.addEventListener('resize', medir);
-        /* Al entrar, la tira se revela y carga todas sus piezas (las ocultas a la derecha no se cargarían solas antes de deslizarse) */
+
+        if (!quieto) fichas.forEach(f => {
+            const a = f.querySelector('a'), tira = f.querySelector('.f-tira'), interior = f.querySelector('.f-tira-in');
+            let x = 0, destino = 0, corre = false;
+            const paso = () => {
+                x += (destino - x) * 0.085;
+                interior.style.transform = `translate3d(${(-x).toFixed(1)}px, 0, 0)`;
+                if (Math.abs(destino - x) > 0.3) requestAnimationFrame(paso); else corre = false;
+            };
+            const ir = v => { destino = v; if (!corre) { corre = true; requestAnimationFrame(paso); } };
+            if (conMouse) {
+                a.addEventListener('mousemove', e => {
+                    const r = tira.getBoundingClientRect();
+                    ir(Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * f._corre);
+                });
+                a.addEventListener('mouseleave', () => ir(0));
+            }
+            /* Con teclado, al enfocar la fila la tira se recorre completa */
+            a.addEventListener('focus', () => { if (a.matches(':focus-visible')) ir(f._corre); });
+            a.addEventListener('blur', () => ir(0));
+        });
+
+        /* Al entrar, la tira se revela y carga todas sus piezas (las ocultas a la derecha no se cargarían solas antes de recorrerse) */
         const ioFichas = new IntersectionObserver(es => es.forEach(e => {
             if (!e.isIntersecting) return;
             e.target.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
@@ -205,7 +239,7 @@
         fichas.forEach(f => ioFichas.observe(f));
     }
 
-    /* --- 9. ENTRAR AL CASO --- */
+    /* --- 8. ENTRAR AL CASO --- */
     /* La escena completa viaja y se abre a sangre como portada del caso */
     paneles.forEach(p => {
         const lamina = p.querySelector('.lamina');
