@@ -75,7 +75,7 @@
         galeria: { imgs: [M + 'lf-furgon.jpg', M + 'lf-repartidor.jpg', M + 'lf-empaque.jpg', M + 'lf-uniforme.jpg'], nota: 'Aplicaciones del sistema: furgón, reparto, empaque y uniforme' },
         aprendizaje: 'Presentar tres caminos igual de trabajados, con criterios y no con gustos, convirtió la elección en una decisión del cliente, tomada con argumentos.',
         creditos: 'Identidad, manual, diseño y desarrollo: Agustín Avendaño. Con el equipo de marketing de Llegó.',
-        siguiente: { nombre: 'Tap In', numero: '02', bajada: 'De la cafetería del campus a la plataforma del colegio.', tinte: '#110E22' }
+        siguiente: { id: 'tapin', url: 'tapin.html', nombre: 'Tap In', numero: '02', bajada: 'De la cafetería del campus a la plataforma del colegio.', tinte: '#110E22' }
     };
 })();
 /* =======================================================

@@ -39,6 +39,7 @@
     --c-cifra-track: -0.05em;
     --c-portada-tam: clamp(88px, 14.5vw, 250px);
     --c-portada-tam-movil: 22vw;
+    --c-barra-claro: #104E56;
     --c-escena: #0A1415;
 }
 

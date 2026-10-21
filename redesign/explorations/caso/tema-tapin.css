@@ -1,8 +1,9 @@
 /* =======================================================
-   TEMA TAP IN (.tema-tp)
+   TEMA TAP IN (.tema-tp / .tp-)
    ======================================================= */
-/* La piel del caso sale del sitio y del manual de Tap In: Poppins, morados y lavanda, superficies de vidrio,
-   píldoras, radios generosos y un movimiento suave que flota. Base: tokens de tapin.cl (css/styles.css) */
+/* La piel del caso sale del sitio y del manual de Tap In: Poppins, la familia morada (un tono por producto),
+   superficies de vidrio, píldoras, radios generosos y un movimiento suave que flota.
+   Base: tokens de tapin.cl (css/styles.css) y el manual de Connect */
 
 /* --- 1. TOKENS --- */
 .tema-tp {
@@ -26,40 +27,184 @@
     --c-curva: cubic-bezier(0.34, 1.25, 0.64, 1);
     --c-cifra-peso: 600;
     --c-cifra-track: -0.05em;
-    --c-escena: radial-gradient(120% 95% at 50% 0%, #9A8CFA 0%, #4A3CAE 46%, #16113A 100%);
+    --c-barra-claro: #2C2B3A;
+    --tp-empresa: #2D2560; --tp-campus: #4A3CAE; --tp-connect: #6B5CE7; --tp-health: #9B8EF0; --tp-soft: #C8C0F8; --tp-tint: #EEEDFE;
 }
 
 /* --- 2. RITMO DE FONDOS: OSCURO, CLARO (COMO EL SITIO) Y MARCA --- */
-.tema-tp, .tema-tp .oscuro { --c-fondo: #110E22; --c-texto: #F4F3FB; --c-texto-2: rgba(238, 237, 254, 0.64); --c-texto-3: rgba(238, 237, 254, 0.36); --c-linea: rgba(155, 142, 240, 0.22); --c-acento: #9B8EF0; --c-acento-2: #B5ABF5; --c-sobre-acento: #110E22; --c-velo: rgba(17, 14, 34, 0.32); }
-.tema-tp .claro { --c-fondo: #F2F1F8; --c-texto: #2C2B3A; --c-texto-2: #6B6A7D; --c-texto-3: #A9A8B8; --c-linea: rgba(74, 60, 174, 0.14); --c-acento: #4A3CAE; --c-acento-2: #6B5CE7; --c-sobre-acento: #FFFFFF; --c-velo: rgba(45, 37, 96, 0.14); }
-.tema-tp .marca { --c-fondo: #2D2560; --c-texto: #FFFFFF; --c-texto-2: rgba(255, 255, 255, 0.72); --c-texto-3: rgba(255, 255, 255, 0.42); --c-linea: rgba(255, 255, 255, 0.24); --c-acento: #FFFFFF; --c-acento-2: #EEEDFE; --c-sobre-acento: #2D2560; }
+.tema-tp, .tema-tp .oscuro { --c-fondo: #110E22; --c-texto: #F4F3FB; --c-texto-2: rgba(238, 237, 254, 0.66); --c-texto-3: rgba(238, 237, 254, 0.36); --c-linea: rgba(155, 142, 240, 0.22); --c-acento: #9B8EF0; --c-acento-2: #B5ABF5; --c-sobre-acento: #110E22; --c-velo: rgba(17, 14, 34, 0.32); --c-superficie: rgba(238, 237, 254, 0.06); }
+.tema-tp .claro { --c-fondo: #F2F1F8; --c-texto: #2C2B3A; --c-texto-2: #6B6A7D; --c-texto-3: #A9A8B8; --c-linea: rgba(74, 60, 174, 0.14); --c-acento: #4A3CAE; --c-acento-2: #6B5CE7; --c-sobre-acento: #FFFFFF; --c-velo: rgba(45, 37, 96, 0.14); --c-superficie: rgba(255, 255, 255, 0.7); }
+.tema-tp .marca { --c-fondo: #2D2560; --c-texto: #FFFFFF; --c-texto-2: rgba(255, 255, 255, 0.74); --c-texto-3: rgba(255, 255, 255, 0.42); --c-linea: rgba(255, 255, 255, 0.22); --c-acento: #FFFFFF; --c-acento-2: #C9C1FA; --c-sobre-acento: #2D2560; --c-superficie: rgba(255, 255, 255, 0.08); }
 /* El claro lleva los brillos lavanda del hero de tapin.cl; la marca, el degradado morado del manual */
 .tema-tp .claro { background: radial-gradient(60% 50% at 85% 8%, rgba(155, 142, 240, 0.28), transparent 70%), radial-gradient(50% 40% at 8% 60%, rgba(107, 92, 231, 0.12), transparent 70%), #F2F1F8; }
-.tema-tp .marca { background: radial-gradient(120% 90% at 50% 0%, #6B5CE7 0%, #4A3CAE 40%, #2D2560 100%); }
+.tema-tp .marca { background: radial-gradient(110% 80% at 50% 0%, #6B5CE7 0%, #4A3CAE 42%, #2D2560 100%); }
 
-/* --- 3. PÍLDORAS Y PALABRA CLAVE --- */
+/* --- 3. PÍLDORAS, CLAVE Y MARCAS COLOREABLES --- */
 /* Las etiquetas de sección son las píldoras de tapin.cl ("● Presentes en Chile y Perú") */
 .tema-tp .franja { border-bottom: 0; padding-bottom: 0; }
 .tema-tp .franja .f-nom { justify-self: start; padding: 6px 13px 6px 11px; border-radius: 999px; background: color-mix(in srgb, var(--c-acento) 14%, transparent); color: var(--c-acento); font-weight: 600; }
 .tema-tp .franja .f-nom::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .tema-tp .clave { color: var(--c-acento-2); }
-.tema-tp .marca .clave { color: #C9C1FA; }
+/* Los SVG oficiales (wordmark, Forky, cerebro) se usan como máscara: toman el color del texto */
+.tp-marca { display: block; width: 100%; aspect-ratio: 1; background: currentColor; -webkit-mask: var(--svg) center / contain no-repeat; mask: var(--svg) center / contain no-repeat; }
+.tp-wm, .tp-wm-chico, .tp-wm-arq, .tp-wm-mini { aspect-ratio: 389.87 / 150.6; }
+.tp-pendiente { display: block; width: 100%; aspect-ratio: 1; border: 2px dashed currentColor; border-radius: 50%; opacity: 0.6; }
 
-/* --- 4. ESCENARIO EN VIDRIO --- */
+/* =======================================================
+   1. HERO: EL WORDMARK Y LAS TIRAS DE LA PALETA
+   ======================================================= */
+/* Las tiras diagonales escalonadas vienen del manual (la paleta en tiras). Cada una es un producto con su tono
+   y su isotipo: el ecosistema completo en la primera pantalla. Entran al cargar y siguen al cursor */
+.tp-hero { --mx: 0; --my: 0; position: relative; min-height: 100svh; padding-bottom: 0; display: grid; grid-template-rows: auto 1fr; padding-top: 72px; overflow: hidden; background: radial-gradient(70% 60% at 80% 35%, rgba(107, 92, 231, 0.38), transparent 70%), #110E22; }
+.tp-escena { position: absolute; inset: 0; pointer-events: none; }
+.tp-tiras { position: absolute; right: -2vw; top: -36vh; width: min(44vw, 700px); height: 170vh; display: flex; gap: clamp(12px, 1.5vw, 24px); transform: rotate(-24deg); translate: calc(var(--mx) * -34px) calc(var(--my) * -22px); }
+.tp-tira { position: relative; flex: 1; border-radius: 999px; translate: 0 calc(var(--i) * 7vh); background: linear-gradient(180deg, color-mix(in srgb, var(--tono) 70%, #fff) 0%, var(--tono) 45%, color-mix(in srgb, var(--tono) 82%, #000) 100%); box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25); pointer-events: auto; transform: translateY(70vh); opacity: 0; transition: filter 500ms var(--c-curva); }
+.tp-hero.entra .tp-tira { animation: tpTira 1500ms var(--ease) both; animation-delay: calc(150ms + var(--i) * 110ms); }
+@keyframes tpTira { from { transform: translateY(70vh); opacity: 0; } to { transform: none; opacity: 1; } }
+/* Isotipo de cada tira, enderezado; se mueve un poco más que la tira (profundidad) */
+.tp-tira-iso { position: absolute; left: 50%; top: 37%; width: 52%; color: #FFFFFF; transform: translate(-50%, -50%) rotate(24deg); translate: calc(var(--mx) * -14px) calc(var(--my) * -10px); opacity: 0; transition: opacity 600ms var(--c-curva) calc(900ms + var(--i) * 110ms); }
+.tp-hero.entra .tp-tira-iso { opacity: 1; }
+.tp-tira-iso .tp-wm-chico { width: 150%; margin-left: -25%; }
+.tp-tira-txt { position: absolute; left: 50%; bottom: 22%; translate: -50% 0; writing-mode: vertical-rl; rotate: 180deg; white-space: nowrap; font: 600 10.5px var(--c-f-etiqueta); letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); transition: color 400ms; }
+@media (hover: hover) {
+    .tp-tira:hover { filter: brightness(1.12) saturate(1.05); }
+    .tp-tira:hover .tp-tira-txt { color: #FFFFFF; }
+}
+
+/* --- 1. TEXTO DEL HERO --- */
+.tp-hero-arriba { position: relative; z-index: 2; }
+.tp-hero-cuerpo { position: relative; z-index: 2; align-self: end; row-gap: 28px; padding-bottom: clamp(40px, 7svh, 80px); pointer-events: none; }
+.tp-titulo { grid-column: 1 / span 8; margin-left: -0.6%; }
+.tp-titulo .tp-wm { width: min(54vw, 860px); color: #F4F3FB; clip-path: inset(100% 0 0 0); transform: translateY(18%); }
+.tp-hero.entra .tp-titulo .tp-wm { animation: tpWordmark 1300ms var(--ease) 250ms forwards; }
+@keyframes tpWordmark { to { clip-path: inset(-5% -5% -5% -5%); transform: none; } }
+.tp-hero-bajada { grid-column: 1 / span 6; max-width: 22ch; font-size: clamp(24px, 2.4vw, 40px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.08; opacity: 0; transform: translateY(16px); transition: opacity 900ms var(--ease) 700ms, transform 1100ms var(--ease) 700ms; }
+.tp-hero-meta { grid-column: 1 / span 7; display: flex; gap: clamp(20px, 3vw, 48px); opacity: 0; transition: opacity 900ms var(--ease) 900ms; }
+.tp-hero-meta div { display: flex; flex-direction: column; gap: 4px; }
+.tp-hero-meta dd { font-size: 14px; }
+.tp-hero.entra .tp-hero-bajada { opacity: 1; transform: none; }
+.tp-hero.entra .tp-hero-meta { opacity: 1; }
+.tp-bajar { position: absolute; right: var(--margen); bottom: clamp(40px, 7svh, 80px); z-index: 2; padding: 10px 16px; border-radius: 999px; background: rgba(238, 237, 254, 0.1); border: 1px solid rgba(238, 237, 254, 0.18); color: #F4F3FB; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background-color 400ms var(--c-curva); }
+@media (hover: hover) { .tp-bajar:hover { background: rgba(238, 237, 254, 0.2); } }
+
+/* =======================================================
+   2. ESCAPARATE: CONNECT EN VIVO
+   ======================================================= */
+.tp-escaparate .titulo-bloque { grid-column: 1 / span 9; }
+.tp-modulos { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 28px); padding-bottom: 60px; }
+/* Escalonados como el bento del manual: la columna derecha baja */
+.tp-modulo { display: flex; flex-direction: column; gap: 12px; }
+.tp-modulo:nth-child(even) { translate: 0 60px; }
+.tp-modulo figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tp-pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px 6px 11px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.2); font-size: 12px; font-weight: 600; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.tp-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); animation: tpVivo 2.2s ease-out infinite; }
+@keyframes tpVivo { 70%, 100% { box-shadow: 0 0 0 7px rgba(255, 255, 255, 0); } }
+.tp-modulo .mk-marco { border-radius: 24px; background: linear-gradient(180deg, #F6F5FD, #EEEDFE); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 40px 90px -30px rgba(17, 14, 34, 0.6); }
+.tp-escaparate-nota { grid-column: 1 / span 7; margin-top: 76px; }
+.tp-escaparate .ficha { margin-top: 28px; }
+
+/* =======================================================
+   3. RELATO: CAPÍTULOS, VITRINA Y RESALTE
+   ======================================================= */
+.tema-tp .capitulo .etiqueta { align-self: start; padding: 6px 13px; border-radius: 999px; background: color-mix(in srgb, var(--c-acento) 12%, transparent); color: var(--c-acento); font-weight: 600; }
 .tema-tp .vitrina .marco-nav { border: 1px solid rgba(255, 255, 255, 0.7); }
 .tema-tp .vitrina .barra-nav { background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .tema-tp .resalte { border-width: 2px; border-color: var(--c-acento-2); box-shadow: 0 0 0 9999px var(--c-velo), 0 0 28px rgba(107, 92, 231, 0.45); }
 .tema-tp .resalte .r-txt { left: 8px; top: 8px; border-radius: 999px; padding: 5px 11px; background: var(--c-acento-2); font-weight: 600; }
 .tema-tp .riel-ev button { font-weight: 600; }
-/* Las piezas de marca flotan como los mockups del hero del sitio */
+/* Las piezas de marca flotan como los mockups del hero de tapin.cl */
 .tema-tp .tablero .capa.on .pz { animation: tpFlota 6s ease-in-out infinite alternate; }
 @keyframes tpFlota { from { transform: translateY(6px); } to { transform: translateY(-6px); } }
 .tema-tp .chequeo li::before { color: var(--c-acento); }
 
-/* --- 5. PROCESO Y RESULTADO --- */
-.tema-tp .linea-tiempo::before { background: linear-gradient(90deg, #EEEDFE, #9B8EF0); }
+/* =======================================================
+   4. PIEZAS DE MARCA EN CÓDIGO
+   ======================================================= */
+/* --- 1. ARQUITECTURA --- */
+.tp-arq { display: flex; flex-direction: column; gap: 22px; }
+.tp-arq-madre { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 26px; border-radius: 24px; background: var(--tp-empresa); color: #FFFFFF; }
+.tp-arq-madre .tp-wm-arq { width: min(240px, 50%); }
+.tp-arq-madre .etiqueta { color: rgba(255, 255, 255, 0.7); }
+.tp-arq-hijos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; list-style: none; position: relative; }
+/* Las líneas que cuelgan de la madre */
+.tp-arq-hijos::before { content: ''; position: absolute; left: 12.5%; right: 12.5%; top: -12px; height: 12px; border: 1.5px solid var(--c-linea); border-bottom: 0; border-radius: 10px 10px 0 0; }
+.tp-arq-hijos li { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px 12px 16px; border-radius: 20px; background: var(--c-superficie); border: 1px solid var(--c-linea); color: var(--tono); }
+.tp-arq-iso { width: 46px; color: var(--tono); }
+.tp-lockup { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--c-texto); }
+.tp-lockup .tp-wm-mini { width: 70px; }
+.tp-lockup b { font-size: 12px; font-weight: 600; color: var(--tono); }
+.tp-arq-hijos li.tp-arq-nuevo { --tono: var(--c-texto-3); border-style: dashed; background: transparent; }
+.tablero .capa.on .tp-arq-hijos li { animation: recorreIso 700ms var(--ease) both; animation-delay: calc(200ms + var(--i) * 120ms); }
+
+/* --- 2. PALETA --- */
+.tp-paleta { display: flex; flex-direction: column; gap: 14px; }
+.tp-sws { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; height: clamp(220px, 34svh, 340px); }
+.tp-sw { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 16px; border-radius: 22px; background: var(--tono); color: #FFFFFF; transform-origin: 50% 100%; }
+.tp-sw .etiqueta { color: rgba(255, 255, 255, 0.78); }
+.tp-sw-n { font-size: clamp(16px, 1.3vw, 20px); font-weight: 600; letter-spacing: -0.02em; }
+.tp-sw.destacado { outline: 2px solid var(--tono); outline-offset: 4px; }
+.tp-sw.destacado::before { content: 'Producto principal'; position: absolute; top: 14px; left: 14px; padding: 5px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); font: 600 10px var(--c-f-etiqueta); letter-spacing: 0.06em; text-transform: uppercase; }
+.tablero .capa.on .tp-sw { animation: tpCrece 900ms var(--ease) both; animation-delay: calc(var(--i) * 110ms); }
+@keyframes tpCrece { from { transform: scaleY(0.2); opacity: 0; } }
+.tp-sws-sup { display: flex; flex-wrap: wrap; gap: 8px; }
+.tp-sws-sup span { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px 5px 6px; border-radius: 999px; border: 1px solid var(--c-linea); font-size: 11px; color: var(--c-texto-2); }
+.tp-sws-sup i { width: 14px; height: 14px; border-radius: 50%; background: var(--tono); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08); }
+
+/* --- 3. CEREBRO --- */
+/* Cada pieza se separa desde el centro (--dx, --dy calculados con su caja) y toma un tono de la familia */
+.tp-cerebro { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.tp-cer-svg { width: min(62%, 340px); }
+.tp-cer-svg svg { display: block; width: 100%; height: auto; overflow: visible; }
+.tp-pieza { fill: var(--tp-connect); transform-box: fill-box; transform-origin: center; transition: translate 900ms var(--c-curva), fill 600ms var(--c-curva), scale 900ms var(--c-curva); }
+.tp-cerebro.fijo .tp-pieza { translate: var(--dx) var(--dy); scale: 0.97; }
+.tp-cerebro.fijo .p1 { fill: var(--tp-campus); } .tp-cerebro.fijo .p2 { fill: var(--tp-connect); } .tp-cerebro.fijo .p3 { fill: var(--tp-health); } .tp-cerebro.fijo .p4 { fill: var(--tp-empresa); }
+.tp-cer-modos { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--c-superficie); border: 1px solid var(--c-linea); }
+.tp-cer-modos button { padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--c-texto-2); transition: background-color 400ms var(--c-curva), color 400ms; }
+.tp-cer-modos button.on { background: var(--tp-connect); color: #FFFFFF; }
+.tp-descartes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; width: 100%; }
+.tp-descartes img { width: 100%; aspect-ratio: 559 / 346; object-fit: cover; border-radius: 8px; filter: grayscale(0.6); opacity: 0.5; }
+.tp-descartes .etiqueta { grid-column: 1 / -1; }
+
+/* --- 4. CÓDIGO --- */
+.tp-codigo { display: grid; grid-template-columns: auto 1fr; gap: clamp(24px, 3vw, 48px); align-items: center; }
+.tp-cod-datos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tp-cod-datos div { display: flex; flex-direction: column; gap: 6px; padding: 18px; border-radius: 20px; background: var(--c-superficie); border: 1px solid var(--c-linea); }
+.tp-cod-datos dt { font-size: clamp(30px, 3vw, 46px); font-weight: 600; letter-spacing: -0.05em; line-height: 1; color: var(--c-acento-2); }
+.tp-cod-datos dd { font-size: 13px; color: var(--c-texto-2); }
+.tp-codigo figcaption { grid-column: 1 / -1; }
+
+/* =======================================================
+   5. PROCESO, RESULTADO Y CITAS
+   ======================================================= */
+.tema-tp .marca .linea-tiempo li::after { background: rgba(255, 255, 255, 0.4); }
 .tema-tp .linea-tiempo li::before { border-color: #FFFFFF; }
+.tema-tp .claro .linea-tiempo li::before { border-color: var(--c-acento); }
 .tema-tp .cifras { border-top: 0; gap: 12px; }
-.tema-tp .cifras div { padding: 22px; border-radius: 20px; background: rgba(255, 255, 255, 0.62); border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 2px 20px rgba(74, 60, 174, 0.1); }
-.tema-tp .cifras b { color: var(--c-acento); }
-@media (prefers-reduced-motion: reduce) { .tema-tp .tablero .capa.on .pz { animation: none; } }
+.tema-tp .cifras div { padding: 22px; border-radius: 22px; background: rgba(255, 255, 255, 0.62); border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 2px 20px rgba(74, 60, 174, 0.1); }
+.tema-tp .cifras b { color: var(--c-acento); font-size: clamp(44px, 5.4vw, 92px); }
+.tema-tp .cita { background: rgba(255, 255, 255, 0.6); border-color: rgba(255, 255, 255, 0.9); box-shadow: 0 2px 20px rgba(74, 60, 174, 0.08); }
+.tema-tp .cita blockquote { font-weight: 600; letter-spacing: -0.03em; }
+
+/* =======================================================
+   VISTA MÓVIL
+   ======================================================= */
+@media (max-width: 768px) {
+    .tp-tiras { right: -40vw; top: -20vh; width: 110vw; height: 120vh; opacity: 0.85; }
+    .tp-titulo, .tp-hero-bajada, .tp-hero-meta, .tp-escaparate .titulo-bloque, .tp-escaparate-nota { grid-column: 1 / -1; }
+    .tp-titulo .tp-wm { width: 86vw; }
+    .tp-hero-meta { flex-wrap: wrap; row-gap: 14px; }
+    .tp-bajar { display: none; }
+    .tp-modulos { grid-template-columns: 1fr; }
+    .tp-modulo:nth-child(even) { translate: none; }
+    .tp-modulo figcaption { flex-direction: column; align-items: flex-start; }
+    .tp-escaparate-nota { margin-top: 20px; }
+    .tp-arq-hijos { grid-template-columns: 1fr 1fr; }
+    .tp-arq-hijos::before { display: none; }
+    .tp-sws { grid-template-columns: repeat(2, 1fr); height: auto; grid-auto-rows: 130px; }
+    .tp-codigo { grid-template-columns: 1fr; justify-items: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .tp-tira, .tp-tira-iso, .tp-titulo .tp-wm, .tp-hero-bajada, .tp-hero-meta { animation: none !important; opacity: 1; transform: none; clip-path: none; }
+    .tp-tiras, .tp-tira-iso { translate: none; }
+    .tema-tp .tablero .capa.on .pz, .tp-pill::before { animation: none; }
+}

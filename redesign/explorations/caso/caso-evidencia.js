@@ -49,8 +49,11 @@
         };
         iframe.src = C.sitio;
     };
+    /* Se monta en reposo y cuando las decisiones están a menos de dos pantallas: no compite con lo que se ve arriba */
     let quietud;
-    const enReposo = () => { clearTimeout(quietud); quietud = setTimeout(montar, 400); };
+    const seccionDec = document.getElementById('decisiones');
+    const cerca = () => seccionDec.getBoundingClientRect().top < window.innerHeight * 2.2;
+    const enReposo = () => { clearTimeout(quietud); quietud = setTimeout(() => { if (cerca()) montar(); }, 400); };
     window.addEventListener('scroll', enReposo, { passive: true });
     if (document.readyState === 'complete') enReposo(); else window.addEventListener('load', enReposo);
 
@@ -99,7 +102,12 @@
         const d = C.decisiones[i];
         bloques.forEach((b, k) => b.classList.toggle('actual', k === i));
         botones.forEach((b, k) => { b.classList.toggle('actual', k === i); b.classList.toggle('ya', k < i); });
-        capas.forEach(c => c.classList.toggle('on', +c.dataset.capa === i));
+        /* Avisa a la capa que entra o sale, para que sus piezas vivas arranquen o se detengan */
+        capas.forEach(c => {
+            const on = +c.dataset.capa === i;
+            if (on !== c.classList.contains('on')) c.dispatchEvent(new CustomEvent(on ? 'capa-on' : 'capa-off', { bubbles: true }));
+            c.classList.toggle('on', on);
+        });
         vitrina.classList.toggle('on', !!d.ancla);
         nota.textContent = d.ancla ? (d.ancla.nota ? `Marcado: ${d.ancla.nota}` : '') : (d.pieza.nota || '');
         clearInterval(demo); clearTimeout(remedir);

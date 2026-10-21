@@ -16,14 +16,30 @@
     const clave = t => t.replace(/\*([^*]+)\*/g, '<span class="clave">$1</span>');
 
     /* --- 1. SECCIONES --- */
-    main.innerHTML = `
+    /* Un caso puede traer su propio hero, su escaparate (la imagen inicial) y su invitación al siguiente
+       proyecto (window.CASO_HERO, CASO_ESCAPARATE y CASO_SIGUIENTE, definidos por su tema) */
+    const capitulo = d => C.capitulos && C.capitulos[d.cap];
+    const relato = C.decisiones.map((d, i) => {
+        const cap = capitulo(d), nuevo = cap && (i === 0 || C.decisiones[i - 1].cap !== d.cap);
+        return (nuevo ? `<div class="capitulo" data-aparece><span class="etiqueta">Capítulo ${n2(d.cap)} · ${cap.periodo}</span><h3>${cap.nombre}</h3><p>${cap.bajada || ''}</p></div>` : '') + `
+                <article class="bloque" id="d-${d.id}">
+                    <span class="num etiqueta">Decisión ${n2(i)}</span>
+                    <h3>${d.titulo}</h3>
+                    <p>${d.texto}</p>
+                    <p class="porque"><span class="etiqueta">Por qué</span>${d.porque}</p>
+                    ${C.vivo.publicado && d.ancla && d.ancla.enlace !== undefined ? `<a class="ver-vivo" href="${C.vivo.url}/${d.ancla.enlace}" target="_blank" rel="noopener">Verlo en ${C.vivo.texto} ↗</a>` : ''}
+                    <div class="pz-solo">${window.CASO_PIEZA(d)}</div>
+                </article>`;
+    }).join('');
+    const riel = C.decisiones.map((d, i) => `${i > 0 && capitulo(d) && C.decisiones[i - 1].cap !== d.cap ? '<li class="sep" aria-hidden="true"></li>' : ''}<li><button type="button" tabindex="-1" data-ir="${i}"${capitulo(d) ? ` title="${capitulo(d).nombre}"` : ''}>${n2(i)}</button></li>`).join('');
+    main.innerHTML = (window.CASO_HERO ? window.CASO_HERO(C, { franja, vivo, ritmo }) : `
         <section class="seccion grilla portada ${ritmo('portada')}">
             ${franja(`${C.numero} · ${C.nombre}`, C.disciplinas, `${C.anio} · ${vivo}`)}
             <h1 class="portada-titulo" aria-label="${C.nombre}">${C.titulo.map(l => `<span class="linea${l.clave ? ' clave' : ''}" data-letras>${l.t}</span>`).join('')}</h1>
             <p class="portada-bajada">${C.bajada}</p>
             <div class="portada-escena" aria-hidden="true">${C.escena.fondo ? `<img class="fondo" src="${C.escena.fondo}" alt="">` : ''}<div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url">${C.vivo.texto}</span></div><img src="${C.poster}" alt=""></div></div>
             <div class="ficha">${C.ficha.map(([k, v]) => `<div><span class="etiqueta">${k}</span><span>${v}</span></div>`).join('')}</div>
-        </section>
+        </section>`) + `
 
         <section class="seccion grilla resumen ${ritmo('resumen')}">
             ${franja('01', 'Resumen', C.anio)}
@@ -34,18 +50,10 @@
         <section class="seccion grilla evidencia ${ritmo('decisiones')}" id="decisiones">
             ${franja('02', 'Decisiones', `${n2(C.decisiones.length - 1)} decisiones`)}
             <h2 class="titulo-bloque" data-letras>${C.titulos.decisiones}</h2>
-            <div class="relato" data-relato>${C.decisiones.map((d, i) => `
-                <article class="bloque" id="d-${d.id}">
-                    <span class="num etiqueta">Decisión ${n2(i)}</span>
-                    <h3>${d.titulo}</h3>
-                    <p>${d.texto}</p>
-                    <p class="porque"><span class="etiqueta">Por qué</span>${d.porque}</p>
-                    ${C.vivo.publicado && d.ancla && d.ancla.enlace ? `<a class="ver-vivo" href="${C.vivo.url}${d.ancla.enlace}" target="_blank" rel="noopener">Verlo en ${C.vivo.texto} ↗</a>` : ''}
-                    <div class="pz-solo">${window.CASO_PIEZA(d)}</div>
-                </article>`).join('')}
+            <div class="relato" data-relato>${relato}
             </div>
             <div class="escenario" data-escenario aria-hidden="true">
-                <div class="riel-ev"><ol>${C.decisiones.map((d, i) => `<li><button type="button" tabindex="-1" data-ir="${i}">${n2(i)}</button></li>`).join('')}</ol><span class="atajos etiqueta"><kbd data-k="j">J</kbd><kbd data-k="k">K</kbd></span></div>
+                <div class="riel-ev"><ol>${riel}</ol><span class="atajos etiqueta"><kbd data-k="j">J</kbd><kbd data-k="k">K</kbd></span></div>
                 <div class="tablero" data-tablero>
                     <div class="vitrina" data-vitrina><div class="marco-nav"><div class="barra-nav"><i></i><i></i><i></i><span class="url">${C.vivo.texto}</span></div><div class="pantalla"><img src="${C.poster}" alt=""><div class="resalte" data-resalte><span class="r-txt"></span><i class="esq e1"></i><i class="esq e2"></i><i class="esq e3"></i><i class="esq e4"></i></div></div></div></div>
                     ${C.decisiones.map((d, i) => (d.ancla ? '' : `<div class="capa" data-capa="${i}">${window.CASO_PIEZA(d)}</div>`)).join('')}
@@ -57,13 +65,15 @@
         <section class="seccion grilla proceso ${ritmo('proceso')}">
             ${franja('03', 'Proceso', C.proceso[0][0] + ' a ' + C.proceso[C.proceso.length - 1][0])}
             <h2 class="titulo-bloque" data-letras>${C.titulos.proceso}</h2>
-            <ol class="linea-tiempo" data-linea>${C.proceso.map(([f, t, d], i) => `<li data-aparece style="--retraso:${200 + i * 110}ms"><span class="etiqueta">${f}</span><strong>${t}</strong><p>${d}</p></li>`).join('')}</ol>
+            <ol class="linea-tiempo" data-linea style="--hitos:${C.proceso.length > 6 ? 4 : C.proceso.length}">${C.proceso.map(([f, t, d], i) => `<li data-aparece style="--retraso:${200 + i * 110}ms"><span class="etiqueta">${f}</span><strong>${t}</strong><p>${d}</p></li>`).join('')}</ol>
         </section>
 
         <section class="seccion grilla resultado ${ritmo('resultados')}">
             ${franja('04', 'Resultado', vivo)}
             <h2 class="titulo-bloque" data-letras>${C.titulos.resultados}</h2>
             <div class="cifras">${C.resultados.map(([c, t, v], i) => `<div data-aparece style="--retraso:${i * 90}ms"><b${C.contar ? ` data-contar="${c}"` : ''}>${c}</b><p>${t}</p>${v ? `<span class="verificar">${v}</span>` : ''}</div>`).join('')}</div>
+            ${C.contexto ? `<p class="contexto-cifras" data-aparece><span class="etiqueta">Contexto del producto</span>${C.contexto.texto}${C.contexto.verificar ? ` <span class="verificar">${C.contexto.verificar}</span>` : ''}</p>` : ''}
+            ${C.citas ? `<div class="citas">${C.citas.map(([t, quien], i) => `<figure class="cita" data-aparece style="--retraso:${i * 120}ms"><blockquote>${t}</blockquote><figcaption class="etiqueta">${quien}</figcaption></figure>`).join('')}${C.citasNota ? `<span class="verificar">${C.citasNota}</span>` : ''}</div>` : ''}
             <div class="galeria">${C.galeria.imgs.map((src, i) => `<figure data-aparece style="--retraso:${i * 90}ms"><img src="${src}" alt="" loading="lazy" decoding="async"></figure>`).join('')}<span class="etiqueta">${C.galeria.nota}</span></div>
         </section>
 
@@ -73,10 +83,10 @@
             <p class="creditos" data-aparece>${C.creditos}</p>
         </section>
 
-        <a class="siguiente" href="#" style="--sig:${C.siguiente.tinte}">
+        ${window.CASO_SIGUIENTE ? window.CASO_SIGUIENTE(C) : `<a class="siguiente" href="#" style="--sig:${C.siguiente.tinte}">
             <div class="fila"><span>Siguiente proyecto</span><span>${C.siguiente.numero} / 03</span></div>
             <div class="nombre-sig"><b data-letras>${C.siguiente.nombre}</b><span>${C.siguiente.bajada} <span class="flecha">↗</span></span></div>
-        </a>`;
+        </a>`}`;
     main.querySelectorAll('.titulo-bloque').forEach(t => { t.innerHTML = clave(t.innerHTML); });
 
     /* --- 2. LETRAS QUE SUBEN --- */
@@ -90,12 +100,13 @@
 
     /* --- 3. APARICIONES, LÍNEA DE TIEMPO Y CONTEO --- */
     const contar = el => {
-        const meta = el.dataset.contar, num = parseFloat(meta.replace(/\./g, '')), sufijo = meta.replace(/[\d.]/g, '');
+        const meta = el.dataset.contar, num = parseFloat(meta.replace(/[^\d]/g, ''));
+        const prefijo = (meta.match(/^[^\d]*/) || [''])[0], sufijo = (meta.match(/[^\d.]*$/) || [''])[0];
         if (isNaN(num) || quieto) return;
         const t0 = performance.now(), dur = 1400;
         const paso = ahora => {
             const t = Math.min((ahora - t0) / dur, 1), v = Math.round(num * (1 - Math.pow(1 - t, 3)));
-            el.textContent = v.toLocaleString('es-CL') + sufijo;
+            el.textContent = prefijo + v.toLocaleString('es-CL') + sufijo;
             if (t < 1) requestAnimationFrame(paso);
         };
         requestAnimationFrame(paso);
@@ -109,6 +120,15 @@
     }), { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
     main.querySelectorAll('[data-letras]').forEach(el => { partir(el); io.observe(el); });
     main.querySelectorAll('[data-aparece], [data-linea]').forEach(el => (quieto ? el.classList.add('visto') : io.observe(el)));
+
+    /* --- 4. BARRA SEGÚN LA SECCIÓN --- */
+    /* La sección que cruza la franja de la barra (los primeros 60 px) decide si la barra va clara u oscura */
+    const ioBarra = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) document.body.dataset.barra = e.target.classList.contains('claro') ? 'claro' : 'oscuro'; }), { rootMargin: '0px 0px -94% 0px' });
+    main.querySelectorAll('.seccion, .sig').forEach(s => ioBarra.observe(s));
+
+    /* --- 5. ARRANQUE DE LOS TEMAS --- */
+    /* Cada tema registra su comportamiento (hero, piezas vivas, siguiente) en window.CASO_INICIOS */
+    (window.CASO_INICIOS || []).forEach(f => f(C, { quieto, main }));
 })();
 /* =======================================================
    FIN JS · PLANTILLA DE CASO

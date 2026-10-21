@@ -232,3 +232,30 @@ Tu pedido: la mecánica de la 3 es la base de todos los casos, pero cada caso se
 | Fluidez | 59 a 60 fps en el scroll por las decisiones con el sitio cargado, en los dos casos |
 
 **Decisiones de Llegó tomadas de tus documentos:** convivencia con la marca madre, paleta ampliada con 104E56, wordmark dibujado, tres caminos para la cruz con cuatro criterios y adjetivos, retícula visible en la web, tres atajos en el hero y la ruta en SVG. El caso dice que la cruz la eligió el cliente (Nodos) y no cuenta que tú recomendabas Líneas: se decide en la Fase 4 si eso se publica.
+
+### Tap In, a fondo (21 oct 2026)
+Fuente: `~/Documents/Illustrator/Tap In/Portafolio/tapin-caso-de-estudio.md` y la carpeta completa del proyecto (branding 2025 y Rebirth, manual de Connect, piezas físicas, mockups del sitio). No se publica nada marcado `[SENSIBLE]` (montos, equity, finanzas, frases privadas, fotos generadas con IA, el panel con el "65%") y las cifras `[ILUSTRATIVO]` de los mockups no se presentan como resultados.
+
+**Tus cuatro pedidos**
+| Pedido | Qué se hizo |
+|---|---|
+| La imagen inicial no puede repetir el mockup del índice | **Escaparate:** los cuatro mockups animados de Connect (comedor, centro de padres, gestión, talleres) corriendo en vivo sobre el morado de la marca, escalonados como el bento del manual. Solo animan cuando se ven |
+| Un hero más atractivo y único por proyecto | **Hero propio de Tap In:** el wordmark real gigante y las tiras diagonales de la paleta (del manual), una por producto con su tono e isotipo: marca madre, Forky (Campus), el cerebro (Connect) y Health en camino. Entran escalonadas y siguen al cursor con inercia. Cada caso ahora puede traer su hero (`window.CASO_HERO`) |
+| Usar toda la historia de Tap In | **Tres capítulos y 11 decisiones:** Campus (Forky, la marca en el campus), el Rebirth (madre que lidera, familia morada, el cerebro de cuatro piezas) y tapin.cl (menú, confianza primero, oscuro a claro, módulos en paralelo, el mockup con empatía, diseñado en código) |
+| Una invitación al siguiente proyecto más única | **Se presenta con la identidad del próximo:** una pista de scroll con el panel fijo; la escena de Mend se abre como lámina, su logo se dibuja con la animación oficial, la app sube y una barra se llena hasta abrir el caso (con movimiento reducido no navega solo). Escenas para Mend, Tap In y Llegó |
+
+**Piezas construidas en código (no láminas):** la evolución de la marca 2025 que avanza sola hasta Forky; la arquitectura con lockups reales y un lugar vacío para "el cuarto producto"; la paleta con Connect marcado como producto principal; el isotipo de Connect que alterna entre "a la rápida, un cerebro" y "si te fijas, cuatro piezas" separando sus cuatro trazados y tiñéndolos con la familia; el mockup del comedor en vivo; la escala del código.
+
+**Audit y correcciones**
+| Hallazgo | Corrección |
+|---|---|
+| La barra usaba difference: sobre el morado el logo se veía verde amarillento | La barra toma el color de la sección que tiene debajo, como la navbar de tapin.cl (también arregla Llegó) |
+| El sitio en vivo se cargaba al abrir la página y competía con el hero y los mockups | Se monta en reposo cuando las decisiones están a menos de dos pantallas |
+| Las tiras del hero tapaban el wordmark y cortaban Health | Más angostas y a la derecha |
+| La grilla de piezas físicas desbordaba el escenario | Bento de proporción fija con etiquetas encima |
+| El teléfono de Mend tapaba el texto de avance | Más arriba y más chico; la barra de avance va en una píldora |
+| El conteo de cifras no soportaba prefijos ("≈40.000") | Prefijo y sufijo |
+| "Ver el proyecto" saltaba de golpe | Scroll suave |
+| Fluidez | 60 fps en el scroll por las decisiones con el sitio cargado |
+
+**Por decidir contigo:** las dos citas de los cofundadores (suavizadas, marcadas "por aprobar"); el contexto de tracción de la empresa (marcado "por confirmar"); si se cuenta que tú propusiste el "acceso denegado" y te lo rechazaron (hoy se cuenta, porque muestra criterio y empatía).

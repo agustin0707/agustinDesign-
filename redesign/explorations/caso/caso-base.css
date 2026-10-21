@@ -162,14 +162,15 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 /* =======================================================
    6. PROCESO
    ======================================================= */
-.linea-tiempo { grid-column: 1 / -1; position: relative; display: grid; grid-template-columns: repeat(6, 1fr); column-gap: var(--medianil); list-style: none; padding-top: 28px; }
-.linea-tiempo::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--c-texto); transform: scaleX(0); transform-origin: 0 50%; transition: transform 1600ms var(--ease); }
-.linea-tiempo.visto::before { transform: scaleX(1); }
-.linea-tiempo li { position: relative; display: flex; flex-direction: column; gap: 8px; padding-right: 8px; }
-.linea-tiempo li::before { content: ''; position: absolute; top: -32px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--c-fondo); border: 1px solid var(--c-texto); }
+/* Cada hito dibuja su tramo de línea al aparecer, en orden: la línea crece de izquierda a derecha.
+   Con más de 6 hitos se arma en dos filas de cuatro */
+.linea-tiempo { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(var(--hitos, 6), 1fr); column-gap: var(--medianil); row-gap: 56px; list-style: none; }
+.linea-tiempo li { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 28px 8px 0 0; }
+.linea-tiempo li::after { content: ''; position: absolute; left: 0; right: calc(var(--medianil) * -1); top: 3px; height: 1px; background: var(--c-texto-3); transform: scaleX(0); transform-origin: 0 50%; transition: transform 900ms var(--ease) var(--retraso, 0ms); }
+.linea-tiempo li.visto::after { transform: scaleX(1); }
+.linea-tiempo li::before { content: ''; position: absolute; top: 0; left: 0; z-index: 1; width: 7px; height: 7px; border-radius: 50%; background: var(--c-fondo); border: 1px solid var(--c-texto); }
 .linea-tiempo li:last-child::before { background: var(--c-texto); }
 .linea-tiempo strong { font-family: var(--c-f-display); font-size: clamp(17px, 1.4vw, 21px); font-weight: var(--c-titulo-peso); letter-spacing: -0.02em; line-height: 1.2; }
-.linea-tiempo p { color: var(--c-texto-2); font-size: 14px; }
 
 /* =======================================================
    7. RESULTADO
@@ -251,10 +252,8 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
     .portada-escena .navegador { left: 6%; right: 6%; top: 14%; }
     .ficha { grid-template-columns: 1fr 1fr; row-gap: 18px; }
     .resumen-cols { grid-template-columns: 1fr; row-gap: 24px; }
-    .linea-tiempo { grid-template-columns: 1fr; row-gap: 28px; padding: 0 0 0 24px; }
-    .linea-tiempo::before { top: 0; bottom: 0; left: 3px; right: auto; width: 1px; height: auto; transform: scaleY(0); transform-origin: 50% 0; }
-    .linea-tiempo.visto::before { transform: scaleY(1); }
-    .linea-tiempo li::before { top: 6px; left: -24px; }
+    .linea-tiempo { grid-template-columns: 1fr; row-gap: 32px; }
+    .linea-tiempo li::after { display: none; }
     .cifras { grid-template-columns: 1fr 1fr; row-gap: 28px; }
     .galeria { grid-template-columns: 1fr 1fr; }
     .isos { grid-template-columns: repeat(3, 1fr); }
@@ -266,7 +265,7 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 @media (prefers-reduced-motion: reduce) {
     [data-letras] .l { transform: none; }
     [data-aparece] { opacity: 1; transform: none; }
-    .linea-tiempo::before { transform: none; }
+    .linea-tiempo li::after { transform: none; }
 }
 
 /* --- 10. SECUENCIAS DE LAS PIEZAS EN EL ESCENARIO --- */
@@ -275,3 +274,157 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 @keyframes recorreIso { from { opacity: 0; transform: translateY(8px); } }
 .tablero .capa.on .camino { animation: recorreIso 700ms var(--ease) both; animation-delay: calc(var(--i) * 140ms); }
 @media (prefers-reduced-motion: reduce) { .tablero .capa.on .isos img, .tablero .capa.on .camino { animation: none; } }
+
+
+/* =======================================================
+   11. CAPÍTULOS DEL RELATO
+   ======================================================= */
+/* Un caso largo se divide en capítulos: el relato los marca y el riel deja un espacio entre ellos */
+.capitulo { display: flex; flex-direction: column; gap: 14px; padding: 18vh 0 4vh; }
+.capitulo:first-child { padding-top: 0; }
+.capitulo h3 { max-width: 14ch; font-family: var(--c-f-display); font-size: clamp(36px, 4vw, 64px); font-weight: var(--c-titulo-peso); letter-spacing: var(--c-titulo-track); line-height: 0.98; }
+.capitulo p { max-width: 40ch; color: var(--c-texto-2); font-size: 16px; }
+.riel-ev .sep { width: 14px; }
+
+/* =======================================================
+   12. CONTEXTO, CITAS Y VERIFICACIÓN
+   ======================================================= */
+.contexto-cifras { grid-column: 1 / span 8; display: flex; flex-direction: column; gap: 8px; margin-top: 36px; max-width: 70ch; color: var(--c-texto-2); font-size: 15px; }
+.citas { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--medianil); margin-top: clamp(56px, 6vw, 96px); }
+.cita { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: 28px; border: 1px solid var(--c-linea); border-radius: var(--c-radio-pieza); }
+.cita blockquote { font-family: var(--c-f-display); font-size: clamp(22px, 2vw, 32px); font-weight: var(--c-intro-peso, 500); letter-spacing: -0.025em; line-height: 1.2; }
+.cita blockquote::before { content: '“'; display: block; height: 0.5em; font-size: 2.2em; line-height: 1; color: var(--c-acento); }
+.citas > .verificar { grid-column: 1 / -1; }
+.verificar { display: inline-flex; align-items: center; gap: 6px; font: 11px var(--mono); color: #B8901C; }
+.verificar::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* =======================================================
+   13. PIEZAS: EVOLUCIÓN, GRILLA Y MOCKUP
+   ======================================================= */
+/* --- 1. EVOLUCIÓN --- */
+.pz-evolucion { display: flex; flex-direction: column; gap: 10px; }
+.evo-escena { position: relative; aspect-ratio: 16 / 9; }
+.evo-cuadro { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; opacity: 0; scale: 0.98; transition: opacity 600ms var(--c-curva), scale 800ms var(--c-curva); }
+.evo-cuadro.on { opacity: 1; scale: 1; }
+.evo-cuadro img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.evo-cuadro .etiqueta { color: var(--c-texto); }
+.evo-tira { display: grid; grid-template-columns: repeat(var(--n, 5), 1fr); gap: 6px; margin-top: 30px; }
+.evo-tira button { position: relative; overflow: hidden; border-radius: calc(var(--c-radio-pieza) / 2); opacity: 0.45; transition: opacity 400ms var(--c-curva); }
+.evo-tira button img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 0; }
+.evo-tira button i { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--c-acento); transform: scaleX(0); transform-origin: 0 50%; }
+.evo-tira button.ya, .evo-tira button.on { opacity: 1; }
+.evo-tira button.ya i { transform: scaleX(1); }
+.evo-tira button.on i { animation: evoAvanza 1800ms linear forwards; }
+@keyframes evoAvanza { to { transform: scaleX(1); } }
+@media (hover: hover) { .evo-tira button:hover { opacity: 1; } }
+
+/* --- 2. GRILLA DE PIEZAS (BENTO) --- */
+/* Proporción fija para caber en el escenario; cada pieza llena su celda y su etiqueta va encima */
+.pz-grilla { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr 1fr; gap: 8px; aspect-ratio: 16 / 11; }
+.pz-grilla .g-cuadro { position: relative; overflow: hidden; border-radius: var(--c-radio-pieza); }
+.pz-grilla .g-cuadro img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; transition: scale 900ms var(--c-curva); }
+.pz-grilla .g-cuadro .etiqueta { position: absolute; left: 8px; bottom: 8px; padding: 4px 8px; border-radius: 999px; background: rgba(17, 14, 34, 0.62); color: #FFFFFF; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.pz-grilla .g1 { grid-column: 1 / span 3; grid-row: 1; }
+.pz-grilla .g2 { grid-column: 4 / span 2; grid-row: 1 / span 2; }
+.pz-grilla .g3 { grid-column: 6; grid-row: 1 / span 2; }
+.pz-grilla .g4 { grid-column: 1 / span 2; grid-row: 2; }
+.pz-grilla .g5 { grid-column: 3; grid-row: 2; }
+.pz-grilla figcaption { display: none; }
+@media (hover: hover) { .pz-grilla .g-cuadro:hover img { scale: 1.04; } }
+.tablero .capa.on .g-cuadro { animation: recorreIso 700ms var(--ease) both; animation-delay: calc(var(--i) * 90ms); }
+
+/* --- 3. MOCKUP EMBEBIDO --- */
+.pz-mockup { display: flex; flex-direction: column; gap: 14px; }
+.mk-marco { position: relative; aspect-ratio: 900 / 600; overflow: hidden; border-radius: var(--c-radio-pieza); background: var(--c-superficie); }
+.mk-marco iframe { position: absolute; top: 0; left: 0; width: 900px; height: 600px; border: 0; transform-origin: 0 0; transform: scale(var(--escala, 0.6)); pointer-events: none; opacity: 0; transition: opacity 500ms ease; }
+.mk-marco.listo iframe { opacity: 1; }
+.mk-pasos { display: flex; gap: 8px; list-style: none; counter-reset: paso; }
+.mk-pasos li { flex: 1; padding-top: 10px; border-top: 1px solid var(--c-linea); color: var(--c-texto); counter-increment: paso; }
+.mk-pasos li::before { content: '0' counter(paso) ' · '; color: var(--c-texto-3); }
+@media (max-width: 768px) {
+    .pz-grilla { aspect-ratio: 3 / 4; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+    .pz-grilla .g1 { grid-column: 1 / -1; grid-row: 1; } .pz-grilla .g2 { grid-column: 1; grid-row: 2; } .pz-grilla .g3 { grid-column: 2; grid-row: 2 / span 2; } .pz-grilla .g4 { grid-column: 1; grid-row: 3; } .pz-grilla .g5 { display: none; }
+    .citas { grid-template-columns: 1fr; }
+    .contexto-cifras { grid-column: 1 / -1; }
+}
+
+/* =======================================================
+   14. INVITACIÓN AL SIGUIENTE PROYECTO
+   ======================================================= */
+/* Una pista de scroll de dos pantallas con el panel fijo: al entrar, la escena del siguiente proyecto se
+   expande desde una lámina (--e); al seguir bajando, la barra se llena (--p) y al completarse se abre.
+   El panel habla con la identidad del próximo proyecto; la tipografía del nombre es la de Agustín Design */
+.sig { position: relative; background: var(--c-fondo); }
+.sig-pista { height: 210svh; }
+.sig-panel { --e: 0; --p: 0; position: sticky; top: 0; height: 100svh; display: block; overflow: hidden; color: #FFFFFF; font-family: var(--sans); }
+.sig-escena { position: absolute; inset: 0; overflow: hidden; background: var(--sig-tinte); clip-path: inset(calc((1 - var(--e)) * 16%) calc((1 - var(--e)) * 10%) calc((1 - var(--e)) * 16%) round calc(28px * (1 - var(--p) * 0.6))); }
+.sig-escena > * { transform: scale(calc(1.08 - var(--p) * 0.08)); }
+.sig-txt { position: absolute; left: var(--margen); right: var(--margen); bottom: clamp(88px, 12svh, 140px); z-index: 3; display: flex; flex-direction: column; gap: 14px; pointer-events: none; }
+.sig-fila { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font: 12px var(--mono); opacity: calc(0.4 + var(--e) * 0.6); }
+.sig-nombre { font-size: clamp(96px, 19vw, 340px); font-weight: 500; letter-spacing: -0.075em; line-height: 0.78; margin-left: -0.05em; transform: translateY(calc((1 - var(--e)) * 30%)); transition: transform 700ms var(--hover-lento), opacity 500ms; }
+.sig-bajada { max-width: 34ch; font-size: clamp(16px, 1.3vw, 19px); opacity: 0.8; }
+.sig-progreso { position: absolute; right: var(--margen); bottom: 28px; z-index: 3; display: flex; align-items: center; gap: 14px; padding: 9px 14px; border-radius: 999px; background: rgba(0, 0, 0, 0.28); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font: 12px var(--mono); }
+.sig-barra { position: relative; width: clamp(120px, 14vw, 220px); height: 2px; background: rgba(255, 255, 255, 0.25); overflow: hidden; border-radius: 2px; }
+.sig-barra i { position: absolute; inset: 0; background: #FFFFFF; transform: scaleX(var(--p)); transform-origin: 0 50%; }
+.sig-panel.abriendo .sig-nombre { transform: translateY(-12%); opacity: 0; }
+.sig-panel.abriendo .sig-escena { clip-path: inset(0); }
+@media (hover: hover) { .sig-panel:hover .sig-barra { background: rgba(255, 255, 255, 0.45); } }
+
+/* --- 1. ESCENA MEND --- */
+.sig-e-mend .sig-campo { position: absolute; inset: 0; background:
+    radial-gradient(52% 72% at 90% 0%, rgba(201, 233, 232, 0.95) 0%, rgba(190, 220, 219, 0.6) 38%, rgba(190, 220, 219, 0) 76%),
+    radial-gradient(40% 60% at 60% 0%, rgba(168, 186, 182, 0.6) 0%, rgba(168, 186, 182, 0) 72%),
+    radial-gradient(60% 65% at 0% 100%, rgba(30, 77, 87, 0.95) 0%, rgba(30, 77, 87, 0) 72%),
+    linear-gradient(90deg, #2A5960 0%, #3A6970 22%, #5E8C91 46%, #84AEB2 70%, #8EB8BB 100%); }
+.sig-e-mend .sig-campo::after { content: ''; position: absolute; inset: 0; opacity: 0.7; mix-blend-mode: soft-light; background-size: 200px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+.sig-mend-logo { position: absolute; left: var(--margen); top: 14svh; width: clamp(220px, 28vw, 460px); overflow: visible; fill: #FFFFFF; }
+.sig-panel:not(.dentro) .sig-mend-logo { opacity: 0; }
+.sig-mend-logo .ej-pair { opacity: 0; }
+.sig-mend-logo .trazo { stroke: #FFFFFF; stroke-width: 0.7; stroke-dasharray: 1; stroke-opacity: 0; }
+.sig-panel.dentro .sig-mend-logo .trazo { animation: sigTrazo 2s cubic-bezier(0.6, 0.1, 0.3, 1) 0.2s both, sigRelleno 0.7s ease 1.5s both; }
+.sig-panel.dentro .sig-mend-logo .ej-full { transform-box: fill-box; transform-origin: 50% 50%; animation: sigEjFull 2.4s linear 1.9s both; }
+.sig-panel.dentro .sig-mend-logo .ej-pair { animation: sigEjPair 2.4s linear 1.9s both; }
+.sig-panel.dentro .sig-mend-logo .ej-a { animation: sigGlideA 2.4s linear 1.9s both, sigCloseA 2.4s linear 1.9s both; }
+.sig-panel.dentro .sig-mend-logo .ej-b { animation: sigGlideB 2.4s linear 1.9s both, sigCloseB 2.4s linear 1.9s both; }
+@keyframes sigTrazo { 0% { stroke-dashoffset: 1; stroke-opacity: 1; } 88% { stroke-dashoffset: 0; stroke-opacity: 1; } 100% { stroke-dashoffset: 0; stroke-opacity: 0; } }
+@keyframes sigRelleno { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+@keyframes sigGlideA { 0% { translate: 13.57px -3.46px; animation-timing-function: cubic-bezier(0.2, 0.65, 0.3, 1); } 80%, 100% { translate: 0 0; } }
+@keyframes sigGlideB { 0% { translate: -13.57px 3.46px; animation-timing-function: cubic-bezier(0.2, 0.65, 0.3, 1); } 80%, 100% { translate: 0 0; } }
+@keyframes sigCloseA { 0%, 50% { transform: translate(-0.99px, -3.88px); animation-timing-function: cubic-bezier(0.9, 0, 1, 1); } 80%, 100% { transform: none; } }
+@keyframes sigCloseB { 0%, 50% { transform: translate(0.99px, 3.88px); animation-timing-function: cubic-bezier(0.9, 0, 1, 1); } 80%, 100% { transform: none; } }
+@keyframes sigEjPair { 0% { opacity: 0; } 18% { opacity: 0.45; } 62% { opacity: 1; } 79.9% { opacity: 1; } 80%, 100% { opacity: 0; } }
+@keyframes sigEjFull { 0%, 79.9% { opacity: 0; transform: none; } 80% { opacity: 1; transform: none; animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1); } 87% { transform: scale(0.982); animation-timing-function: cubic-bezier(0.2, 0.6, 0.3, 1); } 100% { opacity: 1; transform: none; } }
+/* El teléfono con la app sube a medida que se avanza hacia el caso */
+.sig-e-mend .sig-tel { position: absolute; right: 12%; top: 9svh; width: clamp(180px, 16vw, 280px); aspect-ratio: 390 / 844; border: 6px solid #0B0B0B; border-radius: 40px; overflow: hidden; background: #0B0B0B; box-shadow: 0 50px 120px -30px rgba(0, 0, 0, 0.55); translate: 0 calc((1 - var(--p)) * 38svh); }
+.sig-e-mend .sig-tel img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* --- 2. ESCENA TAP IN --- */
+.sig-e-tapin { background: radial-gradient(120% 90% at 70% 0%, #6B5CE7 0%, #4A3CAE 38%, #2D2560 100%); }
+.sig-tiras { position: absolute; right: -6%; top: -30%; bottom: -30%; width: 60%; display: flex; gap: clamp(14px, 1.6vw, 26px); transform: rotate(-22deg); }
+.sig-tiras i { flex: 1; border-radius: 999px; background: linear-gradient(180deg, color-mix(in srgb, var(--tono) 82%, #fff), var(--tono)); translate: 0 calc((1 - var(--p)) * (10% + var(--i) * 8%)); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.5); }
+.sig-tp-wm { position: absolute; left: var(--margen); top: 14svh; width: clamp(200px, 26vw, 420px); aspect-ratio: 389.87 / 150.6; background: #FFFFFF; -webkit-mask: url("media/tp-wordmark.svg") center / contain no-repeat; mask: url("media/tp-wordmark.svg") center / contain no-repeat; }
+
+/* --- 3. ESCENA LLEGÓ FARMA --- */
+.sig-e-llego > img:first-child { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sig-e-llego::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 20, 21, 0.2), rgba(10, 20, 21, 0.75)); }
+.sig-reticula { position: absolute; inset: 0 var(--margen); z-index: 1; border-right: 1px solid rgba(255, 255, 255, 0.2); background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px) 0 0 / 25% 100% repeat-x; }
+.sig-lf-iso { position: absolute; z-index: 2; left: var(--margen); top: 14svh; width: clamp(64px, 6vw, 96px); }
+@media (max-width: 768px) {
+    .sig-e-mend .sig-tel { right: 50%; translate: 50% calc((1 - var(--p)) * 30svh); top: 22svh; width: 46vw; }
+    .sig-mend-logo { top: 9svh; width: 62vw; }
+    .sig-progreso { left: var(--margen); right: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .sig-escena { clip-path: none; }
+    .sig-escena > *, .sig-nombre, .sig-tiras i, .sig-e-mend .sig-tel { transform: none; translate: none; }
+}
+
+/* =======================================================
+   15. BARRA SEGÚN LA SECCIÓN DE ABAJO
+   ======================================================= */
+/* En los casos la barra no usa difference (sobre colores de marca da tonos ajenos, como verde sobre morado):
+   toma el color que corresponde a la sección que tiene debajo, como la navbar de tapin.cl */
+.barra { mix-blend-mode: normal; color: #FFFFFF; transition: color 300ms ease; }
+body[data-barra="claro"] .barra { color: var(--c-barra-claro, #111111); }
+/* Los enlaces internos del caso (como "Ver el proyecto") bajan suave */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
