@@ -53,8 +53,10 @@ img { display: block; width: 100%; height: auto; }
 
 /* --- 4. LETRAS QUE SUBEN --- */
 /* El JS envuelve cada letra; entran desde su línea base en cascada */
-[data-letras] .l { display: inline-block; transform: translateY(105%); animation: subeLetra 1000ms var(--ease) forwards; }
-[data-letras] .palabra { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.2em; margin-bottom: -0.2em; }
+[data-letras] .l { display: inline-block; transform: translateY(130%); animation: subeLetra 1000ms var(--ease) forwards; }
+[data-letras] .palabra { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.18em 0 0.22em; margin: -0.18em 0 -0.22em; }
+.dos { animation: parpadeo 2s steps(1) infinite; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 [data-capa] { will-change: transform; }
 
 @keyframes parpadeo { 50% { opacity: 0; } }

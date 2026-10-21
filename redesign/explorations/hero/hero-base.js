@@ -5,7 +5,7 @@
     /* --- 1. HORA DE SANTIAGO EN VIVO --- */
     const relojes = document.querySelectorAll('[data-reloj]');
     const formato = new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', hour: '2-digit', minute: '2-digit', hour12: false });
-    const tick = () => relojes.forEach(r => { r.textContent = (r.dataset.reloj || 'Santiago') + ' ' + formato.format(new Date()); });
+    const tick = () => relojes.forEach(r => { const [h, m] = formato.format(new Date()).split(':'); r.innerHTML = (r.dataset.reloj || 'Santiago') + ' ' + h + '<span class="dos">:</span>' + m; });
     tick(); setInterval(tick, 15000);
 
     /* --- 2. LETRAS QUE SUBEN --- */

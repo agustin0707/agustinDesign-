@@ -6,7 +6,7 @@ Rama `redesign`. A pedido de Agustín, la UI se trabaja sección por sección. E
 
 ## S1 · Hero
 
-**Elegido: Hero 1 · Capas (v3)**, `explorations/hero/h1-capas.html` (20 oct 2026). La v2 queda en el historial de git.
+**Elegido: Hero 1 · Capas (v4)**, `explorations/hero/h1-capas.html` + `h1-capas.js` (21 oct 2026). Las versiones anteriores quedan en el historial de git.
 
 | Elemento | Decisión |
 |---|---|
@@ -31,6 +31,20 @@ Rama `redesign`. A pedido de Agustín, la UI se trabaja sección por sección. E
 | Esquina inferior derecha vacía, composición coja | "© 2026" en mono equilibra las redes de la izquierda |
 | Sin foco visible para teclado | Contorno de 1 px en el color del texto, con separación |
 | La foto podía aparecer tarde | `preload` con prioridad alta y dimensiones declaradas para evitar saltos de layout |
+
+### Segundo audit (v3 → v4)
+Revisado en 1024, 1280, 1440, 1920 y 390 px, durante la carga y al hacer scroll.
+
+| Hallazgo en la v3 | Mejora en la v4 |
+|---|---|
+| Durante la carga asomaban puntos y acentos de las letras antes de subir | Las letras parten más abajo (130%) y la máscara tiene margen arriba y abajo |
+| En pantallas menos anchas (1024, iPad) el retrato quedaba chico y la mitad superior vacía | El retrato vive en una caja de 90% del alto con `object-fit: cover`: el tamaño de la cabeza depende del alto de la pantalla, no del ancho |
+| El descriptor se leía a parches entre la mano y el fondo | Pasa arriba a la izquierda, bajo el logo, donde siempre hay fondo liso. En móvil sigue bajo el nombre |
+| Al hacer scroll el hero simplemente se iba | **Entrega tipo cortina:** el hero queda fijo, se oscurece, la foto crece levemente y el nombre se apaga mientras la sección negra de Works sube encima |
+| El nombre, lo más grande de la página, no reaccionaba a nada | **Nombre vivo:** las letras cercanas al cursor suben como una ola. Usa la propiedad `translate`, que no choca con la animación de entrada. Solo con mouse y respetando reducir movimiento |
+| Espacio entre "agustín" y "design" algo abierto | `word-spacing: -0.06em` |
+| Hora estática | Los dos puntos de la hora parpadean cada segundo |
+| El `h1` solo decía "agustín design" | Texto oculto para buscadores y lectores de pantalla: "Agustín Avendaño, diseño de marca y desarrollo web en Santiago de Chile" |
 
 **Pendientes del hero:**
 - Los links quedan en inglés ("About, Works, Contact") por decisión de Agustín, como excepción a la regla de voz.
