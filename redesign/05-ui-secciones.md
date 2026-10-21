@@ -15,7 +15,7 @@ Rama `redesign`. A pedido de Agustín, la UI se trabaja sección por sección. E
 | Logo | "agustín.design" arriba a la izquierda con cursor que parpadea. A Agustín le gusta mucho este detalle |
 | Links | **About · Works · Contact**, en la tipografía del sitio actual (Inter en cursiva, 1.1rem), con el peso subido levemente de 200 a 270. **Hover: letras que ruedan** en cascada (cada letra sube y la reemplaza una copia de sí misma). Centrados en desktop; en columna arriba a la derecha en móvil |
 | Llamado | **Botón "ver proyectos" como el actual** (píldora con borde, se llena de izquierda a derecha y flota). Reemplaza la frase "Diseño marcas y construyo sus sitios", que Agustín sentía mejorable |
-| Arriba a la derecha | Hora de Santiago en vivo, en Geist Mono, con los dos puntos que parpadean. "Disponible" se eliminó (Agustín sentía que sobraba) |
+| Arriba a la derecha | Punto que late + hora de Santiago en vivo, en Geist Mono, con los dos puntos que parpadean. La palabra "Disponible" se eliminó; el punto se queda |
 | Abajo a la izquierda | Redes en mono, con inversión de color sobre la foto |
 | Motion | Letras del nombre que suben en cascada, links y botón que aparecen con desenfoque, parallax entre nombre y retrato con el mouse y el scroll. Respeta reducir movimiento |
 | Fondo | Gris claro `#D9D9D6`, cercano al `#dddddd` actual |
@@ -50,6 +50,9 @@ Revisado en 1024, 1280, 1440, 1920 y 390 px, durante la carga y al hacer scroll.
 - Hover nuevo y peso levemente mayor en About, Works y Contact.
 - El parallax dejaba un borde vacío a la izquierda al llevar el mouse a la derecha: la caja del retrato ahora sobresale 32 px por lado y 16 px abajo.
 - Se eliminó el descriptor ("Diseño de marca y desarrollo web · Independiente · Santiago, CL") y la palabra "Disponible": sobraban.
+
+- Hovers más lentos en About, Works, Contact y en las redes: 900 ms con una curva que acelera y frena suave (`cubic-bezier(0.7, 0, 0.2, 1)`). Con la curva anterior casi todo el movimiento ocurría al inicio y se sentía rápido aunque durara más.
+- Vuelve el punto que latía, solo, a la izquierda de la hora.
 
 **Pendientes del hero:**
 - Los links quedan en inglés ("About, Works, Contact") por decisión de Agustín, como excepción a la regla de voz.

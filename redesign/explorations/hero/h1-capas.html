@@ -14,7 +14,7 @@
            HERO 1 · CAPAS (V4)
            ======================================================= */
         /* --p: progreso del scroll al salir del hero (0 a 1), lo escribe h1-capas.js */
-        .hero { --fondo-hero: var(--gris-claro); --nombre-y: 56%; --p: 0; position: sticky; top: 0; background: var(--fondo-hero); color: var(--negro); }
+        .hero { --fondo-hero: var(--gris-claro); --nombre-y: 56%; --p: 0; --hover-lento: cubic-bezier(0.7, 0, 0.2, 1); position: sticky; top: 0; background: var(--fondo-hero); color: var(--negro); }
 
         /* --- 1. GRANO --- */
         .hero::after { content: ''; position: absolute; inset: 0; z-index: 6; pointer-events: none; background: url('../../../img/grano-textura.png') repeat; background-size: 180px; opacity: 0.35; mix-blend-mode: multiply; }
@@ -50,7 +50,16 @@
 
         /* --- 1. HOVER: LETRAS QUE RUEDAN --- */
         /* Cada letra lleva una copia de sí misma debajo (text-shadow). Al pasar el mouse suben en cascada y la copia ocupa su lugar */
-        .links-actual .c { display: inline-block; white-space: pre; text-shadow: 0 1.3em currentColor; transition: translate 560ms var(--ease); transition-delay: calc(var(--i) * 24ms); }
+        .links-actual .c { display: inline-block; white-space: pre; text-shadow: 0 1.3em currentColor; transition: translate 900ms var(--hover-lento); transition-delay: calc(var(--i) * 40ms); }
+
+        /* --- 2. PUNTO JUNTO A LA HORA --- */
+        /* El punto que latía en "Disponible", ahora solo, a la izquierda de la hora */
+        .nav .der { gap: 10px; }
+        .punto-vivo { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: latido 2s ease-in-out infinite; }
+
+        /* --- 3. HOVER LENTO EN LAS REDES --- */
+        /* El subrayado de LinkedIn, Behance e Instagram se dibuja más pausado, al ritmo de los links */
+        .redes .subraya { transition: background-size 900ms var(--hover-lento); }
         @media (hover: hover) { .links-actual a:hover .c { translate: 0 -1.3em; } }
         .nav .logo, .nav .der { opacity: 0; animation: aparece 1200ms var(--ease) 950ms forwards; }
         .hero a:focus-visible { outline: 1px solid currentColor; outline-offset: 6px; border-radius: 2px; }
@@ -117,7 +126,7 @@
     <section class="hero" data-parallax>
         <nav class="nav">
             <a href="#" class="logo">agustín<span class="punto">.</span>design<span class="cursor"></span></a>
-            <span class="mono der"><span class="reloj" data-reloj>Santiago 00:00</span></span>
+            <span class="mono der"><span class="punto-vivo" aria-hidden="true"></span><span class="reloj" data-reloj>Santiago 00:00</span></span>
         </nav>
         <ul class="links-actual"><li><a href="#">About</a></li><li><a href="#">Works</a></li><li><a href="#trabajo">Contact</a></li></ul>
 
