@@ -315,3 +315,23 @@ La versión con láminas no te gustó. Nueva dirección, con tus respuestas: **p
 - **El resto:** Forky cruza corriendo la apertura del capítulo 01; fotos del campus a todo el ancho con parallax; las promos dentro de teléfonos; los cuatro mockups en vivo (solo animan mientras se ven); la web en tres teléfonos; cifras que cuentan; citas y cifras de la empresa marcadas "por confirmar"; aprendizaje palabra por palabra e invitación a Mend.
 - **Archivos:** `caso/tapin.html`, `tapin.css` y `tapin.js` (motor de escenas propio: `--p`, `data-rango`, `data-pasos`, parallax). La invitación al siguiente proyecto pasó a `caso-siguiente.css` para compartirla con la plantilla anterior. Fotos del campus recomprimidas (`media/ed-*.webp`, de 1 a 4 MB a unos 150 KB).
 - **Medido:** de 108 a 120 fps en una pantalla de 120 Hz en todas las escenas, sin desborde horizontal en 390 ni en 1440.
+
+### Tap In editorial, audit gráfico (21 oct 2026)
+Te gustó mucho más; pediste un audit exhaustivo y mejorar a nivel gráfico. Revisado a resolución completa en 1440 y 390.
+
+| Hallazgo | Mejora |
+|---|---|
+| La barra con mezcla por diferencia se veía verde amarilla sobre los morados | Color según el módulo de abajo: tinta sobre lo claro, blanco sobre lo demás (y tinta cuando el hero ya entró al sitio) |
+| Decisiones como columnas de texto chico flotando en vacío | Número grande de la decisión (01 a 11) en el tono suave, títulos más grandes y equilibrados, cuerpo a 19 px |
+| Grises sin contraste suficiente (≈2,4:1) | Grises de apoyo más oscuros en claro y más altos en oscuro; etiquetas mono en gris de lectura |
+| Resumen solo con texto y la columna izquierda vacía | La ficha pasa a la columna izquierda como lista; abajo, **índice de capítulos**: tres tarjetas con su pieza (Forky, las tiras, el sitio) que llevan a cada capítulo |
+| Capítulo 01: Forky morado sobre casi negro, apagado, y una línea punteada que parecía error | Fondo morado de Campus con grano, Forky blanco con ráfagas de velocidad y el "01" enorme calado detrás; lo mismo con el "03" en La web |
+| Forky: escenario chico y regla de solo texto | Escenario más grande con guías de construcción que giran con el avance; la regla lleva la miniatura de cada paso; el final es el lockup de Campus |
+| Arquitectura: la madre aplastaba a los hijos y las líneas no se veían | Madre más angosta, productos más grandes y ramas de organigrama que se dibujan con el scroll (la del +1, punteada) |
+| Paleta: isotipos diminutos en la esquina de tiras enormes | Isotipos grandes al centro de cada tira, que aparecen con su tono |
+| Morados planos | Grano fino en hero, capítulo 01, decisión 02 y teléfonos |
+| Hero | Píldora "En producción" dentro del navegador y una pista con flecha que no choca con el sitio |
+| Cierre | Cita más grande y balanceada, prefijo "≈" de la cifra más chico, botón a tapin.cl más grande; el giro Forky → cerebro más grande y con un punto que viaja entre ambos |
+| Manual y sitio | Barra de avance en el manual; contador "08 / 10" en el índice del sitio |
+
+Medido: 115 a 120 fps en todas las escenas.
