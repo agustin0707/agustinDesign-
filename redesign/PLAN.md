@@ -77,7 +77,7 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 
 | # | Sección | Estado |
 |---|------|--------|
-| S1 | Hero | En curso · Hero 1 · Capas v2 con tus cambios, falta tu visto bueno (ver `05-ui-secciones.md`) |
+| S1 | Hero | En curso · Hero 1 · Capas v3 con audit aplicado, falta tu visto bueno (ver `05-ui-secciones.md`) |
 | S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | Pendiente |
 | S3 | Página de caso | Pendiente |
 | S4 | Sobre mí | Pendiente |

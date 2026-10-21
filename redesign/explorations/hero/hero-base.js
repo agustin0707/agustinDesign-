@@ -12,11 +12,12 @@
     /* Envuelve palabras y letras para animarlas en cascada sin perder accesibilidad */
     document.querySelectorAll('[data-letras]').forEach(el => {
         const texto = el.textContent.trim();
+        const inicio = parseInt(el.dataset.letras, 10) || 120;
         el.setAttribute('aria-label', texto);
         let i = 0;
         el.innerHTML = texto.split(/(\s+|<br>)/).map(p => {
             if (/^\s+$/.test(p)) return ' ';
-            return '<span class="palabra" aria-hidden="true">' + [...p].map(c => `<span class="l" style="animation-delay:${120 + (i++) * 28}ms">${c}</span>`).join('') + '</span>';
+            return '<span class="palabra" aria-hidden="true">' + [...p].map(c => `<span class="l" style="animation-delay:${inicio + (i++) * 28}ms">${c}</span>`).join('') + '</span>';
         }).join('');
     });
 
