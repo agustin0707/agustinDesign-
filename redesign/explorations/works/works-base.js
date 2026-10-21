@@ -10,14 +10,15 @@
         tapin: { nombre: 'Tap In', anio: '2025–26', disciplinas: 'Marca · Producto · Web', cliente: 'Startup edtech', rol: 'Rebranding, UX/UI y desarrollo web', vivo: 'tapin.cl', img: 'media/tapin-web.jpg', img2: 'media/tapin-app.jpg', tinte: '#110E22', intro: 'De la cafetería del campus a la plataforma del colegio. Una marca, una app y un sitio que acompañaron el pivote completo de una startup.' },
         mend: { nombre: 'Mend', anio: '2026', disciplinas: 'Investigación · Marca · Web app', cliente: 'Proyecto de título · salud articular', rol: 'Investigación, identidad, UX/UI y desarrollo', vivo: 'Prototipo con acceso', img: 'media/mend-web.jpg', img2: 'media/mend-app.jpg', tinte: '#0D2024', intro: 'Una app de salud articular para Atención Primaria, diseñada y construida de punta a punta. En Mend, la accesibilidad manda sobre el manual de marca.' }
     };
+    /* El quinto campo son las piezas de la hoja de contactos (w3): archivo y ancho a 440 px de alto */
     const archivo = [
-        ['La Columna', 'Dirección de arte editorial', '2022–24', '../../../img/lacolumna_portada2.webp'],
-        ['HAI Group', 'Identidad corporativa', '2024', '../../../img/hai_portada.webp'],
-        ['Mido', 'Marca y UI', '2024–25', '../../../img/mido_portada.webp'],
-        ['Entrena Po', 'Identidad y redes', '2023–24', '../../../img/entrenapo_portada.webp'],
-        ['Posters y afiches', 'Gráfica personal', '2022–25', '../../../img/poster_portada.webp']
+        ['La Columna', 'Dirección de arte editorial', '2022–24', '../../../img/lacolumna_portada2.webp', [['lacolumna-1', 440], ['lacolumna-2', 248], ['lacolumna-3', 440], ['lacolumna-4', 248], ['lacolumna-5', 440], ['lacolumna-6', 248], ['lacolumna-7', 440], ['lacolumna-8', 248], ['lacolumna-9', 440], ['lacolumna-10', 248], ['lacolumna-11', 440]]],
+        ['HAI Group', 'Identidad corporativa', '2024', '../../../img/hai_portada.webp', [['hai-1', 782], ['hai-2', 782], ['hai-3', 782], ['hai-4', 698], ['hai-5', 782], ['hai-6', 782]]],
+        ['Mido', 'Marca y UI', '2024–25', '../../../img/mido_portada.webp', [['mido-1', 782], ['mido-2', 352], ['mido-3', 782], ['mido-4', 352], ['mido-5', 782], ['mido-6', 352], ['mido-7', 782]]],
+        ['Entrena Po', 'Identidad y redes', '2023–24', '../../../img/entrenapo_portada.webp', [['entrenapo-1', 352], ['entrenapo-2', 782], ['entrenapo-3', 352], ['entrenapo-4', 782], ['entrenapo-5', 352], ['entrenapo-6', 352], ['entrenapo-7', 782], ['entrenapo-8', 352]]],
+        ['Posters y afiches', 'Gráfica personal', '2022–25', '../../../img/poster_portada.webp', [['posters-1', 311], ['posters-2', 285], ['posters-3', 285], ['posters-4', 285], ['posters-5', 311], ['posters-6', 285], ['posters-7', 277], ['posters-8', 311], ['posters-9', 285], ['posters-10', 782]]]
     ];
-    window.WORKS = { proyectos };
+    window.WORKS = { proyectos, archivo };
 
     const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const conMouse = window.matchMedia('(hover: hover)').matches;
@@ -87,6 +88,8 @@
         c.querySelectorAll('iframe').forEach(f => f.remove());
         const orig = e.querySelectorAll('img'), copias = c.querySelectorAll('img');
         copias.forEach((img, i) => { const cs = getComputedStyle(orig[i]); img.style.translate = cs.translate; img.style.scale = cs.scale; if (!img.classList.contains('poster')) img.style.opacity = cs.opacity; });
+        /* La pantalla de carga de la app no viaja: si se presiona apenas al pasar el mouse, la portada quedaría congelada en ella */
+        c.querySelectorAll('.splash').forEach(s => { s.style.opacity = '0'; });
         /* Continuidad: si el sitio había bajado, el clon muestra la captura larga en ese mismo punto en vez de la portada */
         const largaOrig = e.querySelector('.larga'), larga = c.querySelector('.larga');
         if (bajado > 0 && larga && largaOrig && largaOrig.complete && largaOrig.naturalHeight) {

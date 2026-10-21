@@ -18,7 +18,7 @@ const detectar = () => {
         if (tieneTexto && (cs.overflow !== 'visible' || cs.textOverflow === 'ellipsis') && el.scrollWidth > el.clientWidth + 1) problemas.push('CORTE horizontal ' + nombre(el));
         if (tieneTexto && r.right > vw + 1 && !el.closest('.riel')) problemas.push('SALE del viewport ' + nombre(el) + ' (' + Math.round(r.right - vw) + ' px)');
     });
-    document.querySelectorAll('.tope, .fila-top, .pie, .apertura').forEach(fila => {
+    document.querySelectorAll('.tope, .fila-top, .pie, .apertura, .hoja-cab, .ficha a').forEach(fila => {
         const hijos = [...fila.children].filter(visible);
         for (let i = 0; i < hijos.length; i++) for (let j = i + 1; j < hijos.length; j++) {
             const a = hijos[i].getBoundingClientRect(), b = hijos[j].getBoundingClientRect();
@@ -35,7 +35,8 @@ const detectar = () => {
         const p = await b.newPage({ viewport: { width: w, height: h }, isMobile: w < 769, hasTouch: w < 769 });
         await p.goto(U, { waitUntil: 'networkidle' }); await p.waitForTimeout(1500);
         const top = await p.evaluate(() => document.getElementById('pila').getBoundingClientRect().top + scrollY);
-        const paradas = [['apertura', 0], ['p1', top], ['p2', top + h], ['p3', top + 2 * h], ['archivo', top + 3 * h]];
+        const hueco = await p.evaluate(() => parseFloat(getComputedStyle(document.getElementById('pila')).getPropertyValue('--hueco')) || 0);
+        const paradas = [['apertura', 0], ['p1', top], ['p2', top + h + hueco], ['p3', top + 2 * (h + hueco)], ['archivo', top + 3 * (h + hueco)]];
         const todos = [];
         for (const [n, y] of paradas) {
             await p.evaluate(v => scrollTo(0, v), y); await p.waitForTimeout(1300);

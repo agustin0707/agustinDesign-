@@ -133,6 +133,17 @@ Herramientas nuevas en `redesign/herramientas/`: `auditar-textos.cjs` (cortes, d
 | **Interacción:** el enlace "Archivo" saltaba sin transición | Scroll suave, como los saltos a los proyectos |
 | **Móvil:** sobraba negro sobre las láminas | La lámina llena el alto disponible del panel |
 
+### Ajustes v4 (tus observaciones, 21 oct 2026)
+| Observación | Qué se hizo |
+|---|---|
+| **Letras cortadas** ("s" de works, "g" de Llegó, "p" de Tap In) | La máscara de las letras que suben era un `overflow: hidden` del tamaño exacto de la palabra; con tracking negativo y line-height cerrado, los costados, acentos y descendentes quedaban fuera. Ahora es un `clip-path` que se extiende más allá de la caja. Además, la sombra del panel que espera abajo oscurecía el pie del título: hay un hueco de 72 px bajo el borde de la pantalla |
+| Fila superior de cada panel en dos alturas | La disciplina chocaba con el mini índice en la columna 6 y bajaba de línea |
+| **Mockup de Tap In con bugs** | Se veía la barra de scroll del sitio dentro del mockup (se oculta al cargar), la portada se apagaba antes de que el sitio cargara (destello en blanco) y el recorrido terminaba en un corte del formulario de contacto (ahora baja hasta las preguntas frecuentes, con `data-hasta`) |
+| **Fondo de Mend** | Degradado de marca construido en CSS con capas de gradientes y el grano oficial de Mend en soft-light: nítido a cualquier tamaño y sin los textos de la lámina de presentación |
+| **Logo de Mend animado** | Lockup horizontal "mend salud" con las piezas del SVG oficial y las animaciones del manual V08 (Trazo del wordmark y Encaje del isotipo). Se dibuja al entrar la lámina en pantalla y se rearma al salir |
+| **Archivo poco atractivo** | Hoja de contactos: cada fila mantiene el índice tipográfico y suma una tira con 5 a 8 piezas reales, siempre visibles (sin foto flotante). Al pasar el mouse la tira se desliza para mostrar el resto y las demás filas se atenúan; al entrar en pantalla las tiras se revelan en cascada. En móvil la tira se recorre con el dedo |
+| Bug al abrir Mend | Si se presionaba apenas al pasar el mouse, la portada del caso quedaba congelada en la pantalla de carga de la app |
+
 **Nota técnica para la Fase 6:** para controlar el scroll dentro de los sitios, el navegador necesita que estén en el mismo dominio que el portafolio. En la exploración se usan copias locales (`explorations/works/sitios/`, fuera del repo). En producción hay dos caminos: publicar copias de las landings bajo `agustindesign.cl` (con permiso de cada cliente) o grabar un video del recorrido de cada sitio. El video pesa menos y funciona igual en móvil; la copia es más fiel. Se decide en la Fase 6.
 
 

@@ -15,7 +15,7 @@
         pendiente = false;
         const h = window.innerHeight;
         paneles.forEach((p, i) => {
-            const sig = paneles[i + 1] || document.querySelector('.archivo');
+            const sig = paneles[i + 1] || document.querySelector('.hoja');
             const q = quieto ? 0 : Math.min(Math.max(1 - sig.getBoundingClientRect().top / h, 0), 1);
             const v = q.toFixed(3);
             if (ultimo.get(p) !== v) { p.style.setProperty('--q', v); ultimo.set(p, v); }
@@ -26,12 +26,13 @@
     pintar();
 
     /* --- 2. SALTOS A CADA PROYECTO Y AL ARCHIVO --- */
-    /* Los paneles son sticky: su lugar real es el inicio de la pila más n pantallas */
+    /* Los paneles son sticky: su lugar real es el inicio de la pila más n pantallas y n huecos */
     const irA = y => window.scrollTo({ top: y, behavior: quieto ? 'auto' : 'smooth' });
     document.querySelectorAll('[data-salto]').forEach(a => a.addEventListener('click', e => {
         e.preventDefault();
         const i = paneles.findIndex(p => '#' + p.id === a.getAttribute('href'));
-        irA(pila.getBoundingClientRect().top + window.scrollY + i * window.innerHeight);
+        const hueco = parseFloat(getComputedStyle(pila).getPropertyValue('--hueco')) || 0;
+        irA(pila.getBoundingClientRect().top + window.scrollY + i * (window.innerHeight + hueco));
     }));
     document.querySelectorAll('a[href="#archivo"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); irA(document.getElementById('archivo').getBoundingClientRect().top + window.scrollY); }));
 
@@ -75,7 +76,10 @@
         let win, doc;
         try { win = iframe.contentWindow; doc = iframe.contentDocument; } catch (err) { return; }
         if (!win || !doc) return;
-        const destino = Math.max(doc.documentElement.scrollHeight - win.innerHeight, 0) * 0.82;
+        /* Baja hasta la sección indicada en data-hasta (para terminar en un lugar limpio del sitio) o hasta el 82% */
+        const max = Math.max(doc.documentElement.scrollHeight - win.innerHeight, 0);
+        const meta = l.dataset.hasta && doc.querySelector(l.dataset.hasta);
+        const destino = meta ? Math.min(meta.getBoundingClientRect().top + win.scrollY, max) : max * 0.82;
         const inicio = performance.now(), duracion = 12000;
         const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
         const paso = ahora => {
@@ -97,6 +101,12 @@
             l.classList.add('cargando', 'vivo');
             iframe.onload = () => {
                 if (iframe.src.endsWith('about:blank')) return;
+                /* Sin barra de scroll dentro del mockup (con mouse conectado, macOS la muestra siempre) */
+                try {
+                    const estilo = iframe.contentDocument.createElement('style');
+                    estilo.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}';
+                    iframe.contentDocument.head.appendChild(estilo);
+                } catch (err) { /* sitio de otro dominio: se deja como está */ }
                 l.classList.remove('cargando'); l.classList.add('listo');
                 l._espera = setTimeout(() => { if (l.classList.contains('vivo')) recorrer(l); }, 1700);
             };
@@ -132,6 +142,13 @@
         const on = () => laminaApp.classList.add('arranca'), off = () => laminaApp.classList.remove('arranca');
         if (conMouse) { laminaApp.addEventListener('mouseenter', on); laminaApp.addEventListener('mouseleave', off); }
         laminaApp.addEventListener('focus', on); laminaApp.addEventListener('blur', off);
+
+        /* El logo se dibuja cuando la lámina entra en pantalla y se rearma al salir, para la próxima pasada */
+        const escenaMend = laminaApp.querySelector('.escena-mend');
+        new IntersectionObserver(es => es.forEach(e => {
+            if (e.intersectionRatio >= 0.6) escenaMend.classList.add('logo');
+            else if (!e.isIntersecting) escenaMend.classList.remove('logo');
+        }), { threshold: [0, 0.6] }).observe(laminaApp);
     }
 
     /* --- 6. "VER CASO" QUE SIGUE AL CURSOR --- */
@@ -161,7 +178,34 @@
         pila.querySelectorAll('.lamina').forEach(l => io.observe(l));
     }
 
-    /* --- 8. ENTRAR AL CASO --- */
+    /* --- 8. ARCHIVO: HOJA DE CONTACTOS --- */
+    /* Cada fila con su tira de piezas. --corre es cuánto debe deslizarse la tira para mostrar la última pieza */
+    const hoja = document.querySelector('[data-hoja]');
+    if (hoja) {
+        hoja.innerHTML = window.WORKS.archivo.map(([nombre, disc, anio, , piezas], i) => `
+            <li class="ficha" style="--retraso:${i * 90}ms"><a href="#">
+                <span class="f-num mono gris">${String(i + 1).padStart(2, '0')}</span>
+                <span class="f-texto"><span class="f-nombre">${nombre}</span><span class="f-disc mono gris">${disc}</span></span>
+                <span class="f-tira" aria-hidden="true"><span class="f-tira-in">${piezas.map(([archivo, ancho]) => `<img src="media/archivo/${archivo}.webp" width="${ancho}" height="440" alt="" loading="lazy" decoding="async">`).join('')}</span></span>
+                <span class="f-anio mono gris">${anio}</span>
+            </a></li>`).join('');
+        const fichas = [...hoja.querySelectorAll('.ficha')];
+        const medir = () => fichas.forEach(f => {
+            const tira = f.querySelector('.f-tira'), interior = f.querySelector('.f-tira-in');
+            f.style.setProperty('--corre', Math.max(interior.scrollWidth - tira.clientWidth + 24, 0) + 'px');
+        });
+        medir();
+        window.addEventListener('resize', medir);
+        /* Al entrar, la tira se revela y carga todas sus piezas (las ocultas a la derecha no se cargarían solas antes de deslizarse) */
+        const ioFichas = new IntersectionObserver(es => es.forEach(e => {
+            if (!e.isIntersecting) return;
+            e.target.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
+            e.target.classList.add('entra'); ioFichas.unobserve(e.target);
+        }), { threshold: 0.3 });
+        fichas.forEach(f => ioFichas.observe(f));
+    }
+
+    /* --- 9. ENTRAR AL CASO --- */
     /* La escena completa viaja y se abre a sangre como portada del caso */
     paneles.forEach(p => {
         const lamina = p.querySelector('.lamina');
