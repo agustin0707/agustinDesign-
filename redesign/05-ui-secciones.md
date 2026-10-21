@@ -174,3 +174,28 @@ Herramientas nuevas en `redesign/herramientas/`: `auditar-textos.cjs` (cortes, d
 | **2 · Galería cinemática** | La sección queda fija y el scroll vertical mueve tarjetas grandes en horizontal, con barra de progreso. Hover: la imagen se acerca y aparece "Ver caso" | La tarjeta crece a pantalla completa | Deslizar con el dedo, con snap |
 | **3 · Pila de cortinas** | Un proyecto por pantalla: el siguiente sube y cubre al anterior, que se achica y se oscurece. Continúa el lenguaje del hero | La lámina enmarcada se abre a sangre | Igual, con la lámina en formato horizontal |
 
+
+---
+
+## S3 · Página de caso
+
+En curso · exploración (21 oct 2026) · `explorations/caso/` (comparador en `index.html`)
+
+### Estructura común (adelanta el ítem 4.2 del template de caso)
+Caso de prueba: **Tap In**, con decisiones reales sacadas de las notas de reunión de la landing (19 may, 26 may y 2 jun 2026), del `CHECKLIST.md` del sitio y del manual de Connect. El copy es borrador de la Fase 4.
+
+1. **Portada:** fila de contexto, nombre gigante con las letras que suben, bajada en lenguaje de cliente, la misma escena del índice (continúa el viaje desde la Pila) y ficha (cliente, rol, período, equipo, en vivo). Todo el caso vive sobre el tinte del proyecto.
+2. **Resumen:** una intro en primera persona y tres columnas: el encargo, lo que hice, el resultado.
+3. **Decisiones (7):** cada una con título, qué se hizo, por qué y la pieza. Marca que pudiera tener hijos (exploración de isotipos), Connect como cerebro de piezas, menú que responde cuatro preguntas, hero que prueba el producto antes de la duda, módulos y no pasos, de oscuro a claro, diseñado y construido por mí (auditoría real del sitio).
+4. **Proceso:** línea de tiempo de 18 meses que se dibuja al entrar.
+5. **Resultado:** cifras verificables y la galería del lanzamiento en el campus. El dato de familias queda marcado "por confirmar" hasta la 4.5.
+6. **Aprendizaje, créditos y siguiente proyecto** (Mend, con su tinte).
+
+### Tres direcciones (cambia cómo se cuentan las decisiones)
+| Dirección | Cómo se lee | A favor | En contra |
+|---|---|---|---|
+| **1 · Expediente** | Riel fijo con el índice de decisiones y una barra de avance; cada decisión es una entrada con su porqué y la pieza. Atajos J y K | La más clara para leer y volver a una decisión; escala a casos largos (Mend) | La más sobria: el impacto visual depende de las piezas |
+| **2 · Láminas** | Una decisión por pantalla con la pieza en grande; se apilan como cortinas, el mismo gesto del índice, con contador abajo | La más visual; continuidad total con la Pila | Texto corto obligado; repite el gesto del índice |
+| **3 · Evidencia** | El sitio real queda fijo al lado: al leer cada decisión, tapin.cl se desplaza a esa parte (el menú se abre solo) y un marco la señala. Las decisiones de marca cambian el escenario a sus piezas | La prueba más fuerte de "diseño y construyo": la decisión y su resultado en vivo, uno al lado del otro | Depende de tener el sitio en el mismo dominio (Fase 6); en móvil cae a piezas estáticas |
+
+Material nuevo en `explorations/caso/media/` (fuera del repo, es material de cliente): secciones del sitio capturadas, láminas del manual de Connect, 15 isotipos explorados del Branding Rebirth y fotos del lanzamiento.
