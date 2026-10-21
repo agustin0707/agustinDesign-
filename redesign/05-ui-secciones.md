@@ -304,3 +304,14 @@ Elegiste la opción 2, con algo de la 3. La regla quedó así: **las láminas se
 - **Flujo del capítulo:** el bloque interpola su color (y el del texto) entre la portada oscura o morada y el lavanda de las decisiones, con los colores registrados como @property.
 - **Rendimiento:** el radio final no recorta a los hijos (recortarlos obligaba a enmascarar el iframe y bajaba a 50 fps); el velo es su propia capa. Medido: 60 fps en las decisiones, 57 a 60 fps mientras una lámina entra.
 - Las variantes 1 y 3 siguen disponibles con `?fondo=1` y `?fondo=3` para comparar.
+
+### Giro editorial: Tap In como proyecto de Behance con escenas (21 oct 2026)
+La versión con láminas no te gustó. Nueva dirección, con tus respuestas: **público y con todo** (repo de revisión), **editorial + decisiones**, **texto que varía según convenga** (pie mínimo, decisión breve o "Más contexto" desplegable) y **scroll que narra**. La plantilla anterior queda como historial en `caso/tapin-v3.html`; Llegó sigue en ella hasta rehacerlo.
+
+- **Módulos a todo el ancho que se tocan**, como Behance, alternando lavanda, noche, morado de marca y el azul de Connect. El marco es Agustín Design (Geist y Geist Mono, barra que se esconde); la voz y las piezas son de Tap In (Poppins y su familia morada).
+- **Hero:** el resultado en la primera pantalla (tapin.cl bajando solo y el comedor funcionando, sin tarjeta). Al bajar, el navegador crece hasta llenar la pantalla: se entra al caso por el sitio.
+- **Escenas fijas con el scroll:** Forky se arma en cinco pasos con su regla; las cuatro tiras de la paleta suben una a una y abren el capítulo 02; la madre dibuja sus líneas y los productos cuelgan de ella; el cerebro de Connect se separa en sus cuatro piezas numeradas, vuelve y se prueba a 60, 32 y 24 px; el manual pasa en horizontal; la dirección tapin.cl se escribe para abrir el capítulo 03.
+- **El sitio con el scroll:** tapin.cl baja en un navegador y se detiene en cinco decisiones (menú con el desplegable abierto, confianza, módulos, oscuro a claro, objeciones sin acordeón); el foco apaga el resto del sitio y el índice de la derecha lleva a cada una con un clic.
+- **El resto:** Forky cruza corriendo la apertura del capítulo 01; fotos del campus a todo el ancho con parallax; las promos dentro de teléfonos; los cuatro mockups en vivo (solo animan mientras se ven); la web en tres teléfonos; cifras que cuentan; citas y cifras de la empresa marcadas "por confirmar"; aprendizaje palabra por palabra e invitación a Mend.
+- **Archivos:** `caso/tapin.html`, `tapin.css` y `tapin.js` (motor de escenas propio: `--p`, `data-rango`, `data-pasos`, parallax). La invitación al siguiente proyecto pasó a `caso-siguiente.css` para compartirla con la plantilla anterior. Fotos del campus recomprimidas (`media/ed-*.webp`, de 1 a 4 MB a unos 150 KB).
+- **Medido:** de 108 a 120 fps en una pantalla de 120 Hz en todas las escenas, sin desborde horizontal en 390 ni en 1440.
