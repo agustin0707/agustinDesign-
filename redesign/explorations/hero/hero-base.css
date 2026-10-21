@@ -86,5 +86,5 @@ img { display: block; width: 100%; height: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; }
-    [data-capa] { transform: none !important; }
+    [data-capa] { translate: none !important; }
 }

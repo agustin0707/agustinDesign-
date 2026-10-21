@@ -6,7 +6,7 @@ Rama `redesign`. A pedido de Agustín, la UI se trabaja sección por sección. E
 
 ## S1 · Hero
 
-**Elegido: Hero 1 · Capas (v4)**, `explorations/hero/h1-capas.html` + `h1-capas.js` (21 oct 2026). Las versiones anteriores quedan en el historial de git.
+**Cerrado: Hero 1 · Capas (v4 final)**, `explorations/hero/h1-capas.html` + `h1-capas.js` (21 oct 2026). Las versiones anteriores quedan en el historial de git.
 
 | Elemento | Decisión |
 |---|---|
@@ -53,6 +53,18 @@ Revisado en 1024, 1280, 1440, 1920 y 390 px, durante la carga y al hacer scroll.
 
 - Hovers más lentos en About, Works, Contact y en las redes: 900 ms con una curva que acelera y frena suave (`cubic-bezier(0.7, 0, 0.2, 1)`). Con la curva anterior casi todo el movimiento ocurría al inicio y se sentía rápido aunque durara más.
 - Vuelve el punto que latía, solo, a la izquierda de la hora.
+
+### Audit final (21 oct 2026)
+Casos borde: 2560 px, laptop 1366×650, iPhone SE, celular horizontal, movimiento reducido, teclado y fin de página. Sin errores de consola. Peso total del hero: 235 KB en 6 recursos.
+
+| Hallazgo | Corrección |
+|---|---|
+| **Bug:** con "reducir movimiento" activado, el nombre bajaba y tapaba el botón (la regla que apagaba el parallax anulaba también el centrado) | Se anula solo `translate` (el parallax), no `transform` |
+| En 2560 px el nombre tenía tope y se veía chico | El tamaño escala con el ancho y con el alto: `min(15.6vw, 34svh)`, hasta 480 px. Navegación, botón y hora también crecen en pantallas grandes |
+| En pantallas bajas el nombre se salía o el botón chocaba con el pie | El nombre se limita por el alto; en pantallas de menos de 520 px de alto el botón baja a la fila del pie |
+| El hero quedaba fijo toda la página | Va dentro de una `.escena` con la sección siguiente: queda fijo solo mientras lo cubre |
+| Se cargaban Geist 600 y Geist Mono 500 sin usarse | Fuera del `<link>` |
+| La hora reiniciaba el parpadeo cada 15 s | Se actualiza justo al cambiar el minuto |
 
 **Pendientes del hero:**
 - Los links quedan en inglés ("About, Works, Contact") por decisión de Agustín, como excepción a la regla de voz.

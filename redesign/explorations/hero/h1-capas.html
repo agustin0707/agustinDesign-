@@ -6,7 +6,7 @@
     <title>Hero 1 · Capas · agustín.design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Inter:ital,wght@1,200..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&family=Inter:ital,wght@1,200..400&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="../../../img/fotodeperfilgus5.webp" fetchpriority="high">
     <link rel="stylesheet" href="hero-base.css">
     <style>
@@ -14,7 +14,11 @@
            HERO 1 · CAPAS (V4)
            ======================================================= */
         /* --p: progreso del scroll al salir del hero (0 a 1), lo escribe h1-capas.js */
-        .hero { --fondo-hero: var(--gris-claro); --nombre-y: 56%; --p: 0; --hover-lento: cubic-bezier(0.7, 0, 0.2, 1); position: sticky; top: 0; background: var(--fondo-hero); color: var(--negro); }
+        .hero { --fondo-hero: var(--gris-claro); --nombre-y: 56%; --p: 0; --hover-lento: cubic-bezier(0.7, 0, 0.2, 1); position: sticky; top: 0; min-height: 360px; background: var(--fondo-hero); color: var(--negro); }
+
+        /* --- 0. ESCENA --- */
+        /* El hero solo queda fijo mientras la sección siguiente lo cubre; después se suelta */
+        .escena { position: relative; }
 
         /* --- 1. GRANO --- */
         .hero::after { content: ''; position: absolute; inset: 0; z-index: 6; pointer-events: none; background: url('../../../img/grano-textura.png') repeat; background-size: 180px; opacity: 0.35; mix-blend-mode: multiply; }
@@ -34,7 +38,7 @@
 
         /* --- 4. NOMBRE CON INVERSIÓN --- */
         .nombre { position: absolute; left: 0; right: 0; top: var(--nombre-y); transform: translateY(-58%); z-index: 2; padding-inline: var(--margen); color: #fff; mix-blend-mode: difference; pointer-events: none; opacity: calc(1 - var(--p) * 1.3); }
-        .nombre h1 { font-size: clamp(64px, 15.6vw, 290px); white-space: nowrap; text-align: center; word-spacing: -0.06em; }
+        .nombre h1 { font-size: clamp(64px, min(15.6vw, 34svh), 480px); white-space: nowrap; text-align: center; word-spacing: -0.06em; }
         /* Cada letra reacciona al cursor con la propiedad translate, que no choca con la animación de entrada */
         .nombre .l { transition: translate 500ms var(--ease); }
 
@@ -46,7 +50,7 @@
         .links-actual li:nth-child(1) { animation-delay: 1000ms; }
         .links-actual li:nth-child(2) { animation-delay: 1080ms; }
         .links-actual li:nth-child(3) { animation-delay: 1160ms; }
-        .links-actual a { display: inline-flex; overflow: hidden; padding: 0 0.12em; margin: 0 -0.12em; font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.3; font-weight: 270; font-style: italic; letter-spacing: -0.045em; color: #202020; }
+        .links-actual a { display: inline-flex; overflow: hidden; padding: 0 0.12em; margin: 0 -0.12em; font-family: 'Inter', sans-serif; font-size: clamp(1.1rem, 0.78vw, 1.5rem); line-height: 1.3; font-weight: 270; font-style: italic; letter-spacing: -0.045em; color: #202020; }
 
         /* --- 1. HOVER: LETRAS QUE RUEDAN --- */
         /* Cada letra lleva una copia de sí misma debajo (text-shadow). Al pasar el mouse suben en cascada y la copia ocupa su lugar */
@@ -54,7 +58,8 @@
 
         /* --- 2. PUNTO JUNTO A LA HORA --- */
         /* El punto que latía en "Disponible", ahora solo, a la izquierda de la hora */
-        .nav .der { gap: 10px; }
+        .nav .der { gap: 10px; font-size: clamp(12px, 0.72vw, 15px); }
+        .nav .logo { font-size: clamp(16px, 1.05vw, 22px); }
         .punto-vivo { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: latido 2s ease-in-out infinite; }
 
         /* --- 3. HOVER LENTO EN LAS REDES --- */
@@ -73,7 +78,7 @@
         /* --- 1. DESCRIPTOR BAJO EL LOGO --- */
         /* Arriba a la izquierda siempre hay fondo liso: se lee en cualquier ancho y llena la franja superior */
         
-        .btn-proyectos { position: relative; overflow: hidden; z-index: 1; display: block; padding: 15px 45px; border: 2px solid #202020; border-radius: 25px; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 300; font-style: italic; letter-spacing: 1px; text-transform: uppercase; color: #202020; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.6s ease, box-shadow 0.6s ease; }
+        .btn-proyectos { position: relative; overflow: hidden; z-index: 1; display: block; padding: clamp(15px, 1.05vw, 22px) clamp(45px, 3.1vw, 64px); border: 2px solid #202020; border-radius: 999px; font-family: 'Inter', sans-serif; font-size: clamp(0.9rem, 0.62vw, 1.2rem); font-weight: 300; font-style: italic; letter-spacing: 1px; text-transform: uppercase; color: #202020; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.6s ease, box-shadow 0.6s ease; }
         .btn-proyectos::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #202020; transition: left 0.6s cubic-bezier(0.25, 1, 0.5, 1); z-index: -1; }
         @media (hover: hover) {
             .btn-proyectos:hover::before { left: 0; }
@@ -102,6 +107,15 @@
         .siguiente p.sub { grid-column: 4 / span 6; margin-top: 28px; color: var(--gris-medio); }
 
         /* =======================================================
+           PANTALLAS BAJAS (CELULAR HORIZONTAL, LAPTOPS CON POCA ALTURA)
+           ======================================================= */
+        /* El botón baja a la fila del pie y se ocultan los elementos que chocarían */
+        @media (max-height: 520px) and (min-width: 769px) {
+            .accion { top: auto; bottom: var(--margen); }
+            .numero, .scroll { display: none; }
+        }
+
+        /* =======================================================
            VISTA MÓVIL
            ======================================================= */
         @media (max-width: 768px) {
@@ -123,6 +137,7 @@
     </style>
 </head>
 <body>
+    <div class="escena">
     <section class="hero" data-parallax>
         <nav class="nav">
             <a href="#" class="logo">agustín<span class="punto">.</span>design<span class="cursor"></span></a>
@@ -148,6 +163,7 @@
         <h2>Trabajo seleccionado</h2>
         <p class="sub">Vista previa de la entrega: el hero queda fijo, se oscurece y esta sección lo cubre como una cortina. El diseño real de esta sección es el siguiente paso.</p>
     </section>
+    </div>
 
     <script src="hero-base.js"></script>
     <script src="h1-capas.js"></script>

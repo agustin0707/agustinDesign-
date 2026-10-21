@@ -6,7 +6,9 @@
     const relojes = document.querySelectorAll('[data-reloj]');
     const formato = new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', hour: '2-digit', minute: '2-digit', hour12: false });
     const tick = () => relojes.forEach(r => { const [h, m] = formato.format(new Date()).split(':'); r.innerHTML = (r.dataset.reloj || 'Santiago') + ' ' + h + '<span class="dos">:</span>' + m; });
-    tick(); setInterval(tick, 15000);
+    /* Se actualiza justo al cambiar el minuto, así el parpadeo de los dos puntos no se reinicia */
+    const programar = () => setTimeout(() => { tick(); programar(); }, 60000 - (Date.now() % 60000) + 50);
+    tick(); programar();
 
     /* --- 2. LETRAS QUE SUBEN --- */
     /* Envuelve palabras y letras para animarlas en cascada sin perder accesibilidad */
