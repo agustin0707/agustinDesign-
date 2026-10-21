@@ -41,7 +41,7 @@ body { background: var(--c-fondo); color: var(--c-texto); font-family: var(--c-f
 /* --- 2. RITMO DE FONDOS --- */
 /* Cada sección declara su fondo (oscuro, claro o marca) y el tema define qué significa cada uno */
 .seccion { position: relative; background: var(--c-fondo); color: var(--c-texto); padding-bottom: var(--c-seccion); }
-.seccion + .seccion { padding-top: var(--c-seccion); }
+:is(.seccion, .flujo) + .seccion { padding-top: var(--c-seccion); }
 
 /* =======================================================
    1. LETRAS QUE SUBEN Y APARICIONES
@@ -572,9 +572,22 @@ body[data-barra="claro"] .barra.flota { background: rgba(255, 255, 255, 0.6); }
 body.fondo-1 [data-caso] > .seccion::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: min(var(--c-seccion), 220px); background: linear-gradient(180deg, var(--fondo-prev, transparent), transparent); pointer-events: none; z-index: 0; }
 :where(body.fondo-1 [data-caso] > .seccion > *) { position: relative; z-index: 1; }
 
-/* --- 2. LÁMINAS --- */
-/* Cada sección se apoya sobre la anterior con esquinas redondeadas y sombra: el cambio de fondo es una lámina nueva */
-body.fondo-2 [data-caso] > .seccion + .seccion { margin-top: -40px; border-radius: 40px 40px 0 0; box-shadow: 0 -30px 60px -24px rgba(8, 5, 24, 0.45); }
+/* --- 2. LÁMINAS (CON FLUJO DENTRO DE CADA CAPÍTULO) --- */
+/* Cada bloque es una lámina: sube con las esquinas redondeadas y un poco más angosta, y se abre a todo el ancho
+   al llegar arriba (--e, de 0 a 1). El bloque de atrás se oscurece a medida que la nueva lo cubre (--q).
+   Se usa clip-path solo mientras entra; al llegar (.plena) basta el radio: el fondo ya lo respeta, sin recortar
+   los hijos (recortarlos obliga a enmascarar el iframe y las capas animadas en cada cuadro) */
+body.fondo-2 [data-caso] > :is(.seccion, .flujo) { position: relative; isolation: isolate; }
+body.fondo-2 [data-caso] > :is(.seccion, .flujo) + :is(.seccion, .flujo) { margin-top: -48px; clip-path: inset(0 calc((1 - var(--e, 1)) * 4%) 0 round calc(48px - var(--e, 1) * 28px) calc(48px - var(--e, 1) * 28px) 0 0); }
+body.fondo-2 [data-caso] > :is(.seccion, .flujo).plena { clip-path: none; border-radius: 20px 20px 0 0; }
+body.fondo-2 [data-caso] > :is(.seccion, .flujo)::after { content: ''; position: absolute; inset: 0; z-index: 20; background: #07041A; opacity: calc(var(--q, 0) * 0.55); pointer-events: none; will-change: opacity; }
+/* El bloque de un capítulo cambia de color de forma continua según la sección que se lee (colores registrados) */
+body.fondo-2 [data-caso] > .flujo.flujo { background-color: var(--c-fondo); background-image: radial-gradient(60% 40% at 85% 6%, rgb(155 142 240 / calc(var(--g-claro) * 0.3)), transparent 70%), radial-gradient(110% 60% at 50% 0%, rgb(107 92 231 / var(--g-marca)), rgb(74 60 174 / var(--g-marca)) 45%, rgb(45 37 96 / calc(var(--g-marca) * 0.9)) 100%); transition: --c-fondo 900ms ease, --c-texto 900ms ease, --c-texto-2 900ms ease, --c-texto-3 900ms ease, --c-linea 900ms ease, --c-acento 900ms ease, --c-acento-2 900ms ease, --c-superficie 900ms ease, --c-velo 900ms ease, --c-sobre-acento 900ms ease, --g-claro 900ms ease, --g-marca 900ms ease; }
+body.fondo-2 .flujo.claro { --g-claro: 1; --g-marca: 0; }
+body.fondo-2 .flujo.marca { --g-claro: 0; --g-marca: 1; }
+body.fondo-2 .flujo.oscuro { --g-claro: 0; --g-marca: 0; }
+body.fondo-2 .flujo > .seccion { background: transparent; --c-fondo: inherit; --c-texto: inherit; --c-texto-2: inherit; --c-texto-3: inherit; --c-linea: inherit; --c-acento: inherit; --c-acento-2: inherit; --c-superficie: inherit; --c-velo: inherit; --c-sobre-acento: inherit; }
+@media (prefers-reduced-motion: reduce) { body.fondo-2 [data-caso] > :is(.seccion, .flujo) + :is(.seccion, .flujo) { clip-path: none; border-radius: 20px 20px 0 0; } }
 
 /* --- 3. FONDO QUE FLUYE --- */
 /* Las secciones no pintan fondo ni redefinen colores: heredan del body, que cambia de modo con el scroll.

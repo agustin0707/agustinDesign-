@@ -295,3 +295,12 @@ Fuente: `~/Documents/Illustrator/Tap In/Portafolio/tapin-caso-de-estudio.md` y l
 | Capítulo 02 | Las tiras suben en escalera al aparecer y responden al mouse |
 | Resultado | Cifras en una franja limpia; una cita grande a la vez que se alterna sola |
 | Aprendizaje | Se enciende palabra por palabra; al lado, el giro en dos isotipos (Forky 2025 → cerebro 2026) y los créditos ordenados |
+
+### Fondo elegido: láminas con flujo dentro de cada capítulo (21 oct 2026)
+Elegiste la opción 2, con algo de la 3. La regla quedó así: **las láminas separan bloques** (portada, resumen y mapa, cada capítulo, resultado, aprendizaje) y **dentro de cada capítulo el fondo fluye** (la portada del capítulo se funde con sus decisiones mientras se lee, porque son una misma cosa).
+
+- **Entrada de cada lámina:** sube redondeada y 4 % más angosta por lado, y se abre a todo el ancho al llegar arriba (clip-path ligado al scroll); al llegar queda con un radio de 20 px.
+- **La lámina de atrás** se oscurece a medida que la nueva la cubre, como la pila del índice.
+- **Flujo del capítulo:** el bloque interpola su color (y el del texto) entre la portada oscura o morada y el lavanda de las decisiones, con los colores registrados como @property.
+- **Rendimiento:** el radio final no recorta a los hijos (recortarlos obligaba a enmascarar el iframe y bajaba a 50 fps); el velo es su propia capa. Medido: 60 fps en las decisiones, 57 a 60 fps mientras una lámina entra.
+- Las variantes 1 y 3 siguen disponibles con `?fondo=1` y `?fondo=3` para comparar.

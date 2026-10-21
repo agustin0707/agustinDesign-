@@ -16,6 +16,7 @@
         poster: '../works/media/tapin-poster.jpg',
         orden: ['resumen', 'mapa', 'decisiones', 'resultado', 'aprendizaje'],
         fichaEnResumen: true,
+        fondo: '2', flujoCapitulos: true,
         ficha: [['Cliente', 'Tap In · Chile y Perú'], ['Rol', 'Diseñador fundador'], ['Período', 'Ene 2025 a hoy'], ['Equipo', 'Cofundadores y su equipo de desarrollo'], ['Stack', 'HTML, CSS y JS vanilla'], ['En vivo', 'tapin.cl']],
         ritmo: { resumen: 'claro', proceso: 'claro', decisiones: 'claro', resultados: 'marca', aprendizaje: 'oscuro' },
         bajada: 'De la cafetería del campus a la plataforma del colegio.',

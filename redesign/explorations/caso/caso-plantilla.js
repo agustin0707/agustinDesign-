@@ -65,7 +65,9 @@
         const todas = C.decisiones.map((d, i) => [d, i]);
         if (!C.capitulos) return evidencia(todas, `${franja('02', 'Decisiones', `${totalDec} decisiones`)}<h2 class="titulo-bloque" data-letras>${C.titulos.decisiones}</h2>`);
         /* Con capítulos: cada uno abre con su portada a todo el ancho y sigue con su propio escenario */
-        return C.capitulos.map((cap, k) => `
+        /* Con C.flujoCapitulos, la portada y las decisiones de cada capítulo van en un bloque cuyo fondo fluye */
+        const flujo = C.flujoCapitulos && document.body.classList.contains('fondo-2');
+        return C.capitulos.map((cap, k) => `${flujo ? `<div class="flujo ${cap.ritmo || ritmo('decisiones')}" data-flujo>` : ''}
         <section class="seccion grilla cap-portada ${cap.ritmo || ritmo('decisiones')}" id="cap-${k}"${cap.tono ? ` style="--cap-tono:${cap.tono}"` : ''}>
             <div class="cap-texto">
                 <span class="cap-pill etiqueta">Capítulo ${n2(k)} · ${cap.periodo}</span>
@@ -75,7 +77,7 @@
             <div class="cap-visual" data-aparece>${window.CASO_CAP_VISUAL ? window.CASO_CAP_VISUAL(cap, k) : ''}</div>
             <span class="cap-num" aria-hidden="true">${n2(k)}</span>
         </section>
-        ${evidencia(todas.filter(([d]) => d.cap === k))}`).join('');
+        ${evidencia(todas.filter(([d]) => d.cap === k))}${flujo ? '</div>' : ''}`).join('');
     };
 
     /* Mapa del proyecto: las etapas como tramos proporcionales al tiempo y los hitos en su fecha */
