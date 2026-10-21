@@ -10,34 +10,93 @@
     <link rel="stylesheet" href="works-base.css">
     <style>
         /* =======================================================
-           WORKS 3 · PILA DE CORTINAS
+           WORKS 3 · PILA DE CORTINAS (V2)
            ======================================================= */
-        /* Cada proyecto ocupa una pantalla; el siguiente lo cubre al bajar, como la entrega del hero */
+        /* Cada proyecto es una pantalla teñida con su marca; el siguiente la cubre como una hoja */
 
-        /* --- 1. PANEL FIJO --- */
-        /* --q: cuánto lo cubrió el siguiente (0 a 1), lo escribe el JS. El panel cubierto se achica y se oscurece */
-        .panel { --q: 0; position: sticky; top: 0; height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 72px var(--margen) var(--margen); background: var(--negro); overflow: hidden; }
-        .panel-in { display: contents; }
-        .panel > * { transform: scale(calc(1 - var(--q) * 0.06)); opacity: calc(1 - var(--q) * 0.7); transform-origin: 50% 0; }
-        .panel .tope { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); align-items: end; padding-bottom: 16px; }
-        .panel .tope .n { grid-column: 1 / span 2; }
-        .panel .tope .disc { grid-column: 7 / span 4; }
-        .panel .tope .anio { grid-column: 12; justify-self: end; }
+        /* --- 1. CABECERA --- */
+        .cabecera .cuenta { grid-column: 10 / -1; justify-self: end; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+        .cabecera .cuenta a { border-bottom: 1px solid currentColor; }
 
-        /* --- 2. LÁMINA (IMAGEN ENMARCADA) --- */
-        /* La imagen vive en un marco con margen, como una lámina. Al pasar el mouse el marco se abre un poco */
-        .lamina { position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; clip-path: inset(0 round 6px); transition: clip-path 1000ms var(--hover-lento); }
-        .lamina img { width: 100%; height: 100%; object-fit: cover; scale: 1.06; transition: scale 1400ms var(--hover-lento); }
-        .lamina .ver { position: absolute; left: 50%; top: 50%; z-index: 2; translate: -50% -50%; padding: 10px 16px; border-radius: 999px; background: var(--blanco); color: var(--negro); opacity: 0; scale: 0.9; transition: opacity 600ms var(--hover-lento), scale 700ms var(--hover-lento); }
+        /* =======================================================
+           PANEL
+           ======================================================= */
+        /* --q: cuánto lo cubrió el siguiente (0 a 1), lo escribe el JS */
+        .panel { --q: 0; --tinte: var(--negro); position: sticky; top: 0; height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 64px var(--margen) var(--margen); background: var(--tinte); overflow: hidden; }
+
+        /* --- 1. HOJA QUE SUBE --- */
+        /* Cada panel nuevo llega con esquinas redondeadas y sombra arriba, como una hoja sobre la anterior */
+        .panel + .panel, .pila + .archivo { border-radius: 18px 18px 0 0; box-shadow: 0 -30px 60px -12px rgba(0, 0, 0, 0.65); }
+
+        /* --- 2. PANEL CUBIERTO --- */
+        /* El contenido se achica levemente y un velo lo oscurece, sin perder sus colores */
+        .panel > :not(.velo) { transform: scale(calc(1 - var(--q) * 0.05)); transform-origin: 50% 0; }
+        .panel .velo { position: absolute; inset: 0; z-index: 8; background: #000; opacity: calc(var(--q) * 0.7); pointer-events: none; }
+
+        /* --- 3. FILA SUPERIOR CON MINI ÍNDICE --- */
+        /* Los tres proyectos siempre a la vista, con el actual destacado: se sabe dónde estás y se puede saltar */
+        .tope { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); align-items: end; padding-bottom: 14px; }
+        .mi { grid-column: 1 / span 6; display: flex; gap: 22px; }
+        .mi a { display: inline-flex; gap: 8px; color: rgba(245, 245, 243, 0.38); transition: color 600ms var(--hover-lento); }
+        .mi a.actual { color: var(--blanco); }
+        .mi a.actual .mi-n::before { content: '●'; margin-right: 6px; font-size: 8px; vertical-align: 2px; }
+        @media (hover: hover) { .mi a:hover { color: var(--blanco); } }
+        .tope .disc { grid-column: 7 / span 3; }
+        .tope .vivo { grid-column: 10 / -1; justify-self: end; }
+        .tope a.vivo { border-bottom: 1px solid rgba(245, 245, 243, 0.4); }
+
+        /* =======================================================
+           LÁMINA: LA ESCENA DEL PROYECTO
+           ======================================================= */
+        .lamina { position: relative; border-radius: 8px; overflow: hidden; cursor: pointer; isolation: isolate; }
+        .lamina:focus-visible { outline: 1px solid var(--blanco); outline-offset: 6px; }
+        .lamina .ver { position: absolute; right: 18px; top: 18px; z-index: 4; padding: 9px 15px; border-radius: 999px; background: var(--blanco); color: var(--negro); opacity: 0; translate: 0 -8px; transition: opacity 700ms var(--hover-lento), translate 800ms var(--hover-lento); }
+        .lamina .recorre { position: absolute; left: 18px; top: 18px; z-index: 4; padding: 8px 13px; border-radius: 999px; background: rgba(11, 11, 11, 0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0.9; transition: opacity 600ms var(--hover-lento); }
         @media (hover: hover) {
-            .lamina:hover img { scale: 1; }
-            .lamina:hover .ver { opacity: 1; scale: 1; }
+            .lamina:hover .ver { opacity: 1; translate: 0 0; }
+            .lamina:hover .recorre { opacity: 0; }
         }
 
-        /* --- 3. PIE DEL PANEL --- */
-        .panel .pie { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); align-items: end; padding-top: 18px; }
-        .panel .nombre { grid-column: 1 / span 9; font-size: clamp(56px, 8.6vw, 156px); font-weight: 500; letter-spacing: var(--tracking-display); line-height: 0.82; }
-        .panel .bajada { grid-column: 10 / -1; color: var(--gris-medio); font-size: 14px; padding-bottom: 0.6vw; }
+        /* --- 1. ESCENA --- */
+        /* Fondo de marca + dispositivo. Usa unidades de contenedor: se ve igual en la lámina, en el viaje y en el caso */
+        .escena { position: absolute; inset: 0; overflow: hidden; container-type: size; --barra: clamp(14px, 2.3cqw, 34px); }
+        .escena .fondo { position: absolute; inset: 0; }
+        .escena .fondo img { width: 100%; height: 100%; object-fit: cover; scale: 1.05; transition: scale 1600ms var(--hover-lento); }
+        @media (hover: hover) { .lamina:hover .escena .fondo img { scale: 1; } }
+
+        /* --- 2. NAVEGADOR --- */
+        .navegador { position: absolute; left: 15%; right: 15%; top: 12%; bottom: -3%; border-radius: max(6px, 0.7cqw) max(6px, 0.7cqw) 0 0; background: #fff; overflow: hidden; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6); transition: translate 1200ms var(--hover-lento); }
+        .barra-nav { position: relative; height: var(--barra); display: flex; align-items: center; gap: max(4px, 0.45cqw); padding: 0 max(8px, 1cqw); background: #F1F1EF; border-bottom: 1px solid #E2E2DF; }
+        .barra-nav i { width: max(6px, 0.7cqw); height: max(6px, 0.7cqw); border-radius: 50%; background: #CFCFCB; }
+        .barra-nav .url { position: absolute; left: 50%; translate: -50% 0; font-size: max(9px, 0.85cqw); color: #77736B; background: #fff; padding: 0.2em 1.4em; border-radius: 999px; }
+        .pantalla { position: absolute; top: var(--barra); left: 0; right: 0; bottom: 0; overflow: hidden; container-type: size; }
+        .telefono .pantalla { top: 0; }
+
+        /* --- 3. LA WEB HACE SCROLL ADENTRO --- */
+        /* Al pasar el mouse (o al verla en móvil) la captura completa del sitio baja despacio; al salir vuelve más rápido */
+        .pantalla img { width: 100%; height: auto; translate: 0 0; transition: translate 1800ms var(--hover-lento); }
+        .lamina.viendo .pantalla img { translate: 0 calc(-100% + 100cqh); transition-duration: 11s; transition-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
+        @media (hover: hover) {
+            .lamina:hover .pantalla img { translate: 0 calc(-100% + 100cqh); transition-duration: 11s; transition-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
+            .lamina:hover .navegador, .lamina:hover .telefono { translate: 0 -1.5%; }
+        }
+        .escena.quieta * { transition: none !important; }
+
+        /* --- 4. TELÉFONO (MEND) --- */
+        .telefono { position: absolute; right: 15%; top: 8%; height: 106%; aspect-ratio: 390 / 844; border-radius: max(18px, 3cqw); border: max(4px, 0.5cqw) solid #0B0B0B; background: #0B0B0B; overflow: hidden; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.65); transition: translate 1200ms var(--hover-lento); }
+
+        /* --- 5. FONDOS DE CADA MARCA --- */
+        .escena-llego .fondo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 20, 21, 0.1), rgba(10, 20, 21, 0.5)); }
+        .escena-tapin .fondo { background: radial-gradient(120% 95% at 50% 0%, #9A8CFA 0%, #4A3CAE 46%, #16113A 100%); }
+        .escena-mend .fondo img { object-position: 0 50%; }
+
+        /* =======================================================
+           PIE DEL PANEL
+           ======================================================= */
+        /* El nombre sube sobre el borde de la lámina y se invierte al cruzarla, como el nombre del hero */
+        .pie { position: relative; z-index: 5; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--medianil); align-items: end; pointer-events: none; }
+        .pie .nombre { grid-column: 1 / span 9; font-size: clamp(56px, 8.6vw, 156px); font-weight: 500; letter-spacing: var(--tracking-display); line-height: 0.82; color: #fff; mix-blend-mode: difference; translate: 0 -0.32em; margin-bottom: -0.32em; }
+        .pie .bajada { grid-column: 10 / -1; color: var(--gris-medio); font-size: 14px; padding-bottom: 4px; }
 
         .cabecera { position: relative; z-index: 1; }
         .archivo { position: relative; z-index: 5; background: var(--negro); }
@@ -46,18 +105,25 @@
            VISTA MÓVIL
            ======================================================= */
         @media (max-width: 768px) {
-            .panel { padding-top: 64px; }
-            .panel .tope, .panel .pie { grid-template-columns: repeat(4, 1fr); }
-            .panel .tope .n { grid-column: 1 / span 2; }
-            .panel .tope .disc { display: none; }
-            .panel .tope .anio { grid-column: 4; }
-            .panel .nombre { grid-column: 1 / -1; font-size: 15vw; }
-            .panel .bajada { grid-column: 1 / -1; margin-top: 10px; }
-            .lamina .ver { opacity: 1; scale: 1; }
-            /* En móvil la lámina mantiene el formato horizontal de las capturas y el panel se centra */
-            .panel { grid-template-rows: auto auto auto; align-content: center; }
-            .lamina { aspect-ratio: 4 / 3; }
-            .lamina img { object-position: 0 0; }
+            .cabecera .cuenta { grid-column: 1 / -1; justify-self: start; align-items: flex-start; margin-top: 16px; }
+            .panel { padding-top: 60px; grid-template-rows: auto auto auto; align-content: center; }
+            .tope, .pie { grid-template-columns: repeat(4, 1fr); }
+            .mi { grid-column: 1 / -1; gap: 14px; }
+            .mi a:not(.actual) .mi-t { display: none; }
+            .tope .disc { display: none; }
+            .tope .vivo { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
+            .lamina { aspect-ratio: 4 / 4.6; }
+            .navegador { left: 8%; right: 8%; top: 14%; }
+            .telefono { right: 50%; translate: 50% 0; top: 10%; }
+            .lamina .ver { opacity: 1; translate: 0 0; }
+            .lamina .recorre { display: none; }
+            .pie .nombre { grid-column: 1 / -1; font-size: 15vw; }
+            .pie .bajada { grid-column: 1 / -1; margin-top: 12px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .panel > :not(.velo) { transform: none; }
+            .panel .velo { display: none; }
+            .pantalla img { transition: none !important; translate: 0 0 !important; }
         }
     </style>
 </head>
@@ -67,16 +133,66 @@
     <section class="cabecera">
         <span class="num mono gris">02 · Works</span>
         <h2>Trabajo seleccionado</h2>
-        <p>Cada proyecto es una pantalla. Baja y el siguiente cubre al anterior; presiona la imagen para entrar.</p>
+        <div class="cuenta mono"><span class="gris">03 proyectos · 2025–2026</span><a href="#archivo">Archivo ↓</a></div>
     </section>
 
     <div class="pila" id="pila">
-        <section class="panel" data-id="llego"><div class="tope mono"><span class="n">01 / 03</span><span class="disc">Marca · One page</span><span class="anio gris">2026</span></div><div class="lamina" tabindex="0"><img src="media/llego-web.jpg" alt=""><span class="ver mono">Ver caso ↗</span></div><div class="pie"><h3 class="nombre">Llegó Farma</h3><p class="bajada">Submarca de logística farmacéutica. Pitch ganado al diseñador de la marca madre.</p></div></section>
-        <section class="panel" data-id="tapin"><div class="tope mono"><span class="n">02 / 03</span><span class="disc">Marca · Producto · Web</span><span class="anio gris">2025–26</span></div><div class="lamina" tabindex="0"><img src="media/tapin-web.jpg" alt=""><span class="ver mono">Ver caso ↗</span></div><div class="pie"><h3 class="nombre">Tap In</h3><p class="bajada">De la cafetería del campus a la plataforma del colegio.</p></div></section>
-        <section class="panel" data-id="mend"><div class="tope mono"><span class="n">03 / 03</span><span class="disc">Investigación · Marca · Web app</span><span class="anio gris">2026</span></div><div class="lamina" tabindex="0"><img src="media/mend-web.jpg" alt=""><span class="ver mono">Ver caso ↗</span></div><div class="pie"><h3 class="nombre">Mend</h3><p class="bajada">Salud articular para Atención Primaria, de la investigación al producto.</p></div></section>
+        <section class="panel" id="p-llego" data-id="llego" style="--tinte:#0A1415">
+            <div class="tope mono">
+                <nav class="mi" aria-label="Proyectos"><a href="#p-llego" class="actual"><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin"><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend"><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
+                <span class="disc">Marca · One page · 2026</span>
+                <span class="vivo gris">Pronto en línea</span>
+            </div>
+            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Llegó Farma">
+                <div class="escena escena-llego">
+                    <div class="fondo"><img src="media/llego-foto.jpg" alt="" decoding="async"></div>
+                    <div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url mono">llegofarma.cl</span></div><div class="pantalla"><img src="media/llego-larga.jpg" alt="Sitio de Llegó Farma" decoding="async"></div></div>
+                </div>
+                <span class="recorre mono">Sitio · diseño y código</span>
+                <span class="ver mono">Ver caso ↗</span>
+            </div>
+            <div class="pie"><h3 class="nombre">Llegó Farma</h3><p class="bajada">Submarca de logística farmacéutica. Pitch ganado al diseñador de la marca madre.</p></div>
+            <div class="velo" aria-hidden="true"></div>
+        </section>
+
+        <section class="panel" id="p-tapin" data-id="tapin" style="--tinte:#110E22">
+            <div class="tope mono">
+                <nav class="mi" aria-label="Proyectos"><a href="#p-llego"><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin" class="actual"><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend"><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
+                <span class="disc">Marca · Producto · Web · 2025–26</span>
+                <a class="vivo" href="https://tapin.cl" target="_blank" rel="noopener">tapin.cl ↗</a>
+            </div>
+            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Tap In">
+                <div class="escena escena-tapin">
+                    <div class="fondo"></div>
+                    <div class="navegador"><div class="barra-nav"><i></i><i></i><i></i><span class="url mono">tapin.cl</span></div><div class="pantalla"><img src="media/tapin-larga.jpg" alt="Sitio de Tap In" loading="lazy" decoding="async"></div></div>
+                </div>
+                <span class="recorre mono">Sitio en vivo · diseño y código</span>
+                <span class="ver mono">Ver caso ↗</span>
+            </div>
+            <div class="pie"><h3 class="nombre">Tap In</h3><p class="bajada">De la cafetería del campus a la plataforma del colegio.</p></div>
+            <div class="velo" aria-hidden="true"></div>
+        </section>
+
+        <section class="panel" id="p-mend" data-id="mend" style="--tinte:#0D2024">
+            <div class="tope mono">
+                <nav class="mi" aria-label="Proyectos"><a href="#p-llego"><span class="mi-n">01</span><span class="mi-t">Llegó Farma</span></a><a href="#p-tapin"><span class="mi-n">02</span><span class="mi-t">Tap In</span></a><a href="#p-mend" class="actual"><span class="mi-n">03</span><span class="mi-t">Mend</span></a></nav>
+                <span class="disc">Investigación · Marca · Web app · 2026</span>
+                <span class="vivo gris">Prototipo con acceso</span>
+            </div>
+            <div class="lamina" tabindex="0" role="link" aria-label="Ver caso Mend">
+                <div class="escena escena-mend">
+                    <div class="fondo"><img src="media/mend-web.jpg" alt="" loading="lazy" decoding="async"></div>
+                    <div class="telefono"><div class="pantalla"><img src="media/mend-app-larga.jpg" alt="App de Mend" loading="lazy" decoding="async"></div></div>
+                </div>
+                <span class="recorre mono">Web app · diseño y código</span>
+                <span class="ver mono">Ver caso ↗</span>
+            </div>
+            <div class="pie"><h3 class="nombre">Mend</h3><p class="bajada">Salud articular para Atención Primaria, de la investigación al producto.</p></div>
+            <div class="velo" aria-hidden="true"></div>
+        </section>
     </div>
 
-    <section class="archivo"><span class="num mono gris">Archivo</span><ul data-archivo></ul></section>
+    <section class="archivo" id="archivo"><span class="num mono gris">Archivo</span><ul data-archivo></ul></section>
 
     <script src="works-base.js"></script>
     <script>
@@ -84,7 +200,9 @@
            INICIO JS · WORKS 3
            ======================================================= */
         (function () {
-            const paneles = [...document.querySelectorAll('.panel')];
+            const pila = document.getElementById('pila');
+            const paneles = [...pila.querySelectorAll('.panel')];
+            const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             /* --- 1. CUÁNTO CUBRE EL SIGUIENTE --- */
             /* Para cada panel, el progreso del siguiente subiendo sobre él define --q */
@@ -94,19 +212,35 @@
                 const h = window.innerHeight;
                 paneles.forEach((p, i) => {
                     const sig = paneles[i + 1] || document.querySelector('.archivo');
-                    const top = sig.getBoundingClientRect().top;
-                    const q = Math.min(Math.max(1 - top / h, 0), 1);
-                    p.style.setProperty('--q', q.toFixed(3));
+                    const q = Math.min(Math.max(1 - sig.getBoundingClientRect().top / h, 0), 1);
+                    p.style.setProperty('--q', quieto ? 0 : q.toFixed(3));
                 });
             };
             window.addEventListener('scroll', () => { if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); } }, { passive: true });
+            window.addEventListener('resize', pintar);
             pintar();
 
-            /* --- 2. ENTRAR AL CASO --- */
-            /* La lámina enmarcada se abre a sangre y se convierte en la portada */
+            /* --- 2. MINI ÍNDICE: SALTAR A UN PROYECTO --- */
+            /* Los paneles son sticky: su lugar real en el flujo es el inicio de la pila más n pantallas */
+            pila.querySelectorAll('.mi a').forEach(a => a.addEventListener('click', e => {
+                e.preventDefault();
+                const i = paneles.findIndex(p => '#' + p.id === a.getAttribute('href'));
+                const inicio = pila.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({ top: inicio + i * window.innerHeight, behavior: quieto ? 'auto' : 'smooth' });
+            }));
+
+            /* --- 3. VISTA PREVIA EN MÓVIL --- */
+            /* Sin mouse, la web hace scroll sola cuando la lámina está casi completa en pantalla */
+            if (!window.matchMedia('(hover: hover)').matches && !quieto) {
+                const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('viendo', e.intersectionRatio > 0.75)), { threshold: [0, 0.75, 1] });
+                pila.querySelectorAll('.lamina').forEach(l => io.observe(l));
+            }
+
+            /* --- 4. ENTRAR AL CASO --- */
+            /* La escena completa viaja y se abre a sangre como portada del caso */
             paneles.forEach(p => {
                 const lamina = p.querySelector('.lamina');
-                const abrir = () => window.abrirCaso(p.dataset.id, lamina, p.querySelector('.nombre'));
+                const abrir = () => window.abrirCaso(p.dataset.id, lamina, p.querySelector('.nombre'), { clonar: true });
                 lamina.addEventListener('click', abrir);
                 lamina.addEventListener('keydown', e => { if (e.key === 'Enter') abrir(); });
             });
