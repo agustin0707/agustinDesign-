@@ -335,3 +335,10 @@ Te gustó mucho más; pediste un audit exhaustivo y mejorar a nivel gráfico. Re
 | Manual y sitio | Barra de avance en el manual; contador "08 / 10" en el índice del sitio |
 
 Medido: 115 a 120 fps en todas las escenas.
+
+### Hero de Tap In: elegida la B "Desde la mesa" (21 oct 2026)
+Comparador publicado como artifact (y en `caso/heros-tapin/`): A perspectiva lateral, B desde la mesa, C isométrico. Elegiste la **B**. Aplicado al caso, con tus observaciones:
+- El zoom al bajar se mantiene y ahora también **endereza** el sitio: parte recostado (38° en escritorio, 32° en móvil) subiendo desde abajo y se levanta hasta llenar la pantalla, con una curva suave.
+- Título centrado arriba: datos del caso en una línea sobre el wordmark (se eliminó la fila de arriba que competía con la barra), lema en Poppins Light **sin punto final** con **campus** y **colegio** en negrita, y un enlace discreto "tapin.cl en producción".
+- Fuera la cápsula "En producción" y el mockup chico del comedor. La pista para bajar queda como un círculo con flecha que no choca con el sitio.
+- En móvil el texto se alinea a la izquierda arriba y el sitio sube recostado debajo.
