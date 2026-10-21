@@ -179,7 +179,7 @@ Herramientas nuevas en `redesign/herramientas/`: `auditar-textos.cjs` (cortes, d
 
 ## S3 · Página de caso
 
-En curso · exploración (21 oct 2026) · `explorations/caso/` (comparador en `index.html`)
+En curso · plantilla elegida: 3 · Evidencia, con identidad propia por caso (21 oct 2026) · `explorations/caso/` (comparador en `index.html`; la exploración anterior quedó en `caso/exploracion-1/`)
 
 ### Estructura común (adelanta el ítem 4.2 del template de caso)
 Caso de prueba: **Tap In**, con decisiones reales sacadas de las notas de reunión de la landing (19 may, 26 may y 2 jun 2026), del `CHECKLIST.md` del sitio y del manual de Connect. El copy es borrador de la Fase 4.
@@ -199,3 +199,36 @@ Caso de prueba: **Tap In**, con decisiones reales sacadas de las notas de reuni�
 | **3 · Evidencia** | El sitio real queda fijo al lado: al leer cada decisión, tapin.cl se desplaza a esa parte (el menú se abre solo) y un marco la señala. Las decisiones de marca cambian el escenario a sus piezas | La prueba más fuerte de "diseño y construyo": la decisión y su resultado en vivo, uno al lado del otro | Depende de tener el sitio en el mismo dominio (Fase 6); en móvil cae a piezas estáticas |
 
 Material nuevo en `explorations/caso/media/` (fuera del repo, es material de cliente): secciones del sitio capturadas, láminas del manual de Connect, 15 isotipos explorados del Branding Rebirth y fotos del lanzamiento.
+
+### Elegida: 3 · Evidencia, como plantilla para todos los casos, con identidad propia (21 oct 2026)
+Tu pedido: la mecánica de la 3 es la base de todos los casos, pero cada caso se viste con la identidad de su proyecto.
+
+**Reparto entre marco y proyecto** (ajusta la hipótesis 2: la identidad del proyecto ya no vive solo en el hero y las piezas, sino en toda la piel del caso):
+| Es de Agustín Design (constante) | Es del proyecto (cambia en cada caso) |
+|---|---|
+| Barra superior, grilla de 12 columnas, orden del caso (portada, resumen, decisiones, proceso, resultado, aprendizaje, siguiente), mecánica de evidencia (sitio real fijo, resalte que viaja, riel con J y K), tiempos de lectura y el bloque "siguiente proyecto" | Tipografías, color y ritmo de fondos, formas (radios, sombras), texturas, estilo de etiquetas y del resalte, gesto de movimiento y la escena de portada |
+
+**Sistema:** `caso-base.css` define un contrato de variables `--c-*` con valores neutros; cada tema (`tema-tapin.css` con `.tema-tp`, `tema-llego.css` con `.tema-lf`, siguiendo los prefijos del repo) solo redefine variables y agrega sus detalles. El contenido vive en `datos-*.js` y la plantilla (`caso-plantilla.js`) arma la página; `caso-evidencia.js` es la mecánica común. Sumar un caso es escribir sus datos y su tema.
+
+| Caso | Identidad aplicada (sacada de su propio sitio y manual) |
+|---|---|
+| **Llegó Farma** | Retícula de precisión visible con cortes de 8 px en los cruces, nodos (franjas, riel y esquinas del resalte), Manrope 200 a 500 con escalón, LF Mono con el cero sin punto, radios en cero y sin sombras, ritmo oscuro, papel y degradado turquesa con grano, cifras en mono con conteo |
+| **Tap In** | Poppins, morado y lavanda, decisiones sobre fondo claro como el sitio (su propia decisión "de oscuro a claro"), píldoras con punto, vitrina de vidrio, resalte con brillo, piezas que flotan como los mockups del hero, cifras en tarjetas |
+
+### Audit de la opción 3 y mejoras aplicadas
+| Hallazgo | Mejora |
+|---|---|
+| El navegador ocupaba todo el alto: un formato casi cuadrado y un sitio con un viewport irreal de 1.333 px | Vitrina con proporción real de pantalla (16:10), centrada |
+| El sitio se cargaba recién al acercarse a las decisiones: las primeras mostraban solo la portada | Se carga en reposo apenas abre la página (nunca durante el scroll) |
+| Sin noción de avance dentro de las decisiones | Riel con una marca por decisión (pasadas, actual), presionable, y atajos J y K |
+| La etiqueta del resalte repetía "Decisión 03" | Dice qué se marca ("Menú · Soluciones") y el pie del escenario lo repite |
+| El resalte quedaba corrido cuando el sitio animaba lo que entraba en pantalla | Segunda medición a 1,1 s |
+| El sitio mostraba una parte, pero no su interacción | Modo demostración: las pestañas de módulos de Tap In se eligen solas y la ruta de Llegó avanza etapa por etapa |
+| Las capas de marca aparecían de golpe, flotando en el vacío | La exploración se recorre en orden y termina en lo elegido (isotipos de Tap In, cruces de Llegó) |
+| Texto inactivo al 28%: difícil de leer si alguien se adelanta | 38% |
+| Sin salida al sitio real | "Verlo en tapin.cl ↗" por decisión (no en Llegó: aún no está publicado) |
+| Bug: el escalón de Llegó (`text-indent`) se heredaba a cada palabra animada | Anulado en las palabras |
+| Bug: un selector del tema le quitaba el sticky al escenario | `:where()` sin especificidad |
+| Fluidez | 59 a 60 fps en el scroll por las decisiones con el sitio cargado, en los dos casos |
+
+**Decisiones de Llegó tomadas de tus documentos:** convivencia con la marca madre, paleta ampliada con 104E56, wordmark dibujado, tres caminos para la cruz con cuatro criterios y adjetivos, retícula visible en la web, tres atajos en el hero y la ruta en SVG. El caso dice que la cruz la eligió el cliente (Nodos) y no cuenta que tú recomendabas Líneas: se decide en la Fase 4 si eso se publica.

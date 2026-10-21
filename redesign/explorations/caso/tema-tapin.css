@@ -1,0 +1,65 @@
+/* =======================================================
+   TEMA TAP IN (.tema-tp)
+   ======================================================= */
+/* La piel del caso sale del sitio y del manual de Tap In: Poppins, morados y lavanda, superficies de vidrio,
+   píldoras, radios generosos y un movimiento suave que flota. Base: tokens de tapin.cl (css/styles.css) */
+
+/* --- 1. TOKENS --- */
+.tema-tp {
+    --c-f-display: 'Poppins', sans-serif;
+    --c-f-texto: 'Poppins', sans-serif;
+    --c-f-etiqueta: 'Poppins', sans-serif;
+    --c-display-peso: 600;
+    --c-display-track: -0.05em;
+    --c-display-lh: 0.86;
+    --c-titulo-peso: 600;
+    --c-titulo-track: -0.035em;
+    --c-intro-peso: 500;
+    --c-intro-track: -0.025em;
+    --c-etiqueta-tam: 10.5px;
+    --c-etiqueta-track: 0.08em;
+    --c-etiqueta-caja: uppercase;
+    --c-radio: 28px;
+    --c-radio-pieza: 20px;
+    --c-radio-resalte: 18px;
+    --c-sombra: 0 30px 80px -24px rgba(45, 37, 96, 0.45);
+    --c-curva: cubic-bezier(0.34, 1.25, 0.64, 1);
+    --c-cifra-peso: 600;
+    --c-cifra-track: -0.05em;
+    --c-escena: radial-gradient(120% 95% at 50% 0%, #9A8CFA 0%, #4A3CAE 46%, #16113A 100%);
+}
+
+/* --- 2. RITMO DE FONDOS: OSCURO, CLARO (COMO EL SITIO) Y MARCA --- */
+.tema-tp, .tema-tp .oscuro { --c-fondo: #110E22; --c-texto: #F4F3FB; --c-texto-2: rgba(238, 237, 254, 0.64); --c-texto-3: rgba(238, 237, 254, 0.36); --c-linea: rgba(155, 142, 240, 0.22); --c-acento: #9B8EF0; --c-acento-2: #B5ABF5; --c-sobre-acento: #110E22; --c-velo: rgba(17, 14, 34, 0.32); }
+.tema-tp .claro { --c-fondo: #F2F1F8; --c-texto: #2C2B3A; --c-texto-2: #6B6A7D; --c-texto-3: #A9A8B8; --c-linea: rgba(74, 60, 174, 0.14); --c-acento: #4A3CAE; --c-acento-2: #6B5CE7; --c-sobre-acento: #FFFFFF; --c-velo: rgba(45, 37, 96, 0.14); }
+.tema-tp .marca { --c-fondo: #2D2560; --c-texto: #FFFFFF; --c-texto-2: rgba(255, 255, 255, 0.72); --c-texto-3: rgba(255, 255, 255, 0.42); --c-linea: rgba(255, 255, 255, 0.24); --c-acento: #FFFFFF; --c-acento-2: #EEEDFE; --c-sobre-acento: #2D2560; }
+/* El claro lleva los brillos lavanda del hero de tapin.cl; la marca, el degradado morado del manual */
+.tema-tp .claro { background: radial-gradient(60% 50% at 85% 8%, rgba(155, 142, 240, 0.28), transparent 70%), radial-gradient(50% 40% at 8% 60%, rgba(107, 92, 231, 0.12), transparent 70%), #F2F1F8; }
+.tema-tp .marca { background: radial-gradient(120% 90% at 50% 0%, #6B5CE7 0%, #4A3CAE 40%, #2D2560 100%); }
+
+/* --- 3. PÍLDORAS Y PALABRA CLAVE --- */
+/* Las etiquetas de sección son las píldoras de tapin.cl ("● Presentes en Chile y Perú") */
+.tema-tp .franja { border-bottom: 0; padding-bottom: 0; }
+.tema-tp .franja .f-nom { justify-self: start; padding: 6px 13px 6px 11px; border-radius: 999px; background: color-mix(in srgb, var(--c-acento) 14%, transparent); color: var(--c-acento); font-weight: 600; }
+.tema-tp .franja .f-nom::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.tema-tp .clave { color: var(--c-acento-2); }
+.tema-tp .marca .clave { color: #C9C1FA; }
+
+/* --- 4. ESCENARIO EN VIDRIO --- */
+.tema-tp .vitrina .marco-nav { border: 1px solid rgba(255, 255, 255, 0.7); }
+.tema-tp .vitrina .barra-nav { background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.tema-tp .resalte { border-width: 2px; border-color: var(--c-acento-2); box-shadow: 0 0 0 9999px var(--c-velo), 0 0 28px rgba(107, 92, 231, 0.45); }
+.tema-tp .resalte .r-txt { left: 8px; top: 8px; border-radius: 999px; padding: 5px 11px; background: var(--c-acento-2); font-weight: 600; }
+.tema-tp .riel-ev button { font-weight: 600; }
+/* Las piezas de marca flotan como los mockups del hero del sitio */
+.tema-tp .tablero .capa.on .pz { animation: tpFlota 6s ease-in-out infinite alternate; }
+@keyframes tpFlota { from { transform: translateY(6px); } to { transform: translateY(-6px); } }
+.tema-tp .chequeo li::before { color: var(--c-acento); }
+
+/* --- 5. PROCESO Y RESULTADO --- */
+.tema-tp .linea-tiempo::before { background: linear-gradient(90deg, #EEEDFE, #9B8EF0); }
+.tema-tp .linea-tiempo li::before { border-color: #FFFFFF; }
+.tema-tp .cifras { border-top: 0; gap: 12px; }
+.tema-tp .cifras div { padding: 22px; border-radius: 20px; background: rgba(255, 255, 255, 0.62); border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 2px 20px rgba(74, 60, 174, 0.1); }
+.tema-tp .cifras b { color: var(--c-acento); }
+@media (prefers-reduced-motion: reduce) { .tema-tp .tablero .capa.on .pz { animation: none; } }
