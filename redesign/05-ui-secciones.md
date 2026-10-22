@@ -468,3 +468,10 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
   - **Texto:** arriba a la izquierda baja de unas 105 a unas 30 palabras. Queda el rótulo, el título, una bajada de diez palabras y la regla con título y una línea. La cita del manual pasa al código como comentario y sale la ficha.
   - **Gráfica:** una sola ventana partida (código, barra "escribiendo / compilado", vista previa), así nada se tapa. Las líneas guía van de cada variable a lo que dibuja, por el margen izquierdo o derecho cuando las piezas están apiladas. Pasar el cursor por una línea o por una pieza enciende el par.
   - **Por confirmar:** los hex de los neutros y si tapin.cl usa estas variables.
+- **Manual, cuarta vuelta** en `caso/manual-v4/`. Vuelve la disposición de la v2: el editor arriba y la vista previa en su propia ventana encima. El código se ancla arriba y la vista solo cubre la esquina vacía. Salen las líneas guía. Los paneles conversan con una etiqueta de variable sobre cada pieza (aparece con un pulso cuando su línea compila) y con el foco cruzado al pasar el cursor.
+  - **Editor:** pestañas (`marca.css` y `manual.pdf`), una ruta que sigue al paso, la línea actual marcada y un minimapa con el bloque activo.
+  - **Vista previa:** ventana clara con lienzo de puntos y estado "escribiendo / en vivo".
+  - **Color:** cada neutro es una muestra tipo carta de color, con su gris puro en un círculo; la muestra naranja recibe el sello "No entra" y se cae.
+  - **Tipografía:** un espécimen en el tono de Campus, los tres pesos en grande y un panel real con los tres niveles.
+  - **ADN:** un corredor de tests con tiempos y barra de avance, junto a la placa del isotipo con sus pruebas.
+  - **Interfaz:** un panel con barras y anillo que derivan de `--tono` y `--suave`.
