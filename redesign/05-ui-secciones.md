@@ -385,3 +385,4 @@ Comparador `caso/grillas-tapin/` con cinco grillas sobre el resumen, la portada 
 - 12 columnas, medianil de 24 px, margen `max(clamp(24px, 5vw, 96px), (100vw − 1600px) / 2)`: márgenes amplios y 1600 px de contenido como máximo.
 - **Riel de rótulos en las columnas 1 a 3** (etiquetas, números y "Capítulo 0X · año"), como el home y el índice de trabajos; el texto va de la 4 a la 9 y las piezas pueden llegar a la 12.
 - Aplicado: resumen (rótulo en el riel, enunciado y encargo de 4 a 9, credencial de 10 a 12, línea de tiempo de 4 a 12), aperturas de capítulo (rótulo en el riel, título desde la 4) y decisión 01 (numeral y rótulo en el riel, texto de 4 a 6, formas de 8 a 12). La barra superior toma el mismo margen. En móvil, una columna.
+- **Excepción:** el **resumen** usa la ubicación editorial (columnas 1 y 12 libres, texto de 2 a 7, credencial de 9 a 11 y línea de tiempo de 2 a 11); el resto del caso sigue el riel.
