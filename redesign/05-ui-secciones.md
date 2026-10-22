@@ -369,3 +369,9 @@ Comparadores publicados como artifacts (`caso/resumen-tapin/`): primero A ficha 
 - **Artifact** `caso/resumen-tapin/correas-tapin.html`: tres correas (cinta en V, carrete retráctil, cordón con ojal) y tres fondos para la portada (pista de atletismo, campus en duotono, mosaico de QR) junto al actual. Pendiente de tu elección.
 - **Elegidas:** correa **cinta en V** (aplicada: dos tramos tejidos de Campus y Connect con "tap in" estampado y costuras, unidos por un mosquetón en la ranura) y, para la portada del capítulo 01, **el fondo actual**. Sobre ese fondo, tres mejoras para que no se sienta plano en `caso/resumen-tapin/origen-fondo.html`: luz que acompaña a Forky (foco, viñeta y piso con horizonte), profundidad (tres luces de la paleta que derivan y siguen al mouse) y ecos del tap (anillos suaves que continúan la onda). Pendiente de tu elección.
 - **Fondo del capítulo 01:** ninguna de las tres mejoras convenció; se queda el fondo actual (morado de Campus con su luz y grano).
+
+### Decisión 01 de Tap In: Las formas (21 oct 2026)
+Comparador en `caso/forky-tapin/` con material real del archivo `Branding Tap In.ai` (68 láminas: del rayo verde a Forky): A del rayo a Forky, B las formas, C doble lectura. Elegiste **la B**, con imágenes más distintas y la cuchara más adelante. Aplicado:
+- Seis formas reales, en el orden del proceso: utensilios en las letras, un pin con cubiertos, tenedor y cuchillo, las patas y un brazo, una cuchara que corre y casi. Se encienden una a una con el scroll (contador 01 a 07 y rótulo que cambia) y al final se apartan para que aparezca Forky con el wordmark de Campus.
+- Se descartaron las cuatro afinaciones casi iguales (se cortaban) y se limpió la astilla del paso "casi". Las máscaras nuevas viven en `media/tp-fk-*.png`.
+- Texto: "Antes de Forky hubo utensilios en las letras y un pin. El isotipo partió de un tenedor y un cuchillo; después vinieron las patas y un brazo: cerca de treinta formas" (del md del caso).
