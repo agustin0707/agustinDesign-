@@ -462,3 +462,9 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
   - La vista previa se vuelve tapin.cl y anuncia el capítulo 03.
 
   En el riel, una ficha del entregable. Cada paso cierra con una cita corta del manual. Por confirmar: si tapin.cl usa estas variables, para quién es el manual, los hex de los neutros (muestreados de la lámina) y la fecha de entrega.
+- **Manual, tercera vuelta (audit gráfico, de repetición y de texto)** en `caso/manual-v3/`.
+  - **Repeticiones que salen:** los hex de los cuatro tonos (ya en las tiras de la decisión 03) quedan como una línea de referencia en el código. Sale el paso del lockup, que es la anatomía de la decisión 04, y sale "Nuevo", porque la 04 ya tiene el "+1". Sale el hero de tapin.cl (misma captura que el cierre de la 05; el capítulo 03 hace de puente). La interfaz ya no usa ícono ni notificación (ya en la 05).
+  - **Pasos:** quedan cuatro: Color (neutros con violeta frente al gris puro y el acento rechazado), Tipografía (tres pesos, tres niveles y los públicos), ADN (el test con una prueba por regla sobre el isotipo de Campus, que corre al pasar movimiento) e Interfaz (`--tono` y `--suave` con `color-mix` mueven tarjeta, barras, chip y botón entre los tres productos).
+  - **Texto:** arriba a la izquierda baja de unas 105 a unas 30 palabras. Queda el rótulo, el título, una bajada de diez palabras y la regla con título y una línea. La cita del manual pasa al código como comentario y sale la ficha.
+  - **Gráfica:** una sola ventana partida (código, barra "escribiendo / compilado", vista previa), así nada se tapa. Las líneas guía van de cada variable a lo que dibuja, por el margen izquierdo o derecho cuando las piezas están apiladas. Pasar el cursor por una línea o por una pieza enciende el par.
+  - **Por confirmar:** los hex de los neutros y si tapin.cl usa estas variables.
