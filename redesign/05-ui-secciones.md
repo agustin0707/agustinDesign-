@@ -399,3 +399,9 @@ Comparador en `caso/campus-tapin/`. Elegiste **la B (del QR al pedido)**, con fo
   - **Teléfono:** se quitó la línea blanca que se colaba en el borde de la pantalla (el fondo de la pantalla ahora es negro). La hora queda centrada con la isla y la cabecera de la app respira más. Se sumaron chips (Todas, Bebidas, Bancos) y se repartió el espacio para que no quede un hueco sobre las pestañas.
   - **Galerías:** las fotos de apoyo de cada pliego pasan a ser una **galería** con nueve fotos editadas de cada activación (`media/tp-rb-01…09.webp` y `tp-bc-01…09.webp`, elegidas de `Pictures/Tap In/Activaciones/…/Editadas`). Es un riel con snap que sale por el borde derecho; en el riel de la grilla van el contador grande, una barra de avance y dos flechas con hover. Se arrastra con el mouse, se recorre con las flechas del teclado y las fotos entran en cascada.
   - **Cifras 60 y 2:** cada una tiene un rótulo mono con su ícono (QR y dos círculos), una línea arriba y un texto más claro ("en locales de la UC", "con marcas: Red Bull y Banco de Chile"). Al pasar el mouse, la línea se llena en morado, la cifra sube y vuelve a contar, el QR gira y los círculos se juntan.
+
+### Navegación del portafolio en revisión (22 oct 2026)
+Home (`hero/h1-capas.html`), works (`works/w3-pila.html`) y el caso Tap In quedan conectados:
+- **Home:** "ver proyectos", Works y el enlace del final llevan al índice de trabajos; Contact abre el correo (agustin@uc.cl); LinkedIn, Behance e Instagram son los reales.
+- **Works:** el logo y About vuelven al home; Contact abre el correo. Al hacer clic en la lámina de Tap In, la escena viaja a sangre como siempre y al terminar se entra al caso. Si se vuelve con el navegador, la lámina regresa a su lugar. Llegó Farma y Mend siguen con el caso de prueba hasta tener su página.
+- **Tap In:** el logo, About y Contact van al home; Works e Índice, al índice de trabajos.
