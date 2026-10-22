@@ -433,3 +433,6 @@ Home (`hero/h1-capas.html`), works (`works/w3-pila.html`) y el caso Tap In queda
   - Al bajar, la placa pasa por Campus, Connect, Health y +1 (tono por definir, en tinta): cambian el tono (transición de color registrada con @property), el isotipo y el nombre; el wordmark no se mueve. Con el mouse o el teclado sobre la serie se puede ver cada uno.
   - El paso: las cuatro tiras de la paleta viajan juntas hasta la placa (Campus queda arriba) mientras sube el claro. La escena de El Rebirth pasa a 820svh: los tres primeros tiempos usan los primeros 380svh (--pr) y la decisión 04 el resto (--p4), para que cada producto tenga su tramo.
   - Sale el árbol de tarjetas.
+
+### Decisión 05 · El cerebro de Connect, audit (22 oct 2026)
+Comparador en `caso/cerebro-v2/` con un audit de 11 puntos (grilla fuera del patrón, corte desde el claro de la 04, rótulo distinto de los pasos de las decisiones 01 y 02, números de armado sobre las piezas, grilla de cuadros genérica, separación sin peso, piezas sin significado, prueba de escala en fichas con un naranja fuera de la paleta, sin interacción, "Aprobado" en lugar de un porqué y móvil apretado), tres direcciones animadas (A del lockup al cerebro, B piezas y módulos, C construcción y legibilidad) y un catálogo de 16 mejoras sueltas para combinar. Pendiente de tu elección.
