@@ -350,3 +350,11 @@ Comparadores publicados como artifacts (`caso/resumen-tapin/`): primero A ficha 
 - La **credencial cuelga de una cinta con la marca** y cambia al capítulo en curso: tono, signo (Forky, cerebro, navegador), nombre, período y qué pasó. Se inclina levemente con el mouse desde el gancho (7° y 5°), con el brillo del plástico.
 - Reemplaza la ficha lateral y las tarjetas del índice: los capítulos se abren desde la línea de tiempo. El resumen vive sobre casi blanco, saliendo del sitio sin corte.
 - En móvil: enunciado arriba, credencial al centro sin cinta y la línea de tiempo abajo.
+
+### Ajustes al hero y al resumen (21 oct 2026)
+- **Hero:** el navegador ya no muestra una captura que baja; carga **tapin.cl de verdad, sin scroll**, con su animación de entrada y las animaciones del hero que siguen. El sitio pausa lo que cree fuera de pantalla y dentro del navegador inclinado se equivocaba con su hero, así que el hero queda siempre activo; deja de pintarse cuando el hero sale. En un navegador sin GPU el zoom baja a unos 37 fps en escritorio (60 en móvil): **revisar en un Mac real**; si se traba, la salida es una imagen fija solo durante el zoom.
+- **Título del resumen:** sin punto final, Poppins Light, con "desde el día uno" y "rehice la marca y programé su web" en negrita.
+- **Credencial:** las tres descripciones con el mismo largo (unos 73 caracteres) y máximo dos líneas.
+- **El encargo y el resultado:** texto más grande en Poppins, unidos por una flecha (de lo pedido a lo logrado).
+- **Línea de tiempo, audit y mejoras:** la píldora negra del mes tapaba hitos y textos; ahora la fecha y el último hito se leen arriba a la derecha y el cursor es solo una línea con un punto. Los capítulos son barras con su número y nombre encima, que **se llenan a medida que pasa el cursor**; los hitos van en su propio eje (el último recorrido lleva un halo y, al pasar el mouse o con el teclado, su texto aparece en la lectura, sin globos encima de nada). "Hoy" pasa a la fila de los años. En móvil quedan solo los números de capítulo.
+- **Transición al capítulo 01:** cinco propuestas en un artifact (`caso/resumen-tapin/transicion-tapin.html`): fundido continuo, la credencial se expande, onda de tap, tiras de la paleta y Forky pinta. Pendiente de tu elección.
