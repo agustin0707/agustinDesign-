@@ -475,3 +475,13 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
   - **Tipografía:** un espécimen en el tono de Campus, los tres pesos en grande y un panel real con los tres niveles.
   - **ADN:** un corredor de tests con tiempos y barra de avance, junto a la placa del isotipo con sus pruebas.
   - **Interfaz:** un panel con barras y anillo que derivan de `--tono` y `--suave`.
+- **Aplicado al caso: el manual en código** (`.tp-man`, reemplaza el riel de láminas). Es la cuarta vuelta con estos ajustes:
+  - El editor se corre hacia la columna 7, así la vista previa queda a un costado.
+  - La vista previa ya no tiene grilla de puntos y usa el cursor normal (sin el de texto).
+  - El foco es más suave: la pieza sube 3 px con una sombra morada y las líneas de texto solo se tiñen, con transiciones de 300 ms.
+  - Salen las pruebas "cubiertos · alguien corre" y "literal / críptico".
+  - Las etiquetas de variable pasan al morado del editor, sin el doble guion y con un anillo claro que las separa.
+  - La etiqueta "familia" pasa del cuadro morado (morado sobre morado no se leía) a la fila de los tres pesos, que es lo que la variable controla.
+  - La interfaz se rehace como una pantalla de comedor: banda en degradé del tono, consumos con curva y área en `--tono`, dos filas con iniciales y chip "Pagado" en `--suave`, y un selector segmentado cuya pastilla se desliza.
+  - Sale la línea morada sobre la pestaña `marca.css`.
+  - Poppins suma el peso 300 en el `<link>`. Los pasos reutilizan los números grandes de la decisión 05.
