@@ -453,3 +453,12 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
 - **B · Del manual al código:** el manual se escribe como CSS en un editor (cuatro tonos, Poppins, radio) y un componente vacío se arma con cada línea; al final una sola línea cambia el producto. Clic en un color lo aplica. Puente al capítulo 03. Antes de aplicarla hay que confirmar que la web usa estas variables.
 - **C · Un sistema que escala:** una matriz de ícono, lockup, botón y aviso para Campus, Connect y Health que se arma con el scroll; la cuarta columna aparece vacía y se llena con las mismas reglas. Pasar o hacer clic sobre una columna la destaca.
 - **Opción cero:** sacar la sección y pasar del cerebro a la web. Pendiente de tu elección.
+- **Elegida la B (del manual al código), con un audit de información** en `caso/manual-v2/`. La primera B contaba poco: tonos, una fuente y un radio. Faltaba qué es el manual y para quién, el problema que resuelve (con tres productos y uno en camino, cada pieza podía verse distinta), los neutros y la regla 100 % morada, los pesos de Poppins y su porqué, la regla del lockup escrita, el ADN (lo más valioso del manual) y el puente al capítulo 03. "Esquinas de 22 px" sale porque no es una regla del manual. La B mejorada tiene seis pasos (Color, Tipografía, Lockup, ADN, Producto y La web) con un solo archivo `marca.css` que se escribe con el scroll, se desplaza al bloque activo y atenúa los anteriores. La vista previa es clara, como contraste con el editor:
+  - Paleta con neutros y un acento naranja que el sistema rechaza en vivo.
+  - Espécimen de Poppins en seis pesos, una jerarquía real y los tres públicos.
+  - Lockup con el wordmark fijo y el isotipo, el nombre y el tono rotando.
+  - El ADN como un test que el isotipo de Campus pasa regla por regla.
+  - Un kit (ícono, tarjeta, botón y aviso) que cambia de producto con una línea, incluido "Nuevo", con un selector.
+  - La vista previa se vuelve tapin.cl y anuncia el capítulo 03.
+
+  En el riel, una ficha del entregable. Cada paso cierra con una cita corta del manual. Por confirmar: si tapin.cl usa estas variables, para quién es el manual, los hex de los neutros (muestreados de la lámina) y la fecha de entrega.
