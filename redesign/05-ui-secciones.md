@@ -343,3 +343,10 @@ Comparador publicado como artifact (y en `caso/heros-tapin/`): A perspectiva lat
 - Fuera la cápsula "En producción" y el mockup chico del comedor. La pista para bajar queda como un círculo con flecha que no choca con el sitio.
 - En móvil el texto se alinea a la izquierda arriba y el sitio sube recostado debajo.
 - **Ajustes (21 oct 2026):** el enlace queda solo "tapin.cl ↗"; las dos líneas del lema más juntas (interlineado 1,14). **Mouse, en clave Tap In** (como el home, pero propio): el sitio recostado se inclina hacia el cursor con inercia, una luz suave lo sigue sobre el degradado, el reflejo del vidrio se desliza y las letras del wordmark cercanas al cursor suben como la ola del home. **Hover del wordmark:** el punto de la i hace "tap", se hunde y suelta una onda (el wordmark ahora es SVG en línea, letra por letra).
+
+### Resumen de Tap In: el tiempo narra, con la credencial colgante (21 oct 2026)
+Comparadores publicados como artifacts (`caso/resumen-tapin/`): primero A ficha editorial, B credencial y tiempo, C antes y después; elegiste la B y pediste afinarla. Sobre su audit (alineación, tamaños, centro vacío de la credencial, línea de tiempo que parecía gráfico de barras, márgenes e interacción) hubo tres mejoras: tarjeta que gira, credencial colgante y el tiempo narra. Elegiste **la 3, con la gráfica en la credencial colgante y el movimiento de la tarjeta, más leve**. Aplicado al caso:
+- La sección se fija y el scroll recorre el proyecto mes a mes: un cursor avanza por una **línea de tiempo a escala real** (22 meses, con meses, seis hitos con su fecha al pasar el mouse, el cruce de abril entre el Rebirth y la web y la marca de "Hoy").
+- La **credencial cuelga de una cinta con la marca** y cambia al capítulo en curso: tono, signo (Forky, cerebro, navegador), nombre, período y qué pasó. Se inclina levemente con el mouse desde el gancho (7° y 5°), con el brillo del plástico.
+- Reemplaza la ficha lateral y las tarjetas del índice: los capítulos se abren desde la línea de tiempo. El resumen vive sobre casi blanco, saliendo del sitio sin corte.
+- En móvil: enunciado arriba, credencial al centro sin cinta y la línea de tiempo abajo.
