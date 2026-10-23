@@ -779,3 +779,20 @@ Elegido: D. Audit y mejoras sobre la propuesta:
   - Empieza a media entrada del panel y queda completo al 40% de la pista.
   - Con movimiento reducido se muestra completo.
   - Verificado: el relleno y el encaje siguen el scroll de ida y de vuelta, en desktop y móvil.
+
+### Caso Tap In · Audit del resto de pantallas (23 oct 2026)
+Recorrido completo, capturado cada 0,75 pantallas, en 375×667, 390×844, 820×1180 (iPad vertical), 1024×768 y 1180×820 (iPad horizontal) y 844×390 (teléfono horizontal). Más un barrido de elementos que se salen del borde. El formato PC no cambia: verificado en 1440 (mismos valores y escenas, sin errores).
+- **Tablet vertical:** usaba el diseño de PC, compuesto para pantallas horizontales: texto diminuto y media pantalla vacía en cada escena.
+  - Ahora usa la vista móvil (`(max-width: 768px), (orientation: portrait) and (max-width: 1100px)`, igual en el JS con `vistaMovil`).
+  - Encima, una escala propia: títulos un escalón más grandes y texto corrido con largo de línea cómodo (46 a 52 caracteres).
+- **Decisión 04 entre 769 y 1199 px:** el lockup tenía mínimos fijos y la placa cortaba "Campus". Se achica un escalón solo en ese rango.
+- **Decisión 11 en móvil:** se fijaba alineada abajo y cortaba el texto a media línea ("…ilia."). Ahora se fija mostrando la pieza entera, centrada entre 16 y 64 px del borde.
+- **Teléfono del QR en móvil:** tocaba el borde derecho; ahora tiene un margen de 3vw.
+- **Teléfonos bajos (≤720 px de alto):**
+  - La vista previa del manual se cortaba: menos aire arriba y más alto para la pieza.
+  - El teléfono de Mend pisaba el rótulo: más chico y más arriba.
+- **Tablet vertical, panel de Mend:** el teléfono topaba con el logo; más chico y más arriba.
+- **Teléfono horizontal:** las escenas fijas no caben en 390 px de alto. Aparece un aviso para girar el teléfono, solo en pantallas táctiles bajas en horizontal.
+- **Revisado y sin cambios:**
+  - La pantalla morada antes del capítulo 01: es el final de la onda de tap, dura una pantalla.
+  - Las tablets horizontales, que usan el diseño de PC bien escalado.
