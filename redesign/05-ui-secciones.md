@@ -771,3 +771,6 @@ Elegido: D. Audit y mejoras sobre la propuesta:
   - Sale el contador "03 / 03".
   - El anillo dice "Sigue bajando" (antes "Sigue bajando para abrir Mend", que repetía el nombre). Al abrir dice "Abriendo Mend".
   - Esto afecta a todos los paneles del componente; salen `.sig-info` y `.sig-chips`.
+- **Logo en vez del nombre:** en el panel de Mend, el "Mend" grande pasa a ser el logo horizontal con su animación oficial (se dibuja el trazo, se rellena y el isotipo encaja). Sale el isotipo de arriba.
+  - El componente acepta una marca por proyecto (`marcas`) para mostrar el nombre con su logo.
+  - Sale la tipografía Neue Haas que usaba el nombre de Mend.
