@@ -698,3 +698,24 @@ Elegido: M3. Audit y mejoras sobre la versión del comparador:
   - El cursor solo responde a movimiento real.
   - Las columnas avanzan y se detienen antes de la cámara; el teléfono elegido es de la columna del medio.
 - **Pista de la sección (460 svh):** barrido, muro, cámara (0,7 pantallas) y 1,15 pantallas para probar.
+
+### Decisión 11 más tiempo en pantalla y Resultado · Audit y cinco propuestas (23 oct 2026)
+- **La 11:** quieta y entera solo 0,4 pantallas entre el fin de la hoja y el barrido. El segundo tramo quieto pasa de 110 a 240 svh. Ahora:
+  - 1,5 pantallas en desktop y 1,7 en móvil, más la pantalla del barrido.
+  - Verificado: sigue sin moverse durante el barrido.
+- **Resultado:** comparador en `caso/resultado-tapin/` (artifact https://claude.ai/artifact/TTqkGZoKfpPCHZ8k5ey6Qb).
+- **Audit:**
+  - Cuenta esfuerzo (páginas, líneas, mockups, productos), no resultados.
+  - "8 mockups" repite la 11.
+  - Nada se puede comprobar y el link queda chico al final.
+  - Es un bloque de estadísticas genérico.
+  - Corte seco desde el morado.
+  - Dos citas que rotan, y la segunda casi no se lee.
+- **Propuestas:**
+  - A · Tablero (panel del producto, citas como notificaciones).
+  - B · Una cifra por pantalla.
+  - C · El sitio, medido (puntajes de PageSpeed, de ejemplo hasta medirlos).
+  - D · El cliente primero (la cita como titular).
+  - E · Sigue en línea (recomendada): cierra el capítulo 03 con la misma ventana del navegador.
+- **En las cinco:** entrada que funde del morado a la noche; sale "8 mockups"; las cifras de la empresa y las citas siguen marcadas como pendientes.
+- Pendiente de tu elección.
