@@ -519,3 +519,13 @@ Comparador en `caso/cap3-tapin/`, montado sobre el último cuadro real del manua
   - **Título:** "La web" queda a la izquierda, en las columnas 1 a 5.
   - **Dirección y carga:** tapin.cl sigue escribiéndose con el scroll en la barra de la ventana. Al terminar, una línea de carga cruza la barra, aparece el favicon de Connect, la pestaña pasa de "Nueva pestaña" a "Tap In · Gestión escolar" y el hero del sitio se dibuja adentro de arriba hacia abajo.
   - **Móvil:** la ventana va arriba y el título abajo.
+
+### Capítulo 03 · Paso de la portada al sitio, audit y cinco pasos (23 oct 2026)
+Comparador en `caso/sitio-paso/`, sobre una réplica de las dos secciones.
+- **Audit:** la portada oscura sube y aparece de golpe una franja clara. Hay dos navegadores distintos (uno oscuro, chico y a la derecha; otro claro, grande y a la izquierda), el hero de tapin.cl se repite seguido y la sección arranca con el foco de la decisión 06 ya puesto. Además, el índice aparece de una vez.
+- **A · Una ventana (recomendada):** la ventana de la portada viaja a la izquierda y crece hasta ser el navegador del sitio. Su cromo pasa de oscuro a claro y la barra se recoge, mientras una luz clara se abre desde la ventana (sin pasar por gris). Después el título se retira, el índice entra en cascada y al final se pone el foco de la decisión 06.
+- **B · Entrar a la página:** la ventana llena la pantalla y retrocede a su lugar como navegador claro.
+- **C · Amanecer:** un círculo claro se expande desde la barra de direcciones; anticipa la decisión 09.
+- **D · Hoja:** la portada sube como una hoja y deja ver el sitio, que se acerca y se aclara.
+- **E · Título al índice:** como A, pero "La web" viaja y se achica hacia la cabecera del índice.
+- Pendiente de tu elección.
