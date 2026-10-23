@@ -558,3 +558,22 @@ Comparador en `caso/decisiones-tapin/`, sobre la captura real del sitio.
 - **D · Revisión en vivo:** mi cursor recorre el sitio, hace clic y deja un comentario con la decisión.
 - **E · Mapa y detalle:** la página completa en miniatura con un marco que baja, el detalle ampliado y el número grande.
 - Pendiente de tu elección.
+- **Aplicadas: la etiqueta en la perilla (paso 04) y las notas al margen (decisiones 06 a 10).**
+  - **Paso 04:**
+    - Una pastilla clara, no negra, viaja sobre la perilla con el isotipo del producto en el tono actual.
+    - Rebota al llegar a Campus, Connect o Health, y entre productos muestra el hex.
+    - En los extremos se ajusta para no salirse; la flecha sigue a la perilla.
+  - **Decisiones, marcos medidos en la captura** (en píxeles del sitio a 1440, cada uno con el radio de su elemento):
+    - 06: la barra de menú completa.
+    - 07: "Presentes en Chile y Perú" con la fila de logos.
+    - 08: la fila de pestañas de módulos.
+    - 09: el bloque "Todo conectado".
+    - 10: las preguntas con su respuesta al lado.
+  - **El marco:**
+    - Sin velo: borde de 2 px con un halo suave y el número de la nota en su esquina.
+    - Ya no desaparece entre paradas: viaja y cambia de tamaño hasta el elemento siguiente.
+    - Las paradas ya vistas dejan un marcador numerado sobre el sitio.
+  - **Notas (columnas 9 a 12):**
+    - Rótulo, contador y una barra de avance en cinco tramos.
+    - La nota actual va en una tarjeta abierta con su texto y la línea "En el sitio · …", que nombra exactamente lo enmarcado.
+    - Las demás van en filas con el número lleno (vistas) o en contorno (por venir), con hover.
