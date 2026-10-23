@@ -747,3 +747,9 @@ Elegido: D. Audit y mejoras sobre la propuesta:
 - Salen la etiqueta de la cita, la nota "Según la empresa, por confirmar", los asteriscos y el estilo `.tp-verificar`, que ya no se usaba.
 - **Líneas:** "+47.000" contaba también las líneas vacías. Con el método del documento del caso (líneas no vacías) son 44.645 con los mockups y 37.946 sin ellos. Queda "+44.000".
 - **27.000:** según `tapin-caso-de-estudio.md` es el total de estudiantes de los dos campus de la UC donde se lanzó Campus, no sus usuarios (el pitch de oct 2025 habla de 1.500 usuarios activos). El texto ahora dice "estudiantes en los dos campus de la UC donde funciona Campus".
+
+### Sale Aprendizaje; los créditos pasan al Resultado (23 oct 2026)
+- Sale la sección Aprendizaje. La frase repetía lo que el capítulo del Rebirth ya muestra con piezas, el giro Campus → Connect se contaba por tercera vez y era el tercer texto que se enciende palabra por palabra.
+- Los créditos (marca, UX/UI y front end: Agustín · producto y deploy: equipo de Tap In · con: los cofundadores) quedan como una franja bajo "Ver tapin.cl en vivo", en el mismo fondo oscuro.
+- El caso cierra con la cita del cliente, las cifras y el link, y pasa directo al siguiente proyecto.
+- Salen el CSS del giro (`.tp-giro*`, `tpViaje`) y sus reglas de móvil y de movimiento reducido.
