@@ -491,3 +491,16 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
   - **B · Dial del tono (recomendada):** una perilla recorre el rango morado del manual, de Empresa a Health. Se detiene en cada producto con el scroll y se puede arrastrar; cualquier tono intermedio funciona, con el hex en vivo en el código.
   - **C · Tres a la vez:** el mismo componente tres veces, con su valor de `--tono` cada uno.
   - En las tres, sobre los tonos claros (Health) el texto pasa a tinta, como en las tiras de la decisión 03. Pendiente de tu elección.
+- **Aplicada la B en el paso 04 del manual (dial del tono), con mejoras.**
+  - **Gráfica:**
+    - Las seis cajas pasan a una sola hoja de componentes en cuatro filas (Acción, Control, Estado, Entrada), todos genéricos.
+    - El riel tiene muescas en cada producto.
+    - La perilla lleva un anillo blanco y la etiqueta "tono"; la fila Estado lleva la etiqueta "suave".
+    - Sobre los tonos claros el texto pasa a tinta.
+    - El código muestra el hex en vivo y el producto más cercano (o "entre tonos").
+  - **Interacción:**
+    - Con el scroll, la perilla avanza en continuo de Campus a Health y se frena en cada producto.
+    - Se arrastra (crece al tomarla) y, al soltarla cerca de un producto, se ajusta sola. Fuera del rango hace resistencia y vuelve.
+    - Clic en la pista o en el nombre de un producto la lleva ahí. Al pasar por la pista, una ficha muestra el hex bajo el cursor.
+    - Con teclado: flechas (con Shift, más rápido), Inicio, Fin y Re Pág / Av Pág de producto en producto.
+    - Al llegar a un producto, la hoja responde con una ola del tono suave.
