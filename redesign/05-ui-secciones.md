@@ -504,3 +504,12 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
     - Clic en la pista o en el nombre de un producto la lleva ahí. Al pasar por la pista, una ficha muestra el hex bajo el cursor.
     - Con teclado: flechas (con Shift, más rápido), Inicio, Fin y Re Pág / Av Pág de producto en producto.
     - Al llegar a un producto, la hoja responde con una ola del tono suave.
+- **Paso 04 del manual:** salen las etiquetas "tono" y "suave", y el riel se compacta. La perilla persigue la posición del scroll con un suavizado por cuadro: el recorrido y el color se sienten continuos aunque el scroll avance a saltos.
+
+### Capítulo 03 · Portada y paso desde el manual, audit y tres direcciones (23 oct 2026)
+Comparador en `caso/cap3-tapin/`, montado sobre el último cuadro real del manual.
+- **Audit:** al soltarse el manual aparece una costura horizontal (donde empieza el degradé de la portada). La barra es una píldora suelta sin navegador alrededor, centrada en la pantalla mientras el título va en la columna 4. La barra vacía espera demasiado. Al terminar de escribirse solo se pinta un borde y una línea de 2 px, y la barra y el título compiten.
+- **A · La vista se abre (recomendada):** la ventana de la vista previa del manual crece hasta ser la portada y su cabecera se vuelve la barra de direcciones (alineada a la columna 4). Se escribe tapin.cl, aparece el favicon y la página carga debajo mientras el título se retira: entrega al navegador de la sección del sitio.
+- **B · Ventana del navegador:** los paneles del manual suben y se desenfocan, y entra una ventana a la derecha; la pestaña pasa de "Nueva pestaña" a "Tap In · Gestión escolar" y la página se dibuja adentro.
+- **C · Buscador con sugerencias:** la portada sube como una hoja sobre el manual, que se hunde y desenfoca. Mientras se escribe aparecen sugerencias; después, Enter y una barra de carga arriba de la pantalla.
+- En las tres se mantiene tapin.cl escribiéndose con el scroll. Pendiente de tu elección.
