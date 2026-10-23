@@ -602,3 +602,23 @@ Comparador en `caso/d11-paso/`, réplica a 1440 × 900 con el sitio real y captu
   - **La hoja:** en la última pantalla la sección del sitio sube entera, con las esquinas de abajo redondeadas (32 px) y una sombra que aparece al despegar.
   - **Pausa de lectura:** la sección del sitio pasa a 900svh y el último tramo (`FINAL`) a 1,2. Así la nota 10 se lee quieta antes de que la hoja suba, y el imán no actúa en ese tramo.
   - **Relevo sin salto:** al terminar, la 11 queda exactamente donde estaba y sigue con su scroll normal. Probado en desktop y móvil.
+- **Temblor corregido en el paso a la decisión 11:** la 11 se movía con el scroll nativo y el JS la compensaba un cuadro tarde, por eso temblaba. Ahora queda quieta con `position: sticky`, sostenida por un separador de una pantalla (con relleno no funcionaba, porque el sticky solo se mueve dentro del área de contenido), y el JS solo maneja la hoja, la escala y el velo. Medido: durante toda la subida de la hoja la 11 queda en 158 px exactos.
+
+### Decisión 11 · Audit y propuesta (23 oct 2026)
+Comparador en `caso/d11-mejora/`, con hoy y propuesta lado a lado.
+- **Audit:** la historia del comedor solo está en el texto, y la grilla 2 × 2 le da el mismo peso a los cuatro módulos. Nada dice que los mockups están en vivo, la grilla no sigue el patrón de las decisiones, "Decisión 11" se repite en la tarjeta y la única interacción es el fundido de entrada.
+- **Propuesta:**
+  - El patrón del caso: número en el riel, texto de la 4 a la 6 y el comedor grande de la 7 a la 12, con una etiqueta "En vivo" que late.
+  - Debajo, la decisión como flujo: "Antes · Acceso denegado" tachado y Pago → Validación → Aviso de saldo, encendiéndose en orden.
+  - Los otros tres módulos en una fila secundaria con hover.
+  - Pendiente de tu visto bueno.
+
+### tapin.cl en el teléfono · Audit y cinco variantes (23 oct 2026)
+Comparador en `caso/movil-tapin/`, con una captura nueva del sitio completo en móvil (390 px).
+- **Audit:** la idea de la sección ("la misma web, diseñada y programada a la par") va en un pie de 11 px. Además son tres capturas quietas en la composición más común, sin interacción y sin conexión con lo anterior ni lo siguiente.
+- **A · A la par (recomendada):** el navegador y el teléfono bajan juntos con el scroll, con un rótulo que dice la parte del sitio.
+- **B · Un teléfono que recorre:** el sitio entero en una pantalla grande, con etiquetas alternadas.
+- **C · Abanico:** tres teléfonos que giran como carrusel.
+- **D · Muro de pantallas:** columnas inclinadas a distinta velocidad.
+- **E · De 1440 a 390:** el navegador se angosta, cambia a móvil y se vuelve teléfono.
+- Pendiente de tu elección.
