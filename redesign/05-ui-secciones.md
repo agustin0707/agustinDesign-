@@ -754,3 +754,14 @@ Elegido: D. Audit y mejoras sobre la propuesta:
 - El caso cierra con la cita del cliente, las cifras y el link, y pasa directo al siguiente proyecto.
 - Salen el CSS del giro (`.tp-giro*`, `tpViaje`) y sus reglas de móvil y de movimiento reducido.
 - **Fondo del siguiente proyecto:** en Tap In, el bloque "Sigue bajando para abrir Mend" se abre sobre la noche del Resultado (`.tp .sig`), sin la franja clara. Queda acotado a este caso; `caso-siguiente.css` no cambia.
+
+### Panel del siguiente proyecto (Mend) · Audit y arreglo (23 oct 2026)
+- **Fondo raro tras el teléfono:** `mend-app.jpg` ya traía un iPhone dibujado con fondo negro y además iba dentro de un marco CSS: dos biseles y esquinas negras.
+  - Ahora el teléfono tiene un marco de titanio con bisel e isla, como los de los casos, con tono verde de Mend.
+  - La pantalla es la captura limpia (`mend-app-larga.jpg`), con un margen arriba para la isla, y baja por la app con el avance (`--p`).
+  - El splash sigue apareciendo al abrir.
+- **Choques:** el teléfono pisaba las etiquetas y, al final, el anillo de avance.
+  - En la escena de Mend el texto ocupa la mitad izquierda y las etiquetas pasan bajo la bajada.
+  - El teléfono queda en la derecha (79%), bajo el anillo.
+- **Móvil:** el teléfono ya no pasa por encima del nombre. Recorrido más corto (12svh) y aparece con un fundido; queda entre el logo y el texto.
+- Archivos: `caso-siguiente.css` y `caso-siguiente.js` (componente común). El cambio solo afecta a la escena de Mend.
