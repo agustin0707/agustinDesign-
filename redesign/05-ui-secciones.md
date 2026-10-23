@@ -742,3 +742,8 @@ Elegido: D. Audit y mejoras sobre la propuesta:
   - Queda marcada "Cita por aprobar con los cofundadores".
 - **Líneas de código:** "≈40.000" pasa a "+47.000", medido en el código del sitio en el repo: 47.747 líneas de HTML, CSS y JS propios, con los 8 mockups (40.643 sin ellos).
   - El signo + reemplaza al ≈, que parecía un =, y queda igual a las demás cifras.
+
+### Resultado · Sin bloques por confirmar y cifras corregidas (23 oct 2026)
+- Salen la etiqueta de la cita, la nota "Según la empresa, por confirmar", los asteriscos y el estilo `.tp-verificar`, que ya no se usaba.
+- **Líneas:** "+47.000" contaba también las líneas vacías. Con el método del documento del caso (líneas no vacías) son 44.645 con los mockups y 37.946 sin ellos. Queda "+44.000".
+- **27.000:** según `tapin-caso-de-estudio.md` es el total de estudiantes de los dos campus de la UC donde se lanzó Campus, no sus usuarios (el pitch de oct 2025 habla de 1.500 usuarios activos). El texto ahora dice "estudiantes en los dos campus de la UC donde funciona Campus".
