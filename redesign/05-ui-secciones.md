@@ -536,3 +536,25 @@ Comparador en `caso/sitio-paso/`, sobre una réplica de las dos secciones.
   - **Relevo sin corte:** la ventana de la portada ahora muestra la misma captura del sitio (`tp-larga.jpg`).
   - **Pistas:** la portada pasa a 520svh y el sitio a 800svh, para que los tramos propios no se acorten.
   - **Corrección:** las reglas de `.tp-nav-barra` quedan acotadas a sus hijos directos; también le daban fondo blanco y relleno a los elementos de adentro.
+- **Portada del capítulo 03, ajustes:**
+  - La dirección baja de tamaño, a `clamp(17px, 1.5vw, 24px)` con barra de 44 a 56 px; el navegador del sitio, que la recibe en el vuelo, usa la misma medida.
+  - "Capítulo 03 · Abr a sep 2026" pasa a ser un rótulo con punto arriba a la izquierda, en la misma línea que el borde superior de la ventana, con el "03" debajo. En móvil va bajo la ventana.
+- **Paso 04 del manual:** sale la ola del tono suave que teñía la hoja. Comparador en `caso/producto-tapin/` con tres maneras de anunciar el producto sin teñir nada:
+  - A · Ficha del producto (recomendada): el isotipo y el nombre en la cabecera de la hoja, con el nombre girando como un contador.
+  - B · Etiqueta en la perilla.
+  - C · Registro de cambios en la voz de una consola.
+  - Pendiente de tu elección.
+
+### Decisiones 06 a 10 · Audit y cinco formas (23 oct 2026)
+Comparador en `caso/decisiones-tapin/`, sobre la captura real del sitio.
+- **Audit:**
+  - El foco oscurece todo el sitio con un velo gris.
+  - El navegador va en las columnas 1 a 8 y el índice en la 10 a 12, y eso rompe el patrón de las decisiones 01 a 05.
+  - Los números de decisión miden 11 px, entre paradas no queda nada activo y el foco solo aparece y desaparece con fundidos.
+  - El texto queda lejos de la pieza, y la única interacción es el clic en el índice.
+- **A · Decisión a decisión (recomendada):** el patrón del caso, con números grandes en el riel, el texto en las columnas 4 a 6 y el navegador de la 7 a la 12. El marco viaja entre paradas con un velo claro alrededor.
+- **B · Lupa:** el marco numerado en el sitio y, al lado, una lupa con la parte ampliada.
+- **C · Notas al margen:** marcadores numerados que quedan sobre el sitio y notas apiladas al costado.
+- **D · Revisión en vivo:** mi cursor recorre el sitio, hace clic y deja un comentario con la decisión.
+- **E · Mapa y detalle:** la página completa en miniatura con un marco que baja, el detalle ampliado y el número grande.
+- Pendiente de tu elección.
