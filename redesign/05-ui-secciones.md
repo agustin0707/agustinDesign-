@@ -774,3 +774,8 @@ Elegido: D. Audit y mejoras sobre la propuesta:
 - **Logo en vez del nombre:** en el panel de Mend, el "Mend" grande pasa a ser el logo horizontal con su animación oficial (se dibuja el trazo, se rellena y el isotipo encaja). Sale el isotipo de arriba.
   - El componente acepta una marca por proyecto (`marcas`) para mostrar el nombre con su logo.
   - Sale la tipografía Neue Haas que usaba el nombre de Mend.
+- **Logo con el scroll:** la animación del logo de Mend avanza y retrocede con el scroll.
+  - Todas sus animaciones quedan en pausa; `--l` (0 a 1) fija el momento en la línea de 4,3 s con `animation-delay` negativo.
+  - Empieza a media entrada del panel y queda completo al 40% de la pista.
+  - Con movimiento reducido se muestra completo.
+  - Verificado: el relleno y el encaje siguen el scroll de ida y de vuelta, en desktop y móvil.
