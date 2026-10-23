@@ -765,3 +765,9 @@ Elegido: D. Audit y mejoras sobre la propuesta:
   - El teléfono queda en la derecha (79%), bajo el anillo.
 - **Móvil:** el teléfono ya no pasa por encima del nombre. Recorrido más corto (12svh) y aparece con un fundido; queda entre el logo y el texto.
 - Archivos: `caso-siguiente.css` y `caso-siguiente.js` (componente común). El cambio solo afecta a la escena de Mend.
+- **Información que sobraba (audit gráfico):**
+  - El nombre salía dos veces (logo "mend salud" arriba y "Mend" gigante): de la marca queda solo el isotipo animado, con su animación adelantada.
+  - Salen las etiquetas (Investigación, Marca, Web app, 2026): repetían la bajada ("de la investigación al producto").
+  - Sale el contador "03 / 03".
+  - El anillo dice "Sigue bajando" (antes "Sigue bajando para abrir Mend", que repetía el nombre). Al abrir dice "Abriendo Mend".
+  - Esto afecta a todos los paneles del componente; salen `.sig-info` y `.sig-chips`.
