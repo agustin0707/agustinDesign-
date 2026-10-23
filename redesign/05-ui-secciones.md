@@ -719,3 +719,18 @@ Elegido: M3. Audit y mejoras sobre la versión del comparador:
   - E · Sigue en línea (recomendada): cierra el capítulo 03 con la misma ventana del navegador.
 - **En las cinco:** entrada que funde del morado a la noche; sale "8 mockups"; las cifras de la empresa y las citas siguen marcadas como pendientes.
 - Pendiente de tu elección.
+
+### Resultado D · El cliente primero, aplicado con audit (23 oct 2026)
+Elegido: D. Audit y mejoras sobre la propuesta:
+- **Otra entrada para la cita:** encender palabra por palabra ya se usa en el resumen y en Aprendizaje, que viene justo después; sería la tercera vez, y seguida. Ahora:
+  - Cada línea sube desde su máscara, en cascada.
+  - Después se subraya "una sola imagen", la idea de la cita.
+  - Las líneas se arman con el ancho real y se rearman al cargar Poppins o al cambiar el ancho.
+- **Composición:** comilla dibujada (la de Poppins se leía como "//") colgando en el riel; en móvil va sobre la cita. Firma con el wordmark de Tap In.
+- **Cifras al pie:**
+  - "Lo que quedó andando": 9 páginas, ≈40.000 líneas, +27.000 estudiantes y +15.000 familias.
+  - Sale "8 mockups", que repetía la 11.
+  - Las cifras de la empresa llevan asterisco y la nota "Según la empresa, por confirmar" (en la propuesta faltaba explicarlo).
+- **Cita:** una sola, la más fuerte; sale la rotación. Sigue marcada "publicar solo con aprobación".
+- **Entrada:** funde del morado del muro a la noche.
+- **Limpieza:** salen el CSS de las cifras, el contexto y las citas antiguas, y el JS de la rotación.
