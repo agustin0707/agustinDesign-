@@ -485,3 +485,9 @@ Comparador en `caso/manual-tapin/`. Audit: seis láminas 16:9 en un riel horizon
   - La interfaz se rehace como una pantalla de comedor: banda en degradé del tono, consumos con curva y área en `--tono`, dos filas con iniciales y chip "Pagado" en `--suave`, y un selector segmentado cuya pastilla se desliza.
   - Sale la línea morada sobre la pestaña `marca.css`.
   - Poppins suma el peso 300 en el `<link>`. Los pasos reutilizan los números grandes de la decisión 05.
+- **Manual, paso 04 (Interfaz): audit y tres variantes** en `caso/interfaz-tapin/`.
+  - **Audit:** la pantalla de comedor (consumos, alumnos, "Pagado") cuenta un producto y no el sistema. En Health sigue diciendo "Almuerzo", que no tiene sentido (además, Health está en definición). El ojo se va a los datos y no al color, y el tono toca pocas superficies. También anticipa los mockups del comedor de la decisión 11, y el selector se confunde con la interfaz.
+  - **A · Kit del sistema:** una hoja de componentes genéricos que cambia de producto en bloque.
+  - **B · Dial del tono (recomendada):** una perilla recorre el rango morado del manual, de Empresa a Health. Se detiene en cada producto con el scroll y se puede arrastrar; cualquier tono intermedio funciona, con el hex en vivo en el código.
+  - **C · Tres a la vez:** el mismo componente tres veces, con su valor de `--tono` cada uno.
+  - En las tres, sobre los tonos claros (Health) el texto pasa a tinta, como en las tiras de la decisión 03. Pendiente de tu elección.
