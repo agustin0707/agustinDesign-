@@ -622,3 +622,22 @@ Comparador en `caso/movil-tapin/`, con una captura nueva del sitio completo en m
 - **D · Muro de pantallas:** columnas inclinadas a distinta velocidad.
 - **E · De 1440 a 390:** el navegador se angosta, cambia a móvil y se vuelve teléfono.
 - Pendiente de tu elección.
+
+### Decisión 11 y muro de pantallas · Aplicados al caso (23 oct 2026)
+Elegidos: la nueva 11 (`d11-mejora`) y la variante D del teléfono (`movil-tapin`).
+- **Decisión 11:**
+  - Riel con el número en las columnas 1 a 3. Texto en la 4 a 6, fijo mientras pasa la pieza.
+  - En la 7 a 12: el comedor en vivo en un escenario grande y, debajo, el flujo ("Antes · Acceso denegado", tachado, y luego Pago, Validación y Aviso de saldo).
+  - Más abajo, los otros tres módulos en vivo.
+- **Mejoras de interacción en la 11:**
+  - El flujo sigue el reloj real del mockup: mockup-start lo reinicia y la página lo escucha. La barra de cada paso se llena al ritmo de la escena y los pasos ya hechos quedan con un visto.
+  - El escenario se inclina hasta 3° hacia el cursor, con inercia, y un brillo sigue al puntero.
+  - Las tarjetas chicas suben al pasar el cursor. En móvil quedan en un carrusel con snap.
+- **Arreglo:** la pista de la sección del sitio tapaba la 11 y bloqueaba el puntero (no se podía abrir "Más contexto"). Ahora solo su panel recibe eventos.
+- **Muro de pantallas:**
+  - Cuatro columnas inclinadas (tres en tablet y móvil) de siete teléfonos con marco de titanio. Cada uno muestra otra parte de la captura completa del sitio en móvil (`media/tp-movil.jpg`).
+  - Las columnas se mueven solo con CSS, entre `--a` y `--b`, con el `--v` del parallax: suben y bajan alternadas, a distinta velocidad.
+  - Bordes con fundido. El título va sobre un velo a la izquierda en desktop y abajo en móvil.
+- **Interacción del muro:**
+  - Al pasar el cursor (o tocar, en móvil), el teléfono se adelanta, los demás se apagan y su pantalla recorre el sitio de ida y vuelta.
+  - La pista ("Pasa el cursor por una pantalla" / "Toca una pantalla para recorrerla") se oculta mientras hay foco.
