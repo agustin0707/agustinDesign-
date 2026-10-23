@@ -597,3 +597,8 @@ Comparador en `caso/d11-paso/`, réplica a 1440 × 900 con el sitio real y captu
 - **D · El contador sigue:** el 10 gira a 11 y viaja hasta ser el número grande.
 - **E · Zoom al hero:** la cámara se acerca a la tarjeta flotante del comedor en el hero.
 - Pendiente de tu elección.
+- **Aplicado el paso C (hoja) de la decisión 10 a la 11, auditado:**
+  - **La 11 espera debajo:** se monta una pantalla antes (`margin-top: -100svh`, debajo de la sección del sitio). Mientras la hoja sube se queda quieta, porque el JS compensa su desplazamiento, y se acerca de 0,94 a 1 con un velo tinta (máx. 0,32) que se disuelve. No usa filtros, por rendimiento; con movimiento reducido no hay escala.
+  - **La hoja:** en la última pantalla la sección del sitio sube entera, con las esquinas de abajo redondeadas (32 px) y una sombra que aparece al despegar.
+  - **Pausa de lectura:** la sección del sitio pasa a 900svh y el último tramo (`FINAL`) a 1,2. Así la nota 10 se lee quieta antes de que la hoja suba, y el imán no actúa en ese tramo.
+  - **Relevo sin salto:** al terminar, la 11 queda exactamente donde estaba y sigue con su scroll normal. Probado en desktop y móvil.
