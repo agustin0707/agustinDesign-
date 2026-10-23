@@ -753,3 +753,4 @@ Elegido: D. Audit y mejoras sobre la propuesta:
 - Los créditos (marca, UX/UI y front end: Agustín · producto y deploy: equipo de Tap In · con: los cofundadores) quedan como una franja bajo "Ver tapin.cl en vivo", en el mismo fondo oscuro.
 - El caso cierra con la cita del cliente, las cifras y el link, y pasa directo al siguiente proyecto.
 - Salen el CSS del giro (`.tp-giro*`, `tpViaje`) y sus reglas de móvil y de movimiento reducido.
+- **Fondo del siguiente proyecto:** en Tap In, el bloque "Sigue bajando para abrir Mend" se abre sobre la noche del Resultado (`.tp .sig`), sin la franja clara. Queda acotado a este caso; `caso-siguiente.css` no cambia.
