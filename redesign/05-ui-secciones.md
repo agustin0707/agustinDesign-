@@ -679,3 +679,22 @@ Elegido: B · Barrido inclinado.
   - En cada parada el muro se detiene y el teléfono elegido es de la columna del medio.
   - En M2 el navegador ya no tapa el índice.
 - Pendiente: elegir entre M1, M2 y M3.
+
+### Muro M3 · Pruébalo, aplicado al caso con audit (23 oct 2026)
+Elegido: M3. Audit y mejoras sobre la versión del comparador:
+- **El sitio real, no la captura:**
+  - El teléfono final tiene tapin.cl de verdad (`works/sitios/tapin/index.html`) en un iframe a 390 px, escalado a la pantalla.
+  - Se monta al acercarse a la cámara; la captura queda de póster hasta que carga.
+  - Al entrar, el sitio se abre en la misma parte que mostraba el teléfono elegido, sin salto.
+- **Sin scroll atrapado:** el teléfono se activa con un clic o un toque ("Probar el sitio"). Se suelta con Esc, con un clic afuera o al salir de la sección.
+- **Formulario:** el de demo enviaba solicitudes reales a Formspree. Desde el portafolio se intercepta y avisa que es una demostración.
+- **Detalle:**
+  - Barra de estado con la hora en vivo; el sitio empieza debajo, como en Safari.
+  - Barra lateral de avance que lee el scroll real del sitio.
+  - El estado bajo el título cambia: link a tapin.cl, "Usando tapin.cl", aviso del formulario.
+- **Muro antes de la cámara:**
+  - Cortes al inicio de cada parte, sin repetir entre vecinos.
+  - Velo más corto y brillo a la mitad.
+  - El cursor solo responde a movimiento real.
+  - Las columnas avanzan y se detienen antes de la cámara; el teléfono elegido es de la columna del medio.
+- **Pista de la sección (460 svh):** barrido, muro, cámara (0,7 pantallas) y 1,15 pantallas para probar.
