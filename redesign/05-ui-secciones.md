@@ -582,3 +582,18 @@ Comparador en `caso/decisiones-tapin/`, sobre la captura real del sitio.
   - **Captura completa:** la de antes terminaba en mitad del formulario. Ahora es la original hasta los 4600 px más el tramo final del sitio del repo, hasta antes del pie, con 5140 px de alto a 1440. Queda en 1800 px de ancho para no pasar el límite de decodificación de imágenes en móvil, que dejaba el navegador en blanco.
   - **Scroll del navegador:** cada marco queda centrado en la pantalla del navegador. Después de la última decisión el sitio queda quieto (sin el scroll extra del final).
   - **Notas más livianas:** sale la barra de avance, la nota actual pierde la sombra, los números van sin círculo salvo el actual, los títulos inactivos bajan a peso 500 y "En el sitio · …" pasa a gris sin ícono.
+- **Decisiones 06 a 10, scroll afinado:**
+  - **Suavizado:** el sitio y el marco persiguen su posición con un amortiguado por cuadro, así se mueven en continuo aunque la rueda avance a saltos.
+  - **Imán:** si el scroll se detiene a mitad de un viaje, el recorrido termina de llegar a la parada en la dirección en que se venía (probado bajando y subiendo con la rueda). En las paradas no actúa, y con movimiento reducido se apaga.
+  - **Marcadores clicables:** los que quedan sobre el sitio llevan a su decisión.
+  - **Corrección:** la captura del sitio cargaba con `loading="lazy"`. Al llegar directo a mitad de la sección (al recargar o desde el índice), la imagen ya estaba desplazada y no cargaba nunca, y el navegador quedaba en blanco. Ahora carga normal, con prioridad baja.
+
+### Decisión 10 → 11 · Audit y cinco pasos (23 oct 2026)
+Comparador en `caso/d11-paso/`, réplica a 1440 × 900 con el sitio real y capturas del caso.
+- **Audit:** el navegador sube con el formulario y queda una franja vacía antes de la 11. La 11 vuelve al número grande sin explicar el cambio de sistema, no se ve que sus mockups están dentro del sitio y las cuatro tarjetas entran casi juntas.
+- **A · El mockup sale del sitio (recomendada):** el navegador vuelve a "Elige por dónde empezar", el marco toma el mockup del comedor y aparece la nota 11. Después el mockup sale del sitio y aterriza como la tarjeta destacada, el navegador se retira y entran el texto y las otras tres en cascada.
+- **B · La ventana se reparte:** el navegador se divide en cuatro ventanas que se vuelven las tarjetas.
+- **C · Hoja:** la sección sube como una hoja y deja ver la 11.
+- **D · El contador sigue:** el 10 gira a 11 y viaja hasta ser el número grande.
+- **E · Zoom al hero:** la cámara se acerca a la tarjeta flotante del comedor en el hero.
+- Pendiente de tu elección.
