@@ -663,3 +663,19 @@ Comparador en `caso/paso-muro/` (artifact https://claude.ai/artifact/XDLWtAA3ox7
   - M2 · A la par: las mismas paradas con un navegador de escritorio al lado.
   - M3 · Pruébalo: el muro se endereza y queda un teléfono que se recorre.
 - Pendiente de tu elección.
+
+### Barrido de la 11 al muro · Aplicado al caso, y muro en tres columnas (23 oct 2026)
+Elegido: B · Barrido inclinado.
+- **Barrido:**
+  - El muro se superpone a la 11. Su panel queda fijo y un borde inclinado 12° (el ángulo del muro) lo destapa de abajo hacia arriba en la primera pantalla de su pista (`--barre`, por clip-path).
+  - El fondo morado y el grano pasan de la sección al panel, para no teñir la 11.
+- **La 11 quieta durante el barrido:**
+  - Un marco nuevo (`.tp-v11-marco`) se fija por segunda vez. La 11 queda en su sitio si cabe o alineada abajo si no, para que se vean los otros módulos. El JS calcula `--t11` con el alto real de la grilla.
+  - Medido: la grilla no se mueve un píxel durante todo el barrido, en desktop y en móvil.
+- **Barra:** pasa a blanco recién cuando el barrido terminó.
+- **Muro:** tres columnas en todos los anchos, con teléfonos un poco más grandes.
+- **Comparador nuevo del muro:** `caso/muro-v2/` (artifact https://claude.ai/artifact/Etd68H1TtfhTPpeZVvHcym), en tres columnas, reemplaza la parte 3 del anterior. Arreglos:
+  - El foco solo responde a un movimiento real del cursor y se suelta con el scroll.
+  - En cada parada el muro se detiene y el teléfono elegido es de la columna del medio.
+  - En M2 el navegador ya no tapa el índice.
+- Pendiente: elegir entre M1, M2 y M3.
