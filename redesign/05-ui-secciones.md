@@ -577,3 +577,8 @@ Comparador en `caso/decisiones-tapin/`, sobre la captura real del sitio.
     - Rótulo, contador y una barra de avance en cinco tramos.
     - La nota actual va en una tarjeta abierta con su texto y la línea "En el sitio · …", que nombra exactamente lo enmarcado.
     - Las demás van en filas con el número lleno (vistas) o en contorno (por venir), con hover.
+- **Decisiones 06 a 10, ajustes:**
+  - **La decisión 09 cambia por el formulario.** Sale "De oscuro a claro" (la más débil como decisión) y entra el formulario de la demo, que es el fin del sitio. Para seguir el orden de la página, las objeciones pasan a ser la 09 y el formulario la 10: "Cuatro campos para pedir la demo", con el marco medido sobre la tarjeta "Reserva tu demo". El texto es un borrador para que lo ajustes.
+  - **Captura completa:** la de antes terminaba en mitad del formulario. Ahora es la original hasta los 4600 px más el tramo final del sitio del repo, hasta antes del pie, con 5140 px de alto a 1440. Queda en 1800 px de ancho para no pasar el límite de decodificación de imágenes en móvil, que dejaba el navegador en blanco.
+  - **Scroll del navegador:** cada marco queda centrado en la pantalla del navegador. Después de la última decisión el sitio queda quieto (sin el scroll extra del final).
+  - **Notas más livianas:** sale la barra de avance, la nota actual pierde la sombra, los números van sin círculo salvo el actual, los títulos inactivos bajan a peso 500 y "En el sitio · …" pasa a gris sin ícono.
