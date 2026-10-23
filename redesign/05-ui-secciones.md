@@ -513,3 +513,9 @@ Comparador en `caso/cap3-tapin/`, montado sobre el último cuadro real del manua
 - **B · Ventana del navegador:** los paneles del manual suben y se desenfocan, y entra una ventana a la derecha; la pestaña pasa de "Nueva pestaña" a "Tap In · Gestión escolar" y la página se dibuja adentro.
 - **C · Buscador con sugerencias:** la portada sube como una hoja sobre el manual, que se hunde y desenfoca. Mientras se escribe aparecen sugerencias; después, Enter y una barra de carga arriba de la pantalla.
 - En las tres se mantiene tapin.cl escribiéndose con el scroll. Pendiente de tu elección.
+- **Aplicada la B (ventana del navegador) en la portada del capítulo 03 y en el paso desde el manual.**
+  - **Superposición:** la portada se monta sobre el final del manual, con `margin-top: -200svh` y fondo transparente, como el QR. El manual pasa a 730svh y su animación termina 1,5 pantallas antes del final de su pista.
+  - **Salida del manual:** en el tramo compartido, los paneles del manual suben, se apagan y se desenfocan (`--sale`, que fija el JS de la portada). Al mismo tiempo entran el fondo, el "03" y una ventana de navegador en las columnas 6 a 12.
+  - **Título:** "La web" queda a la izquierda, en las columnas 1 a 5.
+  - **Dirección y carga:** tapin.cl sigue escribiéndose con el scroll en la barra de la ventana. Al terminar, una línea de carga cruza la barra, aparece el favicon de Connect, la pestaña pasa de "Nueva pestaña" a "Tap In · Gestión escolar" y el hero del sitio se dibuja adentro de arriba hacia abajo.
+  - **Móvil:** la ventana va arriba y el título abajo.
