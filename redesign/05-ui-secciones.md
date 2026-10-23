@@ -641,3 +641,25 @@ Elegidos: la nueva 11 (`d11-mejora`) y la variante D del teléfono (`movil-tapin
 - **Interacción del muro:**
   - Al pasar el cursor (o tocar, en móvil), el teléfono se adelanta, los demás se apagan y su pantalla recorre el sitio de ida y vuelta.
   - La pista ("Pasa el cursor por una pantalla" / "Toca una pantalla para recorrerla") se oculta mientras hay foco.
+
+### Decisión 11, paso al teléfono y muro · Audit y propuestas (23 oct 2026)
+Comparador en `caso/paso-muro/` (artifact https://claude.ai/artifact/XDLWtAA3ox7mTZttRUTyQv).
+- **Parte 1, audit de la 11:** conmutador entre hoy y con mejoras, con el comedor en vivo.
+  - **Relato (revisar):** el paso 03 dice "Aviso de saldo", pero el mockup muestra el panel del comedor registrando el pago (Juan pasa de pendiente a suscrito). Propuesta: "Panel al día" y ajustar la frase de la decisión.
+  - El "antes" visible: al pasar el cursor o tocar "Antes", el escenario muestra la pantalla de acceso denegado.
+  - Una línea bajo el flujo que dice qué pasa en cada paso.
+  - Mockup un 10% más grande y centrado.
+  - Los otros tres módulos quietos; se animan al pasar el cursor (en móvil, el del centro del carrusel).
+  - Riel y texto en un solo bloque fijo; la sombra de la hoja se apaga al terminar; sale "Más contexto".
+- **Parte 2, seis pasos de la 11 al teléfono:**
+  - A · Hoja morada.
+  - B · Barrido inclinado (12°, el ángulo del muro).
+  - C · Un teléfono, todo el sitio (recomendado): el teléfono sale del comedor, crece y se acomoda en el muro.
+  - D · Columnas que suben.
+  - E · Del claro al morado.
+  - F · Zoom al escenario.
+- **Parte 3, audit del muro:** es textura sin lectura, con cortes a mitad de bloque y repetidos, pantallas lavadas, un scroll largo con solo parallax, "a la par" sin demostrar y un título pesado en móvil. Las tres mejoras corrigen los encuadres, el contraste y el móvil.
+  - M1 · Recorrido guiado (recomendado): cinco paradas con índice; el teléfono de cada una se adelanta y se endereza.
+  - M2 · A la par: las mismas paradas con un navegador de escritorio al lado.
+  - M3 · Pruébalo: el muro se endereza y queda un teléfono que se recorre.
+- Pendiente de tu elección.
