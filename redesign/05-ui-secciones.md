@@ -734,3 +734,11 @@ Elegido: D. Audit y mejoras sobre la propuesta:
 - **Cita:** una sola, la más fuerte; sale la rotación. Sigue marcada "publicar solo con aprobación".
 - **Entrada:** funde del morado del muro a la noche.
 - **Limpieza:** salen el CSS de las cifras, el contexto y las citas antiguas, y el JS de la rotación.
+
+### Resultado · Cita nueva y líneas medidas (23 oct 2026)
+- **Cita:** "Un director entra a tapin.cl y en una sola pantalla entiende qué hacemos." Se subraya "en una sola pantalla".
+  - Nombra a quien compra Tap In y un resultado concreto, en 13 palabras.
+  - La anterior era abstracta ("en una sola imagen se entiende cómo funciona").
+  - Queda marcada "Cita por aprobar con los cofundadores".
+- **Líneas de código:** "≈40.000" pasa a "+47.000", medido en el código del sitio en el repo: 47.747 líneas de HTML, CSS y JS propios, con los 8 mockups (40.643 sin ellos).
+  - El signo + reemplaza al ≈, que parecía un =, y queda igual a las demás cifras.
