@@ -529,3 +529,10 @@ Comparador en `caso/sitio-paso/`, sobre una réplica de las dos secciones.
 - **D · Hoja:** la portada sube como una hoja y deja ver el sitio, que se acerca y se aclara.
 - **E · Título al índice:** como A, pero "La web" viaja y se achica hacia la cabecera del índice.
 - Pendiente de tu elección.
+- **Aplicado el paso A (una ventana) entre la portada del capítulo 03 y el sitio.**
+  - **Superposición:** el sitio se monta sobre el final de la portada (`margin-top: -200svh`, fondo transparente) y no se ve mientras entra por abajo. Al fijarse, la portada le cede su ventana.
+  - **Vuelo:** el navegador del sitio arranca exactamente donde estaba la ventana de la portada, con su cromo oscuro, la pestaña con el favicon y la barra con tapin.cl. Durante una pantalla de scroll viaja y crece a su lugar en las columnas 1 a 8, el cromo pasa a claro, la barra se recoge y el contenido pierde su margen.
+  - **Luz e índice:** una luz clara se abre desde el centro del navegador mientras "La web" y el "03" se retiran. Después el índice entra en cascada y, al aterrizar, empieza el recorrido con el foco de la decisión 06.
+  - **Relevo sin corte:** la ventana de la portada ahora muestra la misma captura del sitio (`tp-larga.jpg`).
+  - **Pistas:** la portada pasa a 520svh y el sitio a 800svh, para que los tramos propios no se acorten.
+  - **Corrección:** las reglas de `.tp-nav-barra` quedan acotadas a sus hijos directos; también le daban fondo blanco y relleno a los elementos de adentro.
