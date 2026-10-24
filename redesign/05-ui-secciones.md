@@ -796,3 +796,27 @@ Recorrido completo, capturado cada 0,75 pantallas, en 375×667, 390×844, 820×1
 - **Revisado y sin cambios:**
   - La pantalla morada antes del capítulo 01: es el final de la onda de tap, dura una pantalla.
   - Las tablets horizontales, que usan el diseño de PC bien escalado.
+
+### Caso Tap In · Audit exhaustivo de la vista de celular (24 oct 2026)
+Recorrido completo a 390×844 en 2x, capturado cada 0,4 pantallas, más una revisión de las áreas de toque. Decisiones tomadas por Agustín: sitio móvil en las decisiones, paleta con nombre y hex, ventana del capítulo 03 más baja y onda del capítulo 01 más corta. PC no cambia (verificado en 1440).
+- **Decisiones 06 a 10 con tapin.cl en versión móvil:**
+  - Captura nueva del sitio en el teléfono (`media/tp-movil-sitio.jpg`, 390 × 7446, con las animaciones de entrada ya hechas).
+  - La ventana la usa en la vista móvil (`<picture>`), igual que la portada del capítulo 03, para que el vuelo muestre la misma imagen.
+  - Marcos propios medidos en el sitio real (`data-caja-m`): barra, colegios, tarjeta de módulos, preguntas y formulario. Marcadores con su posición móvil (`--pxm`, `--pym`).
+  - Los marcos más altos que la ventana se alinean arriba, con 30 px de aire para no tapar su número.
+  - Las etiquetas cambian donde el sitio móvil es distinto: "Las tarjetas de módulos" y "con su respuesta abajo" (`.tp-solo-pc` / `.tp-solo-movil`). Se oculta el panel desplegable del menú de escritorio.
+  - En tablet vertical la ventana mide hasta 560 px, centrada, para no ampliar el sitio al doble.
+- **Paleta del Rebirth:** las columnas apretaban la descripción y el RGB letra por letra. Ahora muestran solo el nombre y el hex; al tocar una tira, se ensancha y muestra el uso, el código completo y el contraste.
+- **Capítulo 03:** la ventana "Nueva pestaña" baja de 46 a 34svh (menos vacío) y el rótulo sube con ella.
+- **Onda del capítulo 01:**
+  - En móvil la onda llena la pantalla más tarde, justo antes de que el resumen se desvanezca.
+  - El título del capítulo ya está visible al aparecer, sin esperar al observador.
+  - El morado vacío pasa de una pantalla entera a un instante.
+- **Áreas de toque:** ninguna bajo 44 px, agrandadas sin mover el diseño (pseudoelementos o padding compensado):
+  - Hitos y etapas de la línea de tiempo.
+  - Números de paso del cerebro y del manual.
+  - Serie de la decisión 04.
+  - Paradas y perilla del dial.
+  - "Más contexto" y el link a tapin.cl.
+- **Legibilidad:** las cotas de la decisión 04 suben de 10 a 11 px.
+- **Revisado y sin cambios:** hero, decisiones 01 y 02, activaciones (el carrusel ya se desliza con el dedo), decisión 05, manual, decisión 11, muro, resultado y siguiente proyecto.
