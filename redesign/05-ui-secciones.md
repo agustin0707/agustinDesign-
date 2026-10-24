@@ -820,3 +820,30 @@ Recorrido completo a 390×844 en 2x, capturado cada 0,4 pantallas, más una revi
   - "Más contexto" y el link a tapin.cl.
 - **Legibilidad:** las cotas de la decisión 04 suben de 10 a 11 px.
 - **Revisado y sin cambios:** hero, decisiones 01 y 02, activaciones (el carrusel ya se desliza con el dedo), decisión 05, manual, decisión 11, muro, resultado y siguiente proyecto.
+
+### Caso Tap In · Correcciones desde el iPhone y PC (24 oct 2026)
+**Móvil**
+- **Scroll lateral:** bloqueado con `overflow-x: clip` en `html` y `body` del caso. `clip` no crea un contenedor de scroll: no hay doble barra en Chrome y el sticky funciona. Los carruseles mantienen su scroll propio.
+- **Estirón del scroll (overscroll):** el lienzo muestra el borde más cercano. Arriba, el degradado morado del hero; abajo, el verde de Mend (el JS cambia a mitad de página).
+- **Franjas abajo y temblores:** en iPhone la barra de Safari se esconde y la pantalla crece.
+  - Los paneles fijos (`.tp-fijo`, el panel del siguiente proyecto y la espera de la 11) pasan de `100svh` a `100lvh`.
+  - El JS mide el alto con una sonda de 100lvh y ya no recalcula las escenas cuando solo aparece o se esconde la barra.
+- **Hero:**
+  - Wordmark, bajada y link centrados.
+  - En el teléfono, el navegador lleva una captura del sitio (no el sitio en vivo) y una sombra fija, en vez de recalcular una sombra de 140 px dentro de un plano en 3D en cada cuadro.
+- **Resumen:** más aire entre bloques (26 px entre filas, 84 px arriba y 40 abajo).
+- **Activaciones:** degradado oscuro más alto bajo el título, la descripción y los datos de la foto.
+- **Manual:**
+  - El código arriba y la vista previa abajo, sin encimarse (antes la vista tapaba la línea del error de color).
+  - La pieza mide 66svh y la vista previa trae menos relleno; en teléfonos bajos, 70svh y el contenido al 88%.
+  - La muestra de color deja aire al sello inclinado.
+- **Cinco decisiones:**
+  - La ventana sube a 63svh (con un tope para teléfonos bajos).
+  - El tramo final es más corto en móvil (sección de 780svh, cierre de 0,4 en vez de 1,2, espera de la 11 de 170svh).
+  - El imán queda desactivado en pantallas táctiles: peleaba con la inercia del dedo y devolvía el scroll, la causa probable del paso "infinito".
+
+**PC**
+- **Cinco decisiones al recargar:**
+  - Las medidas se repiten al cargar las fuentes y la página, y el marco se repinta en la parada actual.
+  - El imán espera a que la persona mueva el scroll; antes podía mover sola la posición que el navegador restauraba.
+- **Carrusel de Banco de Chile:** la sección del Rebirth se monta encima antes de quedar fija y sus tiras se quedaban con los clics de las flechas. Ahora solo recibe clics cuando está fija (`.activa`).
