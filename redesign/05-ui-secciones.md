@@ -980,3 +980,16 @@ Aplicado en `redesign/explorations/works/inicio.html` e `inicio-works.js`.
 - **Mend · escalera con grano y viñeta:**
   - Escalera de tres teléfonos con pantallas reales: Inicio al frente, Calendario y Explorar detrás.
   - Fondo con grano más fuerte, viñeta, una entrada de luz cálida y el isotipo en relieve. El relieve se dibuja solo con bordes de luz y sombra, usando `mask-composite: exclude`.
+
+### Home y destacados, ronda de ajustes (26 oct 2026)
+Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/destacados-v2/`.
+
+- **Llegó Farma, texto:** sale "Pitch ganado". Ahora cuenta la marca madre y mi rol: submarca de salud de Llegó, referente de la logística en Chile; identidad, manual y sitio diseñados y programados por mí. Cifra: +21 años de Llegó en logística, hoy también en México. Lo de la marca madre queda fuera hasta que esté confirmado.
+- **Tap In, la cinta:** sin la trama diagonal. Cada "tap in" va separado por el mismo aire (repeticiones independientes, cada 27 unidades), así el loop no salta. En el teléfono se oculta la cinta lejana, que cruzaba el rótulo.
+- **Tap In, Web:** la captura de tapin.cl ahora muestra los cuatro mockups del hero (se ocultaban al hacer scroll durante la captura; el hero se compone desde la vista inicial).
+- **Mend, escalera:** Calendario a la izquierda, Explorar al centro bajando sola y el Inicio a la derecha.
+- **Mend, relieve:** el isotipo pasa arriba a la izquierda y más chico, el mismo rincón que la retícula de Llegó y la cinta de Tap In.
+- **Comparador (destacados-v2):**
+  - Llegó, En uso: seis versiones (en ruta, sale de la celda (recomendada), tríptico, secuencia, pieza y detalle, del manual a la calle).
+  - Marca animada de Llegó (puntos, rutas, nodos y luego el wordmark) y de Tap In (cascada, tap de la i y cada tap abre un producto con su tono).
+  - Siete transiciones entre destacados contra la actual; recomendada: la ventana que se abre.
