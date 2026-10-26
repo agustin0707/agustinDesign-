@@ -928,3 +928,14 @@ Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive
   - Cinco diagramaciones del bloque izquierdo: ficha técnica, la cifra manda, riel editorial (recomendada), logo como firma y tarjeta de cristal.
   - Tres fondos por proyecto. Llegó Farma: aérea en duotono (recomendada), red de nodos y fondo del manual. Tap In: tiras de la paleta (recomendada), isotipos gigantes y onda de tap. Mend: bruma en movimiento, isotipo gigante y arcos de movimiento (recomendada).
 - **¿Logo en vez del nombre?** Se recomienda no: el nombre en Geist es parte del marco y los logos desequilibran el ritmo entre portadas.
+
+### Home · Cifra alineada, regla editorial y cinco fondos por portada (26 oct 2026)
+- **Cifra:** el dato junto al número se apoya en su base: su última línea calza con la línea base de la cifra, en vez de colgar hacia abajo.
+- **Regla de destacados:** deja de ser una pastilla de vidrio. Ahora es una regla editorial de margen a margen que cierra la portada abajo, como los rótulos la abren arriba.
+  - Tres tramos, cada uno con su línea que se llena con el avance de su portada.
+  - Cada tramo lleva número y nombre; el activo va en blanco y muestra sus disciplinas.
+  - Un velo suave al pie da contraste. En el teléfono quedan el número y el nombre.
+- **Comparador de fondos** `redesign/explorations/works/fondos/fondos.html`: cinco fondos por proyecto con material real, más el de hoy como referencia.
+  - **Llegó Farma:** seguimiento en vivo (recomendada), bruma del manual, matriz de puntos, última milla y empaque en estudio.
+  - **Tap In:** la activación (recomendada), muro de stickers, claim gigante, QR de noche y campus en duotono.
+  - **Mend:** luz de ventana (recomendada), tríptico de movimiento, degradado oficial y Encaje, sombras de ventana y hueso editorial.
