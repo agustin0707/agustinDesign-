@@ -944,3 +944,13 @@ Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive
 - **Llegó Farma:** la bruma del manual sin isotipos (degradado de la secuencia oficial y las retículas de puntos), más la retícula de precisión del sitio. Se respeta su regla: líneas de 1 px, blanco al 16 % sobre oscuro, cuatro columnas entre márgenes y un corte de 8 px antes de cada cruce. Dos dosis: la retícula completa, con horizontales que calzan con los rótulos y la regla, o solo como detalle del lado de la pieza.
 - **Tap In, cinco nuevas:** la credencial colgando (recomendada), la familia de íconos en profundidad, el muro de pantallas, el mapa del campus con los 60 QR y el foco de escenario.
 - **Mend, cinco nuevas:** pose en movimiento (recomendada), la semana en acción, lino en primer plano, respiración guiada y la app en abanico.
+
+### Works · Fondos, tercera ronda (26 oct 2026)
+- **Llegó Farma (B mejorada):** la retícula se construye desde los elementos de la portada, no desde una grilla fija.
+  - La línea de los rótulos pasa a ser parte de la retícula.
+  - La pieza queda en su celda, a 16 px de las líneas.
+  - El bloque de texto tiene su propia celda, y el eje de la pieza continúa hacia arriba.
+  - Se mantienen 1 px, blanco al 16 % y cortes de 8 px en cada cruce.
+  - En B2, el módulo de puntos del manual llena exactamente la celda libre sobre el nombre (recomendada).
+- **Tap In, seis nuevas:** vidrio acanalado (recomendada), esferas de marca, semitono del tap (interactivo), la cinta de marca, la marca desarmada y contorno de luz.
+- **Mend:** varios teléfonos con pantallas reales y distintas de la versión actual (Inicio, Calendario, Explorar y Perfil), siempre con Inicio como principal. Tres composiciones sin abanico: escalera (recomendada), la fila y en profundidad.
