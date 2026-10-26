@@ -884,3 +884,10 @@ Recorrido completo cuadro a cuadro en iPhone 14 Pro y iPhone SE (WebKit) y en PC
 - **Decisión 11 en laptops bajos (720 a 840 px de alto):** no cabía y el escenario quedaba cortado arriba.
   - El escenario se acorta según el alto de la pantalla y el mockup en vivo se achica centrado, con el fondo del mockup (#F4F2FC) para que no quede franja.
   - Desde 900 px de alto queda igual que antes.
+
+### Caso Tap In · Estirón superior en PC (26 oct 2026)
+- Chrome en PC pinta el estirón del scroll solo con el color de fondo del lienzo, no con el degradado, y arriba quedaba una franja blanca. El lienzo lleva ahora el tono medio del borde superior del hero (#6B5CDC), y el degradado copia ese borde de izquierda a derecha.
+
+### Works · Destacados, tres direcciones (26 oct 2026)
+- Comparador en `redesign/explorations/works/destacados/destacados.html`: A · Portada (recomendada), B · Índice con visor y C · Pliego.
+- Diagnóstico: los tres destacados son la misma lámina (una captura en un navegador), el nombre queda cortado por el panel siguiente, no hay resultado y los datos compiten en mono diminuto.
