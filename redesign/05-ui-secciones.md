@@ -903,3 +903,20 @@ Recorrido completo cuadro a cuadro en iPhone 14 Pro y iPhone SE (WebKit) y en PC
   - M5, barra legible.
   - M6, archivo con vistas Hoja y Lista.
   - M7, el archivo sube como hoja sobre la última portada.
+
+### Home · Works con la Portada y las siete mejoras (26 oct 2026)
+Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive en `inicio-works.js`; `w3-pila.js` queda solo para su comparador.
+
+- **M1 · Apertura con índice:** la frase de valor es el titular y los destacados son una tabla (proyecto, disciplinas, año y estado) que lleva a cada portada.
+- **Portadas:** cada proyecto a pantalla completa con su mundo (la foto aérea de Llegó, el morado de Tap In, el degradado con grano de Mend). La siguiente se destapa desde abajo y la anterior se aleja.
+- **M2 · Capítulos:** Marca, Web y En uso sobre la misma pieza (en Mend: Marca, App e Inicio). Al abrir la marca de Mend, su logo se dibuja con las animaciones del manual. Las flechas recorren las pestañas.
+- **M3 · Una cifra:**
+  - Llegó Farma: pitch ganado.
+  - Tap In: +15.000 familias.
+  - Mend: en testeo con pacientes.
+- **M4 · Regla de avance:** una sola, en el marco. Cada tramo se llena con su portada y las teclas 1, 2 y 3 saltan. Solo la portada al frente recibe foco y clics.
+- **M5 · Barra legible:** sobre works lleva un velo con blur en vez de la mezcla por diferencia; se esconde al bajar y vuelve con una subida clara.
+- **M6 · Archivo:** dos vistas, Hoja (la hoja de contactos) y Lista (solo tipografía). La elección se recuerda.
+- **M7 · Entrega:** el archivo sube como una hoja sobre la última portada.
+- **Ver caso:** la pieza viaja a la página de caso; Tap In entra a su caso real.
+- **Celular:** la pieza va arriba y abajo quedan el nombre, la cifra y el botón. La bajada queda para el caso.
