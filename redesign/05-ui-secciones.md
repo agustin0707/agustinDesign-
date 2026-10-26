@@ -891,3 +891,15 @@ Recorrido completo cuadro a cuadro en iPhone 14 Pro y iPhone SE (WebKit) y en PC
 ### Works · Destacados, tres direcciones (26 oct 2026)
 - Comparador en `redesign/explorations/works/destacados/destacados.html`: A · Portada (recomendada), B · Índice con visor y C · Pliego.
 - Diagnóstico: los tres destacados son la misma lámina (una captura en un navegador), el nombre queda cortado por el panel siguiente, no hay resultado y los datos compiten en mono diminuto.
+
+### Works · Auditoría y siete mejoras (26 oct 2026)
+- Elegida la dirección A · Portada para los destacados.
+- Referencias recorridas: Order (capítulos por disciplina en cada proyecto), Ragged Edge (una cifra de resultado), Koto (riel fijo con la ficha), Locomotive (índice tipográfico), Instrument (filtros y cambio de vista) y Collins (la marca del cliente sobre su imagen).
+- Demo en `redesign/explorations/works/mejoras/mejoras.html`:
+  - M1, apertura con índice.
+  - M2, capítulos Marca, Web y En uso.
+  - M3, una cifra protagonista.
+  - M4, regla de avance con teclas 1 a 3.
+  - M5, barra legible.
+  - M6, archivo con vistas Hoja y Lista.
+  - M7, el archivo sube como hoja sobre la última portada.
