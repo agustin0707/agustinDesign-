@@ -965,3 +965,18 @@ Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive
   - La segunda cinta queda fuera de foco detrás de la pieza, y ninguna toca el texto.
   - Cinco nuevas: stickers troquelados, holograma, papel en capas, neón de vitrina y marquesina tipográfica.
 - **Mend · escalera, seis detalles para el degradado:** grano y viñeta, halo y reflejo (recomendada: les da a los teléfonos dónde pararse), isotipo en relieve, luz de ventana, bokeh y curvas de nivel.
+
+### Home · Fondos elegidos para las portadas (26 oct 2026)
+Aplicado en `redesign/explorations/works/inicio.html` e `inicio-works.js`.
+
+- **Llegó Farma · L1 esencial, animada:**
+  - Fondo: la bruma con la secuencia oficial del degradado.
+  - Retícula: la línea de los rótulos y la celda de la ventana del sitio a 16 px, con 1 px, 12 % (20 % la de los rótulos) y cortes de 8 px. Esquiva los capítulos y la arma el JS leyendo los elementos.
+  - Animación: las líneas se dibujan en cascada la primera vez que la portada queda a la vista. Después, una luz recorre cada línea larga de vez en cuando.
+  - En escritorio, un bloque de 12 × 6 puntos late en ola.
+- **Tap In · la cinta de marca, sin las costuras punteadas:**
+  - Sombra proyectada, volumen, trama de tela y el wordmark impreso en Poppins que corre por la cinta.
+  - Atrás, otra cinta fuera de foco. Con movimiento reducido, las animaciones se pausan.
+- **Mend · escalera con grano y viñeta:**
+  - Escalera de tres teléfonos con pantallas reales: Inicio al frente, Calendario y Explorar detrás.
+  - Fondo con grano más fuerte, viñeta, una entrada de luz cálida y el isotipo en relieve. El relieve se dibuja solo con bordes de luz y sombra, usando `mask-composite: exclude`.
