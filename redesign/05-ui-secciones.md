@@ -993,3 +993,9 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
   - Llegó, En uso: seis versiones (en ruta, sale de la celda (recomendada), tríptico, secuencia, pieza y detalle, del manual a la calle).
   - Marca animada de Llegó (puntos, rutas, nodos y luego el wordmark) y de Tap In (cascada, tap de la i y cada tap abre un producto con su tono).
   - Siete transiciones entre destacados contra la actual; recomendada: la ventana que se abre.
+
+### Destacados, quinta ronda (26 oct 2026)
+- **Home · Llegó, En uso como secuencia:** un marco que recorre flota, uniforme, bodega, entrega y pantalla (la papelería sale), con barras de avance y el rótulo que cambia. Todo en CSS; con movimiento reducido queda la primera foto.
+- **Home · paso entre destacados como hoja:** cada portada sube como el archivo sobre Mend. Bordes de 22 px (18 en el teléfono) que se enderezan en el último cuarto, sombra hacia arriba y la anterior se oscurece un poco. Va lineal con el scroll: la pista crece a 480svh y cada paso ocupa 100svh, con pausas de 60svh en cada portada.
+- **Comparador · Llegó, marca:** solo el isotipo real (cruz de cinco nodos). El centro aparece, los brazos crecen y los dos nodos sueltos llegan; el nodo de la derecha sale como mensajero, destapa la palabra y se vuelve la o, y el tilde se marca como un visto. La placa queda limpia, sin guías ni rótulos.
+- **Comparador · Tap In, tres placas:** tarjetas que hacen tap (recomendada), wordmark a sangre y bandas de producto.
