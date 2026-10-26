@@ -920,3 +920,11 @@ Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive
 - **M7 · Entrega:** el archivo sube como una hoja sobre la última portada.
 - **Ver caso:** la pieza viaja a la página de caso; Tap In entra a su caso real.
 - **Celular:** la pieza va arriba y abajo quedan el nombre, la cifra y el botón. La bajada queda para el caso.
+
+### Home · Regla de destacados, capítulos de Mend y opciones de portada (26 oct 2026)
+- **Regla:** ahora es un vidrio con tres pestañas. Cada una lleva número, nombre y una pista que se llena con el avance de su portada. En el teléfono queda el nombre completo, sin número.
+- **Mend:** los capítulos son Marca, Web y En uso, como en los otros dos; Web parte activo en los tres. "En uso" es el render del teléfono con el inicio de la app (`media/mend-en-uso.webp`, recortado con esquinas transparentes).
+- **Comparador** `redesign/explorations/works/portadas-opciones/portadas-opciones.html`:
+  - Cinco diagramaciones del bloque izquierdo: ficha técnica, la cifra manda, riel editorial (recomendada), logo como firma y tarjeta de cristal.
+  - Tres fondos por proyecto. Llegó Farma: aérea en duotono (recomendada), red de nodos y fondo del manual. Tap In: tiras de la paleta (recomendada), isotipos gigantes y onda de tap. Mend: bruma en movimiento, isotipo gigante y arcos de movimiento (recomendada).
+- **¿Logo en vez del nombre?** Se recomienda no: el nombre en Geist es parte del marco y los logos desequilibran el ritmo entre portadas.
