@@ -954,3 +954,14 @@ Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive
   - En B2, el módulo de puntos del manual llena exactamente la celda libre sobre el nombre (recomendada).
 - **Tap In, seis nuevas:** vidrio acanalado (recomendada), esferas de marca, semitono del tap (interactivo), la cinta de marca, la marca desarmada y contorno de luz.
 - **Mend:** varios teléfonos con pantallas reales y distintas de la versión actual (Inicio, Calendario, Explorar y Perfil), siempre con Inicio como principal. Tres composiciones sin abanico: escalera (recomendada), la fila y en profundidad.
+
+### Works · Fondos, cuarta ronda (26 oct 2026)
+- **Llegó Farma, B2 más liviana:** pesaba porque sumaba ocho líneas, el módulo de puntos y la bruma, todo con la misma intensidad. La bruma se aclara, las líneas bajan al 12 % (la de los rótulos queda al 20 %) y el módulo se achica. Tres dosis:
+  - L1 · Esencial (recomendada): la línea de los rótulos, la celda de la pieza y un bloque chico de puntos.
+  - L2 · Solo esquinas: esquinas de 1 px con sus cortes de 8 px.
+  - L3 · La celda del texto: la pieza flota libre y solo se arma la celda del texto.
+- **Tap In · la cinta, con oficio (recomendada):**
+  - La cinta principal: sombra proyectada, volumen con brillo al centro, bordes cosidos, trama de tela y el wordmark impreso.
+  - La segunda cinta queda fuera de foco detrás de la pieza, y ninguna toca el texto.
+  - Cinco nuevas: stickers troquelados, holograma, papel en capas, neón de vitrina y marquesina tipográfica.
+- **Mend · escalera, seis detalles para el degradado:** grano y viñeta, halo y reflejo (recomendada: les da a los teléfonos dónde pararse), isotipo en relieve, luz de ventana, bokeh y curvas de nivel.
