@@ -871,3 +871,16 @@ Recorrido completo a 390×844 en 2x, capturado cada 0,4 pantallas, más una revi
 - **Favicon de las maquetas:** igual al real de tapin.cl (morado #4A3CAE, isotipo al 78 % y esquina de ícono de app). Antes era lila y con el cerebro chico.
 - **Logo de Mend:** se arma desde que asoma (30 % de la entrada) y queda completo justo antes de que el panel llene la pantalla. Antes llegaba al 60 % donde uno se detiene.
 - **Cita:** firmada por Diego Dihmes, Cofundador de Tap In, junto al wordmark.
+
+### Caso Tap In · Auditoría de bugs en celular y PC (26 oct 2026)
+
+Recorrido completo cuadro a cuadro en iPhone 14 Pro y iPhone SE (WebKit) y en PC a 1280 × 720, 1440 × 900 y 1920 × 1080 (Chromium): sin errores de consola, sin scroll lateral y sin imágenes rotas.
+
+- **Logo de Mend:** la animación se ve completa. Parte cuando el logo ya está entero en pantalla (90 % de la entrada), dibuja el trazo, rellena y suma el isotipo con el scroll, y termina al 40 % de la pista, antes de abrir Mend.
+- **Panel de Mend en celular:** el teléfono tapaba "Siguiente proyecto" y aparecía recién después de llegar.
+  - Ahora el JS mide el hueco libre sobre el rótulo y el teléfono cabe y se centra ahí en cualquier alto de pantalla.
+  - Entra junto con el panel, así ya está en su lugar al llegar.
+- **Manual en celular:** la cabecera de la vista previa chocaba ("Interfaz• escribiendo") y en el SE se partía en dos líneas. Sin "Vista previa ·", el paso y el estado caben en una línea.
+- **Decisión 11 en laptops bajos (720 a 840 px de alto):** no cabía y el escenario quedaba cortado arriba.
+  - El escenario se acorta según el alto de la pantalla y el mockup en vivo se achica centrado, con el fondo del mockup (#F4F2FC) para que no quede franja.
+  - Desde 900 px de alto queda igual que antes.
