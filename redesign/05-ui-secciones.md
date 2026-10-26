@@ -847,3 +847,27 @@ Recorrido completo a 390×844 en 2x, capturado cada 0,4 pantallas, más una revi
   - Las medidas se repiten al cargar las fuentes y la página, y el marco se repinta en la parada actual.
   - El imán espera a que la persona mueva el scroll; antes podía mover sola la posición que el navegador restauraba.
 - **Carrusel de Banco de Chile:** la sección del Rebirth se monta encima antes de quedar fija y sus tiras se quedaban con los clics de las flechas. Ahora solo recibe clics cuando está fija (`.activa`).
+
+### Caso Tap In · Safari en blanco, fluidez en iPhone y cambios de tamaño en PC (26 oct 2026)
+
+**iPhone (Safari)**
+- **Pantalla en blanco desde "5 decisiones":** en la decisión 11, la imagen de cada mockup estaba en el flujo dentro de una caja con `aspect-ratio`. Safari entraba en un bucle de altura y la página llegaba a 33 millones de píxeles. La imagen pasa a `position: absolute`.
+- **Escenario de la 11 de 1778 px de ancho:** la columna `1fr` tomaba el ancho mínimo del contenido. Ahora `minmax(0, 1fr)` y `min-width: 0` en la pieza.
+- **Carrusel de Banco de Chile:** la capa del Rebirth (y sus tiras invisibles) tapaba las flechas. La sección deja pasar los toques; solo las tiras y los controles los reciben.
+- **Fluidez (hero, activaciones a Rebirth, "La web" a las 5 decisiones):** cada cuadro de scroll medía el diseño entre escrituras y obligaba a Safari a recalcular toda la página varias veces por cuadro.
+  - Las posiciones de las secciones se miden una vez (al cargar, al cambiar el tamaño y cuando cambia el alto de la página) y cada cuadro solo lee el scroll.
+  - Lo que todavía hay que medir (los textos que se encienden) se lee antes de escribir.
+  - El origen de la onda del hero, el viaje de las tiras a la placa y el vuelo de la ventana de la portada se miden al partir, no en cada cuadro.
+- **Encuadre de la 11 al cargar:** se medía con la pieza a mitad de su entrada (40 px más abajo). Ahora se mide sin transformaciones.
+
+**PC**
+- **Cambiar el tamaño de la ventana:** las pistas miden en alto de pantalla, así que el mismo scroll caía en otra sección. Al achicar estando abajo, la página quedaba al final y el panel de Mend navegaba solo.
+  - Se guarda en qué módulo y a qué altura de su pista va el lector, y al redimensionar se vuelve ahí.
+  - El panel de Mend solo navega por el scroll del lector, nunca por un cambio de tamaño.
+- **Cruzar entre PC y vista móvil:** el hero cambia entre el sitio en vivo y la captura de teléfono, y el recorrido de las 5 decisiones relee su tramo final. Antes quedaban como al cargar.
+- **Verificación:** cada sección después de redimensionar (1440 a 1100, 1440 a 700 y 700 a 1440) se comparó contra una carga limpia del mismo tamaño. Solo difieren las animaciones en vivo y la barra de navegación.
+
+**Detalles**
+- **Favicon de las maquetas:** igual al real de tapin.cl (morado #4A3CAE, isotipo al 78 % y esquina de ícono de app). Antes era lila y con el cerebro chico.
+- **Logo de Mend:** se arma desde que asoma (30 % de la entrada) y queda completo justo antes de que el panel llene la pantalla. Antes llegaba al 60 % donde uno se detiene.
+- **Cita:** firmada por Diego Dihmes, Cofundador de Tap In, junto al wordmark.
