@@ -939,3 +939,8 @@ Aplicado en `redesign/explorations/works/inicio.html`. El JS de la sección vive
   - **Llegó Farma:** seguimiento en vivo (recomendada), bruma del manual, matriz de puntos, última milla y empaque en estudio.
   - **Tap In:** la activación (recomendada), muro de stickers, claim gigante, QR de noche y campus en duotono.
   - **Mend:** luz de ventana (recomendada), tríptico de movimiento, degradado oficial y Encaje, sombras de ventana y hueso editorial.
+
+### Works · Fondos, segunda ronda (26 oct 2026)
+- **Llegó Farma:** la bruma del manual sin isotipos (degradado de la secuencia oficial y las retículas de puntos), más la retícula de precisión del sitio. Se respeta su regla: líneas de 1 px, blanco al 16 % sobre oscuro, cuatro columnas entre márgenes y un corte de 8 px antes de cada cruce. Dos dosis: la retícula completa, con horizontales que calzan con los rótulos y la regla, o solo como detalle del lado de la pieza.
+- **Tap In, cinco nuevas:** la credencial colgando (recomendada), la familia de íconos en profundidad, el muro de pantallas, el mapa del campus con los 60 QR y el foco de escenario.
+- **Mend, cinco nuevas:** pose en movimiento (recomendada), la semana en acción, lino en primer plano, respiración guiada y la app en abanico.
