@@ -1017,3 +1017,8 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Archivo sobre Mend:** el archivo subía mientras Mend todavía estaba subiendo (la pista medía 480svh y el archivo tiene margen de -100svh). La pista pasa a 580svh: Mend llega, queda quieta 60svh y recién ahí sube el archivo.
 - **Animaciones solo en pantalla:** el sitio que baja en Web, los logos de Marca, la secuencia de En uso y la escalera de Mend corren solo con la portada en pantalla y su capítulo abierto. Fuera de eso quedan sin animación, así que al volver parten desde el principio. Las tarjetas de Tap In detienen su ciclo al salir.
 - **Tap In, En uso:** sale el render del teléfono. Ahora es la misma secuencia de Llegó con fotos reales de activaciones: Red Bull, Banco de Chile, el campus, la cafetería y la app.
+
+### Home · En uso de Mend y foto 04 de Tap In (26 oct 2026)
+- **Tap In, foto 04:** sale la cafetería; entra la activación de Red Bull con el teléfono adelante, con el rótulo "Entre clases".
+- **Mend, En uso:** sale el render antiguo del teléfono (una versión anterior de la app). Ahora muestra el producto entre sus dos lados: el panel del kine en el navegador (app.mendsalud.cl) y el teléfono del paciente adelante, el mismo de la escalera. Dos momentos que se alternan cada 5 s: Rosa hace su check-in mientras el kine ve a quién mirar primero, y el kine le aplaude mientras a ella le llega el aviso. Capturas de la fase 2 con Supabase, recortadas sin la barra de revisión.
+- En el teléfono el rótulo se oculta y el teléfono se monta sobre el navegador. Con movimiento reducido queda el primer momento.
