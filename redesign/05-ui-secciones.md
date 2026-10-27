@@ -1099,3 +1099,12 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
   - (05) El correo como titular.
   - (06) Comando.
 - Todas funcionan: copiar, elegir, escribir y un envío de prueba. El pie es común a todas.
+
+### Brief en una frase elegido y footer nuevo (27 oct 2026)
+- **Elegida la 02, brief en una frase.**
+- **Rangos de inversión:** menos de $800 mil, $800 mil a $1,5 M, $1,5 a $4 M, $4 a $8 M y por definir. Sale "más de $8 M".
+- **Footer, el colofón:** cierra el sitio como lo abre el hero, con el nombre.
+  - **Arriba:** la firma, una línea de qué haces, el estado disponible y tres índices: sitio, casos y redes. Cada link tiene su subrayado que entra y su atajo de teclado (H, W, A, C, 1, 2, 3).
+  - **Al medio, el colofón vivo:** hecho a mano con HTML, CSS y JS, y cuánto cargó y cuánto pesa la página que estás viendo, medido en el navegador de quien la ve. Al lado van el tema (sistema, oscuro, claro) y "Arriba" con un anillo que marca cuánto llevas leído.
+  - **Abajo:** el nombre de margen a margen, que sube letra por letra al entrar en pantalla, más la línea legal con la hora de Santiago y la fecha.
+- El comparador ahora tiene tema claro: los mismos roles con valores invertidos.
