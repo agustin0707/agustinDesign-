@@ -1028,3 +1028,9 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Escena de proporción fija:** 160 x 110 unidades, para que los focos calcen con las pantallas en cualquier ancho.
 - **Coreografía (12 s):** Rosa toca "Algo molesto" (toque y anillo de luz), una señal viaja del teléfono al panel y su fila se enciende; el panel navega de lado a su ficha, el kine revisa su semana (anillo en su registro de hoy), la señal vuelve y el aviso sube en el teléfono con su anillo. El rótulo cambia con cada momento.
 - Las capturas del panel se recortan sin el chip de aplauso ni la barra de revisión. En el teléfono el rótulo se oculta; con movimiento reducido queda el primer momento quieto.
+
+### Home · En uso de Mend, tercera versión (26 oct 2026)
+- **Sin líneas punteadas:** la información viaja como un dato con la forma de la interfaz, una píldora crema con la tipografía y el color del panel.
+- **Ida:** Rosa toca "Algo molesto" (gota de luz y anillo), la píldora "Rosa · Algo molesto" se despega del botón, viaja en arco y se disuelve sobre la señal de alarma de su fila, que se enciende.
+- **Vuelta:** en la ficha de Rosa el kine toca "Marcar semana revisada"; la píldora "Semana revisada" viaja al teléfono y al llegar sube la pantalla de avisos con su anillo.
+- El arco sale de mover el eje x en el envoltorio y el eje y en la píldora, con curvas distintas.
