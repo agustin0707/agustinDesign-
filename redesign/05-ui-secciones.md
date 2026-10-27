@@ -1022,3 +1022,9 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Tap In, foto 04:** sale la cafetería; entra la activación de Red Bull con el teléfono adelante, con el rótulo "Entre clases".
 - **Mend, En uso:** sale el render antiguo del teléfono (una versión anterior de la app). Ahora muestra el producto entre sus dos lados: el panel del kine en el navegador (app.mendsalud.cl) y el teléfono del paciente adelante, el mismo de la escalera. Dos momentos que se alternan cada 5 s: Rosa hace su check-in mientras el kine ve a quién mirar primero, y el kine le aplaude mientras a ella le llega el aviso. Capturas de la fase 2 con Supabase, recortadas sin la barra de revisión.
 - En el teléfono el rótulo se oculta y el teléfono se monta sobre el navegador. Con movimiento reducido queda el primer momento.
+
+### Home · En uso de Mend, segunda versión (26 oct 2026)
+- **Gráfica:** el panel del kine va en un navegador de vidrio teñido (barra con candado y app.mendsalud.cl) en vez del navegador gris, con sombra profunda y una sombra de piso bajo la escena. El teléfono es el mismo de la escalera, adelante a la derecha.
+- **Escena de proporción fija:** 160 x 110 unidades, para que los focos calcen con las pantallas en cualquier ancho.
+- **Coreografía (12 s):** Rosa toca "Algo molesto" (toque y anillo de luz), una señal viaja del teléfono al panel y su fila se enciende; el panel navega de lado a su ficha, el kine revisa su semana (anillo en su registro de hoy), la señal vuelve y el aviso sube en el teléfono con su anillo. El rótulo cambia con cada momento.
+- Las capturas del panel se recortan sin el chip de aplauso ni la barra de revisión. En el teléfono el rótulo se oculta; con movimiento reducido queda el primer momento quieto.
