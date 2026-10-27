@@ -1048,3 +1048,16 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Sin videos ni la hoja de la rutina guiada**, que aún no existen: después de deslizar para empezar (la barra se llena y dice "Empecemos"), la historia salta al inicio con la semana sumando el día.
 - **Panel:** la ficha suma la meta (0 a 1 de 3 días con su barra), la fila del check-in pasa de "Rutina pendiente" a la rutina hecha, el lunes se marca y la última barra de "Cómo ha estado" sube. Al final aparece el aviso breve "Rosa vio tu aviso".
 - Cuatro datos viajan entre ambos lados (check-in, rutina hecha, semana revisada y respuesta), cada uno con su avatar y quién lo manda. Los tiempos se generan desde un guion en segundos.
+
+### Home · cierre de las tres portadas (27 oct 2026)
+- **Descripciones sin punto final** en Llegó, Tap In y Mend.
+- **Web como video:** los mockups web ya no bajan una captura larga. Son grabaciones del scroll real de cada sitio con sus animaciones de entrada (Llegó y Tap In desde sus copias locales, Mend desde la app con sus datos de ejemplo, en Explorar). Se cargan recién al verse y parten desde el inicio cada vez que la portada entra en pantalla con Web abierto. Esto también arregla la propuesta de valor de Llegó, que en la captura quedaba a medio animar. En el teléfono, la ventana toma la proporción del video.
+- **Mend, isotipo de vidrio:** más luz y sombra en sus bordes y una cara clara que desenfoca el fondo (backdrop-filter con la máscara del isotipo).
+- **Mend, En uso:**
+  - Sin la sombra de piso bajo la escena.
+  - El teléfono es un video del recorrido real en la app, grabado con los tiempos de la coreografía: la presión del check-in, la entrada de cada pantalla y el deslizar para empezar tal como está diseñado (pista que se llena, "Empecemos" y check). La hoja de la rutina guiada se corta del video.
+  - El panel se reinicia con cada vuelta del video para ir sincronizados.
+  - Los toques son círculos tenues, como las grabaciones de pantalla del iPhone, y uno sigue el dedo al deslizar.
+  - La notificación tiene la estética de iPhone: material claro desenfocado, ícono de la app, título en negrita con la hora a la derecha y el texto debajo; cae con resorte y sube al tocarla.
+  - El panel pasa a martes 27 (el lunes ya estaba hecho): la meta va de 1 a 2 de 3 días.
+- **Pendiente:** fotos nuevas para En uso de Llegó, hechas al tamaño y resolución de la secuencia (PLAN, S2c).
