@@ -1135,3 +1135,4 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
   - Horario de lunes a viernes de 9:00 a 17:00, hora de Santiago.
 - **En el home,** "Llamada de 20 min" abre la agenda con el nombre y el correo ya puestos si se escribieron en la frase.
 - **Pendiente de Agustín:** conectar el calendario de iCloud en Cal.com con una contraseña específica para apps de Apple. Así las reservas caen en el calendario del iPhone y no se agenda sobre lo ocupado.
+- **iCloud conectado (27 oct 2026):** la integración Apple Calendar de Cal.com rechazaba la cuenta, aunque los datos estaban bien. Entró por la integración CalDAV genérica, con caldav.icloud.com, el Apple ID y una contraseña específica para apps. Las reservas caen en el calendario Trabajo de iCloud y los 16 calendarios de iCloud cuentan como ocupados. La página pública ya muestra horas libres según esos calendarios.
