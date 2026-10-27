@@ -1141,3 +1141,35 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
   - Desde el home llegan ya puestos el nombre, el correo, la empresa y, en las notas, qué busca, para cuándo y con qué inversión ("Desde el portafolio: busca…").
   - Todo eso queda en el evento del calendario y en el correo de confirmación.
   - Los correos de Cal.com llegan a la pestaña Notificaciones de Gmail.
+  - Un filtro de Gmail los pasa a Principal (27 oct 2026). La reserva de prueba quedó cancelada y la agenda se da por lista.
+
+### Contacto: auditoría y mejoras (27 oct 2026)
+**Lo que se corrigió de la versión anterior**
+- La frase aparecía de golpe.
+- No había señal de avance ni de error.
+- La confirmación era un párrafo suelto.
+- Copiar el correo avisaba con un toast lejos del clic.
+- Los canales eran links planos.
+
+**Gráfica**
+- Columna izquierda fija con foto, "Te respondo yo", el estado disponible con su punto que late, el plazo de respuesta y la hora de Santiago.
+- Los campos llenos quedan en blanco y la frase en gris, para que se lea lo escrito.
+- Las listas son paneles grafito con descripción en mono y un visto en la opción elegida.
+- La confirmación es un comprobante: hora, "Listo, Nombre.", corte punteado con muescas, lo escrito fila por fila y "Te escribo antes del…" con el punto verde. Al lado, los tres pasos que siguen.
+- Los canales directos son tres columnas con ícono, dato y acción.
+
+**Animación**
+- Al entrar en pantalla, la frase sube palabra por palabra con máscara y los campos aparecen en su turno.
+- Al enfocar, una línea blanca se dibuja bajo el campo.
+- Elegir una opción la hace subir en su lugar.
+- El correo bien escrito confirma con un visto; si falta, el campo tiembla.
+- Enviar muestra tres puntos y el comprobante entra con sus filas en cascada.
+- Todo se apaga con movimiento reducido.
+
+**Interacción**
+- Seis barras de avance: nombre, empresa, qué, cuándo, inversión y correo. Debajo, "4 de 6 · ya puedes enviar" o "Todo listo".
+- El botón queda tenue hasta que el correo es válido.
+- Se envía con ⌘ Enter desde cualquier campo o con Enter en el correo.
+- Las listas se recorren con flechas y saltan a la opción con la primera letra.
+- Copiar el correo responde en la misma fila ("Copiado ✓").
+- El link "dejarla agendada ahora" del comprobante abre la agenda con todo prellenado, igual que el canal.
