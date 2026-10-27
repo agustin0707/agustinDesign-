@@ -1034,3 +1034,10 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Ida:** Rosa toca "Algo molesto" (gota de luz y anillo), la píldora "Rosa · Algo molesto" se despega del botón, viaja en arco y se disuelve sobre la señal de alarma de su fila, que se enciende.
 - **Vuelta:** en la ficha de Rosa el kine toca "Marcar semana revisada"; la píldora "Semana revisada" viaja al teléfono y al llegar sube la pantalla de avisos con su anillo.
 - El arco sale de mover el eje x en el envoltorio y el eje y en la píldora, con curvas distintas.
+
+### Home · En uso de Mend, panel vivo (26 oct 2026)
+- **Panel del kine en HTML:** ya no es una captura. Es una réplica liviana del panel real (barra, columna de pacientes, "Tu día" y la ficha de Rosa) construida en HTML y medida en em, para que se actualice de verdad.
+- **Lo que pasa en el panel:** cuando llega el dato, la fila de Rosa crece arriba de "Para mirar primero" y destella, los contadores giran de 8 a 9 y su subtítulo en la columna cambia a "Algo molesto · hoy". Un cursor llega a la fila y hace clic; la vista pasa a su ficha (la columna queda y la marca). Ahí aparece el check-in de hoy con su marca en el día lunes, el cursor presiona "Marcar semana revisada" y el botón cambia a "Semana revisada".
+- **Traspaso:** el dato es una ficha con avatar, el dato y quién lo manda ("Algo molesto · Rosa, check-in de hoy" y "Semana revisada · Paula, tu kine"). Se despega del botón con un salto, viaja en arco y se abre y funde en lo que provoca: la fila nueva del panel o la notificación del teléfono, que cae desde arriba con un leve rebote.
+- **Teléfono:** el botón "Algo molesto" queda elegido tras el toque. La pantalla de avisos sale; la respuesta llega como notificación sobre el check-in.
+- La ficha suma "Cómo ha estado" (barras de las últimas tres semanas) y "Su plan"; la columna suma "Por revisar".
