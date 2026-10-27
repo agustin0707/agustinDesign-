@@ -1012,3 +1012,8 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Tap In, Marca:** las tres tarjetas reemplazan al wordmark suelto. Entran al abrir Marca y hacen tap cada 3,2 s mientras el capítulo está abierto; al salir, el ciclo se detiene. Con movimiento reducido quedan quietas.
 - Las tarjetas se miden en unidades de contenedor (1 px de la maqueta de 796 x 621); en el teléfono toman casi todo el ancho de la vista.
 - Las curvas usan los tokens del sitio (`--ease`, `--ease-morph`) y un `--rebote` en la pista de portadas. Sale la regla `.pt-marca`, que ya no se usaba.
+
+### Home · animaciones en pantalla, En uso de Tap In y archivo (26 oct 2026)
+- **Archivo sobre Mend:** el archivo subía mientras Mend todavía estaba subiendo (la pista medía 480svh y el archivo tiene margen de -100svh). La pista pasa a 580svh: Mend llega, queda quieta 60svh y recién ahí sube el archivo.
+- **Animaciones solo en pantalla:** el sitio que baja en Web, los logos de Marca, la secuencia de En uso y la escalera de Mend corren solo con la portada en pantalla y su capítulo abierto. Fuera de eso quedan sin animación, así que al volver parten desde el principio. Las tarjetas de Tap In detienen su ciclo al salir.
+- **Tap In, En uso:** sale el render del teléfono. Ahora es la misma secuencia de Llegó con fotos reales de activaciones: Red Bull, Banco de Chile, el campus, la cafetería y la app.
