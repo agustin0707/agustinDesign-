@@ -1006,3 +1006,9 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Tap In, tarjetas elegidas:** el tap ahora es físico. La tarjeta se apoya, la señal NFC se enciende de adentro hacia afuera, salen ondas desde ese punto y un brillo la cruza. Después pasa hacia adelante con desenfoque y la siguiente avanza; la que vuelve al fondo entra con un fundido. Ciclo de 3,2 s.
 - **Health sin isotipo:** esa rama de Tap In todavía no se desarrolla, así que su tarjeta lleva solo la señal, el wordmark y el nombre.
 - Salen del comparador el wordmark a sangre y las bandas de producto.
+
+### Home · marcas animadas de Llegó y Tap In (26 oct 2026)
+- **Llegó, Marca:** el logo animado de la sexta ronda reemplaza al logo estático, sobre el fondo de la portada. Se arma cada vez que se abre Marca, igual que Mend; con movimiento reducido aparece armado.
+- **Tap In, Marca:** las tres tarjetas reemplazan al wordmark suelto. Entran al abrir Marca y hacen tap cada 3,2 s mientras el capítulo está abierto; al salir, el ciclo se detiene. Con movimiento reducido quedan quietas.
+- Las tarjetas se miden en unidades de contenedor (1 px de la maqueta de 796 x 621); en el teléfono toman casi todo el ancho de la vista.
+- Las curvas usan los tokens del sitio (`--ease`, `--ease-morph`) y un `--rebote` en la pista de portadas. Sale la regla `.pt-marca`, que ya no se usaba.
