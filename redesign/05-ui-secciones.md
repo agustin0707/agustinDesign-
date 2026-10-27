@@ -1108,3 +1108,15 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
   - **Al medio, el colofón vivo:** hecho a mano con HTML, CSS y JS, y cuánto cargó y cuánto pesa la página que estás viendo, medido en el navegador de quien la ve. Al lado van el tema (sistema, oscuro, claro) y "Arriba" con un anillo que marca cuánto llevas leído.
   - **Abajo:** el nombre de margen a margen, que sube letra por letra al entrar en pantalla, más la línea legal con la hora de Santiago y la fecha.
 - El comparador ahora tiene tema claro: los mismos roles con valores invertidos.
+
+### Home · contacto y footer (27 oct 2026)
+- El brief en una frase y el footer (colofón) quedan en el home, después del archivo. El contacto es la sección 03.
+- **Envío:** arma el mensaje con la frase completa y lo abre en el correo de quien escribe, dirigido a hola@agustindesign.cl. La confirmación dice que solo falta enviarlo y cuándo respondo (24 h hábiles, hora de Santiago). Cuando exista un servicio de envío (por ejemplo, un Worker de Cloudflare), se manda directo.
+- **Canales:** copiar el correo funciona. WhatsApp y la agenda avisan "pronto" hasta tener el número y el link de Cal.com.
+- **Enlaces:** Contact (en el hero y la barra) y el índice del footer bajan a la frase. Atajos: H arriba, W works, C contacto, y 1 a 3 para las portadas, que ya existían.
+- **Footer:**
+  - Redes reales: LinkedIn, Instagram, GitHub y Behance.
+  - "Sobre mí" y "Sobre este sitio" marcados como pronto.
+  - Sin el selector de tema por ahora, porque el home todavía mezcla secciones claras y oscuras; se suma cuando todo el sitio tenga los dos temas (fase 7).
+- En el teléfono, la lista de opciones se corre hacia adentro si no cabe.
+- **Datos pendientes de Agustín:** número de WhatsApp, link de agenda (Cal.com) y crear hola@agustindesign.cl con el reenvío de correos de Cloudflare.
