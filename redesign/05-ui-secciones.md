@@ -1041,3 +1041,10 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Traspaso:** el dato es una ficha con avatar, el dato y quién lo manda ("Algo molesto · Rosa, check-in de hoy" y "Semana revisada · Paula, tu kine"). Se despega del botón con un salto, viaja en arco y se abre y funde en lo que provoca: la fila nueva del panel o la notificación del teléfono, que cae desde arriba con un leve rebote.
 - **Teléfono:** el botón "Algo molesto" queda elegido tras el toque. La pantalla de avisos sale; la respuesta llega como notificación sobre el check-in.
 - La ficha suma "Cómo ha estado" (barras de las últimas tres semanas) y "Su plan"; la columna suma "Por revisar".
+
+### Home · En uso de Mend, la historia completa (26 oct 2026)
+- **Cuatro capítulos en 28 s:** (1) Rosa hace su check-in y entra arriba de la lista de su kine. (2) Va a Explorar, abre la rutina de hoy, desliza para empezar y su semana suma un día; el kine lo ve al instante en su ficha. (3) El kine marca la semana como revisada y a ella le llega la notificación. (4) Rosa responde "Lo vi, gracias" y el kine recibe un aviso breve.
+- **Pantallas reales:** el teléfono encadena capturas de la app con sus datos de ejemplo (check-in elegido, inicio, Explorar, la rutina, el inicio con la semana en 1 de 3 días, avisos y la respuesta), tomadas con Rosa como paciente. Cada pantalla entra como en la app: el inicio sube, la rutina llega de lado.
+- **Sin videos ni la hoja de la rutina guiada**, que aún no existen: después de deslizar para empezar (la barra se llena y dice "Empecemos"), la historia salta al inicio con la semana sumando el día.
+- **Panel:** la ficha suma la meta (0 a 1 de 3 días con su barra), la fila del check-in pasa de "Rutina pendiente" a la rutina hecha, el lunes se marca y la última barra de "Cómo ha estado" sube. Al final aparece el aviso breve "Rosa vio tu aviso".
+- Cuatro datos viajan entre ambos lados (check-in, rutina hecha, semana revisada y respuesta), cada uno con su avatar y quién lo manda. Los tiempos se generan desde un guion en segundos.
