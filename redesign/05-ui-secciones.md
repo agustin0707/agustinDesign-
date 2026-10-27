@@ -1173,3 +1173,25 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
 - Las listas se recorren con flechas y saltan a la opción con la primera letra.
 - Copiar el correo responde en la misma fila ("Copiado ✓").
 - El link "dejarla agendada ahora" del comprobante abre la agenda con todo prellenado, igual que el canal.
+
+### Auditoría del home y archivo conectado (27 oct 2026)
+**Archivo:** cada ficha abre la página que el proyecto tenía en el sitio anterior.
+- Cubre La Columna, HAI Group, Mido, Entrena Po y Posters.
+- Es temporal: los destacados llegan al nivel de Tap In y los del archivo al de La Columna, con estética propia pero menos desarrollados.
+- En la copia publicada, Home y el menú vuelven al home nuevo (al archivo), Tap In lleva a su caso nuevo y Anco sale del menú.
+- Los originales de la raíz no se tocan, porque son producción.
+
+**Corregido**
+- En el iPhone la página se arrastraba 138 px hacia el lado. Había dos causas:
+  - La hora de la barra caía en una tercera columna inexistente.
+  - Las listas cerradas del contacto ocupaban espacio fuera de pantalla.
+- Ahora no hay scroll lateral.
+
+**Revisado sin problemas:** sin errores de consola ni recursos rotos en Chromium y WebKit, todas las imágenes con alt e ids únicos.
+
+**Pendiente, anotado para su fase**
+- Sin meta description ni imagen para compartir (OG): fase 7.
+- "About" sube al inicio hasta que exista Sobre mí (S4).
+- "Ver caso" de Llegó y Mend abre la vista previa del caso, no una página: S3.
+- Los links de la barra miden 20 px de alto, bajo los 24 px recomendados para toque.
+- Peso inicial de unos 5,7 MB en desktop y 7,7 MB en el teléfono, sobre todo imágenes de portada: revisar en performance (7.6).
