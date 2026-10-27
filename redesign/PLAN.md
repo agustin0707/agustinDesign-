@@ -80,11 +80,11 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 |---|------|--------|
 | S1 | Hero | Hecho · Hero 1 · Capas v4 final, con tres audits (ver `05-ui-secciones.md`) |
 | S2 | Índice de trabajos y entrada al proyecto (interacción nueva) | Hecho · Pila de cortinas v5, con visto bueno el 21 oct 2026 (ver `05-ui-secciones.md`) |
-| S2b | Portadas de los destacados (Llegó, Tap In, Mend) | En curso · cerradas el 27 oct 2026 salvo las fotos de En uso de Llegó |
+| S2b | Portadas de los destacados (Llegó, Tap In, Mend) | Hecho · cerradas el 27 oct 2026; queda aparte S2c |
 | S2c | Fotos nuevas para En uso de Llegó, hechas al tamaño y resolución de la secuencia | Pendiente · más adelante, a pedido de Agustín |
 | S3 | Página de caso | En curso · Tap In editorial con escenas de scroll (tras descartar las láminas), falta tu visto bueno; Llegó después con su md |
 | S4 | Sobre mí | Pendiente |
-| S5 | Contacto y footer | Pendiente |
+| S5 | Contacto y footer | En curso · investigación y seis variantes en `explorations/contacto/`, falta que elijas |
 
 | # | Ítem | Estado |
 |---|------|--------|

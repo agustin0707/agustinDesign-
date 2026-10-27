@@ -1071,3 +1071,31 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 ### Home · mockups web cuadro a cuadro (27 oct 2026)
 - **Scroll fluido de verdad:** la cámara lenta todavía dejaba pasos desiguales, porque el screencast entrega los cuadros cuando puede y no cuando se dibujan, y el scroll se sentía como con flechas. Ahora la grabación es determinista, cuadro a cuadro: el tiempo de la página es virtual y avanza exactamente 1/60 s por cuadro. Se controlan el reloj de JS, los timers, requestAnimationFrame, todas las animaciones y transiciones CSS (pausadas y puestas en su tiempo exacto) y el scroll, y cada cuadro se captura con la página quieta.
 - **Entradas que no se veían:** la ventana del mockup recortaba el video por abajo cuando la vista era más ancha que el video, y los sitios disparan sus entradas justo en esa franja. Ahora la ventana toma la proporción del video y se encaja en la vista, en cualquier tamaño de pantalla y en el teléfono.
+
+## S5 · Contacto y footer
+
+### Investigación y seis variantes (27 oct 2026)
+Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos y los links arriba.
+
+- **Patrones encontrados:**
+  - Los design engineers que no venden servicios dejan un correo o ni eso (Rauno, Paco Coursey, Emil Kowalski, Brian Lovin, Jakub Krehel).
+  - Los estudios de marca separan los canales por propósito, los hacen copiables y nombran a una persona (Ragged Edge, Studio Dumbar, Pentagram, Collins, Studio Freight).
+  - Los que reciben muchos proyectos califican con opciones de servicio y presupuesto (Cuberto, basement.studio, AREA 17).
+  - Otros cierran con un gran llamado, más lugar y hora (Lusion, Koto, Joffrey Spitzer).
+  - Las guías para freelancers piden que el paso siguiente sea una conversación y que se diga qué pasa después de escribir.
+  - En Chile, WhatsApp llega al 89,7 % de quienes usan internet.
+- **Lo que le sirve al portafolio:**
+  - Una persona, no un formulario.
+  - Un paso principal con atajos al lado.
+  - Tres preguntas con opciones, como máximo.
+  - El detalle como prueba.
+  - El verde solo para "disponible" y el reloj de Santiago.
+  - Un correo propio: hola@agustindesign.cl, en vez del de la UC.
+- **Variantes:**
+  - (01) Índice de canales.
+  - (02) Brief en una frase, recomendada.
+  - (03) Alcance y proceso.
+  - (04) Agenda primero.
+  - (05) El correo como titular.
+  - (06) Comando.
+- Todas funcionan: copiar, elegir, escribir y un envío de prueba. El pie es común a todas.
