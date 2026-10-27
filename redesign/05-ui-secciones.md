@@ -1126,3 +1126,12 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
 - **WhatsApp:** +56 9 5624 7539. El chat se abre con un mensaje listo: "Hola Agustín, vi tu portafolio y quiero conversar un proyecto."
 - La confirmación ahora dice, por ejemplo, "Te escribo antes del miércoles a las 15:46".
 - **Pendiente:** el link de agenda para la llamada de 20 minutos (Agenda de citas de Google Calendar o Cal.com). Mientras tanto avisa "pronto".
+
+### Agenda de 20 minutos (27 oct 2026)
+- **Evento en Cal.com:** "Conversemos 20 minutos" en cal.com/agustindesign/20min.
+  - Cal Video como lugar.
+  - Descripción: "Una videollamada corta para entender tu proyecto…".
+  - 10 minutos de margen después de cada llamada y 12 horas de anticipación mínima.
+  - Horario de lunes a viernes de 9:00 a 17:00, hora de Santiago.
+- **En el home,** "Llamada de 20 min" abre la agenda con el nombre y el correo ya puestos si se escribieron en la frase.
+- **Pendiente de Agustín:** conectar el calendario de iCloud en Cal.com con una contraseña específica para apps de Apple. Así las reservas caen en el calendario del iPhone y no se agenda sobre lo ocupado.
