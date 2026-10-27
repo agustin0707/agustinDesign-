@@ -1120,3 +1120,9 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
   - Sin el selector de tema por ahora, porque el home todavía mezcla secciones claras y oscuras; se suma cuando todo el sitio tenga los dos temas (fase 7).
 - En el teléfono, la lista de opciones se corre hacia adentro si no cabe.
 - **Datos pendientes de Agustín:** número de WhatsApp, link de agenda (Cal.com) y crear hola@agustindesign.cl con el reenvío de correos de Cloudflare.
+
+### Contacto con datos reales (27 oct 2026)
+- **Correo:** agus.avendano@gmail.com. Se copia desde el contacto y es el destino del mensaje que arma la frase.
+- **WhatsApp:** +56 9 5624 7539. El chat se abre con un mensaje listo: "Hola Agustín, vi tu portafolio y quiero conversar un proyecto."
+- La confirmación ahora dice, por ejemplo, "Te escribo antes del miércoles a las 15:46".
+- **Pendiente:** el link de agenda para la llamada de 20 minutos (Agenda de citas de Google Calendar o Cal.com). Mientras tanto avisa "pronto".
