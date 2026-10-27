@@ -1061,3 +1061,9 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
   - La notificación tiene la estética de iPhone: material claro desenfocado, ícono de la app, título en negrita con la hora a la derecha y el texto debajo; cae con resorte y sube al tocarla.
   - El panel pasa a martes 27 (el lunes ya estaba hecho): la meta va de 1 a 2 de 3 días.
 - **Pendiente:** fotos nuevas para En uso de Llegó, hechas al tamaño y resolución de la secuencia (PLAN, S2c).
+
+### Home · notificación de Mend y scroll fluido en los mockups web (27 oct 2026)
+- **Notificación de Mend:** baja y se separa de los bordes del teléfono (margen de unos 15 pt a los lados y 25 pt arriba), así no choca con las esquinas redondeadas de la pantalla. El toque y el dato del kine apuntan a su nuevo centro.
+- **Scroll fluido:** las grabaciones anteriores salían del screencast en tiempo real, con 30 cuadros irregulares por segundo, y el scroll se sentía a saltos. Ahora se graban en cámara lenta: la página corre a 1/4 de velocidad (1/12 en Mend), con las animaciones CSS, el reloj de JS, los timers y los videos frenados, y la captura se acelera al codificar. Salen entre 180 y 300 cuadros efectivos por segundo, que se codifican a 60 fps.
+- El scroll va a velocidad constante con entrada y salida suaves, y las imágenes se cargan y decodifican antes de bajar para que no traben el render.
+- Mend se graba más lento porque la app tiene pausas fijas de unos 270 ms; a 1/12 quedan en menos de dos cuadros.
