@@ -999,3 +999,10 @@ Aplicado en `redesign/explorations/works/inicio.html` y comparador en `works/des
 - **Home · paso entre destacados como hoja:** cada portada sube como el archivo sobre Mend. Bordes de 22 px (18 en el teléfono) que se enderezan en el último cuarto, sombra hacia arriba y la anterior se oscurece un poco. Va lineal con el scroll: la pista crece a 480svh y cada paso ocupa 100svh, con pausas de 60svh en cada portada.
 - **Comparador · Llegó, marca:** solo el isotipo real (cruz de cinco nodos). El centro aparece, los brazos crecen y los dos nodos sueltos llegan; el nodo de la derecha sale como mensajero, destapa la palabra y se vuelve la o, y el tilde se marca como un visto. La placa queda limpia, sin guías ni rótulos.
 - **Comparador · Tap In, tres placas:** tarjetas que hacen tap (recomendada), wordmark a sangre y bandas de producto.
+
+### Destacados, sexta ronda (26 oct 2026)
+- **Sin placas:** las marcas de Llegó y Tap In van directo sobre el fondo de cada portada, sin bloque detrás.
+- **Llegó, fluidez:** las fases se encadenan sin pausas (3,5 s en total). Los brazos y los nodos entran con salida exponencial, el mensajero se estira al viajar, destapa la palabra con un borde difuso (máscara con degradado en vez de corte duro) y se abre en la o.
+- **Tap In, tarjetas elegidas:** el tap ahora es físico. La tarjeta se apoya, la señal NFC se enciende de adentro hacia afuera, salen ondas desde ese punto y un brillo la cruza. Después pasa hacia adelante con desenfoque y la siguiente avanza; la que vuelve al fondo entra con un fundido. Ciclo de 3,2 s.
+- **Health sin isotipo:** esa rama de Tap In todavía no se desarrolla, así que su tarjeta lleva solo la señal, el wordmark y el nombre.
+- Salen del comparador el wordmark a sangre y las bandas de producto.
