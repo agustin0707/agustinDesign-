@@ -1195,3 +1195,26 @@ Comparador en `redesign/explorations/contacto/contacto.html`, con los hallazgos 
 - "Ver caso" de Llegó y Mend abre la vista previa del caso, no una página: S3.
 - Los links de la barra miden 20 px de alto, bajo los 24 px recomendados para toque.
 - Peso inicial de unos 5,7 MB en desktop y 7,7 MB en el teléfono, sobre todo imágenes de portada: revisar en performance (7.6).
+
+### Contacto y footer: las 12 mejoras elegidas (30 oct 2026)
+Salieron de la auditoría gráfica del 29 oct, un artifact con 19 propuestas y maquetas en vivo. Agustín eligió 12: C1, C6, C8, C9, C11, C12, F1, F2, F4, F5, T1 y T2. El diagnóstico era que todo pesaba lo mismo: 11 tamaños, 9 grises, datos repetidos y 31 elementos en el footer.
+
+**Contacto**
+- **Conversemos (C1):** titular con el tamaño y la entrada de "Archivo", con "(24 h)" al lado. Reemplaza el rótulo "03 · Contacto". En el teléfono va a 13,5vw para no partirse.
+- **El correo en vivo (C12):** la columna izquierda (foto, rol, disponible, plazo y hora) se reemplaza por una hoja clara, apenas girada, que arma el correo que me llega. Para, con la foto y el punto verde, y la hora en vivo. Cada hueco vacío es una barra; lo tipeado aparece al mismo tiempo y lo elegido en una lista se escribe letra por letra. Bajo 1100 px pasa abajo de la frase.
+- **Luz del campo activo (C6):** halo muy suave detrás del campo con el foco, que se desliza al siguiente y se apaga al salir de la frase.
+- **Plumón (C11):** al elegir de una lista o salir de un campo bien escrito, una franja blanca cruza el valor y se retira (520 ms, una vez por campo, con mezcla por diferencia).
+- **El botón se llena (C8):** el avance vive dentro del botón, un tramo por cada parte de la frase. Las seis barras y su texto salen (el texto queda para lectores de pantalla). El atajo ⌘ Enter aparece cuando el correo está bien escrito; si falta, el botón dice "Falta tu correo".
+- **Canales en una línea (C9):** "¿Prefieres otra vía?" y tres pastillas: Copiar correo, WhatsApp y Agendar 20 min.
+
+**Footer**
+- **Tres franjas (F1):** la firma gigante arriba, una fila de links con Arriba al final y la línea legal.
+- **Fuera los duplicados (F2):** salen la firma chica, la descripción, el disponible, la columna de casos, los dos "pronto", "Sin cookies" y "Hecho en Santiago".
+- **Firma de peso variable (F4):** Geist pasa a cargarse variable (100 a 900). Con mouse, las letras cerca del cursor engordan y las lejanas se afinan. En pantallas táctiles corre una ola, y la firma deja 5% de aire para no tocar los bordes.
+- **Colofón en una línea (F5):** "Hecho a mano · HTML, CSS y JS · 0,25 s · 2,4 MB", con la carga y el peso medidos en vivo.
+
+**Todo el bloque**
+- **Tres grises (T1):** blanco, gris medio y tenue (#4A4A47), más la línea. La hoja del correo usa los mismos grises, invertidos.
+- **Tres tamaños (T2):** la frase (`--t-frase`), 16 para lo que se lee (`--t-lee`) y 12 en mono para rótulos.
+
+**Verificado:** en Chromium y WebKit, a 1440, 1000 y en iPhone 13, sin errores ni scroll lateral. Probados el envío con el comprobante y el aviso de correo faltante.

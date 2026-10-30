@@ -1,7 +1,7 @@
 # Plan de rediseño · Agustín Design
 
 Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
-Última actualización: 27 oct 2026
+Última actualización: 30 oct 2026
 
 ---
 
@@ -85,7 +85,7 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 | S2c | Fotos nuevas para En uso de Llegó, hechas al tamaño y resolución de la secuencia | Pendiente · más adelante, a pedido de Agustín |
 | S3 | Página de caso | En curso · Tap In editorial con escenas de scroll (tras descartar las láminas), falta tu visto bueno; Llegó después con su md |
 | S4 | Sobre mí | Pendiente |
-| S5 | Contacto y footer | Hecho · brief en una frase y colofón en el home (27 oct 2026); con correo, WhatsApp y agenda (Cal.com conectada a iCloud) |
+| S5 | Contacto y footer | Hecho · brief en una frase y colofón en el home (27 oct 2026); con correo, WhatsApp y agenda (Cal.com conectada a iCloud); 12 mejoras gráficas elegidas de la auditoría aplicadas el 30 oct 2026 |
 
 | # | Ítem | Estado |
 |---|------|--------|
