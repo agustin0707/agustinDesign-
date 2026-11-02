@@ -1288,3 +1288,25 @@ Después de tres rondas (seis tratamientos, seis versiones de Hoja clara y la au
 - **Se mantiene de la auditoría:** la hoja clara que se abre al entrar (`--e`), la entrada en cascada una sola vez, las filas y su marca.
 - **Navegación:** About en la barra y en el hero baja a `#about`; el footer suma "Sobre mí" con la tecla A; About entra al índice en lupa entre Archivo y Contact.
 - **Verificado:** en Chromium (1440 y 1024) y WebKit (iPhone 13). Sin errores ni scroll lateral; las filas llegan exacto a 90 px del borde y la tecla A llega al About.
+
+### About Ficha: auditoría y 14 mejoras (2 nov 2026)
+Revisé la Ficha en el home a 1440, 1024 y en iPhone 13, desde que llega del archivo hasta Conversemos, y la comparé en un artifact con Antes y Después. Agustín aprobó las 14 mejoras.
+- **Portada:**
+  - **Orden en el teléfono:** primero el título, después el retrato cuadrado y la ficha.
+  - **Dos grupos:** título y bajada arriba; ficha e índice apoyados en la base del retrato, con un solo hueco entre ambos.
+  - **Datos:** oficio, especialidad, base con la hora y respuesta (24 h hábiles, igual que el contacto). Salen "Nombre" y "Hace", que repetían la bajada.
+  - **Hora:** los dos puntos laten cada segundo.
+  - **Panel:** pie con el nombre y las coordenadas de Santiago y el grano del hero.
+  - **Retrato:** sube un 7% desde la base del panel mientras la hoja entra (`--sube`).
+  - **Índice:** usa el dibujo de los titulares de tapa. Con mouse muestra la tecla; en el teléfono, un número en mono. Arregla además el "Formación" que quedaba solo a 1024.
+- **Filas:**
+  - **Ancho:** el contenido ocupa de la columna 4 a la 12; el texto corrido conserva su medida.
+  - **Pasos:** en una línea con un punto por paso, que en el teléfono se vuelve vertical.
+  - **Servicios:** cada uno lleva a su prueba con un salto a la portada: Llegó Farma, Tap In o Mend. Las filas que no están bajo el cursor se apagan.
+  - **Quién:** copy nuevo con el porqué del oficio integral. Es una propuesta y Agustín puede ajustarlo.
+  - **Formación:** a 18 px.
+- **Cierre:** una fila "Sigue" lleva a Conversemos, con la tecla C.
+- **Verificado:**
+  - Chromium (1440 y 1024) y WebKit (iPhone 13), sin errores ni scroll lateral.
+  - El índice y las teclas llegan exacto a cada fila sin el índice del home.
+  - "Sigue" llega al contacto y Mend a su portada.
