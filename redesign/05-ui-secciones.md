@@ -1218,3 +1218,11 @@ Salieron de la auditoría gráfica del 29 oct, un artifact con 19 propuestas y m
 - **Tres tamaños (T2):** la frase (`--t-frase`), 16 para lo que se lee (`--t-lee`) y 12 en mono para rótulos.
 
 **Verificado:** en Chromium y WebKit, a 1440, 1000 y en iPhone 13, sin errores ni scroll lateral. Probados el envío con el comprobante y el aviso de correo faltante.
+
+### Footer: la firma con linterna y el punto que viaja (2 nov 2026)
+El peso variable (F4) no convenció. Se armó un artifact con cinco hovers vivos: código, linterna, construcción, punto e inercia. Agustín eligió unir la 02 con la 04.
+- **Linterna:** al pasar, la firma se apaga a gris tenue y una luz sigue al cursor. Cada letra recorta el mismo degradado radial, corrido por su posición, y el radio (`--luz`) se anima con `@property`.
+- **El punto:** sale del flujo y salta al borde entre letras más cercano al cursor. Las letras se abren medio punto a cada lado, con `transform` para no pisar la entrada, que usa `translate`. Lejos de casa se vuelve verde, el color de disponible, y al salir vuelve a su lugar y a su gris.
+- **En el teléfono:** lo mismo arrastrando el dedo (`touch-action: pan-y`). Sale la ola.
+- Geist vuelve a cargarse solo en 400 y 500.
+- **Verificado:** en Chromium, WebKit e iPhone 13, sin errores ni scroll lateral.
