@@ -1279,3 +1279,12 @@ La gráfica de tramos no convenció. Se armó un artifact con seis gráficas dis
 - **Dónde vive (opción C, elegida):** un bloque corto en el home, entre Archivo y Contact, y más adelante la página /sobre, después de los casos de Llegó y Mend. About se suma al índice en lupa cuando exista el bloque.
 - **Barra:** los links siguen el orden real de las secciones: Works, About, Contact, en la barra compacta y en la del hero. About sigue subiendo al inicio hasta que exista el bloque.
 - **Preview del bloque:** tres direcciones (Ficha, Manifiesto, Retrato) con la foto en blanco y negro recortada; recomiendo Ficha. Falta el visto bueno.
+
+### About: portada Ficha en el home (2 nov 2026)
+Después de tres rondas (seis tratamientos, seis versiones de Hoja clara y la auditoría de la Portada) Agustín se quedó con los ajustes auditados, menos la portada. Se revisaron 24 About de diseñadores en vivo y se armaron seis portadas nuevas: Nombre partido, La frase, Edición del día, Retrato anotado, Ficha con atajos y Zoom a sangre. Eligió **Ficha** para verla en el home y buscar mejoras ahí.
+- **Dónde:** `section.ab#about`, entre Archivo y Contact. Prefijo `.ab-`; CSS en el bloque 4 de `inicio.html` y JS en `inicio-about.js`.
+- **Portada:** pantalla dividida. Retrato recortado en blanco y negro en su panel (columnas 1 a 6) y, a la derecha (8 a 12), "Sobre mí" al tamaño de Archivo y Conversemos, la bajada, una ficha (nombre, oficio, qué hace, base y hora en vivo) y los atajos.
+- **Atajos:** botones o teclas 1 a 4 (Quién, Qué hago, Cómo trabajo, Formación), solo con el About en pantalla para no chocar con las portadas. Deslizan sin el índice del home (`desplazar(y, true)`) y al llegar el rótulo de la fila se marca con una línea.
+- **Se mantiene de la auditoría:** la hoja clara que se abre al entrar (`--e`), la entrada en cascada una sola vez, las filas y su marca.
+- **Navegación:** About en la barra y en el hero baja a `#about`; el footer suma "Sobre mí" con la tecla A; About entra al índice en lupa entre Archivo y Contact.
+- **Verificado:** en Chromium (1440 y 1024) y WebKit (iPhone 13). Sin errores ni scroll lateral; las filas llegan exacto a 90 px del borde y la tecla A llega al About.
