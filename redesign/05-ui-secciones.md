@@ -1267,3 +1267,7 @@ La gráfica de tramos no convenció. Se armó un artifact con seis gráficas dis
 - **Caja:** centrada en alto, de `min(44vh, 380px)` por 240 px; en el teléfono, `min(40vh, 300px)` por 170 px.
 - **Verificado:** en Chromium y WebKit (iPhone 13). Los saltos llegan exacto a Contact y arriba, la rueda interrumpe y no hay scroll lateral.
 - **Ajuste (2 nov):** las cuatro secciones quedan más juntas, en una caja de `min(30vh, 260px)` (en el teléfono, `min(28vh, 220px)`). Detrás del índice entra un degradado propio, con la misma opacidad del índice: una sombra suave que nace del borde derecho (85% a 0) y una luz tenue (6%) que sigue a la marca con `--my`.
+- **Fluidez y degradado (2 nov):**
+  - **La marca no copia el scroll.** Las secciones miden muy distinto (Works con sus portadas es larguísima), así que la marca corría, se frenaba y volvía a correr. Ahora avanza del origen al destino con la misma curva y el mismo tiempo del viaje, y llegan juntas. Rótulos y marca se mueven con `transform`, no con `top`, para no recalcular el layout en cada cuadro.
+  - **Curva más suave.** La anterior (0,6 0 0,12 1) tenía un pico de velocidad de 4 veces el promedio y eso daba tirones en los saltos largos. Pasa a 0,45 0 0,2 1, con un pico de 2,9 veces, y dura de 700 a 1300 ms.
+  - **Degradado.** La elipse y la luz que seguía a la marca se veían como una mancha. Queda una sombra lineal a toda la altura, que nace del borde derecho al 50% y se desvanece en 620 px, con paradas suavizadas para que no se vea forma ni borde.
