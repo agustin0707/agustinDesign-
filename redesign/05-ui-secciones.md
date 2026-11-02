@@ -1257,3 +1257,12 @@ La cortina negra no convenció. Se armó un artifact con seis transiciones naveg
 - **Saltos cortos:** solo deslizan, con la misma curva.
 - **Secciones:** se registran con `desplazar.seccion(nombre, y)`; las portadas las suma `inicio-works.js`.
 - **Verificado:** en Chromium y WebKit (iPhone 13). Todos los saltos llegan exacto y la rueda interrumpe y esconde el índice.
+
+### Índice en lupa (2 nov 2026)
+La gráfica de tramos no convenció. Se armó un artifact con seis gráficas distintas, todas con el mismo movimiento: Regla, Sumario, Lupa, Odómetro, Línea de tiempo y Página índice. Agustín eligió la Lupa y la quiso solo con cuatro secciones.
+- **Secciones:** Hero, Works, Archivo y Contact. Las portadas y el footer salen del índice: los saltos a una portada se marcan como Works.
+- **Lupa:** los rótulos van en Geist 500 de 14 px, repartidos parejo. Los cercanos a la marca crecen hasta 2,1 veces desde su borde derecho y se apartan para darle lugar, como el dock de macOS. La cercanía es `--g`, de 0 a 1, con un radio de 1,5 secciones; agranda el rótulo y alarga su raya.
+- **Anclas:** cada sección se ancla donde termina su salto, así la marca queda exacta en el destino al llegar.
+- **Se mantiene:** estados, destino con flecha, cascada, curva, atenuado y pulso, iguales a la versión anterior.
+- **Caja:** centrada en alto, de `min(44vh, 380px)` por 240 px; en el teléfono, `min(40vh, 300px)` por 170 px.
+- **Verificado:** en Chromium y WebKit (iPhone 13). Los saltos llegan exacto a Contact y arriba, la rueda interrumpe y no hay scroll lateral.
