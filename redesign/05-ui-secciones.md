@@ -1243,3 +1243,17 @@ El peso variable (F4) no convenció. Se armó un artifact con cinco hovers vivos
 - Se detiene si la persona usa la rueda, toca la pantalla o aprieta una tecla. Con movimiento reducido salta directo.
 
 **Verificado:** en Chromium y WebKit (iPhone 13). Todos los saltos llegan exacto a su destino, la interrupción funciona y no hay errores.
+
+### Navegación: el índice que viaja (2 nov 2026)
+La cortina negra no convenció. Se armó un artifact con seis transiciones navegables y Agustín eligió la 04, el índice que viaja. Después vino una auditoría con diez mejoras activables, y de ahí eligió G1, G3, G4, M1, M2, M3 y M4.
+- **Saltos largos** (más de 1,2 pantallas): un velo baja la página a un tercio, más oscuro hacia la derecha. A la derecha aparece un índice con las secciones del home: Inicio, Works, Llegó Farma, Tap In, Mend, Archivo, Contacto y Final.
+- **Tramos (G3):** cada sección es un tramo del riel con su largo real. Los rótulos guardan 17 px de distancia mínima.
+- **Tres estados (G1):** lo recorrido en gris, lo actual en blanco, lo que falta del camino en tenue y el resto casi apagado, en mono de 12 px.
+- **Destino (G4):** se marca con una flecha desde el arranque.
+- **Entrada (M1):** el riel se dibuja de arriba abajo y los rótulos entran en cascada; al salir se apagan en orden inverso.
+- **Curva (M2):** bézier 0,6 0 0,12 1, con arranque decidido y llegada larga. Dura de 650 a 1200 ms según la distancia.
+- **Atenuado (M3):** en el último 30% del viaje la página se vuelve a encender.
+- **Llegada (M4):** la marca hace un pulso y el destino parpadea una vez.
+- **Saltos cortos:** solo deslizan, con la misma curva.
+- **Secciones:** se registran con `desplazar.seccion(nombre, y)`; las portadas las suma `inicio-works.js`.
+- **Verificado:** en Chromium y WebKit (iPhone 13). Todos los saltos llegan exacto y la rueda interrumpe y esconde el índice.
