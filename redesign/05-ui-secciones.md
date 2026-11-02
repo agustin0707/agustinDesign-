@@ -1226,3 +1226,20 @@ El peso variable (F4) no convenció. Se armó un artifact con cinco hovers vivos
 - **En el teléfono:** lo mismo arrastrando el dedo (`touch-action: pan-y`). Sale la ola.
 - Geist vuelve a cargarse solo en 400 y 500.
 - **Verificado:** en Chromium, WebKit e iPhone 13, sin errores ni scroll lateral.
+
+### Fluidez del hover y de la navegación (2 nov 2026)
+**Firma del footer**
+- La entrada y la salida eran bruscas, porque se animaba el radio de la luz, de 4000 px al tamaño final. Ahora se anima `--apaga` (de 0 a 1), que mezcla el borde del degradado de blanco a tenue: un fundido de 600 ms al entrar y 900 ms al salir, con curva suave en ambos extremos.
+- La luz persigue al cursor con un leve retraso, calculado en cada cuadro.
+- Letras y punto se mueven en 460 ms.
+- El punto ya no es verde: viaja encendido en blanco y vuelve a su gris.
+
+**Footer:** sale el link a GitHub.
+
+**Navegación** (`inicio-desplazar.js`)
+- Un solo desplazamiento para volver arriba, works, contacto, archivo, cada portada y los atajos H, W y C. Reemplaza al `scrollTo` con `behavior: smooth` repartido en tres archivos.
+- Hasta tres pantallas desliza directo, con curva que acelera y frena, en 450 a 1100 ms según la distancia.
+- Más lejos, una cortina negra cubre 220 ms, el salto ocurre detrás y la página llega deslizando en 950 ms.
+- Se detiene si la persona usa la rueda, toca la pantalla o aprieta una tecla. Con movimiento reducido salta directo.
+
+**Verificado:** en Chromium y WebKit (iPhone 13). Todos los saltos llegan exacto a su destino, la interrupción funciona y no hay errores.
