@@ -1310,3 +1310,15 @@ Revisé la Ficha en el home a 1440, 1024 y en iPhone 13, desde que llega del arc
   - Chromium (1440 y 1024) y WebKit (iPhone 13), sin errores ni scroll lateral.
   - El índice y las teclas llegan exacto a cada fila sin el índice del home.
   - "Sigue" llega al contacto y Mend a su portada.
+
+### About: menos líneas, Aire y cierre en prosa (2 nov 2026)
+Agustín sintió que se abusaba de las líneas de diagramación en la ficha, Formación y Sigue, y que Quién podía ser mucho más atractivo. Se armaron tres direcciones (Aire, Superficies y Prosa). Eligió **Aire**, con Sigue en la versión de **Prosa**.
+- **Filas:** se separan por aire (48 px arriba y abajo, 36 en el teléfono), sin líneas.
+- **Ficha:** dos columnas de rótulo en mono y valor a 18 px, sin líneas.
+- **Quién:** pasa a tamaño de titular (de 30 a 60 px). Se enciende palabra a palabra cuando la línea de lectura (al 62% de la pantalla) pasa por cada palabra, de izquierda a derecha. La marca, la experiencia y el código parten encendidos. El JS separa las palabras sin tocar el HTML; con movimiento reducido el texto queda encendido entero.
+- **Formación:** créditos en tres columnas, con el nombre arriba y el detalle abajo (una columna en el teléfono).
+- **Sigue:** "¿Tienes un proyecto en mente?" en gris, seguido de "Conversemos ↓" en negro, a tamaño de titular.
+- **Se mantienen con línea:** el índice y los servicios, que son listas para recorrer y comparar.
+- **Verificado:**
+  - Chromium (1440 y 1024) y WebKit (iPhone 13), sin errores ni scroll lateral.
+  - Índice, teclas, Sigue y los saltos a las portadas funcionan igual.
