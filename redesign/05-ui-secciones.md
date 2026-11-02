@@ -1266,3 +1266,4 @@ La gráfica de tramos no convenció. Se armó un artifact con seis gráficas dis
 - **Se mantiene:** estados, destino con flecha, cascada, curva, atenuado y pulso, iguales a la versión anterior.
 - **Caja:** centrada en alto, de `min(44vh, 380px)` por 240 px; en el teléfono, `min(40vh, 300px)` por 170 px.
 - **Verificado:** en Chromium y WebKit (iPhone 13). Los saltos llegan exacto a Contact y arriba, la rueda interrumpe y no hay scroll lateral.
+- **Ajuste (2 nov):** las cuatro secciones quedan más juntas, en una caja de `min(30vh, 260px)` (en el teléfono, `min(28vh, 220px)`). Detrás del índice entra un degradado propio, con la misma opacidad del índice: una sombra suave que nace del borde derecho (85% a 0) y una luz tenue (6%) que sigue a la marca con `--my`.
