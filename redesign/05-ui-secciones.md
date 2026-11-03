@@ -1455,3 +1455,12 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - `media/favicon.png` es de 64 px.
   - `media/apple-touch-icon.png` es de 180 px a sangre, porque iOS pone las esquinas.
 - **Pendiente:** la firma del footer todavía no lleva las marcas. Tiene su propia interacción (letras que suben, luz y punto viajero), así que la propuesta va aparte.
+
+### Firma del footer entre marcas: tres propuestas (3 nov 2026)
+- La firma va de margen a margen, así que el espacio para las marcas tiene que salir de algún lado:
+  - **01 · En el margen:** la firma no cambia y las marcas, finas y de 14 px fijos, quedan en el margen.
+  - **02 · El logo a todo el ancho (recomendada):** las marcas con las proporciones de la barra. La firma se achica cerca de un 10 % y suma unos 0,4 em de alto.
+  - **03 · Las marcas entran con la firma:** la 02 con movimiento. Las marcas se cierran mientras suben las letras y, con la luz, se cierran sobre el nombre y se aclaran.
+- Las marcas van del gris tenue del punto (#4A4A47). La luz y el punto viajero no cambian.
+- Exploración: `explorations/marca/logo/firma-footer.html`.
+- Artifact: https://claude.ai/artifact/1SaAFuq9Ty18LevjZPvHZe
