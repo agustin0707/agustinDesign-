@@ -1390,3 +1390,13 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - Faltan meta description, Open Graph y favicon.
   - A 1024 el índice de Works parte "Investigación · Marca · Web app" en dos líneas.
   - En el teléfono, "2026 · Prototipo con acceso" de Mend usa dos líneas.
+
+### Meta, vista previa al compartir y ronda 1 del logo (3 nov 2026)
+- **Meta y vista previa:**
+  - El home suma una meta description: "Agustín Avendaño, diseñador en Santiago. Diseño marcas y construyo los sitios web donde viven, sin traspasos entre diseño y código."
+  - También suma `theme-color` negro, Open Graph completo (tipo, idioma es_CL, nombre del sitio, título, descripción, imagen de 1200 × 630 con su alt) y la tarjeta grande de Twitter.
+  - La imagen (`media/og.png`) es la frase de valor del home sobre negro, con rótulos en mono, y apunta al repo de revisión. Al migrar (Fase 7) pasa a agustindesign.cl.
+- **Favicon provisorio:** una "a" con el punto cuadrado en gris sobre negro (`media/favicon.png` a 64 px y `apple-touch-icon.png` a 180 px). Se reemplaza cuando se defina el logo.
+- **Logo, ronda 1:** 24 opciones en cinco familias: palabra, código e índice, monograma, firma, y símbolo y palabra. Cada ficha muestra el logo en grande, en la barra, invertido y como favicon a 32 y 16 px.
+  - Exploración: `explorations/marca/logo/ronda-1.html`.
+  - Artifact: https://claude.ai/artifact/Px5y2ibTrcx1Wb5RXACH5e
