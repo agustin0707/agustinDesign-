@@ -1368,3 +1368,25 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - Se muestreó la entrada y la salida del hero: los valores crecen y vuelven a 0 de forma continua.
   - La hoja del correo no cambia de posición al scrollear.
   - La línea legal queda en el borde inferior mientras el footer entra.
+
+### Íconos en contacto, Rueda en el Archivo y auditoría del home (3 nov 2026)
+- **Contacto:** WhatsApp lleva su globo con el auricular y Agendar 20 min un calendario con reloj, a 16 px y del color del texto, como el ícono de Copiar correo.
+- **Archivo:** se aplica Rueda.
+  - Al pasar por una fila, "NN piezas" sube letra a letra y entra "Abrir ↗" desde abajo, con 24 ms de desfase por letra y 760 ms en total. El número se enciende y aparece la flecha del título.
+  - Las demás filas ya no se apagan.
+  - Con movimiento reducido el cambio es instantáneo.
+  - Las letras se arman en `inicio-works.js`; el texto oculto lleva `aria-hidden`.
+- **Auditoría del home:**
+  - Se revisó en Chromium (1440, 1024, 768), WebKit (Safari 1440, iPhone 13) y Pixel 5.
+  - Sin errores de consola, 404 ni scroll lateral.
+  - Sin ids duplicados, anclas muertas ni imágenes sin alt.
+  - Hay un solo h1, `lang="es"` y las fuentes cargan.
+  - Los atajos W, A, C y H, la vista lista y el movimiento reducido funcionan.
+- **Arreglado en la auditoría:**
+  - **Firma del footer:** a 768 la caja cortaba la cola de la g; ahora lleva 0,18 em de aire abajo.
+  - **Portada de Llegó Farma:** en el teléfono, la flecha de "llegofarma.cl ↗" quedaba sola en otra línea; el enlace ya no se parte.
+  - **Barra de navegación:** oculta, sus enlaces seguían recibiendo foco con Tab, invisibles. Ahora se ocultan también para el teclado y la barra reaparece si el foco entra en ella.
+- **Pendiente, sin tocar:**
+  - Faltan meta description, Open Graph y favicon.
+  - A 1024 el índice de Works parte "Investigación · Marca · Web app" en dos líneas.
+  - En el teléfono, "2026 · Prototipo con acceso" de Mend usa dos líneas.
