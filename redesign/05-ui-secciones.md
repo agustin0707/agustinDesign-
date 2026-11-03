@@ -1400,3 +1400,14 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Logo, ronda 1:** 24 opciones en cinco familias: palabra, código e índice, monograma, firma, y símbolo y palabra. Cada ficha muestra el logo en grande, en la barra, invertido y como favicon a 32 y 16 px.
   - Exploración: `explorations/marca/logo/ronda-1.html`.
   - Artifact: https://claude.ai/artifact/Px5y2ibTrcx1Wb5RXACH5e
+
+### Favicon sin choque, tres Open Graph y ronda 2 del logo (3 nov 2026)
+- **Favicon provisorio:** la "a" y el punto cuadrado se tocaban a 16 y 32 px. Ahora van separados por 12 px (a 180 px), con la "a" un poco más chica.
+- **Open Graph, en revisión:** tres opciones nuevas en `explorations/marca/logo/`:
+  - **A · Retrato:** el hero con la frase en una píldora de vidrio.
+  - **B · Índice:** la frase más los tres destacados con sus webs.
+  - **C · Ficha:** gris con grano, la hora y la firma cortada en la base.
+  - Mientras no se elija una, el home sigue con la imagen actual.
+- **Logo, ronda 2:** en la ronda 1 gustaron 08, 15, 19 y 23, sin convencer del todo. La ronda 2 suma 15 opciones en cuatro familias: enlace y pantalla, monograma ad, herramientas del oficio y objeto.
+  - Exploración: `explorations/marca/logo/ronda-2.html`.
+  - Artifact: https://claude.ai/artifact/Dnk3chT3PNbjvQmeJ74d8w
