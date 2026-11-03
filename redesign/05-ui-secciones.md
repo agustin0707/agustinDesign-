@@ -1352,3 +1352,19 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - El tamaño sigue igual (221,6 px a 1440) y la luz y el punto funcionan como antes.
 - **Pila:** el fondo negro que cubre los costados mientras el archivo se achica desbordaba la página 11 px. Ahora crece con --p lo justo para compensar la escala (la mitad de 1 / escala − 1 por lado), sin desbordar.
 - **Verificado:** Chromium (1440) y WebKit (iPhone 13), sin errores ni scroll lateral en toda la transición.
+
+### Ajustes generales: hover del hero, Llegó Farma en línea, correo quieto y footer con velo (3 nov 2026)
+- **Hover del hero:**
+  - El parallax de las capas saltaba de golpe a la posición del cursor al entrar y volvía de golpe al centro al salir. Ahora una posición suavizada persigue al mouse con inercia (constante de 420 ms, medida en tiempo para que sea igual a 60 y 120 Hz). El scroll se aplica directo. Cambio en `hero/hero-base.js`, compartido con las otras exploraciones de hero.
+  - La ola del nombre sigue a un cursor suavizado (160 ms). Su fuerza crece al entrar (380 ms) y se apaga al salir (620 ms): las letras suben y bajan sin cortes. Sale la transición CSS de las letras, que ahora suaviza `h1-capas.js`.
+- **Works:** sale "Pronto en línea" de Llegó Farma. Queda como Tap In: "llegofarma.cl" con punto verde en el índice y "2026 · llegofarma.cl ↗" en la portada, con enlace al sitio (verificado en línea).
+- **Contacto:** la hoja "Nuevo mensaje" ya no es sticky. Queda en su lugar junto a la frase.
+- **Footer:**
+  - La línea legal (©, colofón y hora) queda pegada al borde de la pantalla mientras el footer entra, con el mismo velo de la barra de navegación: fondo al 62%, blur de 16 px y saturación de 1,2. La firma sube por detrás, esmerilada, hasta que la línea llega a su lugar.
+  - `.pie` pasa de `overflow: hidden` a `clip`, porque hidden lo volvía contenedor de scroll y anulaba el sticky.
+- **Archivo:** auditoría y seis hovers más delicados en revisión (https://claude.ai/artifact/UvqzHDtMWnk61oJzn3otxq). Aún no se aplica ninguno.
+- **Verificado:**
+  - Chromium (1440) y WebKit (iPhone 13), sin errores ni scroll lateral.
+  - Se muestreó la entrada y la salida del hero: los valores crecen y vuelven a 0 de forma continua.
+  - La hoja del correo no cambia de posición al scrollear.
+  - La línea legal queda en el borde inferior mientras el footer entra.
