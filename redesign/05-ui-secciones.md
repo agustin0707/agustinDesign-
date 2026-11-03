@@ -1343,3 +1343,12 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - La hoja queda fija con su base en el borde de la pantalla y se tapa cuando el About llega arriba.
   - El salto a Archivo llega con la hoja arriba.
   - La subida del archivo sobre Mend no cambia.
+
+### Sitio "Próximamente" y la firma del footer sin cortes (3 nov 2026)
+- **Qué hago:** "Web para una marca que ya existe" tenía vacío el lugar del enlace a su proyecto. Ahora dice "Próximamente" en gris, sin enlace; el primero será llego.cl. En el teléfono baja a la segunda línea, como los demás.
+- **Firma del footer:** las letras de "agustín.design" se cortaban a la derecha (la a, la t, la e y el acento). Cada letra pinta su degradado solo dentro de su caja y, con el interletrado de −0,07 em, la caja era más angosta que el dibujo.
+  - Cada letra lleva un relleno de 0,1 em arriba y abajo y 0,14 em a los lados, descontado con un margen negativo: el dibujo no se mueve.
+  - `inicio-contacto.js` resta ese aire al calzar el ancho y al calcular los bordes donde salta el punto.
+  - El tamaño sigue igual (221,6 px a 1440) y la luz y el punto funcionan como antes.
+- **Pila:** el fondo negro que cubre los costados mientras el archivo se achica desbordaba la página 11 px. Ahora crece con --p lo justo para compensar la escala (la mitad de 1 / escala − 1 por lado), sin desbordar.
+- **Verificado:** Chromium (1440) y WebKit (iPhone 13), sin errores ni scroll lateral en toda la transición.
