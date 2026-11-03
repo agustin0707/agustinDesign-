@@ -27,6 +27,8 @@ Anti referencias a evitar: el patrón Dennis Snellenberg (lo más clonado), 3D p
 ## Dirección de marca (Fase 3)
 **C · Índice**, elegida el 20 oct 2026: Geist + Geist Mono, blanco y negro con grises, verde solo para "disponible", modo oscuro de primera clase, motion instantáneo y útil (120 a 200 ms), hora en vivo y atajos de teclado. Es la evolución del ADN actual del sitio (Inter, Space Mono, grises, punto de estado y reloj). Exploración en `redesign/explorations/marca/c-indice.html`.
 
+**Logo (3 nov 2026):** "agustín.design" entre cuatro marcas de corte, del mismo gris que el punto, que se cierran al pasar el mouse. Símbolo para favicon y avatar: la a entre marcas. El trazo nunca baja de 1 px. Componente en `works-base.css` (`:is(.nav, .barra) .logo::before`); rondas en `redesign/explorations/marca/logo/`.
+
 ## Hipótesis (validar, no dar por hechas)
 1. El salto es de posicionamiento, no solo estético: los casos se cuentan desde proceso y decisiones.
 2. Mi marca es el marco, el proyecto es el contenido: nav, tipografía, grilla, ritmo, motion y estructura de caso son Agustín Design; la identidad de cada proyecto vive adentro (hero, piezas).

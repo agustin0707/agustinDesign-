@@ -1441,3 +1441,17 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **El sistema en uso:** pestaña a 16 px, ícono del iPhone a 60 px, avatar a 88 px, barra a 22 px y firma del footer. Un selector cambia el color de las marcas en todos los usos a la vez.
 - Exploración: `explorations/marca/logo/ronda-5.html`.
 - Artifact: https://claude.ai/artifact/Ch4JdNTVSsBbdLYkDYBrAS
+
+### Logo definido y aplicado (3 nov 2026)
+- **Elegidas en la ronda 5:** 01 Marcas grises y 04 a con marcas grises. El logo es "agustín.design" entre cuatro marcas de corte del mismo gris que el punto. El símbolo es la a entre marcas.
+- **En el sitio:** las marcas son un componente de `works-base.css` (`:is(.nav, .barra) .logo::before`), hecho con un pseudo-elemento y ocho degradados.
+  - Ninguna página cambia su HTML: el home y los casos que usan la barra lo toman solos.
+  - Las marcas cuelgan fuera de la caja, así el texto sigue en la grilla.
+  - El trazo nunca baja de 1 px ni los brazos de 4 px.
+  - Al pasar el mouse se cierran sobre el nombre en 200 ms; sin movimiento si el sistema lo pide.
+- **Cursor del logo:** sale el cursor que parpadeaba junto al nombre en el hero del home.
+- **Favicon y apple-touch-icon:** la a entre marcas grises sobre negro.
+  - `media/favicon-32.png` tiene su propio trazo de 2 px para la pestaña.
+  - `media/favicon.png` es de 64 px.
+  - `media/apple-touch-icon.png` es de 180 px a sangre, porque iOS pone las esquinas.
+- **Pendiente:** la firma del footer todavía no lleva las marcas. Tiene su propia interacción (letras que suben, luz y punto viajero), así que la propuesta va aparte.

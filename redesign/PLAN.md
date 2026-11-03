@@ -55,7 +55,7 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | # | Ítem | Estado |
 |---|------|--------|
 | 3.1 | Personalidad y tono verbal | En curso · núcleo común propuesto |
-| 3.2 | Firma: logotipo, monograma o ambos | En curso · dirección C elegida; falta resolver "agustín.design" vs dominio .cl |
+| 3.2 | Firma: logotipo, monograma o ambos | Hecho · ambos: "agustín.design" entre marcas de corte grises y, como símbolo, la a entre marcas (ronda 5 del logo, 3 nov 2026) |
 | 3.0 | Recibir la idea de Agustín para el rediseño (mejorar, no rehacer de cero) | Hecho · referencias de hero y ajustes a la C en `03-marca.md` |
 | 3.3 | Tipografía de sistema | Pendiente |
 | 3.4 | Paleta | Pendiente |
