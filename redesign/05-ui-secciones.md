@@ -1464,3 +1464,10 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - Las marcas van del gris tenue del punto (#4A4A47). La luz y el punto viajero no cambian.
 - Exploración: `explorations/marca/logo/firma-footer.html`.
 - Artifact: https://claude.ai/artifact/1SaAFuq9Ty18LevjZPvHZe
+
+### Footer: la firma es el logo a todo el ancho (3 nov 2026)
+- Se eligió la 02 de `firma-footer.html`. La firma lleva las marcas de corte del logo, del gris tenue del punto (#4A4A47).
+- **Componente compartido:** el dibujo de las marcas es el mismo de la barra (`works-base.css`). En la barra se suman la opacidad y el cierre al pasar el mouse; en el home, el color del footer.
+- **Caja:** a los lados, el margen más 0,31 em para las marcas; arriba 0,27 em y abajo 0,45 em, para que el recorte no las corte.
+- **Calce:** `inicio-contacto.js` mide el relleno a 100 px y suma a lo ancho del nombre la parte de las marcas. El margen queda fijo y las marcas tocan justo el margen (32 px en desktop, 16 en el teléfono).
+- La luz, el punto viajero y la entrada letra por letra no cambian.
