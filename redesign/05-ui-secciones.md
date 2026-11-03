@@ -1429,3 +1429,15 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **En uso:** la recomendada en la pestaña a 16 px, en la barra a 22 px y en la firma del footer.
 - Exploración: `explorations/marca/logo/ronda-4.html`.
 - Artifact: https://claude.ai/artifact/H8AkkcJjLa4wNR4WqCLUw4
+
+### Logo, ronda 5: cierre (3 nov 2026)
+- En la ronda 4 gustaron 01 Corte justo, 04 Marcas del color del texto y 07 a entre marcas. Queda descartado el enlace; la pieza es el nombre entre marcas de corte y el símbolo, la a entre marcas.
+- **Trazo óptico:** el trazo de las marcas nunca baja de 1 px y los brazos nunca bajan de 4 px. En la barra (22 px) y el favicon (16 px) ya no desaparecen.
+- **La decisión que queda, el color de las marcas:**
+  - grises (01);
+  - del color del texto (02), que es la recomendada: una sola regla, y el gris queda solo para el punto;
+  - ópticas (03): grises en grande y del color del texto en chico.
+- **El símbolo:** marcas grises, marcas del color del texto (recomendada) o la a con el punto gris.
+- **El sistema en uso:** pestaña a 16 px, ícono del iPhone a 60 px, avatar a 88 px, barra a 22 px y firma del footer. Un selector cambia el color de las marcas en todos los usos a la vez.
+- Exploración: `explorations/marca/logo/ronda-5.html`.
+- Artifact: https://claude.ai/artifact/Ch4JdNTVSsBbdLYkDYBrAS
