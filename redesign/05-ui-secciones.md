@@ -1411,3 +1411,12 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Logo, ronda 2:** en la ronda 1 gustaron 08, 15, 19 y 23, sin convencer del todo. La ronda 2 suma 15 opciones en cuatro familias: enlace y pantalla, monograma ad, herramientas del oficio y objeto.
   - Exploración: `explorations/marca/logo/ronda-2.html`.
   - Artifact: https://claude.ai/artifact/Dnk3chT3PNbjvQmeJ74d8w
+
+### Open Graph A en el home y ronda 3 del logo (3 nov 2026)
+- **Open Graph:** se eligió la A, Retrato. `media/og.png` pasa a ser el hero con el retrato, el nombre en inversión y la frase en una píldora de vidrio. El alt describe la imagen.
+- **Logo, ronda 3:** en la ronda 2 gustaron 02 Enlace, 03 Puntero y 11 Marcas de corte. La ronda 3 tiene 12 opciones:
+  - cada una de las tres ajustada en dos o tres pesos (enlace fino o solo en design, puntero gris, lleno o sin punto, corte justo o solo en la a);
+  - los cruces de a dos y los tres juntos.
+  - Las que tienen movimiento lo muestran al pasar el mouse: el puntero salta, las marcas se cierran y el subrayado se dibuja.
+  - Exploración: `explorations/marca/logo/ronda-3.html`.
+  - Artifact: https://claude.ai/artifact/DSwnVNCYVDWnncWBK2embt
