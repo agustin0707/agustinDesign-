@@ -1420,3 +1420,12 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - Las que tienen movimiento lo muestran al pasar el mouse: el puntero salta, las marcas se cierran y el subrayado se dibuja.
   - Exploración: `explorations/marca/logo/ronda-3.html`.
   - Artifact: https://claude.ai/artifact/DSwnVNCYVDWnncWBK2embt
+
+### Logo, ronda 4: marcas de corte (3 nov 2026)
+- En la ronda 3 gustaron 07 Corte justo y 11 Corte y enlace. La dirección queda definida: el nombre entre marcas de corte.
+- **La pieza:** seis versiones que afinan el peso y el color de las marcas, el punto y el enlace.
+  - **Recomendada, 03 · Corte que se vuelve enlace:** en reposo es la 07. Al pasar el mouse las marcas se cierran, el subrayado se dibuja y entra la flecha.
+- **El símbolo:** tres opciones para el favicon: a entre marcas, ad entre marcas, y marcas con el punto.
+- **En uso:** la recomendada en la pestaña a 16 px, en la barra a 22 px y en la firma del footer.
+- Exploración: `explorations/marca/logo/ronda-4.html`.
+- Artifact: https://claude.ai/artifact/H8AkkcJjLa4wNR4WqCLUw4
