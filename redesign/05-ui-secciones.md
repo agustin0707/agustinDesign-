@@ -1322,3 +1322,24 @@ Agustín sintió que se abusaba de las líneas de diagramación en la ficha, For
 - **Verificado:**
   - Chromium (1440 y 1024) y WebKit (iPhone 13), sin errores ni scroll lateral.
   - Índice, teclas, Sigue y los saltos a las portadas funcionan igual.
+
+### About: cierre sin el Conversemos repetido, isotipos en Formación y la Pila desde Archivo (3 nov 2026)
+Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió aplicar el cierre, los isotipos sobre la Formación tal como estaba (sin las láminas propuestas) y la transición **Pila**. Qué hago queda para otra ronda.
+- **Cierre:** sale el "Conversemos ↓" junto a la pregunta, porque el título gigante del contacto viene justo después. Sale también el rótulo "Sigue". "¿Tienes un proyecto en mente?" queda sola, en negro y más grande (de 34 a 72 px), como última línea de la hoja. La tecla C y la barra siguen llevando al contacto.
+- **La hoja termina:** el fondo claro cierra abajo con las mismas esquinas que arriba (22 px, 18 en el teléfono).
+- **Formación con isotipos:**
+  - Cada crédito lleva arriba el isotipo de su institución, a una tinta, apoyado en una base común de 64 px. En el teléfono el isotipo va a la izquierda del texto.
+  - **UC:** el escudo de Wikimedia Commons, pasado a línea negra (`media/ab-uc.svg`).
+  - **UPF:** el sello "upf." recortado del logo de Commons, que solo existe en JPG, y pasado a PNG con transparencia (`media/ab-upf.png`). Si aparece el SVG oficial, se reemplaza.
+  - **Shifta:** el mismo de la ronda anterior (`media/ab-shifta.svg`).
+- **Pila, de Archivo a About:**
+  - Repite el gesto de Mend a Archivo. El archivo se queda fijo en su último tramo y, mientras la hoja clara sube encima con sombra, se achica a 94% y se apaga hasta un 60%. Cuando la hoja llega arriba, el archivo deja de pintarse.
+  - Reemplaza el cierre de 4vw en los costados, que casi no se veía.
+  - **Ancla:** el id `archivo` pasa a un ancla vacía antes de la hoja. Así los saltos a Archivo desde abajo no leen la posición fija.
+  - Un fondo negro más ancho detrás de la hoja tapa la portada de Mend en los costados cuando el archivo se achica.
+  - Con movimiento reducido, la hoja no se fija.
+- **Verificado:**
+  - Chromium (1440) y WebKit (iPhone 13), sin errores ni scroll lateral.
+  - La hoja queda fija con su base en el borde de la pantalla y se tapa cuando el About llega arriba.
+  - El salto a Archivo llega con la hoja arriba.
+  - La subida del archivo sobre Mend no cambia.
