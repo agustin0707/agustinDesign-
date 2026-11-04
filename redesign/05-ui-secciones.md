@@ -1492,3 +1492,9 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - los links de las portadas y de Qué hago, a unos 40 px.
   - Se hace con pseudo-elementos o relleno solo en pantallas táctiles, sin mover el diseño.
 - **Para el lanzamiento (Fase 7):** `canonical` y datos estructurados (Person / ProfessionalService) con el dominio final, y og:image servida desde agustindesign.cl. También comprimir más los videos tp-web.mp4 (1,9 MB) y md-web.mp4 (1,4 MB).
+
+### Casos: barra en español (3 nov 2026)
+- La barra de los casos (`caso/tapin.html` y `caso/llego.html`) decía About, Works y Contact, y Contact abría un correo antiguo.
+- Ahora dice Trabajo, Sobre mí y Contacto, en el orden del home, y lleva a las mismas secciones del home (`inicio.html#works`, `#about` y `#contacto`). El contacto del home ya usa el correo aprobado.
+- En `llego.html`, el logo y "← Índice" también vuelven al home (antes apuntaban a `#` y a la Pila vieja).
+- Las imágenes sin seguimiento de `caso/activaciones-v2/` y `caso/rebirth-v2/` son copias para que esas dos exploraciones funcionen solas. El caso de Tap In no las usa: lee las mismas fotos desde `caso/media/`. No se borran ni se suben hasta decidirlo.
