@@ -1757,3 +1757,26 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - `/proyecto-tapin.html` redirige al caso nuevo y `/proyecto-anco.html` a la home.
 - **Cita de Cristian Barreaux:** se publica con la etiqueta "Cita por aprobar", por decisión tuya.
 - **Verificado antes de subir:** todas las páginas en un servidor local, sin 404 ni errores de consola, y capturas de la home en escritorio y teléfono y del caso Llegó.
+
+### Transición del home al caso: la ventana se vuelve el hero (4 nov 2026)
+
+- **Pedido:** que ir a un caso, sobre todo a los destacados, sea muy fluido y profesional.
+- **Qué pasaba:** "Ver caso" abría la capa de prueba del índice (con su texto de relleno) y a los 950 ms, a mitad del viaje, cortaba en seco a la página del caso, que hacía su propia entrada sin relación con la portada.
+- **Cómo quedó:** View Transitions entre páginas. La ventana de la portada (la pieza que se ve en "Web") viaja y se agranda hasta el hero del caso, y se funde en él mientras viaja. El resto del home se apaga y el caso aparece debajo.
+  - **Tap In:** la ventana aterriza en la ventana inclinada del hero, con el mismo sitio adentro. Mientras carga el sitio vivo, queda debajo el póster de la portada.
+  - **Llegó Farma:** la ventana se abre a pantalla completa y se disuelve en la cinta. Detrás queda el color del hero, sin pasar por negro.
+  - El texto del hero (logo, franja, ficha) espera en su primer cuadro y entra a los 620 ms, cuando la pieza ya va frenando.
+  - Viaje de 1 s con `cubic-bezier(0.4, 0, 0.1, 1)`: responde al clic y frena largo, sin rebote. El fundido de las dos capturas dura 420 ms, al medio del viaje, alineadas al ancho y arriba para que el sitio coincida.
+- **Archivos:**
+  - `works-base.css`: sección nueva "Transición al caso" (la cargan el home y los casos);
+  - `inicio-works.js`, sección 5: nombra la pieza y deja anotada la portada de salida;
+  - `caso/caso-llegada.js` (nuevo, en el `<head>` de cada caso): recibe la pieza en el hero y suelta las entradas;
+  - `llego.html`, `tapin.html`, `llego.css` y `tapin.css`: la marca de la pieza y los ajustes de llegada.
+- **Respaldo:**
+  - sin View Transitions entre páginas (Firefox), el home se funde a negro en 220 ms y navega;
+  - con movimiento reducido, se navega sin transición;
+  - al volver con atrás, el home queda en la misma portada, sin restos.
+- **Verificado** en Chrome headless, con cuadros congelados de la transición y una pasada en tiempo real: los dos casos a 1440 × 900 y a 390 × 844, la carga normal de cada caso (sin venir del home) con su entrada de siempre, la vuelta con atrás, y sin 404 ni errores nuevos.
+- **Pendiente:**
+  - probarlo en el iPhone (Safari 18.2 o superior tiene la transición);
+  - en el teléfono, la captura de escritorio se cruza un instante con la del sitio móvil, porque no calzan.
