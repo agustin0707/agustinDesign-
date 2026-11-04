@@ -1627,3 +1627,19 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - Todo dura 1,4 s en un solo reloj lineal, así la ruta y los nodos coinciden.
 - **Verificado:** los ajustes de la lectura coinciden con los pedidos. Se congelaron cuadros del hover (despacho, nodo pendiente, llegada, onda). Al terminar, el hover queda listo para la siguiente pasada.
 - **Pendiente:** llevar el hero al caso (`caso/llego.html`).
+
+### Caso Llegó Farma, hero: seis hovers del logo y la cinta más fluida al mouse (4 nov 2026)
+- **Pedido:** seis versiones mejores del hover, una en la línea de la animación de Marca de la portada de Llegó en el home, y que la cinta se sienta fluida al entrar y salir el mouse de la pantalla.
+- **Hallazgo:** el isotipo es una cruz de nodos (centro con dos brazos y dos nodos sueltos). El "grande" que se usaba como destino era el cuerpo entero, así que la ruta de la entrega terminaba fuera del centro (20,5; 53,5). Ahora termina en el centro real (32; 41,2), el mismo del home.
+- **Eje Hover en el dock** (teclas C V B N M y la coma; ancla `#cinta/texto/grafica/hover`). Elegir uno lo muestra una vez. Por defecto queda el Mensajero:
+  - **A · Mensajero (recomendado):** en la línea del home. El nodo de la derecha suelta un mensajero que barre Llegó con el borde difuso de la portada: la palabra baja al 22 % y se enciende detrás de él. La o lo recibe, sale la onda y la tilde se marca. El mensajero y el barrido comparten curva y tramo.
+  - **B · Entrega:** los nodos de estado del manual (relleno y contorno), con la ruta hasta el centro de la cruz.
+  - **C · Cruz:** el cuerpo girado 180° se revela con la máscara de brazos del home. Los nodos sueltos se conectan y por un momento se ve la cruz completa.
+  - **D · Retícula:** altura de mayúscula, de x y línea base, y los ejes de la cruz, de Llegó y de la barra, con cortes en cada cruce; se trazan en cascada y se apagan.
+  - **E · Trama:** 176 puntos de la trama de Llegó aparecen alrededor y se recogen hacia la cruz, que late al recibirlos.
+  - **F · Red:** continuo. Los nodos sueltos siguen al cursor con un resorte y un hilo turquesa claro los une al centro; al salir vuelven con un leve rebote.
+  - Cada pasada dura lo que duran sus animaciones (se cierra con `getAnimations`), sin tiempos repetidos en el JS.
+- **Cinta y mouse:** el seguimiento era un `lerp` de 0,06 por cuadro (cambia con los fps y arranca de golpe cuando el objetivo salta al salir o entrar de la ventana). Ahora pasa por dos filtros medidos en tiempo: el objetivo se suaviza (120 ms) y la cinta lo sigue con un resorte críticamente amortiguado. Velocidad y aceleración nunca saltan. La salida de la ventana se detecta con `mouseout` sin destino y con `blur`. Sobre el dock la cinta queda donde estaba, en vez de volver al centro.
+- **Dock:** con cuatro ejes pasa a dos filas cuando no cabe.
+- **Verificado:** a 1440 px, con cuadros congelados de cada hover sobre una copia ampliada del logo. También se probaron los atajos, el ancla, el cierre de cada pasada y la red con cursor simulado, sin errores de consola. La fluidez real del mouse hay que sentirla en un navegador normal; el panel corre a pocos cuadros por segundo.
+- **Pendiente:** que Agustín elija el hover y llevar el hero al caso.
