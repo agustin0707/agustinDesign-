@@ -1702,3 +1702,21 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Dock:** quedan Eco con mouse (por defecto, C) y Eco, la versión anterior, para comparar (V). Salen Despacho, Rearme, Cierre e Ida y vuelta.
 - **Verificado:** a 1440 px, con el cursor simulado sobre la o (la o, la tilde, la g y la barra reaccionan; el isotipo no se mueve), la pasada desde la derecha (de farma al isotipo, con la onda en orden) y la vuelta a 0 al salir de la ventana. También se probaron los atajos y el ancla.
 - **Pendiente:** sentirlo con un mouse real y llevar el hero al caso.
+
+### Caso Llegó Farma, hero: Eco con el mouse, con resortes (4 nov 2026)
+
+- **Pedido:** la idea gustó, pero en la práctica se sentía raro. Hacerlo muy fluido y atractivo.
+- **Por qué se sentía raro:**
+  - cada movimiento del mouse reiniciaba una transición de 450 ms, así que el gesto tartamudeaba y llegaba tarde;
+  - la pasada de entrada llevaba todas las piezas a su gesto completo y pisaba lo que marcaba el cursor;
+  - las letras se apagaban, la tilde se recortaba y las piezas se encogían: el logo se veía romperse;
+  - la campana era angosta (13 % del ancho), así que reaccionaban una o dos piezas y el resto quedaba quieto, a saltos.
+- **Lo nuevo:**
+  - **Resortes en vez de transiciones.** Cada pieza tiene tres resortes que persiguen al cursor en el mismo cuadro que la cinta, en tiempo real. Conservan la velocidad entre un movimiento y otro y nunca se reinician a mitad de camino. El grado lleva un rebote leve (6 %) para que se sienta vivo; el tirón es más amortiguado.
+  - **Campana ancha** (20 % del ancho): al pasar el cursor reaccionan de tres a cinco piezas a la vez, como una ola que lo sigue.
+  - **Tirón magnético.** Además de su gesto, cada pieza se inclina unos píxeles hacia el cursor. Crece con la cercanía, toca techo y se apaga, así nunca salta al cruzar una pieza.
+  - **Nada se apaga ni se recorta.** Los gestos son solo de posición y escala, en la dirección de la entrada: el nodo de arriba sube, el de la derecha se corre, las letras de Llegó se levantan apenas, la o se cierra, la tilde se aleja hacia su esquina, la barra se acorta y farma baja. El logo siempre se lee entero.
+  - **La entrada al logo es un empujón, no una animación.** Cada pieza recibe un golpe en su resorte según su distancia al punto de entrada (0,8 ms por píxel, hasta 460 ms) y se suma a lo que marca el cursor. La ola cruza el logo en medio segundo y la onda sale de la o cuando la alcanza.
+  - En reposo los resortes se apagan solos y el logo vuelve a quedar sin estilos en línea.
+- **Verificado:** el mapeo de cada gesto en los estilos calculados y la física en una simulación (golpe con pico de 0,39 que se asienta en ~550 ms, ola de izquierda a derecha en ~500 ms, barrido del cursor con varias piezas a la vez, vuelta a cero al soltar). El panel del navegador estaba oculto y ahí no corren los cuadros, así que falta sentirlo con un mouse real.
+- **Pendiente:** probarlo con mouse y llevar el hero al caso.
