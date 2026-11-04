@@ -1743,3 +1743,17 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - el hover reacciona en ola y vuelve a cero al soltar;
   - sin errores en la consola.
 - **Pendiente:** probarlo en el iPhone.
+
+### Lanzamiento: el sitio nuevo en agustindesign.cl (4 nov 2026)
+
+- **Pedido:** publicar en agustindesign.cl la última versión y respaldar el portafolio anterior, sobre todo las páginas de la Jo.
+- **Respaldo:** `agustin0707/agustindesign-antiguo` (privado) guarda `main` completo con su historia hasta el commit 565393f, el último del sitio anterior. Ahí quedan también `jotita/`, `fotos-tier/`, photo-ranking y planning-session.
+- **Cómo se publica ahora:** `zsh redesign/herramientas/produccion.sh` arma el sitio en una copia aparte del repo (`../agustindesign-produccion`, rama `main`) y deja el commit listo; con `--subir` lo sube. Los medios que git ignora en este repo viajan solo en esa copia, sin forzarlos acá.
+- **Rutas:**
+  - `/` es la home nueva (`works/inicio.html`);
+  - los casos están en `/caso/llego.html` y `/caso/tapin.html`;
+  - el archivo sigue en `/proyecto-*.html`;
+  - las páginas de la Jo quedan en sus mismas rutas;
+  - `/proyecto-tapin.html` redirige al caso nuevo y `/proyecto-anco.html` a la home.
+- **Cita de Cristian Barreaux:** se publica con la etiqueta "Cita por aprobar", por decisión tuya.
+- **Verificado antes de subir:** todas las páginas en un servidor local, sin 404 ni errores de consola, y capturas de la home en escritorio y teléfono y del caso Llegó.
