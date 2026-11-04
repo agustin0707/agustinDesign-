@@ -1471,3 +1471,24 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Caja:** a los lados, el margen más 0,31 em para las marcas; arriba 0,27 em y abajo 0,45 em, para que el recorte no las corte.
 - **Calce:** `inicio-contacto.js` mide el relleno a 100 px y suma a lo ancho del nombre la parte de las marcas. El margen queda fijo y las marcas tocan justo el margen (32 px en desktop, 16 en el teléfono).
 - La luz, el punto viajero y la entrada letra por letra no cambian.
+
+### Auditoría del home y cuatro arreglos (3 nov 2026)
+- **Lo que está sano:**
+  - sin errores de consola ni recursos rotos;
+  - todas las imágenes con alt y foco visible en todo;
+  - sin scroll lateral en móvil y con movimiento reducido funcionando;
+  - favicon y Open Graph en orden, y los links externos responden.
+- **1. Ver caso sin página de prueba:** Llegó y Mend abrían el caso de prueba con el texto "Página de caso de prueba".
+  - Llegó ahora dice "Ver el sitio ↗" y abre llegofarma.cl en otra pestaña.
+  - Mend muestra el rótulo "Caso en preparación", sin clic, porque su prototipo es con acceso.
+  - Solo Tap In hace el viaje a su caso (`inicio-works.js` toma el botón solo si es un link interno).
+- **2. Navegación en español:** la barra y el hero decían Works, About y Contact, y el footer, Trabajo, Sobre mí y Contacto. Ahora todo es Trabajo, Sobre mí y Contacto.
+  - El índice de los saltos largos pasa a Inicio, Trabajo, Archivo, Sobre mí y Contacto.
+  - El rótulo de la sección queda "02 · Trabajo · Proyectos seleccionados".
+- **3. Flechas:** en Qué hago, los ejemplos (Llegó Farma, Tap In, Mend) llevan a proyectos más arriba en la misma página. Cambian ↗ por ↑, y el hover sube en vez de ir en diagonal.
+- **4. Áreas de toque en móvil:**
+  - el logo sube de 16 a 44 px de toque;
+  - los links del hero, de 16 a 32 px;
+  - los links de las portadas y de Qué hago, a unos 40 px.
+  - Se hace con pseudo-elementos o relleno solo en pantallas táctiles, sin mover el diseño.
+- **Para el lanzamiento (Fase 7):** `canonical` y datos estructurados (Person / ProfessionalService) con el dominio final, y og:image servida desde agustindesign.cl. También comprimir más los videos tp-web.mp4 (1,9 MB) y md-web.mp4 (1,4 MB).
