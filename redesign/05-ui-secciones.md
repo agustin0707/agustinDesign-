@@ -1529,3 +1529,17 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - en escritorio (1024 px) y en teléfono (375 px), sin errores de consola y sin scroll lateral;
   - el foco de la evidencia queda sobre el sitio (z-index), y en el teléfono el degradado ya no deja franjas a los lados.
 - **Pendiente:** probarlo en el iPhone real y el visto bueno de Agustín.
+
+### Caso Llegó Farma, seis heros para escritorio (4 nov 2026)
+- **Encargo:** foco total en PC, sección por sección. Primero el hero: al menos seis direcciones distintas, pulidas al nivel de Tap In sin parecerse a él.
+- **Exploración:** `explorations/caso/heros-llego/heros-llego.html` (prefijo `.hl-`), sobre el marco común y la piel de Llegó. Un dock abajo cambia de hero (teclas 1 a 6, ← →, R repite la entrada) y cada uno se puede compartir con su ancla (`#red`, `#portada`, `#cenital`, `#eleccion`, `#cinta`, `#valores`).
+- **Las seis direcciones:**
+  1. **La red:** una red logística en canvas crece sobre la trama de puntos; paquetes viajan entre nodos y el isotipo Nodos se arma en el centro. El mouse enciende los puntos y se conecta al nodo más cercano. Al bajar, zoom al isotipo.
+  2. **Portada:** el hero como la portada del manual, con retícula de cuatro módulos y cortes de 8 px, specs reales (Manrope 200 a 500, LF Mono, 36 páginas) y la paleta. Una mira marca la posición del mouse. Al bajar, la franja del degradado se abre a pantalla completa y queda el isotipo.
+  3. **Cenital:** la foto cenital de la bodega con una ruta que se dibuja, las marcas "Carga validada" y "Furgón en carga" con la hora real de Santiago y un seguimiento Plan, Carga, En ruta, Entrega. Al bajar, zoom al furgón.
+  4. **La elección:** los tres caminos de isotipo con sus cuatro criterios; se marca "Mi favorita" en Líneas y "Elegida · 9 sep" en Nodos. Al bajar, Nodos queda solo al centro.
+  5. **La cinta:** el sitio que programé, sección por sección, en un plano inclinado que avanza como una cinta transportadora; la altura del mouse cambia la velocidad. Al bajar, la cinta se endereza y se entra al sitio.
+  6. **Diez valores:** el degradado de marca cae en sus 10 bandas, se funde y, al pasar el mouse, cada banda se separa y dice su HEX. Al bajar, queda como un filete.
+- **Imágenes:** copias de 1200 px (`caso/media/lf-cinta-*.jpg`, carpeta ignorada por git) para que la cinta cargue liviana.
+- **Verificado:** en escritorio a 1024 px, cada hero en reposo, con mouse y con scroll, sin recursos caídos.
+- **Pendiente:** que Agustín elija una dirección (o mezcle dos) para llevarla al caso.
