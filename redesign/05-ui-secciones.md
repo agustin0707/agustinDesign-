@@ -1565,3 +1565,40 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   4. **La letra:** sobre papel, la cinta corre dentro de "Farma" a todo el ancho. Al bajar, se entra por el asta de la F (medida en un canvas con Manrope 500) hasta llenar la pantalla, la cinta se endereza y aterriza el sitio en vivo.
 - **Verificado:** a 1280, 1440 y 1920 px de ancho, en reposo, con mouse y con scroll, sin errores de consola ni recursos caídos. El panel del navegador corre a pocos cuadros por segundo, así que la velocidad real hay que verla en un navegador normal.
 - **Pendiente:** que Agustín elija una versión (o una mezcla) para llevarla al caso.
+
+### Caso Llegó Farma, hero: la cinta, segunda ronda en tres ejes (4 nov 2026)
+- **Decisión:** Agustín se queda con **La base**. Pide variantes de diagramación jugando con la profundidad y la cantidad de la cinta, propuestas de texto, gráficas aparte de la cinta y una auditoría exhaustiva.
+- **Exploración:** `explorations/caso/cinta-v2/cinta-v2.html` (prefijo `.cv-`). Un solo motor de cinta con ajustes en vivo y tres ejes que se combinan desde el dock: cinta (1 a 5), texto (Q W E R) y gráfica (A S D F G). X abre los ajustes, Z repite la entrada, y el ancla guarda la combinación (`#cinta/texto/grafica`, por ejemplo `#linea/decision/cotas`).
+- **Auditoría de la base:**
+  1. **Muro de mockups:** tres columnas iguales e inclinadas se leen como el muro de pantallas de las plantillas. Lo que la hace cinta es el movimiento; falta que se vea cinta (piso, rieles).
+  2. **Sin profundidad atmosférica:** lo lejano se ve igual de nítido que lo cercano y el plano se siente plano.
+  3. **Sin punto focal:** tres columnas iguales; el ojo rebota y ninguna sección se lee entera.
+  4. **No muestra la escala:** tres columnas no dicen "un sitio completo de ocho secciones".
+  5. **El texto no está en la grilla:** el escalón y la bajada usaban un 25% suelto, no la grilla de 12 del caso.
+  6. **La bajada repite literal el Resumen** que viene justo después.
+  7. **El hero no dice qué hice ni cuánto:** ni el manual de 36 páginas ni las 8 semanas.
+  8. **El diferencial principal, programar, vive en un chip chico.**
+  9. **El nombre del cliente es lo más grande:** a un cliente potencial le importa más lo que logré.
+  10. **La marca de Llegó no aparece:** ni su trama, ni su retícula, ni sus nodos; solo el color.
+  11. **Falta un detalle técnico que pruebe oficio.**
+  12. **El tinte tenía el foco fijo:** ahora sigue al desvío de la cinta.
+- **Cinta (composición):**
+  1. **La base:** sin cambios.
+  2. **La línea:** una sola columna grande sobre su piso y sus rieles; cada sección pasa de a una y se lee entera.
+  3. **El campo:** siete columnas de cartas chicas a distintas velocidades; la escala del sitio de un vistazo.
+  4. **El horizonte:** cámara casi al ras (70°, perspectiva corta) y niebla; la cinta se pierde en la distancia.
+  5. **La tira:** eje horizontal, de derecha a izquierda y en escorzo, cruzando sobre el título. Al bajar también aterriza en el sitio en vivo.
+- **Texto:**
+  - **A. El nombre:** la versión actual, ahora en la grilla de 12 (Farma y la bajada parten exacto en la columna 4).
+  - **B. La decisión:** "Gané el pitch con un sistema, no con un logo." como titular desde la columna 4; el cliente pasa al riel.
+  - **C. La ficha:** "Llegó Farma" en una línea y una ficha de cuatro celdas (encargo, lo que hice, lo que entregué, en cuánto: 8 semanas, del 25 ago al 20 oct, que son 56 días).
+  - **D. El oficio:** "Diseñé la marca. Programé el sitio.", con "Programé" en el turquesa claro.
+- **Gráfica:**
+  - **Retícula:** la del manual, con cortes de 8 px, dibujada sobre la cinta.
+  - **Cotas:** cada captura con su medida real (1440 × 900), dentro del plano.
+  - **Trama:** los puntos de Llegó como superficie de la cinta. Avanzan con ella y repiten exacto en cada ciclo.
+  - **Guía:** una guía de despacho con los hitos reales (despacho 25.08, entrega 20.10) y seis nodos que se llenan en orden.
+- **Ajustes en vivo:** columnas, ancho de carta, inclinación, giro, escorzo, perspectiva, desvíos, velocidad, niebla, piso y eje, con una lectura copiable para pasarme la combinación exacta.
+- **Corregido en el camino:** el riel retenía la opacidad de su entrada (mismo bug de la franja); ahora la entrada anima a los hijos.
+- **Verificado:** a 1280, 1440 y 1920 px, con combinaciones de los tres ejes, con ajustes y con scroll hasta el sitio en vivo (también en el eje horizontal), sin errores de consola ni recursos caídos. La velocidad real hay que verla en un navegador normal.
+- **Pendiente:** que Agustín elija una combinación para llevarla al caso.
