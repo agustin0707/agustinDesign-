@@ -14,7 +14,7 @@ Estados: `Pendiente` · `En curso` · `Bloqueado` · `Hecho`
 | S.4 | Conectar esta carpeta al repo: `main` = producción, `redesign` encima con los cambios locales sin publicar | Hecho · falta decidir si se sube `redesign` a GitHub (el repo es público) |
 | S.5 | CNAME de `www` en Cloudflare apuntando a `agustin0707.github.io` | Hecho |
 | S.6 | Dominio `agustindesign.cl` verificado en la cuenta `agustin0707` (TXT en Cloudflare) | Hecho |
-| S.7 | Renovar `agustindesign.cl` en NIC Chile (vence el 20 nov 2026) | Pendiente · lo haces tú, requiere pago |
+| S.7 | Renovar `agustindesign.cl` en NIC Chile (vencía el 20 nov 2026) | Hecho · renovado, vence el 20 nov 2027 (whois verificado el 3 nov 2026) |
 
 ## Fase 0 · Auditoría → `00-auditoria.md`
 | # | Ítem | Estado |
