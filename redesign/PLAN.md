@@ -83,7 +83,7 @@ A pedido de Agustín, la UI se trabaja **sección por sección**, cerrando marca
 | S2b | Portadas de los destacados (Llegó, Tap In, Mend) | Hecho · cerradas el 27 oct 2026; queda aparte S2c |
 | S2d | Archivo conectado: cada ficha abre su página (la del sitio anterior por ahora) | Hecho · 27 oct 2026; los del archivo llegan al nivel de La Columna, los destacados al de Tap In |
 | S2c | Fotos nuevas para En uso de Llegó, hechas al tamaño y resolución de la secuencia | Pendiente · más adelante, a pedido de Agustín |
-| S3 | Página de caso | En curso · Tap In editorial con escenas de scroll, falta tu visto bueno. Llegó Farma construido el 4 nov 2026 sobre el marco común (`caso-marco.css` + `caso-motor.js`), falta tu visto bueno y probarlo en el iPhone. Hero elegido: la cinta (La base); segunda ronda en tres ejes (cinta, texto y gráfica) en `explorations/caso/cinta-v2/` |
+| S3 | Página de caso | En curso · Tap In editorial con escenas de scroll, falta tu visto bueno. Llegó Farma construido el 4 nov 2026 sobre el marco común (`caso-marco.css` + `caso-motor.js`), falta tu visto bueno y probarlo en el iPhone. Hero elegido: la tira con el logo animado y la ficha, en `explorations/caso/cinta-v2/` (`#tira/ficha/sin`) |
 | S4 | Sobre mí | Pendiente |
 | S5 | Contacto y footer | Hecho · brief en una frase y colofón en el home (27 oct 2026); con correo, WhatsApp y agenda (Cal.com conectada a iCloud); 12 mejoras gráficas elegidas de la auditoría aplicadas el 30 oct 2026 |
 

@@ -1602,3 +1602,16 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Corregido en el camino:** el riel retenía la opacidad de su entrada (mismo bug de la franja); ahora la entrada anima a los hijos.
 - **Verificado:** a 1280, 1440 y 1920 px, con combinaciones de los tres ejes, con ajustes y con scroll hasta el sitio en vivo (también en el eje horizontal), sin errores de consola ni recursos caídos. La velocidad real hay que verla en un navegador normal.
 - **Pendiente:** que Agustín elija una combinación para llevarla al caso.
+
+### Caso Llegó Farma, hero elegido: la tira con el logo y la ficha (4 nov 2026)
+- **Decisión:** Agustín elige **La tira + La ficha + Sin gráfica**. Pide el logo horizontal con animación y un hover atractivo, y que la información bajo el título sea tan limpia como el hero de Tap In.
+- **Exploración:** la misma `explorations/caso/cinta-v2/cinta-v2.html`, que ahora abre por defecto en `#tira/ficha/sin`. Los demás ejes siguen en el dock para comparar.
+- **Logo:**
+  - el horizontal blanco, en un SVG en línea separado en isotipo (nodo grande y dos chicos), Llegó, la barra y farma; reemplaza el título escrito;
+  - **entrada:** el nodo grande nace, los dos chicos brotan desde él, Llegó sube por su máscara letra a letra, la tilde cae al final, la barra se traza y farma sale desde detrás de ella;
+  - **hover:** una pasada por cada entrada del mouse. El nodo grande late, los chicos rebotan como resorte, sale una onda turquesa claro, la tilde salta y las letras hacen una ola. Solo se activa después de la entrada, así nunca la reinicia;
+  - al bajar, el logo sube y se apaga.
+- **Ficha:** de cuatro celdas con rótulo a tres datos cortos sin rótulo, cada uno con el nodo de la marca, en las columnas 1 a 9: "Marca y manual de 36 páginas", "Sitio diseñado y programado por mí", "En línea en 8 semanas".
+- **Nota:** el logo del cliente aparece fuera de las capturas por pedido explícito de Agustín.
+- **Verificado:** a 1280, 1440 y 1920 px. Se probaron la entrada y el hover (también con cuadros congelados) y el scroll hasta el sitio en vivo, sin recursos caídos.
+- **Pendiente:** llevar el hero al caso (`caso/llego.html`) y seguir con la próxima sección.
