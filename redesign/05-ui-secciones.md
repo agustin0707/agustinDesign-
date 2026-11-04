@@ -1643,3 +1643,26 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Dock:** con cuatro ejes pasa a dos filas cuando no cabe.
 - **Verificado:** a 1440 px, con cuadros congelados de cada hover sobre una copia ampliada del logo. También se probaron los atajos, el ancla, el cierre de cada pasada y la red con cursor simulado, sin errores de consola. La fluidez real del mouse hay que sentirla en un navegador normal; el panel corre a pocos cuadros por segundo.
 - **Pendiente:** que Agustín elija el hover y llevar el hero al caso.
+
+### Caso Llegó Farma, hero: la entrada del home y tres hovers desde el mensajero (4 nov 2026)
+- **Entrada del logo, siempre la misma:** ahora es la del capítulo Marca de la portada de Llegó en el home, con su misma estructura de SVG y sus tiempos (3,7 s):
+  - aparece el nodo central y los brazos crecen hacia la izquierda y hacia abajo;
+  - llegan los dos nodos sueltos;
+  - el de la derecha sale como mensajero y destapa Llegó con un borde difuso;
+  - se abre en la o, la tilde se marca y entra farma.
+  - Cada pieza tiene en reposo su estado final y la entrada parte de su estado inicial, así el logo queda entero al terminar. La clase de entrada sale cuando terminan sus animaciones.
+  - La ficha entra después de la palabra (2,7 s).
+- **Auditoría del Mensajero como hover:**
+  1. Repetía la entrada: ahora que la entrada es el mensajero, el hover sería un eco.
+  2. Apagaba Llegó al 22 % en cada pasada: en un hover se lee como un estado de carga, no como una respuesta.
+  3. Un círculo blanco sobre letras blancas apagadas tiene poco contraste: se veía una mancha cruzando.
+  4. 1,5 s es largo para un gesto que se repite con cada pasada del mouse.
+  5. La tilde se borraba al inicio: una pérdida que el usuario no pidió.
+  6. El mensajero atravesaba las letras: no tenía un camino propio.
+- **Tres hovers nuevos** (teclas C V B; ancla `#…/hover`). Los tres terminan con la confirmación de la entrada en corto (la o recibe, sale la onda y la tilde asiente) y ninguno apaga la palabra:
+  - **A · Vuelo (1,1 s):** el mensajero sale del nodo derecho en arco por sobre la palabra (x e y en ejes separados, como un objeto que cae), deja una estela turquesa claro que se borra desde el origen y aterriza en la o con un aplaste.
+  - **B · Seguimiento (1,5 s, recomendado y por defecto):** la entrega, mejor. El nodo despacha hacia una calle bajo la palabra; seis etapas (las del seguimiento de llegofarma.cl) pasan de contorno a relleno cuando la ruta las alcanza, como los nodos de estado del manual. La ruta sube a la o y la entrega se confirma. La calle queda a 20 px de la ficha.
+  - **C · Barrido (1,2 s):** el mensajero cruza por detrás de Llegó, visible entre las letras, y una franja turquesa claro pegada a él tiñe las letras a su paso. El barrido de la portada, sin apagar la palabra.
+- **Fuera:** los seis hovers anteriores y el código de la Red.
+- **Verificado:** a 1440 px, con cuadros congelados de la entrada (0,7, 1,9, 2,6 y 3,1 s) y de cada hover. También se probaron los atajos, el ancla, el cierre de las clases y el logo entero al terminar, sin errores de consola.
+- **Pendiente:** que Agustín elija entre los tres y llevar el hero al caso.
