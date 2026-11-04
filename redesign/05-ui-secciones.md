@@ -1543,3 +1543,25 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Imágenes:** copias de 1200 px (`caso/media/lf-cinta-*.jpg`, carpeta ignorada por git) para que la cinta cargue liviana.
 - **Verificado:** en escritorio a 1024 px, cada hero en reposo, con mouse y con scroll, sin recursos caídos.
 - **Pendiente:** que Agustín elija una dirección (o mezcle dos) para llevarla al caso.
+
+### Caso Llegó Farma, hero: la cinta, auditada y en cuatro versiones (4 nov 2026)
+- **Decisión:** Agustín elige **La cinta**. **Diez valores** se guarda para cuando el caso hable de los colores y recursos de la marca.
+- **Exploración:** `explorations/caso/cinta-llego/cinta-llego.html` (prefijo `.ci-`), con dock de 1 a 4 y anclas `#base`, `#control`, `#pieza`, `#letra`. Las cuatro comparten un motor de cinta y cada una agrega lo suyo.
+- **Auditoría de la cinta y lo que corrige la base:**
+  1. **Barra y franja chocaban con las capturas:** se agrega un cielo oscuro arriba.
+  2. **Las capturas blancas le ganaban al título:** un tinte en multiply deja limpia la zona de foco y vuelve turquesa los bordes.
+  3. **La entrada era un fundido sobre un degradado vacío:** la cinta llega rápido y frena hasta su velocidad de crucero, y el plano sube a su lugar.
+  4. **Al bajar, el título se volvía un fantasma sobre las capturas:** ahora cada línea sale por su máscara; la bajada y el chip se van antes.
+  5. **La franja no se iba con el scroll:** la entrada retenía su opacidad. Ahora la entrada anima a los hijos y el scroll al contenedor.
+  6. **El final se veía borroso:** la captura de 1200 px se estiraba 3,4 veces. Ahora la carta cambia a la de 2880 px antes de crecer.
+  7. **El final era una foto:** ahora la carta aterriza como una ventana bajo la barra, con su franja de URL, y la reemplaza el sitio real en un iframe. Corre su propia entrada y no choca con la barra del portafolio. El resto de la cinta se retira para que aterrice limpia.
+  8. **Repetición:** cada columna recorre las ocho secciones desfasadas, no seis.
+  9. **Velocidad según la altura del mouse:** no se descubría, así que sale de la base; la interacción con el mouse vive en La pieza.
+  10. **Rendimiento:** `will-change` solo en las tres columnas, no en las 54 imágenes.
+- **Las versiones:**
+  1. **La base:** todo lo anterior.
+  2. **El control:** una línea de control de calidad cruza la cinta dentro del plano. Cada sección lleva su rótulo y su nodo de estado (vacío pendiente, lleno validado). Al cruzar, queda en un registro con la hora de Santiago: la trazabilidad de Llegó aplicada a su web.
+  3. **La pieza:** el mouse frena la cinta. La sección que tocas se levanta hacia la cámara con su nombre y su ancla real en llegofarma.cl, y el resto se apaga.
+  4. **La letra:** sobre papel, la cinta corre dentro de "Farma" a todo el ancho. Al bajar, se entra por el asta de la F (medida en un canvas con Manrope 500) hasta llenar la pantalla, la cinta se endereza y aterriza el sitio en vivo.
+- **Verificado:** a 1280, 1440 y 1920 px de ancho, en reposo, con mouse y con scroll, sin errores de consola ni recursos caídos. El panel del navegador corre a pocos cuadros por segundo, así que la velocidad real hay que verla en un navegador normal.
+- **Pendiente:** que Agustín elija una versión (o una mezcla) para llevarla al caso.
