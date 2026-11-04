@@ -1615,3 +1615,15 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Nota:** el logo del cliente aparece fuera de las capturas por pedido explícito de Agustín.
 - **Verificado:** a 1280, 1440 y 1920 px. Se probaron la entrada y el hover (también con cuadros congelados) y el scroll hasta el sitio en vivo, sin recursos caídos.
 - **Pendiente:** llevar el hero al caso (`caso/llego.html`) y seguir con la próxima sección.
+
+### Caso Llegó Farma, hero: el horizonte y un hover de entrega (4 nov 2026)
+- **Decisión:** Agustín cambia la cinta a **El horizonte** con sus ajustes (n 5 · ancho 0.23 · rx 71 · rz -19 · ry 0 · persp 1050 · dx 0.19 · dy -0.04 · vel 1.25 · niebla 0.80 · piso 1 · eje v). Se mantienen La ficha y Sin gráfica. La exploración abre por defecto en `#horizonte/ficha/sin`.
+- **Hover del logo, rehecho con la marca:** el anterior (latido, resorte, ola de letras) era genérico. Ahora es una entrega con las reglas del manual (nodos de estado: relleno es hecho, contorno es pendiente):
+  - el nodo de arriba despacha con un pulso;
+  - el nodo chico de la derecha queda en contorno y el grande se apaga: pendientes;
+  - una ruta turquesa claro se traza de nodo a nodo y cada nodo se llena al llegar;
+  - en el grande sale la onda y la tilde de Llegó asiente. Después la ruta se borra.
+  - Las letras ya no se mueven: el gesto vive en el isotipo, que es donde está la idea (puntos que se conectan y se vuelven red de reparto).
+  - Todo dura 1,4 s en un solo reloj lineal, así la ruta y los nodos coinciden.
+- **Verificado:** los ajustes de la lectura coinciden con los pedidos. Se congelaron cuadros del hover (despacho, nodo pendiente, llegada, onda). Al terminar, el hover queda listo para la siguiente pasada.
+- **Pendiente:** llevar el hero al caso (`caso/llego.html`).
