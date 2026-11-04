@@ -1,0 +1,19 @@
+:root{ --t-etiqueta: 10px; }
+.t-etiqueta{ letter-spacing: .06em; }
+.franja .nombre{ white-space: nowrap; }
+.s-cta .campo label{ font-size: 11px; letter-spacing: .04em; }
+
+.s-valor .pilar{ min-height: 420px; }
+.s-valor{ --alto-pilar: 420px; }
+
+.s-exp .flota{ aspect-ratio: 3 / 1; }
+
+:root{ --esp-seccion: 88px; }
+
+.s-cat .categorias li{ padding-block: 10px; }
+.s-cat .nm{ font-size: 28px; }
+.s-cat .marca .icono{ width: 24px; height: 24px; }
+
+.recorrido{ left: 12px; gap: 11px; }
+.recorrido .punto{ width: 7px; height: 7px; }
+.recorrido::before{ left: 3px; }
