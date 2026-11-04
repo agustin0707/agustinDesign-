@@ -1720,3 +1720,9 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - En reposo los resortes se apagan solos y el logo vuelve a quedar sin estilos en línea.
 - **Verificado:** el mapeo de cada gesto en los estilos calculados y la física en una simulación (golpe con pico de 0,39 que se asienta en ~550 ms, ola de izquierda a derecha en ~500 ms, barrido del cursor con varias piezas a la vez, vuelta a cero al soltar). El panel del navegador estaba oculto y ahí no corren los cuadros, así que falta sentirlo con un mouse real.
 - **Pendiente:** probarlo con mouse y llevar el hero al caso.
+
+### Caso Llegó Farma, hero: Eco con el mouse, menos gelatina (4 nov 2026)
+
+- **Pedido:** se siente bien, pero muy gelatinoso; bajarlo un poco.
+- **Cambio:** los resortes pasan a casi críticos. El grado sube de ω 11, ζ 0,62 a ω 13, ζ 0,85: sin rebote visible y se asienta en ~350 ms en vez de ~550. El tirón hacia el cursor pasa a ω 10, ζ 0,95 y baja de 4 a 3 unidades. El empujón de la entrada sube a 15 para que la ola conserve presencia (pico de 0,31 en vez de 0,39), ahora sin rebote.
+- **Verificado:** la física en simulación. Falta sentirlo con mouse.
