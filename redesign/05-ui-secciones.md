@@ -1684,3 +1684,21 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Fuera:** Vuelo, Seguimiento y Barrido, con sus piezas (estela, calle, etapas, franja).
 - **Verificado:** a 1440 px, con cuadros congelados de cada hover; el nodo de Ida y vuelta queda centrado en la o. También se probaron los atajos, el ancla y el ciclo de clases (`.nodo`, `.encima`, `.vuelve`), sin errores de consola.
 - **Pendiente:** que Agustín elija y llevar el hero al caso.
+
+### Caso Llegó Farma, hero: Eco con el mouse (4 nov 2026)
+- **Pedido:** Agustín se queda con Eco, pero quiere que el hover dependa de dónde está el mouse, como en el hero de Tap In.
+- **Lo que hace Tap In:** las letras del wordmark cercanas al cursor suben según una campana de distancia (σ 110 px, la distancia vertical vale 0,6) con una transición de 450 ms, y al entrar al wordmark el punto de la i hace "tap".
+- **Eco con mouse, la misma lógica con los gestos de Llegó:**
+  - **Cerca del cursor:** cada pieza del logo tiene un grado de 0 a 1 según su distancia, con la campana de Tap In (σ = 13 % del ancho del logo). Mientras más cerca, más se rebobina esa pieza hacia su estado de partida en la entrada, con la amplitud del Eco:
+    - el isotipo se encoge apenas;
+    - el nodo de arriba sube y el de la derecha se corre a la derecha, de donde llegan;
+    - las letras de Llegó bajan al 55 %, como en el barrido;
+    - la o se cierra un poco y la tilde se borra en parte;
+    - la barra se acorta y farma baja y se atenúa.
+  - Al alejarse, todo se rearma con la curva de salida de la entrada.
+  - **Al entrar al logo:** el Eco completo sale desde el punto de entrada. Cada pieza llega a su gesto con un retraso según su distancia (0,9 ms por píxel, hasta 520 ms) y la onda sale de la o cuando la ola la alcanza. Si entras por farma, la ola va hacia el isotipo; si entras por el isotipo, al revés.
+  - **Técnica:** una propiedad registrada (`@property --w`) por pieza, que se transiciona y se anima. El JS solo escribe el grado; cada gesto vive en el CSS. La pasada anima `--w` hasta 1 y vuelve sola a lo que marque el cursor, sin saltos.
+  - **Cuándo funciona:** solo con mouse, sin movimiento reducido, después de la entrada y con el hero en pantalla.
+- **Dock:** quedan Eco con mouse (por defecto, C) y Eco, la versión anterior, para comparar (V). Salen Despacho, Rearme, Cierre e Ida y vuelta.
+- **Verificado:** a 1440 px, con el cursor simulado sobre la o (la o, la tilde, la g y la barra reaccionan; el isotipo no se mueve), la pasada desde la derecha (de farma al isotipo, con la onda en orden) y la vuelta a 0 al salir de la ventana. También se probaron los atajos y el ancla.
+- **Pendiente:** sentirlo con un mouse real y llevar el hero al caso.
