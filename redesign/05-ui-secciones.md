@@ -1726,3 +1726,20 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Pedido:** se siente bien, pero muy gelatinoso; bajarlo un poco.
 - **Cambio:** los resortes pasan a casi críticos. El grado sube de ω 11, ζ 0,62 a ω 13, ζ 0,85: sin rebote visible y se asienta en ~350 ms en vez de ~550. El tirón hacia el cursor pasa a ω 10, ζ 0,95 y baja de 4 a 3 unidades. El empujón de la entrada sube a 15 para que la ola conserve presencia (pico de 0,31 en vez de 0,39), ahora sin rebote.
 - **Verificado:** la física en simulación. Falta sentirlo con mouse.
+
+### Caso Llegó Farma: el hero de la cinta, en la página del caso (4 nov 2026)
+
+- **Pedido:** con el hero aprobado, llevarlo a `caso/llego.html`.
+- **Qué entra:** solo la combinación elegida (el horizonte, la ficha, sin gráfica y el Eco con el mouse). Reemplaza al hero anterior (la trama de puntos que se volvía el isotipo, con Llegó Farma en grande). Salen el dock, los ajustes en vivo, el ancla y las variantes descartadas.
+- **Cómo quedó:**
+  - Marcado: la sección es una escena del motor común (`data-escena="hero"`, pista de 280 pantallas de alto). El logo es el `h1`, con `aria-label="Llegó Farma"`.
+  - CSS en `llego.css`, sección 5, con los prefijos del caso: `.lf-h-` para el hero y `.lf-lg-` para las piezas del logo. Sale todo el CSS del hero anterior (cruz, trama, título, escalón, pista).
+  - JS en `llego.js`, sección 2: el motor de la cinta con los ajustes fijos del horizonte, la entrada del logo y los resortes del hover. El motor del caso solo le pasa el avance del scroll; la cinta corre en su propio bucle y se detiene cuando el hero sale de pantalla.
+- **Vista móvil:** tres columnas más anchas (ancho 0,5, desvío 0,06 y −0,12), la franja en dos filas, el logo a lo ancho, la ficha en una columna y el fundido desde abajo. Al aterrizar, el sitio en vivo se dibuja a 1440 y se escala, igual que la captura que reemplaza.
+- **Verificado** en Chrome headless (el panel del navegador estaba oculto):
+  - a 1440 × 900 queda igual a la exploración;
+  - al bajar, la ventana en vivo abre con el sitio;
+  - a 390 × 844 no hay desborde horizontal y aterriza con el sitio escalado;
+  - el hover reacciona en ola y vuelve a cero al soltar;
+  - sin errores en la consola.
+- **Pendiente:** probarlo en el iPhone.
