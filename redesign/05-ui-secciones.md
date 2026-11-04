@@ -1666,3 +1666,21 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Fuera:** los seis hovers anteriores y el código de la Red.
 - **Verificado:** a 1440 px, con cuadros congelados de la entrada (0,7, 1,9, 2,6 y 3,1 s) y de cada hover. También se probaron los atajos, el ancla, el cierre de las clases y el logo entero al terminar, sin errores de consola.
 - **Pendiente:** que Agustín elija entre los tres y llevar el hero al caso.
+
+### Caso Llegó Farma, hero: cinco hovers de la familia de la entrada (4 nov 2026)
+- **Pedido:** ninguno de los tres hovers anteriores convenció; tienen que seguir la línea de la entrada del logo y sentirse familia.
+- **Auditoría, por qué no eran familia:**
+  1. Agregaban un vocabulario que la entrada no tiene: estela, calle con etapas, franja de color. Se leían como otro sistema.
+  2. Color: usaban acentos turquesa. La entrada del home es toda blanca, incluso la onda. La onda de la entrada del hero también estaba en turquesa y en 1,5 px: ahora es blanca de 1 px, como en el home.
+  3. Curvas propias (parábola, ritmo constante). La entrada usa tres: `--sale`, `--ease-morph` y `--rebote`.
+  4. Gestos propios: aterrizar, teñir, avanzar por etapas. La entrada tiene los suyos: aparecer con rebote, trazar brazos, llegar desde 24 px, viajar con aplaste, barrer con borde difuso, abrir la o, onda, marcar la tilde, trazar la barra y subir farma.
+- **Regla nueva:** cada hover es una frase de la entrada, con sus mismas piezas, gestos y curvas. Lo único que se agrega es `--curva` para lo que se recoge antes de volver a armarse. También se suma la sombra del logo del home.
+- **Cinco propuestas** (teclas C V B N M):
+  - **A · Despacho (recomendado, por defecto):** el segundo acto. El nodo derecho sale como mensajero con su misma curva y aplaste, cruza Llegó abriéndose paso con el borde difuso del barrido (un hueco viaja con él en la máscara de la palabra) y se funde en la o con la onda; detrás llega un nodo nuevo desde la derecha, como en la entrada. 1,3 s.
+  - **B · Rearme:** el primer acto. Los brazos se recogen al centro y los nodos se van; el centro rebota y todo se vuelve a armar con los tiempos de la entrada. 1,5 s.
+  - **C · Cierre:** el tercer acto. La o se cierra y se abre con la onda, la tilde se marca de nuevo, la barra se traza y farma sube. 1,3 s.
+  - **D · Eco:** la entrada entera en miniatura, cada pieza con un tercio de su amplitud y en el mismo orden (el barrido pasa con la palabra al 55 %). 1,4 s.
+  - **E · Ida y vuelta:** un estado, no una pasada. Con el mouse encima, el nodo derecho viaja a la o y queda adentro, entregado; al salir vuelve. Es una transición: si el mouse sale a mitad de camino, se devuelve desde donde va.
+- **Fuera:** Vuelo, Seguimiento y Barrido, con sus piezas (estela, calle, etapas, franja).
+- **Verificado:** a 1440 px, con cuadros congelados de cada hover; el nodo de Ida y vuelta queda centrado en la o. También se probaron los atajos, el ancla y el ciclo de clases (`.nodo`, `.encima`, `.vuelve`), sin errores de consola.
+- **Pendiente:** que Agustín elija y llevar el hero al caso.
