@@ -1498,3 +1498,34 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - Ahora dice Trabajo, Sobre mí y Contacto, en el orden del home, y lleva a las mismas secciones del home (`inicio.html#works`, `#about` y `#contacto`). El contacto del home ya usa el correo aprobado.
 - En `llego.html`, el logo y "← Índice" también vuelven al home (antes apuntaban a `#` y a la Pila vieja).
 - Las imágenes sin seguimiento de `caso/activaciones-v2/` y `caso/rebirth-v2/` son copias para que esas dos exploraciones funcionen solas. El caso de Tap In no las usa: lee las mismas fotos desde `caso/media/`. No se borran ni se suben hasta decidirlo.
+
+### Caso Llegó Farma, primera versión completa (4 nov 2026)
+- **Marco común nuevo:** `caso/caso-marco.css` (prefijo `.cs-`) y `caso/caso-motor.js` sacan del caso de Tap In lo que es de Agustín Design: barra, grilla, escenas con panel fijo y `--p`, pasos y rangos, texto que se enciende, cifras que cuentan, parallax, tiras de fotos, la evidencia del sitio real y el siguiente proyecto. Cada caso pone su piel encima con variables (tipografías, pesos, colores, curva). Tap In sigue con sus archivos; migrarlo al marco queda para después.
+- **La piel de Llegó** (`llego.css`, `llego.js`, prefijo `.lf-`): Manrope liviana con escalón, LF Mono con el cero sin punto, el degradado de 10 valores con grano, la retícula con cortes de 8 px, los nodos de estado, radios en cero y sin sombras. Todo sale del manual y del sitio entregado.
+- **Estructura:**
+  1. **Hero:** la trama de puntos de Llegó se enciende y cinco puntos crecen hasta formar el isotipo Nodos.
+  2. **Resumen:** el proyecto rastreado como un envío, en seis hitos (25 ago a 20 oct), con atajos a los tres capítulos.
+  3. **Capítulo 01 · El pitch:** 01 Diagnóstico, 02 Un sistema y no un logo, 03 Un turquesa con parentesco.
+  4. **Capítulo 02 · La marca:** 04 La madre no se toca, 05 Tres caminos y la decisión del cliente, 06 Fotos de la operación, 07 Un manual que otros pueden usar.
+  5. **Capítulo 03 · La web:** 08 Un dominio propio (se escribe llego.cl/farma, se tacha y queda llegofarma.cl). De la 09 a la 12, el sitio real dentro de un navegador, con el foco siguiendo cada decisión. La 13 es el QR de la feria: el sitio a 390 px en un teléfono, bajando con el scroll.
+  6. **Resultado y siguiente proyecto (Tap In).**
+- **Cifras verificadas:**
+  - 36 páginas de manual;
+  - 3 caminos y 4 criterios;
+  - 5 días del contenido final al sitio aprobado (9 a 14 oct);
+  - 56 cambios al texto;
+  - 5 rangos de pantalla y 0 librerías.
+  - "22 años" no entra porque no tiene respaldo.
+  - Las cifras internas de Farma y los montos no se publican.
+- **Criterios aplicados:**
+  - se cuenta que la favorita era Líneas y que el cliente eligió Nodos;
+  - el uso de Adobe Firefly se declara en la decisión 06 y en los créditos;
+  - la cita del gerente va marcada "Cita por aprobar" hasta tener su permiso;
+  - la propuesta anterior aparece sin nombres;
+  - los logos del cliente salen solo en las piezas y en el sitio.
+- **Home:** el botón de Llegó vuelve a "Ver caso →" y hace el viaje al caso, como Tap In.
+- **Repo:** las imágenes de `caso/activaciones-v2/` y `caso/rebirth-v2/` pasan al `.gitignore`. El HTML de cada ronda sigue en el repo y la revisión publica todo.
+- **Verificado:**
+  - en escritorio (1024 px) y en teléfono (375 px), sin errores de consola y sin scroll lateral;
+  - el foco de la evidencia queda sobre el sitio (z-index), y en el teléfono el degradado ya no deja franjas a los lados.
+- **Pendiente:** probarlo en el iPhone real y el visto bueno de Agustín.

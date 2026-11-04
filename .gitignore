@@ -17,3 +17,8 @@ redesign/explorations/moodboard/capturas/
 redesign/explorations/works/media/
 redesign/explorations/caso/media/
 redesign/explorations/works/sitios/
+# Medios de las rondas de Tap In: el HTML de cada ronda queda en el repo, sus imágenes solo en local y en la revisión
+redesign/explorations/caso/activaciones-v2/*.webp
+redesign/explorations/caso/activaciones-v2/*.svg
+redesign/explorations/caso/rebirth-v2/*.webp
+redesign/explorations/caso/rebirth-v2/*.svg
