@@ -1780,3 +1780,22 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Pendiente:**
   - probarlo en el iPhone (Safari 18.2 o superior tiene la transición);
   - en el teléfono, la captura de escritorio se cruza un instante con la del sitio móvil, porque no calzan.
+
+### Paso de la portada al caso: ocho propuestas, cuatro por caso (4 nov 2026)
+
+- **Pedido:** que el paso al caso sea mejor y propio de cada caso destacado, con al menos seis propuestas que relacionen la portada con el hero; único, atractivo y profesional.
+- **Exploración:** `explorations/caso/pasos-caso/pasos-caso.html`. La portada y el hero de cada caso calcados a 1440 × 900, con cámara lenta (L), reproducir (espacio), 1 a 4 para el paso y C para el caso. El hash deja un enlace directo a cada paso (`#lf-1` a `#tp-4`).
+- **Llegó Farma:**
+  1. **Vuelve a la cinta** (recomendado): la ventana se recuesta y queda como la carta central de la cinta; la cámara se aleja y la cinta arranca. Es el gesto del hero al revés, por eso se siente una sola pieza.
+  2. **Despacho:** la portada entera se acuesta en la pose del plano y la cinta se la lleva al horizonte mientras el caso entra desde abajo.
+  3. **El nombre se vuelve marca:** el título viaja al logotipo y el barrido del mensajero lo reescribe como marca.
+  4. **Rastreo:** Ver caso se encoge a un punto, traza la ruta con tres hitos y barre la portada; la ruta queda como el filete de la ficha.
+- **Tap In:**
+  1. **La ventana se recuesta:** la ventana viaja y se recuesta en 3D hasta la del hero; el título se vuelve el wordmark.
+  2. **A través de la cinta** (recomendado): la cámara entra en un "tap in" impreso, lo endereza y atraviesa la cinta; el impreso se asienta como el wordmark.
+  3. **Tap:** una onda sale desde el punto del clic, descubre el caso y la i del wordmark responde con su tap.
+  4. **Tres credenciales:** Health, Connect y Campus suben y tapan la portada; al irse dejan el caso.
+- **Construcción prevista:** salvo Tap y Rastreo, ninguno depende de View Transitions: el home guarda la caja de la pieza (FLIP entre páginas) o tapa la pantalla con la pieza, y el caso abre desde ese mismo cuadro. Así se ven igual en Safari, Chrome y Firefox, y permiten el 3D que View Transitions no hace.
+- **Verificado** en Chrome headless con cuadros en cámara lenta de los ocho pasos, sin errores.
+- **Nav:** se revisó si los tres botones van en inglés o en español. Recomendación: español, y cambiar "Trabajo" por "Proyectos" (pendiente de tu visto bueno).
+- **Pendiente:** elegir un paso por caso; después se construye en el sitio y reemplaza la transición actual.
