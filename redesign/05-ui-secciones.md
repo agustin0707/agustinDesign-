@@ -1885,3 +1885,10 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - tu visto bueno a la plantilla;
   - si se aprueba, pasarla a `caso-marco.css` y aplicarla al caso real;
   - el móvil queda solo apilado, para después.
+
+## Barra: "Trabajo" pasa a "Proyectos" (5 nov 2026)
+
+- **Pedido:** cambiar el botón Trabajo de la barra por Proyectos.
+- **Cambiado** en la barra del home, la del home al bajar, la de los casos (Llegó, Tap In) y la exploración de La marca.
+- **En el pie,** el enlace ahora dice "Proyectos" y su atajo pasa de W a P; el índice de los saltos largos también dice "Proyectos".
+- **Se queda igual** el rótulo de la sección "02 · Trabajo · Proyectos seleccionados".
