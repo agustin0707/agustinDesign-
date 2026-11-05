@@ -1892,3 +1892,4 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Cambiado** en la barra del home, la del home al bajar, la de los casos (Llegó, Tap In) y la exploración de La marca.
 - **En el pie,** el enlace ahora dice "Proyectos" y su atajo pasa de W a P; el índice de los saltos largos también dice "Proyectos".
 - **Se queda igual** el rótulo de la sección "02 · Trabajo · Proyectos seleccionados".
+- **En producción** el 5 nov 2026, junto con el paso del home al caso (`produccion.sh --subir`, commit 73ce454 en `main`). Verificado en vivo en agustindesign.cl.
