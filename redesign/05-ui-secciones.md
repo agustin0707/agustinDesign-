@@ -1855,3 +1855,33 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Pendiente:**
   - probarlo en el iPhone y en Safari de escritorio (usa animaciones con fotogramas implícitos y capturas con canvas);
   - en el teléfono, la ventana de Tap In muestra la captura de escritorio angostándose hasta que entra la del teléfono.
+
+## Llegó Farma · Capítulo 02 en la plantilla Lámina (exploración, 5 nov 2026)
+
+- **Pedido:** seguir a fondo con Llegó, en escritorio. Partir por La marca en la dirección editorial aprobada: pieza a sangre, decisión corta al costado y scroll que narra. Lo que salga se vuelve la plantilla de todas las decisiones.
+- **Dónde:** `explorations/caso/marca-llego/` (standalone; usa `caso-marco.css`, `llego.css` y `caso-motor.js`).
+- **Plantilla Lámina** (`.cs-lam`):
+  - la pieza va a sangre desde la columna 4 hasta el borde derecho, de alto completo;
+  - la decisión vive en el riel (columnas 1 a 3): número, título, una frase y el porqué;
+  - abajo del riel, el rótulo de pasos; el scroll avanza la pieza paso a paso.
+- **03 · Diez valores:**
+  - las diez bandas del degradado caen una a una, con su número y su HEX;
+  - se funden en el degradado de marca con grano; al pasar el mouse, cada banda se abre plana con su HEX;
+  - al seguir, la capa se recoge en un filete y de él suben los tres tonos con sus proporciones (35, 50 y 15 %), junto al morado de Llegó.
+- **04 · La madre no se toca:**
+  - el logotipo grande con sus tres cotas;
+  - la retícula de construcción de la página 06 del manual se dibuja sobre las medidas reales del SVG, con el módulo X (la separación entre isotipo y Llegó);
+  - el área de protección se dibuja con una X por lado;
+  - al final, los mínimos a tamaño real: 16, 120 y 140 px.
+- **05 · Tres caminos:**
+  - Puntos, Líneas y Nodos en tres columnas de alto completo;
+  - suben sus aplicaciones (furgón, reparto, empaque);
+  - la foto se apaga para leer los cuatro criterios en adjetivos;
+  - al final se velan los dos no elegidos: Nodos queda marcada "Elegida · 9 sep" y Líneas "Mi favorita".
+- **07 · El manual:** nueve páginas reales pasan y se detienen una a una (portada y páginas 05, 06, 09, 11, 18, 28, 32 y 33), con su sección y número de página.
+- **Verificado** en Chrome headless a 1440 × 900, con cuadros en seis puntos de cada escena y el hover del degradado; sin errores.
+  - Las máscaras de los isotipos solo cargan servidas por http, no desde file://.
+- **Pendiente:**
+  - tu visto bueno a la plantilla;
+  - si se aprueba, pasarla a `caso-marco.css` y aplicarla al caso real;
+  - el móvil queda solo apilado, para después.
