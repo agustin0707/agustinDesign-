@@ -1893,3 +1893,14 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **En el pie,** el enlace ahora dice "Proyectos" y su atajo pasa de W a P; el índice de los saltos largos también dice "Proyectos".
 - **Rótulo de la sección (segundo pedido):** "02 · Trabajo · Proyectos seleccionados" pasa a "02 · Proyectos · Tres destacados", para que el número de la sección diga lo mismo que la barra sin repetir la palabra. También las barras de las exploraciones antiguas de Llegó (cinta-llego, heros-llego, cinta-v2). Los bocetos de pasos-caso quedan como estaban: dibujan las opciones de ese momento. En producción el 5 nov 2026 (commit 6a0d86c en `main`, solo `index.html`), verificado en vivo.
 - **En producción** el 5 nov 2026, junto con el paso del home al caso (`produccion.sh --subir`, commit 73ce454 en `main`). Verificado en vivo en agustindesign.cl.
+
+## Llegó Farma · La Lámina pasa al caso (5 nov 2026)
+
+- **Visto bueno** de Agustín a la plantilla Lámina explorada en `explorations/caso/marca-llego/`.
+- **Marco común:** la base de la Lámina vive ahora en `caso-marco.css` (4.1): riel de columnas 1 a 3 con la decisión y el rótulo de pasos abajo, pieza a sangre desde la 4 hasta el borde derecho. En móvil, por ahora, solo apila.
+- **En `caso/llego.html`** las decisiones 03 (Diez valores), 04 (La madre no se toca: retícula, módulo X, área de protección y mínimos), 05 (los tres caminos lado a lado) y 07 (las páginas reales del manual pasando) reemplazan a las piezas anteriores. La 03 se queda al final del capítulo 01, donde estaba; la 06 (fotos) no cambia.
+- **Código:** las clases de la exploración pasan al prefijo del caso (`lf-val-`, `lf-lock-`, `lf-cam-`, `lf-man-`) y sus fases van en `llego.js` con `tramo()` y `fase()`. Las variables de la ventana del degradado se llaman `--lf-va` y `--lf-vb`: con `--b` registrada como porcentaje se rompían las marcas de corte del logo, que usan `--b`.
+- **Queda fuera** la lámina con las cuatro reglas en vivo del manual (retícula con cortes, grano, cero sin punto, nodos): las páginas reales la reemplazan.
+- **Verificado** a 1440 × 900 en las cuatro escenas, sin errores de consola.
+- **Siguiente:** llevar a la Lámina las decisiones 01 (diagnóstico) y 02 (sistema), y después 08 (dominio) y 13 (teléfono), una por una con preview.
+
