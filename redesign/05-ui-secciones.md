@@ -1904,3 +1904,11 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Verificado** a 1440 × 900 en las cuatro escenas, sin errores de consola.
 - **Siguiente:** llevar a la Lámina las decisiones 01 (diagnóstico) y 02 (sistema), y después 08 (dominio) y 13 (teléfono), una por una con preview.
 
+## Llegó Farma · Decisiones 01 y 02 en la Lámina (exploración, 5 nov 2026)
+
+- **Preview** en `explorations/caso/pitch-llego/` para aprobar antes de pasarla al caso.
+- **01 · Primero, el diagnóstico:** la pieza son dos mitades a sangre, la marca madre en su morado (#84187C) y Farma en papel. Paso 1: entran las cinco cosas intocables de Llegó. Paso 2: entran las cuatro libres, cada una con la decisión del caso que la resuelve (02, 03, 04 y 05). Paso 3: sube desde abajo una franja oscura con el hallazgo (no había reglas para submarcas).
+- **02 · Un sistema, no un logo:** la trama de puntos de Llegó llena la pieza en una ola diagonal; los puntos de la ruta crecen a nodos, el resto se apaga y los conectores se dibujan; aparecen las lecturas (molécula y red de reparto). Al final la red sube y entran desde abajo las tres verticales: farma con su isotipo, minería y food con su hueco.
+- **Token nuevo:** `--lf-morado`, solo donde la pieza habla de la marca madre. Pasa a los tokens de `llego.css` si se aprueba.
+- **Verificado** a 1440 × 900 en cuatro puntos de cada pista, sin errores. Ajuste en la misma ronda: filas más grandes y la decisión que resuelve cada cosa libre bajo su texto, para que no se partieran en dos líneas.
+
