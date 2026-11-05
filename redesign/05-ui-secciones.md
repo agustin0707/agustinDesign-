@@ -1799,3 +1799,26 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Verificado** en Chrome headless con cuadros en cámara lenta de los ocho pasos, sin errores.
 - **Nav:** se revisó si los tres botones van en inglés o en español. Recomendación: español, y cambiar "Trabajo" por "Proyectos" (pendiente de tu visto bueno).
 - **Pendiente:** elegir un paso por caso; después se construye en el sitio y reemplaza la transición actual.
+
+### Paso al caso: los dos elegidos, auditados y más lentos (4 nov 2026)
+
+- **Pedido:** quedarse con "Vuelve a la cinta" (Llegó) y "La ventana se recuesta" (Tap In), más fluidos y algo más lentos, y auditar el cambio del título al wordmark, que se sentía tosco y de golpe.
+- **Auditoría, Llegó:**
+  - la ventana se fundía con la carta mientras la carta ya se movía: dos logos y dos bordes a la vez;
+  - el fondo de la portada seguía encima de la carta y la lavaba;
+  - el empujón de arranque de la cinta se llevaba la carta fuera del foco, quedaba un vacío y las otras columnas aparecían de golpe.
+- **Ajuste, Llegó (2,4 s):**
+  - el hero va encima desde el primer cuadro con su fondo apagado, y el fondo del caso se enciende detrás de la carta (1,1 s);
+  - la ventana pliega su barra y su borde inferior hasta calzar con la carta (misma captura, mismo encuadre) y se cambia sin fundido;
+  - la carta se suelta en 2 s con una curva pareja; la cinta acelera a medida que la carta se acuesta, sin empujón, así la carta no sale del foco;
+  - las otras columnas aparecen apenas la carta se suelta y llegan completas antes de que se acueste del todo;
+  - la barra, la franja, el logo y la ficha entran más tarde, cuando la cinta ya está asentada.
+- **Auditoría, Tap In:** el título en Geist y el wordmark se veían enteros y nítidos al mismo tiempo, con letras distintas y desfasadas: un doble que se leía como error. La cinta de la portada seguía visible cuando el título cruzaba por su altura.
+- **Ajuste, Tap In (1,8 s):**
+  - la ventana viaja en 1,5 s con una curva que arranca suave;
+  - la cinta de la portada se apaga antes de que pase el título;
+  - el título viaja 1,1 s hasta el lugar del wordmark y al llegar se desenfoca y se apaga, mientras el wordmark se enfoca encima y sus letras suben apenas, de izquierda a derecha. Los dos pasan borrosos por el mismo punto, así se lee como un nombre que cambia de letra y no como dos que se cruzan;
+  - el resto del texto entra después, cuando el wordmark ya está nítido.
+- **Exploración:** los dos pasos quedan marcados "Elegido" en `explorations/caso/pasos-caso/pasos-caso.html` (`#lf-1` y `#tp-1`).
+- **Verificado** en Chrome headless con cuadros en cámara lenta, sin errores.
+- **Pendiente:** tu visto bueno; después se construyen en el sitio con FLIP entre páginas y reemplazan la transición actual.
