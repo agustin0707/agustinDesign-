@@ -120,6 +120,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 body.bloqueado { position: fixed; left: 0; right: 0; }
 
 /* =======================================================
+   TRANSICIÓN AL CASO
+   ======================================================= */
+
+/* --- 1. RELEVO ENTRE PÁGINAS --- */
+/* El paso lo arman el home (inicio-works.js) y el caso (caso-llegada.js): el último cuadro del home y el primero del
+   caso son el mismo, así que el cambio de página no se ve. Donde hay View Transitions entre páginas, un fundido corto
+   cubre cualquier diferencia mínima; con movimiento reducido se navega sin transición */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 180ms; animation-timing-function: linear; }
+
+/* --- 2. EL PRIMER CUADRO DEL CASO --- */
+/* Mientras el script del hero no toma la pieza, una copia quieta ocupa su lugar exacto (las medidas y la captura las
+   escribe caso-llegada.js), y lo demás del hero espera escondido. La barra del sitio entra después, con el caso */
+.llega-espera::after { content: ''; position: fixed; z-index: 60; left: var(--ll-x); top: var(--ll-y); width: var(--ll-w); height: var(--ll-h); background: var(--ll-img) 50% 0 / cover no-repeat; pointer-events: none; }
+.llega-caso .barra { opacity: 0; }
+
+/* =======================================================
    VISTA MÓVIL
    ======================================================= */
 @media (max-width: 768px) {
