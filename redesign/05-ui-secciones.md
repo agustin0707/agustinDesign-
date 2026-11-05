@@ -1822,3 +1822,36 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Exploración:** los dos pasos quedan marcados "Elegido" en `explorations/caso/pasos-caso/pasos-caso.html` (`#lf-1` y `#tp-1`).
 - **Verificado** en Chrome headless con cuadros en cámara lenta, sin errores.
 - **Pendiente:** tu visto bueno; después se construyen en el sitio con FLIP entre páginas y reemplazan la transición actual.
+
+### Paso al caso construido en el sitio (4 nov 2026)
+
+- **Pedido:** construir en el sitio los dos pasos elegidos y afinados, "Vuelve a la cinta" (Llegó) y "La ventana se recuesta" (Tap In).
+- **Cómo funciona:** el paso se reparte entre las dos páginas y no depende de View Transitions.
+  - **En el home** (`inicio-works.js`, sección 5):
+    - al hacer clic en Ver caso, la portada se calla en cascada y la pieza queda quieta en su lugar;
+    - si estaba abierto Marca o En uso, primero vuelve a Web;
+    - el home anota dónde quedó la pieza y guarda una captura del cuadro exacto del video en ese instante; después navega;
+    - Llegó pliega la barra de la ventana hasta la carta (0,5 s); Tap In saca la cinta de la portada (0,44 s).
+  - **En el caso** (`caso-llegada.js`, en el `<head>`):
+    - el primer cuadro muestra la pieza quieta en ese mismo lugar, sobre el mundo de la portada, y el script del hero toma el relevo en el mismo cuadro;
+    - como el último cuadro del home y el primero del caso son iguales, el cambio de página no se ve;
+    - donde hay View Transitions, un fundido de 180 ms cubre cualquier diferencia mínima.
+- **Llegó** (`llego.js`, 2.7):
+  - la cinta arranca aterrizada en la caja de la ventana, con la captura, y la suelta en 2 s;
+  - sin empujón: la carta no se escapa del foco;
+  - el degradado del caso se enciende sobre el mundo de la portada;
+  - el logo se arma al segundo y la ficha llega al final.
+- **Tap In** (`tapin.js`, 9.1):
+  - la ventana viaja plana desde la portada hasta su pose recostada en 1,5 s;
+  - el título del home viaja al wordmark y se desenfoca mientras el wordmark se enfoca encima, letra por letra;
+  - el sitio vivo (en el teléfono, su captura) entra a mitad del viaje, cuando el movimiento disimula el cambio.
+- **Reemplaza** la transición anterior con View Transitions: la pieza nombrada, `vt-llega`, `vt-espera` y el fundido a negro.
+- **Verificado** en Chrome headless, con cuadros reales del clic a la llegada:
+  - los dos casos a 1440 × 900 y a 390 × 844;
+  - con el capítulo Marca abierto al hacer clic;
+  - la vuelta con atrás (la portada queda como estaba);
+  - la carga directa de cada caso, con su entrada de siempre;
+  - sin errores.
+- **Pendiente:**
+  - probarlo en el iPhone y en Safari de escritorio (usa animaciones con fotogramas implícitos y capturas con canvas);
+  - en el teléfono, la ventana de Tap In muestra la captura de escritorio angostándose hasta que entra la del teléfono.
