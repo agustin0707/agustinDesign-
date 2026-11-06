@@ -2013,3 +2013,20 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - **Estado.** Ahora comparte la línea superior del encargo y los capítulos.
   - **En celular:** la ruta en el tiempo, sin el número, la fecha del mensajero ni las notas.
 - **Verificado** a 1440 × 900 en el paso y el resumen, de ida y de vuelta, más el hover y el clic en un hito (lleva al hito 05). A 390 × 844 también. Sin errores de consola. Falta probar el temblor en el iPhone y en Safari real.
+
+## Llegó Farma · Paso del resumen a la portada del capítulo 01 (exploración, 6 nov 2026)
+
+- **Pedido:** centrarse en el paso del resumen a la portada del capítulo 01.
+- **Auditoría del paso actual:**
+  - **Corte seco.** El papel termina y la sección oscura sube como un bloque, sin relación con lo que había en pantalla.
+  - **Portada sin pausa.** No se fija: se ve entera un instante y el texto (que aparece una vez, al verse) llega tarde, cuando la sección ya está casi toda arriba.
+  - **Número muerto.** El 01 en contorno es estático, aunque viene de los separadores del manual.
+  - **Sin relación con la ruta.** El capítulo 01 es el pitch, que en la ruta es el hito 02, y nada lo une.
+- **Base común, en `explorations/caso/paso-capitulo/`:**
+  - La pista del resumen pasa de 260 a 360. La ruta usa los primeros 160 (`data-tramo` en la escena, nuevo y opcional en `llego.js`) y en los últimos 100 el resumen queda quieto.
+  - La portada sube encima (`margin-top: -200lvh`) y se fija. En la primera mitad de su pista se abre y en la segunda se traza el 01 (SVG con `stroke-dashoffset`), crece la retícula y entra el título. Lo de adentro empieza antes de terminar de abrir, así nunca queda vacía.
+- **Tres direcciones**, con selector (teclas 1 a 3, R para volver al hito 05):
+  1. **Nodo.** La portada sale del hito del pitch (28 ago): el nodo se llena de ella y crece desde su centro hasta cubrir la pantalla. El capítulo es un hito de la ruta.
+  2. **Índice.** La tarjeta "01 El pitch" del resumen se llena y crece hasta ser la portada.
+  3. **Retícula.** La portada sube en las cuatro columnas de la retícula de Llegó, desfasadas.
+- **Verificado** a 1440 × 900 en doce puntos de cada dirección, sin errores de consola. La salida de la portada a la decisión 01 sigue siendo el corte de antes.
