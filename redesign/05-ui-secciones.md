@@ -2080,3 +2080,22 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   2. **Nueve días.** La línea de la retícula se vuelve el eje del 19 al 28 de agosto: brief, diagnóstico (con enlace a la decisión 01), las dos jornadas con tres densidades de nodos y el pitch (con enlace a las decisiones 02 y 03). El avance corre por los días como el mensajero del resumen.
   3. **Las láminas.** Nueve de las once láminas reales del pitch en una cinta que avanza con el scroll. Quedan fuera la 2, que menciona los años de Llegó, y la 9, con los descartes que se parecen a la propuesta anterior. Las láminas están en `caso/media/lf-pitch-*.jpg`, que está en `.gitignore`.
 - **Verificado** a 1440 × 900 en los mismos puntos de las tres, sin errores de consola. Esperan que Agustín elija una.
+
+## Llegó Farma · Índice pasa al caso como portada del capítulo 01 (6 nov 2026)
+
+- **Elegida:** Índice.
+- **En el caso** (`llego.html`, `llego.css` 7.1 y la vista móvil, `llego.js` escena `capitulo` y sección 5):
+  - Riel con "Capítulo 01 · 19 a 28 ago 2026", el dato "9 días" y "Del brief al pitch".
+  - Índice con las tres decisiones del capítulo. Cada una es un enlace con scroll suave a su sección (ids nuevos `dec-01` a `dec-03`) y una flecha que avanza al pasar el mouse.
+  - Con el paso, el índice entra en la pausa antes de la decisión, una línea a la vez (`--lf-pi`).
+  - Sin el paso queda entero.
+- **Escritorio:**
+  - El título deja lugar al índice (columnas 4 a 8 y 9 a 12).
+  - Solo en esta portada, la retícula va en los medianiles de la grilla de 12 y el título queda a medio medianil de su línea.
+  - El 01 entra justo en el último tramo de la retícula.
+- **Móvil:** aire entre rótulo, título e índice, y el dato queda para escritorio, así la portada cabe en una pantalla.
+- **Pendiente:** las portadas 02 y 03 y el hero siguen con la retícula anterior; unificarla es un cambio aparte.
+- **Verificado:**
+  - A 1440 × 900 en seis puntos del paso, sin errores de consola.
+  - Los tres enlaces dejan su decisión arriba.
+  - En móvil (375 × 812) la portada queda completa.
