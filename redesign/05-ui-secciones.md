@@ -1977,3 +1977,15 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   5. **Destino.** El sitio vuela al final de la ruta y queda sobre el hito 06 con un tallo de 1 px; la línea se traza hacia atrás, hasta el diagnóstico. El rótulo pasa de "Destino" a "Entregado · 20 oct".
   6. **Reparto.** El sitio se cierra en un punto de partida y la ruta se dibuja por la retícula con un giro entre hito e hito; el avance y el mensajero siguen las calles.
 - **Verificado** a 1440 × 900 en doce puntos de cada ruta, sin errores de consola.
+
+## Llegó Farma · El Mensajero pasa al caso (6 nov 2026)
+
+- **Decisión:** Agustín eligió la ruta Mensajero para el paso del hero al resumen.
+- **En el caso** (`caso/llego.html`, `llego.css` 6 a 6.2, `llego.js` 3 y 4):
+  - **El resumen en tres bandas.** Arriba el enunciado, al medio la ruta a todo el ancho con los seis hitos y sus nombres, y abajo el estado con su registro, el encargo y los capítulos. La tarjeta de seguimiento sale.
+  - **El paso, solo en escritorio y con movimiento.** La pista del hero pasa de 280 a 400. La ventana se cierra en el nodo central del isotipo, el punto viaja al primer hito y el brazo se estira encendiendo los hitos. Al final el texto se despliega desde la línea. La cinta usa una escala, así que el aterrizaje no cambia de ritmo.
+  - **Sin bucle propio.** El paso se calcula desde el avance del hero que ya entrega el motor; la ruta se mide una vez (y al cambiar el tamaño). La ventana no sale del hero.
+  - **Avance continuo en todas las vistas.** La línea se llena con el scroll hasta el hito actual y sigue hacia el próximo, con el mensajero en la punta. El hito actual late como la onda del isotipo (quieto con movimiento reducido).
+  - **Barra.** Con el hero ya papel, la barra toma la tinta de los módulos claros.
+  - **Celular y movimiento reducido.** El resumen queda quieto, con la ruta completa: solo la fecha del hito actual y sin el encargo.
+- **Verificado** a 1440 × 900 en quince puntos, de ida y de vuelta, y a 390 × 844 en cuatro, sin errores de consola. Falta probarlo en el iPhone.
