@@ -2065,3 +2065,18 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Recomendación:** el diagnóstico como mapa del caso. A la izquierda, la madre con sus piezas reales. A la derecha, cuatro espacios punteados que apuntan a la decisión que los llena (isotipo 05, color 03, trazo 04, sistema 02). El hallazgo va como quinto espacio, grande y vacío.
 - **Orden propuesto:** portada, pieza mapa, texto e interacción, salida.
 - **Por confirmar:** mostrar la paleta madre y nombrar Aeonik; el logotipo Llegó tomado del lockup de Farma; el origen de la frase "libertad total, pero también responsabilidad total".
+
+## Llegó Farma · Tres portadas para el capítulo 01 (exploración, 6 nov 2026)
+
+- **Pedido:** tres portadas mejores que la actual. Agustín confirma que se pueden mostrar la paleta madre y Aeonik, que el logotipo Llegó se toma del lockup de Farma y que la frase "libertad total, pero también responsabilidad total" es suya.
+- **Base común, en `explorations/caso/portada-cap01/`:**
+  - El paso es el del caso (Nodo). La página parte en el resumen, por eso el JS prende `.lf-paso` sin hero.
+  - La retícula va en los medianiles de la grilla de 12: el título queda a medio medianil de su línea (P3).
+  - El 01 entra justo en el último tramo de la retícula.
+  - En el riel, el rótulo con fechas y el dato "9 días, del brief al pitch" (P1 y P4).
+  - Lo que entra en la pausa antes de la decisión llena los 500 px que quedaban vacíos (P2).
+- **Tres portadas**, con selector (teclas 1 a 3, R para volver al resumen):
+  1. **Índice.** Las tres decisiones del capítulo como enlaces, a la derecha del título.
+  2. **Nueve días.** La línea de la retícula se vuelve el eje del 19 al 28 de agosto: brief, diagnóstico (con enlace a la decisión 01), las dos jornadas con tres densidades de nodos y el pitch (con enlace a las decisiones 02 y 03). El avance corre por los días como el mensajero del resumen.
+  3. **Las láminas.** Nueve de las once láminas reales del pitch en una cinta que avanza con el scroll. Quedan fuera la 2, que menciona los años de Llegó, y la 9, con los descartes que se parecen a la propuesta anterior. Las láminas están en `caso/media/lf-pitch-*.jpg`, que está en `.gitignore`.
+- **Verificado** a 1440 × 900 en los mismos puntos de las tres, sin errores de consola. Esperan que Agustín elija una.
