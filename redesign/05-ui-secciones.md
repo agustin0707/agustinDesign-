@@ -1921,3 +1921,17 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Verificado** a 1440 × 900, sin errores. Ajuste en la misma ronda: la ventana primero se achica y después viaja, para no tapar el resumen que entra.
 - **Artifact** para revisar con el sitio en vivo adentro (sin el endpoint del formulario ni las notas internas de la copia).
 
+
+## Llegó Farma · Paso del hero al resumen, auditoría (6 nov 2026)
+
+- **Pedido:** auditar a fondo el paso (interacción, gráfica, animación) y mejorarlo.
+- **Hallazgos y cambios:**
+  - **Doble del sitio al despegar.** Bajo la ventana quedaba la carta de Inicio del hero; al achicarse la ventana se veía un segundo sitio corrido detrás. Ahora la carta se vacía al ritmo del despegue y queda solo su borde: el lugar de donde salió.
+  - **Arranque lento.** La ventana tardaba en responder al scroll (curva con entrada suave). Ahora despega apenas entra la hoja, con salida suave.
+  - **Persecución con temblor.** La ventana perseguía al hueco mientras la hoja seguía subiendo, y una pieza movida por JS contra otra movida por el scroll puede atrasarse un cuadro. Ahora vuela a donde va a quedar el hueco y espera ahí; es el hueco el que sube a recibirla.
+  - **Vuelo plano.** Sin sombra no se leía que la ventana iba encima de la hoja. Ahora gana sombra al despegar y la pierde en el último tramo, cuando el hueco llega a ella. El borde se mantiene en 1 px de pantalla aunque la ventana se achique.
+  - **Aterrizaje sin acuse.** El hueco punteado ahora tiene las cuatro marcas de corte del logo de Agustín Design: esperan abiertas, se cierran sobre la ventana al posarse (200 ms) y toman el acento al entregarse. El punteado se apaga al calzar.
+  - **Rótulo del destino.** "Destino" a "Entregado · 20 oct" cambiaba seco; ahora entra con un relevo corto desde abajo (200 ms).
+  - **Fechas de la línea.** La primera y la última se salían de la tarjeta; ahora se alinean a sus bordes.
+  - **Rendimiento.** El cuadro corría siempre; ahora solo con el hero o el resumen en pantalla.
+- **Verificado** a 1440 × 900 en 12 puntos del paso, de ida y de vuelta, sin errores de consola.
