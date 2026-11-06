@@ -1989,3 +1989,27 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - **Barra.** Con el hero ya papel, la barra toma la tinta de los módulos claros.
   - **Celular y movimiento reducido.** El resumen queda quieto, con la ruta completa: solo la fecha del hito actual y sin el encargo.
 - **Verificado** a 1440 × 900 en quince puntos, de ida y de vuelta, y a 390 × 844 en cuatro, sin errores de consola. Falta probarlo en el iPhone.
+
+## Llegó Farma · Auditoría y mejoras del resumen (6 nov 2026)
+
+- **Pedido:** un movimiento más fluido, algo de interacción, una gráfica más atractiva y que los elementos dejen de temblar.
+- **Auditoría:**
+  - **Temblor.** Mientras el resumen subía, su panel se contra-desplazaba con una variable escrita por JS en cada cuadro. El scroll nativo mueve la sección en el compositor y el JS llega un cuadro tarde, así que texto, ruta e hitos vibraban.
+  - **Saltos con la rueda.** Todo seguía al scroll crudo: con rueda de mouse el paso y el mensajero avanzaban a escalones.
+  - **Línea que se rediagramaba.** El avance y el mensajero animaban `width` y `left`, con recálculo de la página en cada cuadro y bordes que titilan entre píxeles.
+  - **Ruta sin datos.** Los hitos iban equiespaciados, aunque entre el diagnóstico y el pitch hubo 3 días y entre el manual y el sitio, 21.
+  - **Gráfica plana.** La línea era igual en lo hecho y en lo que faltaba, y la banda de arriba tenía un vacío a la derecha.
+  - **Sin interacción.** Los hitos no se podían tocar.
+  - **Estado seco.** El nombre y el registro cambiaban sin transición.
+- **Cambios** (`llego.html`, `llego.css` 6 a 6.2, `llego.js` 3 y 4):
+  - **Panel fijo mientras sube** (`.lf-sube`). El scroll no lo mueve y el temblor desaparece; al terminar de subir vuelve a ser sticky en el mismo lugar.
+  - **Resorte de unos 90 ms** en el paso y en el mensajero. La rueda ya no avanza a saltos. La posición del panel y el fondo siguen al scroll real, así nunca se descalzan.
+  - **Avance con `scale` y mensajero con `translate`.** Corren en el compositor.
+  - **Ruta en escala de tiempo real.** Del 25 de agosto al 20 de octubre, con las ocho semanas marcadas (el "en línea en 8 semanas" de la ficha). El mensajero lleva la semana y la fecha mientras viaja.
+  - **Plan contra recorrido.** Lo que falta va en punteado y lo recorrido en línea llena. El brazo del paso sale punteado y calza con la ruta.
+  - **Número del hito.** Va grande y tenue a la derecha del enunciado (01 a 06). El número y el estado cambian con un relevo de 240 ms que entra desde el lado del scroll.
+  - **Hitos como botones.** Al pasar el mouse (o con el foco del teclado) el nodo crece y aparece su línea del registro; con clic, el scroll va a ese hito.
+  - **Rótulos de Diagnóstico y Pitch.** Se abren uno a cada lado de su nodo, porque los separan tres días.
+  - **Estado.** Ahora comparte la línea superior del encargo y los capítulos.
+  - **En celular:** la ruta en el tiempo, sin el número, la fecha del mensajero ni las notas.
+- **Verificado** a 1440 × 900 en el paso y el resumen, de ida y de vuelta, más el hover y el clic en un hito (lleva al hito 05). A 390 × 844 también. Sin errores de consola. Falta probar el temblor en el iPhone y en Safari real.
