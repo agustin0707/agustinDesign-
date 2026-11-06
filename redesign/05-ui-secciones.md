@@ -2030,3 +2030,15 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   2. **Índice.** La tarjeta "01 El pitch" del resumen se llena y crece hasta ser la portada.
   3. **Retícula.** La portada sube en las cuatro columnas de la retícula de Llegó, desfasadas.
 - **Verificado** a 1440 × 900 en doce puntos de cada dirección, sin errores de consola. La salida de la portada a la decisión 01 sigue siendo el corte de antes.
+
+## Llegó Farma · Nodo pasa al caso (6 nov 2026)
+
+- **Elegido:** Nodo. La portada del capítulo 01 sale del hito del pitch (28 ago) y crece desde su centro hasta cubrir la pantalla; después se traza el 01, crece la retícula y entra el título.
+- **En el caso** (`caso/llego.html`, `llego.css` 6.3 y 7, `llego.js` escena `capitulo`):
+  - El capítulo 01 pasa a ser una escena con su portada en un panel fijo. Sin el paso (vista móvil o movimiento reducido) su pista mide una pantalla y se ve igual que antes, con el 01 entero.
+  - Con el paso, la escena alarga la pista del resumen (260 a 360, con `data-tramo` para la ruta) y la del capítulo (100 a 400). La sección es transparente y no toma el mouse hasta abrir, así los hitos y el índice del resumen siguen respondiendo.
+  - Lo que se ve sigue al scroll con el mismo resorte de 90 ms del resumen.
+  - La barra cambia de tinta cuando el círculo tapa su franja y vuelve cuando la hoja de la decisión llega arriba.
+  - El enlace "01 El pitch" del índice lleva a la portada ya abierta (`data-ancla="0.5"`).
+- **La salida, resuelta:** la decisión 01 sube sobre la última pantalla de la portada como una hoja (el mismo gesto con que el resumen sube sobre el hero), y la portada se oscurece y se corre un poco hacia arriba debajo. Ya no hay corte seco.
+- **Verificado** a 1440 × 900 en doce puntos del paso, sin errores de consola; barra, clics de los hitos y enlace al capítulo revisados. En la vista móvil la portada queda como antes. Falta probarlo en el iPhone y en Safari.
