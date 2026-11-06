@@ -1935,3 +1935,23 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - **Fechas de la línea.** La primera y la última se salían de la tarjeta; ahora se alinean a sus bordes.
   - **Rendimiento.** El cuadro corría siempre; ahora solo con el hero o el resumen en pantalla.
 - **Verificado** a 1440 × 900 en 12 puntos del paso, de ida y de vuelta, sin errores de consola.
+
+## Llegó Farma · Seis propuestas para el paso al resumen (exploración, 6 nov 2026)
+
+- **Pedido:** a Agustín no le gusta el paso desde el zoom de la cinta al sitio en vivo hasta el resumen. Auditar y proponer seis caminos. Cuidar que el scroll sobre el hero no se lo quede el one page.
+- **Auditoría del paso actual (vuelo a la tarjeta):**
+  - **Zoom de ida y vuelta.** La carta crece hasta llenar la pantalla y de inmediato se achica a miniatura: el resultado, que es lo mejor del caso, se degrada justo después de aparecer.
+  - **Demasiados efectos a la vez.** El hero se hunde, se oscurece y deja ver bordes negros mientras la ventana vuela con sombra: va contra "ningún efecto sin razón".
+  - **La tarjeta se llena.** Miniatura, estado, línea, registro y capítulos compiten en una columna de 4.
+  - **El sitio parece una foto.** Es el sitio real, pero no se usa como tal: no se recorre ni responde.
+  - **Scroll capturado.** El one page declara `overscroll-behavior-y: none`. Si su iframe llega a recibir la rueda (Safari puede hacerlo aunque tenga `pointer-events: none`), el scroll se queda en el sitio y no pasa al caso.
+- **Arreglo del scroll, ya en el caso** (`llego.css` 5.7 y `llego.html`): una capa transparente tapa el iframe y recibe la rueda y el toque, y el iframe queda `inert`. Mismo arreglo en las exploraciones del paso.
+- **Las seis propuestas, en `explorations/caso/paso-propuestas/`,** con un selector abajo (teclas 1 a 6, R para verla de nuevo desde el zoom):
+  1. **Telón.** El sitio se queda quieto y la hoja del resumen lo cubre. Sin vuelo ni miniatura.
+  2. **Recorrido.** El scroll del caso recorre el one page entero (ocho secciones, con contador y riel propio) y al final sube el resumen.
+  3. **Lámina.** La ventana se retira a las columnas 6 a 12 y el resumen se arma a su lado: el sitio queda grande, como la pieza de una lámina, con el seguimiento bajo él.
+  4. **Responsivo.** El sitio real se angosta de escritorio a tablet (834) y a celular (390), rearmándose con sus propios cortes, y el celular queda junto al resumen.
+  5. **Ruta.** La ventana se cierra en una línea turquesa que viaja y se vuelve la ruta del proyecto a todo el ancho, con los seis hitos y sus nombres.
+  6. **Cotas.** Antes de irse, una lupa (la caja de evidencia del marco, con las marcas de corte) recorre cuatro elementos reales del sitio medidos en su DOM: isotipo, tipografía, retícula y nodo. Después, telón.
+- **Técnica:** una sola página con las seis; cada propuesta alarga la pista del hero lo que necesita y el aterrizaje queda siempre en el mismo punto (la copia de `llego.js` calcula la escala con el alto real de la pista). La variable `--w` choca con la registrada para los resortes del logo, así que la lupa usa `--lw` y `--lh`.
+- **Verificado** a 1440 × 900 en nueve puntos de cada propuesta, más el cambio de propuesta sin recargar, sin errores de consola.
