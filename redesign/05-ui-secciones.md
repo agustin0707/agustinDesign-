@@ -1912,3 +1912,12 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Token nuevo:** `--lf-morado`, solo donde la pieza habla de la marca madre. Pasa a los tokens de `llego.css` si se aprueba.
 - **Verificado** a 1440 × 900 en cuatro puntos de cada pista, sin errores. Ajuste en la misma ronda: filas más grandes y la decisión que resuelve cada cosa libre bajo su texto, para que no se partieran en dos líneas.
 
+## Llegó Farma · Paso del hero al resumen (exploración, 5 nov 2026)
+
+- **Pedido:** mejorar el paso desde la ventana con llegofarma.cl en vivo (final del hero) a la sección Resumen.
+- **Diagnóstico del paso actual:** la ventana en vivo, que es el resultado, se va hacia arriba con el hero sin más; el turquesa del hero corta seco contra el papel del resumen; el resumen se arma mientras entra; y el relato salta del sitio terminado al diagnóstico del 25 ago sin ninguna señal.
+- **Propuesta en `explorations/caso/paso-resumen/`:** el hero se queda fijo y el resumen sube encima como una hoja; el hero se hunde debajo (se achica 5 % y se oscurece). La ventana en vivo se achica sobre su centro, viaja y aterriza en un hueco punteado de la tarjeta de seguimiento, rotulado "Destino · llegofarma.cl", como el comprobante de un envío. El seguimiento corre del diagnóstico en adelante y, al llegar al hito 06, el destino pasa a "Entregado · 20 oct".
+- **Técnica:** la ventana sale del hero y queda fija sobre la página (bajo la barra); el resumen empieza una pantalla antes de que termine el hero (`margin-top: -100lvh`). Cuando el resumen se suelta, una copia del sitio en el hueco toma el lugar de la ventana. La pista del hero pasa de 280 a 380 sin cambiar el ritmo del aterrizaje (copia de `llego.js` con el avance escalado).
+- **Verificado** a 1440 × 900, sin errores. Ajuste en la misma ronda: la ventana primero se achica y después viaja, para no tapar el resumen que entra.
+- **Artifact** para revisar con el sitio en vivo adentro (sin el endpoint del formulario ni las notas internas de la copia).
+
