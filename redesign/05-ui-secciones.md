@@ -1955,3 +1955,25 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   6. **Cotas.** Antes de irse, una lupa (la caja de evidencia del marco, con las marcas de corte) recorre cuatro elementos reales del sitio medidos en su DOM: isotipo, tipografía, retícula y nodo. Después, telón.
 - **Técnica:** una sola página con las seis; cada propuesta alarga la pista del hero lo que necesita y el aterrizaje queda siempre en el mismo punto (la copia de `llego.js` calcula la escala con el alto real de la pista). La variable `--w` choca con la registrada para los resortes del logo, así que la lupa usa `--lw` y `--lh`.
 - **Verificado** a 1440 × 900 en nueve puntos de cada propuesta, más el cambio de propuesta sin recargar, sin errores de consola.
+
+## Llegó Farma · Seis rutas a partir de la propuesta Ruta (exploración, 6 nov 2026)
+
+- **Pedido:** seis opciones mejores que la Ruta (5), con el mismo concepto: la ventana en vivo se vuelve la línea del proyecto.
+- **Auditoría de la Ruta:**
+  - **El sitio muere seco.** El recorte a una franja turquesa apaga el sitio de golpe, sin relación con lo que se ve.
+  - **La línea viaja demasiado.** Baja en vertical media pantalla y cruza el texto del resumen.
+  - **Todo a la vez.** Papel, texto y línea aparecen juntos; no se lee qué pasa primero.
+  - **Los hitos saltan.** Los nodos aparecen al final y el avance es por escalones.
+  - **No habla Llegó.** No usa el lenguaje de nodos ni el isotipo, y el sitio, que es el destino (hito 06, En línea), se pierde.
+- **Base común de las seis:**
+  - La ruta queda a media pantalla, cerca del centro de la ventana, así la línea casi no viaja.
+  - Primero el hero se vuelve papel, después la línea se calza y al final el enunciado y el estado se despliegan desde ella.
+  - Los hitos van al centro de seis tramos iguales, y el avance es continuo: la línea se llena con el scroll hasta el hito actual y sigue hacia el próximo, con el mensajero en la punta.
+- **Las seis rutas, en `explorations/caso/paso-rutas/`,** con selector abajo (teclas 1 a 6, R para verla de nuevo desde el zoom):
+  1. **Horizonte.** La ventana se acuesta sobre su eje, como la cinta sobre el horizonte, hasta quedar de canto: lo que queda es la línea.
+  2. **Escaneo.** Una línea lee el sitio de arriba abajo, como el escaneo de un bulto, con el porcentaje leído; lo leído sube a ser la ruta.
+  3. **Tramos.** El sitio se cierra en seis columnas, una por hito; cada una deja su tramo y su nodo, y la línea llega con los hitos puestos.
+  4. **Mensajero.** El sitio se cierra en el nodo central del isotipo, el punto va al primer hito y el brazo se estira encendiendo los demás. El hito actual late como la onda del isotipo.
+  5. **Destino.** El sitio vuela al final de la ruta y queda sobre el hito 06 con un tallo de 1 px; la línea se traza hacia atrás, hasta el diagnóstico. El rótulo pasa de "Destino" a "Entregado · 20 oct".
+  6. **Reparto.** El sitio se cierra en un punto de partida y la ruta se dibuja por la retícula con un giro entre hito e hito; el avance y el mensajero siguen las calles.
+- **Verificado** a 1440 × 900 en doce puntos de cada ruta, sin errores de consola.
