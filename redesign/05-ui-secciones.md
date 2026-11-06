@@ -2042,3 +2042,26 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - El enlace "01 El pitch" del índice lleva a la portada ya abierta (`data-ancla="0.5"`).
 - **La salida, resuelta:** la decisión 01 sube sobre la última pantalla de la portada como una hoja (el mismo gesto con que el resumen sube sobre el hero), y la portada se oscurece y se corre un poco hacia arriba debajo. Ya no hay corte seco.
 - **Verificado** a 1440 × 900 en doce puntos del paso, sin errores de consola; barra, clics de los hitos y enlace al capítulo revisados. En la vista móvil la portada queda como antes. Falta probarlo en el iPhone y en Safari.
+
+## Llegó Farma · Auditoría de la portada y la decisión 01 (6 nov 2026)
+
+- **Pedido:** ir con todo a la sección 01, parte por parte, partiendo por una auditoría de la portada y la decisión 01.
+- **Portada:**
+  - **P1, alto.** No muestra nada del pitch. Propuesta: el índice de sus tres decisiones (enlaces) y un dato en lenguaje de cliente, "del brief al pitch, 9 días".
+  - **P2, alto.** Hay unos 500 px de pausa sin cambios. Propuesta: que entre ahí el índice.
+  - **P3, medio.** La retícula (cuartos) no calza con la grilla de 12: el título queda a 6 px de la línea y una línea cruza el 0. Se comparte con otras portadas.
+  - **P4, detalle.** El rótulo queda perdido en la esquina.
+- **Decisión 01:**
+  - **D1, alto.** La pieza es solo texto, sin ninguna marca.
+  - **D2, alto.** El hallazgo tiene forma de alerta de interfaz.
+  - **D3, alto.** Los pasos apagan la pieza: al 12 % y al 50 %, con un contraste cercano a 2:1 al final.
+  - **D4, medio.** El párrafo cuenta dos separaciones y la pieza muestra una.
+  - **D5, medio.** Tres "01" en pantalla. Es un componente compartido.
+  - **D6, medio.** La composición flota y los bloques no parten en la misma línea.
+  - **D7, medio.** 1.800 px de scroll para tres cambios de opacidad.
+  - **D8, medio.** Sin interacción.
+  - **D9, detalle.** Comillas rectas y `role="img"`.
+  - **D10, después.** La salida a la decisión 02 es un corte seco.
+- **Recomendación:** el diagnóstico como mapa del caso. A la izquierda, la madre con sus piezas reales. A la derecha, cuatro espacios punteados que apuntan a la decisión que los llena (isotipo 05, color 03, trazo 04, sistema 02). El hallazgo va como quinto espacio, grande y vacío.
+- **Orden propuesto:** portada, pieza mapa, texto e interacción, salida.
+- **Por confirmar:** mostrar la paleta madre y nombrar Aeonik; el logotipo Llegó tomado del lockup de Farma; el origen de la frase "libertad total, pero también responsabilidad total".
