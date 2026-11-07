@@ -2144,3 +2144,16 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - paso 3, las verticales con el punteado del mapa y la receta (isotipo desde el nodo más el color de su industria).
 - **Orden propuesto:** la pieza (S2 a S5 y S7), composición y accesibilidad (S6 y S9), la entrada (S1) y la salida a la 03.
 - **Por confirmar:** si los campos de puntos de la lámina 5 son la decoración de Llegó o se dibujaron para el pitch, y las palabras de las dos lecturas.
+
+## Llegó Farma · La decisión 02 como el taller del nodo (7 nov 2026)
+
+- **Exploración** en `explorations/caso/decision-02/`, con selector entre el taller y la pieza actual (teclas 1, 2 y R). Parte en el mapa de la 01 y sigue a la 03.
+- **Cuatro pasos sobre una sola trama** (antes eran tres):
+  1. la madre en morado con sus campos de puntos en los bordes y el logotipo; el pie cita la lámina 05 ("el patrón de puntos ya era parte de Llegó, como decoración");
+  2. la madre se retira, los campos se ordenan en una trama desde el nodo hacia afuera y la lente se acerca: dos puntos crecen y la cápsula real los une, con las dos lecturas de la lámina 06 a los lados;
+  3. la misma regla suma tres nodos y un conector, pasa al turquesa claro y entra el isotipo real encima de su construcción, dentro de la caja punteada del isotipo;
+  4. la lente se suelta: Farma en uso en su tercio y minería y food como la misma caja vacía, con la trama encendida solo adentro y su receta. Abajo, en reserva, la tilde por industria (sale del "Más contexto" del texto).
+- **Geometría medida:** el paso de la trama parte cada tercio de la mesa en pasos enteros, así las tres marcas caen sobre la trama; los nodos miden un tercio del paso, la proporción del isotipo y de la cápsula. Los puntos guardan su tamaño en pantalla con la lente cerca.
+- **Resuelve** S2 a S7 y S9: la composición es la de la 01 (texto y pieza desde la misma línea) y la pieza deja de ser `role="img"`, con texto real.
+- **Confirmado en la lámina 05:** los puntos son la decoración que Llegó ya usaba. Las palabras de las lecturas salen tal cual de la lámina 06.
+- **Pendiente:** la entrada desde el mapa (S1) y la salida a la 03.
