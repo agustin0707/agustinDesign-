@@ -2099,3 +2099,22 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - A 1440 × 900 en seis puntos del paso, sin errores de consola.
   - Los tres enlaces dejan su decisión arriba.
   - En móvil (375 × 812) la portada queda completa.
+
+## Llegó Farma · La decisión 01 como mapa del caso (7 nov 2026)
+
+- **Exploración** en `explorations/caso/decision-01/`: la página parte en el resumen y la decisión sube como hoja sobre la portada, igual que en el caso. Selector con la pieza actual para comparar (teclas 1 y 2, R para verla subir de nuevo).
+- **La pieza deja de ser texto** (D1). A la izquierda, lo intocable de Llegó sobre una lámina blanca:
+  - el logotipo Llegó, sacado del lockup de Llegó Farma y puesto en el morado de la madre, con su área de protección trazada como plano (marco punteado y dos cotas x) y su ó señalada;
+  - la bajada "Entregando confianza" con comillas tipográficas (D9), la tipografía (Aeonik, solo el nombre) y la paleta madre con sus cuatro códigos.
+- **A la derecha, los cuatro espacios libres** con el punteado de lo planeado de la ruta. Cada uno es un enlace a la decisión que lo llena: isotipo a la 05, color a la 03, trazo a la 04 y sistema a la 02. Al pasar el mouse el punteado toma el acento y la flecha avanza.
+- **Abajo, el quinto espacio, el más grande: el hallazgo** (D2). Vacío hasta el paso 3, cuando "Reglas para submarcas" pasa a tipografía grande, con "Libertad total, pero también responsabilidad total" como criterio. El párrafo se acorta a "El manual de Llegó no las tenía. Había que inventarlas…", porque el título ya dice qué faltaba.
+- **Los pasos construyen, no apagan** (D3 y D7):
+  - paso 1, la madre entra pieza por pieza;
+  - paso 2, se dibujan los cuatro espacios y el quinto, todavía sin dueño;
+  - paso 3, se abre el hallazgo.
+  Lo que aún no llega se ve como contorno tenue y el último paso es la pieza completa.
+- **Composición** (parte de D6): texto y pieza parten en la misma línea y la pieza ocupa la altura útil. El tablero usa siete columnas de la grilla, cuatro para la madre y tres para lo libre, y el texto del hallazgo calza con la columna de los espacios.
+- **Accesible** (D9): listas reales en vez de `role="img"`; solo el logotipo lleva su etiqueta.
+- **Archivos de marca:** `media/lf-llego-logotipo.svg`, sacado del lockup. `media/` está en `.gitignore`.
+- **Verificado** a 1440 × 900 en los tres pasos y a 1280 × 760, sin errores de consola. En el celular (375 × 812) la pieza cabe sin la bajada y la tipografía. Espera el visto bueno de Agustín antes de pasar al caso.
+- **Sigue:** el texto del aside (D4), la interacción de las intocables y los segmentos (D8), el numeral repetido (D5, se consulta) y la salida a la decisión 02 (D10).
