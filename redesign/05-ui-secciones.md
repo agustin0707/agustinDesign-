@@ -2118,3 +2118,29 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Archivos de marca:** `media/lf-llego-logotipo.svg`, sacado del lockup. `media/` está en `.gitignore`.
 - **Verificado** a 1440 × 900 en los tres pasos y a 1280 × 760, sin errores de consola. En el celular (375 × 812) la pieza cabe sin la bajada y la tipografía. Espera el visto bueno de Agustín antes de pasar al caso.
 - **Sigue:** el texto del aside (D4), la interacción de las intocables y los segmentos (D8), el numeral repetido (D5, se consulta) y la salida a la decisión 02 (D10).
+
+## Llegó Farma · El mapa pasa al caso como pieza de la decisión 01 (7 nov 2026)
+
+- **Aprobado:** el mapa.
+- **En el caso** (`llego.html`, `llego.css` 8.1 y la vista móvil, `llego.js` sección 5):
+  - la pieza y el texto de la exploración, sin cambios;
+  - ids nuevos `dec-04` y `dec-05`, para que los cuatro espacios libres lleven a su decisión con scroll suave;
+  - salen los estilos de la pieza anterior (tabla de dos listas y recuadro del hallazgo).
+- **Verificado** en el caso a 1440 × 900, en el paso desde la portada y en los tres pasos, sin errores de consola.
+- **Quedan de la 01:** el texto del aside (D4), la interacción de las intocables y los segmentos (D8) y el numeral repetido (D5).
+
+## Llegó Farma · Auditoría de la decisión 02 (7 nov 2026)
+
+- **Nueve hallazgos**, tres de impacto alto:
+  - S1: la entrada desde la 01 es un corte seco y no recoge el espacio "Un sistema gráfico" del mapa;
+  - S2: el paso 1 no prueba que los puntos sean de Llegó;
+  - S3: el nodo dibujado es una red genérica de líneas rectas, no la cápsula de la marca.
+- **Medios:** las dos lecturas como nota al pie (S4), dos huecos en el paso 3 sin la regla para las verticales (S5), la composición centrada distinta a la 01 (S6) y 600 px de trama quieta (S7).
+- **Detalles:** el 02 repetido (S8, va con D5) y `role="img"` (S9).
+- **Recomendación: el taller del nodo.** Con las láminas 5, 6 y 10 del pitch como fuente:
+  - entrada desde el espacio del mapa;
+  - paso 1, la decoración de puntos de la madre en morado se ordena en la trama;
+  - paso 2, la cápsula real con sus dos lecturas y el isotipo de Farma armado sobre la trama, ya en turquesa;
+  - paso 3, las verticales con el punteado del mapa y la receta (isotipo desde el nodo más el color de su industria).
+- **Orden propuesto:** la pieza (S2 a S5 y S7), composición y accesibilidad (S6 y S9), la entrada (S1) y la salida a la 03.
+- **Por confirmar:** si los campos de puntos de la lámina 5 son la decoración de Llegó o se dibujaron para el pitch, y las palabras de las dos lecturas.
