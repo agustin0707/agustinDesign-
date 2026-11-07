@@ -2178,3 +2178,14 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - E, fundido: el mapa se retira, entra el fondo y después la 02, en tres tiempos que casi no se cruzan;
   - F, el filo: la 02 se descubre desde abajo, en su lugar, con una línea turquesa y su nombre en el borde.
 - **Recomendada: D.** Un solo objeto viaja y el resto queda quieto, y ese objeto es justo lo que une las dos decisiones: lo intocable de la madre abre el sistema de Farma.
+
+## Llegó Farma · El filo pasa al caso (7 nov 2026)
+
+- **Elegido el filo (F).** La 02 se descubre en su lugar desde abajo, al ritmo del scroll, con una línea turquesa y "Decisión 02 · Un sistema gráfico" en el borde.
+- **En el caso:**
+  - la 01 pasa a pista 380 con `data-pasos-hasta="0.643"`: sus tres pasos ocupan lo mismo que antes y la última pantalla, con el mapa quieto, es la ventana del paso;
+  - la 02 sube 100lvh sobre ella (llego.css 8.1.6);
+  - con `.lf-paso` (escritorio y con movimiento), llego.js sección 6 escribe `--lf-filo` y `.lf-filo-on`: el panel de la 02 queda fijo, recortado desde abajo, y al terminar vuelve a ser sticky en el mismo lugar;
+  - en celular y con movimiento reducido la 02 sube como hoja, sin pantalla muerta.
+- **Verificado** a 1440 × 900 (el hallazgo de la 01 completo antes de la ventana, el filo a media altura y la 02 sin salto al terminar) y a 390 × 844, sin errores de consola.
+- **Pendiente:** la salida a la 03 y probarlo en el iPhone.
