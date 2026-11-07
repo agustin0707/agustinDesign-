@@ -2157,3 +2157,11 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Resuelve** S2 a S7 y S9: la composición es la de la 01 (texto y pieza desde la misma línea) y la pieza deja de ser `role="img"`, con texto real.
 - **Confirmado en la lámina 05:** los puntos son la decoración que Llegó ya usaba. Las palabras de las lecturas salen tal cual de la lámina 06.
 - **Pendiente:** la entrada desde el mapa (S1) y la salida a la 03.
+
+## Llegó Farma · El taller del nodo pasa al caso (7 nov 2026)
+
+- **En `caso/llego.html`:** la decisión 02 es el taller, con la escena `taller` en llego.js (reemplaza a `sistema`) y la sección 8.2 de llego.css reescrita (8.2.1 a 8.2.8), más sus reglas móviles y de movimiento reducido. Salen la red de líneas, la leyenda y la capa de verticales con desenfoque.
+- **"Más contexto" sale del texto:** la tilde por industria ya está en la pieza, en el paso 4.
+- **Verificado** a 1440 × 900, 1280 × 760 y 390 × 844, desde el mapa hasta la 03, sin errores de consola.
+- **La exploración** queda como registro: su comparación con la pieza anterior ya no se dibuja, porque esa escena salió del caso.
+- **Pendiente:** la entrada desde el mapa (S1), la salida a la 03 y probarlo en el iPhone.
