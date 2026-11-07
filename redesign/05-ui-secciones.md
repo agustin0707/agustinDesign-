@@ -2165,3 +2165,16 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Verificado** a 1440 × 900, 1280 × 760 y 390 × 844, desde el mapa hasta la 03, sin errores de consola.
 - **La exploración** queda como registro: su comparación con la pieza anterior ya no se dibuja, porque esa escena salió del caso.
 - **Pendiente:** la entrada desde el mapa (S1), la salida a la 03 y probarlo en el iPhone.
+
+## Llegó Farma · Seis pasos de la 01 a la 02 (7 nov 2026)
+
+- **Exploración** en `explorations/caso/paso-02/`, con selector (teclas 1 a 6) y R para ver el paso solo.
+- **Mecánica común:** la 01 suma una pantalla a su pista (380) y termina sus pasos antes (`data-pasos-hasta`). Esa última pantalla, con el mapa quieto, es la ventana del paso, y la 02 sube 100lvh sobre ella. En la ventana el panel de la 02 queda fijo (menos en la hoja) y cada versión lo revela a su modo. Al terminar vuelve a ser sticky en el mismo lugar, sin salto.
+- **Las seis:**
+  - A, la hoja: la 02 sube sobre el mapa, que se apaga un poco, igual que de la portada a la 01;
+  - B, el espacio se abre: el espacio "Un sistema gráfico" se llena con la 02 y se abre hasta la pantalla;
+  - C, el punto: la flecha de ese espacio se vuelve un punto que crece;
+  - D, la madre pasa: la ficha del logotipo se invierte en la lámina morada con que abre la 02 y se abre a su tamaño; después entran el fondo y el texto;
+  - E, fundido: el mapa se retira, entra el fondo y después la 02, en tres tiempos que casi no se cruzan;
+  - F, el filo: la 02 se descubre desde abajo, en su lugar, con una línea turquesa y su nombre en el borde.
+- **Recomendada: D.** Un solo objeto viaja y el resto queda quieto, y ese objeto es justo lo que une las dos decisiones: lo intocable de la madre abre el sistema de Farma.
