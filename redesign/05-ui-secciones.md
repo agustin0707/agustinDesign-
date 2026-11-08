@@ -2270,3 +2270,14 @@ La gráfica del lockup se había dibujado de memoria y no calzaba con el manual 
 - **La 07 cambia construcción y mínimos por usos incorrectos (pág. 27) y dirección fotográfica (pág. 29),** y termina en una hoja de cierre: aprobado casi sin cambios el 23 sep, a un mes otros ya producían piezas, la cita de Pamela Vargas (cita por aprobar) y "1 oct · Pidieron la web", que lleva al capítulo 03.
 - **Verificado** a 1440 × 900, 1280 × 720 y 390 × 844, sin errores de consola.
 - **Pendiente:** probarlo en el iPhone. En celular, los lemas de los tres caminos quedan tapados por las fotos en columnas tan angostas (ya pasaba antes).
+
+## Llegó Farma · Fotos, manual y cierre del capítulo 02 (8 nov 2026)
+
+- **La tira de fotos de la 06 termina en la ultra panorámica** (la flota), que pasa al 07; el resto se corre un lugar.
+- **La portada del manual, con los colores reales.** La imagen salía de los PDF, que se exportan apagados; ahora sale del .ai, con el degradado de la portada final.
+- **Auditoría del movimiento del manual:** la página se movía hasta 0,8 páginas por golpe de rueda y 11 de 38 golpes no movían nada (el avance se concentraba al medio de cada paso). Ahora la curva reparte el movimiento (máximo 0,5 página por golpe, solo 2 golpes quietos en los extremos) y una inercia de 110 ms lo suaviza; un salto grande (el índice, un atajo) llega directo. Las páginas ya no cargan diferido, así ninguna aparece en blanco al pasar.
+- **Exploración del cierre y el paso al capítulo 03** (`explorations/caso/portada-03/`): la hoja de aprobación no convencía como forma. Tres versiones del cierre, cada una con su paso a la portada del 03:
+  - **A · El manual se cierra:** las páginas se juntan bajo la portada como un mazo, la retícula del manual mide la pila y el resultado entra debajo. Después la portada del manual viaja a la ventana del navegador de la portada del 03: el manual se vuelve la web.
+  - **B · La retícula:** el resultado se compone en la retícula de tres por tres de la portada del manual; sus líneas se mueven hasta ser el marco del navegador.
+  - **C · El nodo:** una página por día del 15 al 23 sep en un eje; el nodo del 1 oct (contorno) se llena, viaja y se vuelve el cursor que escribe el dominio.
+- **Verificado** a 1440 × 900, sin errores de consola. Falta elegir y llevar la elegida al caso; después, el iPhone.
