@@ -2337,3 +2337,12 @@ Exploración en `explorations/caso/sitio-vivo/`, un solo iframe con el sitio rea
 - **La entrega:** 14 Que nada dependa de mí, la feria y el Resultado.
 
 Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bueno y cinco confirmaciones antes de construir; la versión 3 del sitio en vivo es la base de las escenas.
+
+## Llegó Farma · Capítulo 03 rehecho, sección por sección: 1. La portada (8 nov 2026)
+
+- **Portada Índice integrada:** riel, "La web", la pregunta del capítulo y el índice de las siete decisiones, con el 03 trazado sin cruces internos.
+- **El paso:** el puente "1 oct · Pidieron la web →" se abre en círculo desde su flecha, como el hito del pitch en el 01; después se traza el 03, crece la retícula, entra el título y el índice. Reemplaza el vuelo del manual al navegador, que dejó de tener destino.
+- **Provisorio hasta rehacerlas:** dominio, sitio en vivo y teléfono siguen en su orden y numeración antiguos. Los enlaces 12 y 14 del índice no llevan a ninguna parte todavía.
+- **Verificado** a 1440 × 900 con el paso completo, sin errores de consola.
+
+**Para el cierre (LinkedIn público, 8 nov):** las impresiones solo las ve quien administra la página. Lo público son reacciones (entre 17 y 46 por publicación) sobre 10.160 seguidores: no sirve como cifra. Sí sirven dos hechos: la primera participación de Llegó en FarmaExpo 2026 y la publicación en Diario Financiero que lleva a llegofarma.cl.
