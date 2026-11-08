@@ -2346,3 +2346,11 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **Verificado** a 1440 × 900 con el paso completo, sin errores de consola.
 
 **Para el cierre (LinkedIn público, 8 nov):** las impresiones solo las ve quien administra la página. Lo público son reacciones (entre 17 y 46 por publicación) sobre 10.160 seguidores: no sirve como cifra. Sí sirven dos hechos: la primera participación de Llegó en FarmaExpo 2026 y la publicación en Diario Financiero que lleva a llegofarma.cl.
+
+## Llegó Farma · Capítulo 03 rehecho: 2. Decisión 08, Todo parte en un QR (8 nov 2026)
+
+- **Pasa a abrir el capítulo** y sube como hoja sobre la portada.
+- **La escena:** el QR del stand llena la pieza (es real y lleva al sitio), el teléfono sube y lo enfoca, la mira se cierra, aparece la dirección y el visor se abre sobre llegofarma.cl real, que baja con el scroll.
+- **La nota de la barra** sale cuando la barra del sitio está visible: la decide el propio sitio.
+- **En celular o con movimiento reducido** queda solo el teléfono con el sitio.
+- **Verificado** a 1440 × 900, sin errores de consola.
