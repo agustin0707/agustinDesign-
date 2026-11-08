@@ -2323,3 +2323,5 @@ Exploración en `explorations/caso/sitio-vivo/`, un solo iframe con el sitio rea
 **Seguridad:** el formulario de la copia local apunta a la cuenta real del cliente. La página bloquea el envío y los enlaces externos desde el iframe, en `window` y en captura; se montaba tarde si el iframe cargaba antes que el script, corregido y probado tres veces con `fetch` simulado. Al integrar al caso, este bloqueo va con la sección.
 
 **Verificado** a 1440 × 900, las cuatro paradas de las tres versiones, sin errores. Celular pendiente.
+
+**Corregido tras tu revisión:** con rueda real, la cámara cruzaba el sitio entero entre paradas y las entradas del sitio, que se disparan una sola vez, dejaban secciones a medio dibujar. Ahora las paradas se funden en 120 ms y salta directo, con las secciones ya armadas (al integrar, recordar que el sitio dentro del caso no reproduce sus entradas). La franja y el riel se ajustan a ventanas angostas o bajas; en la 1 el sitio nunca baja de 1280 lógicos.
