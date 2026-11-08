@@ -2189,3 +2189,15 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - en celular y con movimiento reducido la 02 sube como hoja, sin pantalla muerta.
 - **Verificado** a 1440 × 900 (el hallazgo de la 01 completo antes de la ventana, el filo a media altura y la 02 sin salto al terminar) y a 390 × 844, sin errores de consola.
 - **Pendiente:** la salida a la 03 y probarlo en el iPhone.
+
+## Llegó Farma · La salida de la 02 a la 03, con el filo (7 nov 2026)
+
+- **El filo pasa a ser el paso entre decisiones.** Mismo gesto que de la 01 a la 02: la 03 se descubre en su lugar desde abajo, con la línea turquesa y "Decisión 03 · Un turquesa con parentesco" en el borde. Una sola gramática para pasar de una decisión a otra dentro del capítulo.
+- **El nombre va siempre del lado del papel:** sobre la línea cuando entra una decisión oscura (la 02), bajo ella cuando entra una clara (la 03).
+- **La línea descubre los diez valores ya puestos.** Antes la 03 llegaba con la pieza vacía y las bandas caían después. Con el paso, la línea pasa primero por los códigos HEX y después por las bandas; sus pasos 2 y 3 (el degradado, el filete y los tres tonos) siguen igual. En celular las bandas siguen cayendo como antes.
+- **En el código:**
+  - la 02 pasa a pista 480 con `data-pasos-hasta="0.737"`, y la escena taller ahora respeta ese límite;
+  - el mecanismo se generaliza: toda decisión con `.lf-filo-sec` sube 100lvh sobre la anterior (llego.css 8.1.6) y llego.js sección 6 lleva `--lf-filo` y `.lf-filo-on` por sección;
+  - los enlaces del mapa a una decisión con filo llegan una pantalla más abajo, con la decisión ya arriba.
+- **Verificado** a 1440 × 900 (la familia completa antes de la ventana, el filo a media altura sobre las bandas, la 03 sin salto al terminar y el paso de la 01 a la 02 intacto) y a 390 × 844 (la 03 sube como hoja), sin errores de consola.
+- **Pendiente:** probarlo en el iPhone.
