@@ -2325,3 +2325,15 @@ Exploración en `explorations/caso/sitio-vivo/`, un solo iframe con el sitio rea
 **Verificado** a 1440 × 900, las cuatro paradas de las tres versiones, sin errores. Celular pendiente.
 
 **Corregido tras tu revisión:** con rueda real, la cámara cruzaba el sitio entero entre paradas y las entradas del sitio, que se disparan una sola vez, dejaban secciones a medio dibujar. Ahora las paradas se funden en 120 ms y salta directo, con las secciones ya armadas (al integrar, recordar que el sitio dentro del caso no reproduce sus entradas). La franja y el riel se ajustan a ventanas angostas o bajas; en la 1 el sitio nunca baja de 1280 lógicos.
+
+## Llegó Farma · Auditoría del relato del capítulo 03 y propuesta (8 nov 2026)
+
+**La auditoría:** no hay conflicto (la tensión está guardada en el Resultado); el orden es el del sitio, con la premisa de la feria al final; las decisiones describen funciones; la tesis "con mi propio manual" casi no se prueba; falta lo que compra un cliente (registro de contenido, entrega, arreglo posterior a la publicación); y el capítulo no tiene desenlace.
+
+**La propuesta, en tres tiempos y un cierre:**
+- **Una feria:** 08 Todo parte en un QR · 09 Un dominio propio · 10 Una página, una acción.
+- **Mi propio manual:** 11 La retícula del manual, con la excepción de los títulos · 12 56 cambios al texto, ninguno inventado.
+- **Que no quedara plana:** 13 La trazabilidad, en código, seguida de la cita a pantalla completa.
+- **La entrega:** 14 Que nada dependa de mí, la feria y el Resultado.
+
+Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bueno y cinco confirmaciones antes de construir; la versión 3 del sitio en vivo es la base de las escenas.
