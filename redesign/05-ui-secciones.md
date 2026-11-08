@@ -2291,3 +2291,21 @@ Agustín eligió A, con mejoras. Ya está en el caso y reemplaza la hoja de apro
 - **Fino:** la portada sale desde donde está en cada cuadro, así la inercia del manual nunca produce un salto. La del manual se esconde solo cuando el vuelo ya partió.
 - **Sin el paso** (celular o movimiento reducido), el cierre se arma igual y la portada del 03 sube como hoja. En celular el texto ocupa el ancho y los datos de las esquinas no salen.
 - **Verificado** a 1440 × 900 y 390 × 844, sin errores de consola. Pendiente: el iPhone.
+
+## Llegó Farma · Auditoría de la portada del 03 y de la sección 09 a 12 (8 nov 2026)
+
+**Portada del capítulo 03:**
+- Se salió del sistema: el 01 y el 02 tienen riel con dato, retícula, número trazado e índice; el 03 no tiene ninguno.
+- Mezcla portada y decisión 08 en la misma pantalla, y nada anuncia las otras cinco decisiones del capítulo.
+- Lo mejor de la escena (el dominio corregido) pasa a 13 px dentro de un navegador chico.
+- El navegador es un mockup con una foto y un logo, justo en el capítulo que prueba que el sitio es real.
+- El texto ("Diseñada y programada por mí") no plantea tensión, a diferencia de las otras portadas.
+
+**Sección 09 a 12 (el sitio en vivo):**
+- **Bug:** el foco mide 0 de ancho, porque `--w` está registrada como número en llego.css (`@property`) y el motor la usa con px. El velo cubre todo el sitio y por eso se ve gris.
+- El sitio va a un 46 %: los cortes de 8 px de la decisión 09 no se alcanzan a ver.
+- Dice "En vivo" pero no se puede tocar.
+- En la parada 10 el hero queda cortado, con la sección siguiente asomando.
+- Cada parada es una pantalla quieta: cuatro decisiones repartidas en 520 de pista, y el código, que es el diferencial principal, recibe menos pieza que cualquier decisión de marca.
+
+**Exploración:** cinco portadas en `explorations/caso/portada-web/`: Índice, La barra, Retícula viva, En variables y El QR (funciona, decodificado con el lector de macOS).
