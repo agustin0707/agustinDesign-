@@ -2240,3 +2240,14 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **En celular y con movimiento reducido** cada una sube como hoja.
 - **Verificado** a 1440 × 900 y 390 × 844, sin errores de consola.
 - **Pendiente:** el paso de la 07 a la portada del capítulo 03 y probarlo en el iPhone.
+
+## Llegó Farma · La pieza de la decisión 04, igual al manual (8 nov 2026)
+
+La gráfica del lockup se había dibujado de memoria y no calzaba con el manual aprobado. Ahora cada paso repite su página del brandbook, medida sobre el PDF:
+- **Composición principal (pág. 03):** el isotipo va centrado en la línea base de Llegó, como en el manual. El SVG oficial que usan llegofarma.cl y el resto del caso lo tiene 6 unidades más arriba; para la pieza hice una copia corregida (`media/lf-logo-vertical-manual.svg`) y no toqué el sitio ni el SVG oficial.
+- **Construcción (pág. 06):** el módulo X son dos tercios del ancho del isotipo. La caja parte en el borde del isotipo y se cierra en 8X, con el isotipo en su retícula de 3 × 3, la ó en la celda de arriba, Llegó reflejado en 7X, las líneas de x, línea base y descendente, y las cotas x.
+- **Área de protección (pág. 08):** una X por lado, medida desde el alto de Llegó y la base de farma, con la ó en la esquina y las cotas arriba a la izquierda y abajo a la derecha.
+- **Mínimos (pág. 09):** 16 px / 1,2 cm el isotipo, 120 px / 3 cm la principal y 140 px / 3,5 cm la horizontal. En celular los tres se apilan para que quepan.
+- **El pie cambia la página del brandbook** con cada paso (03, 06, 08 y 09).
+- **Verificado** a 1440 × 900 y 390 × 844 contra las páginas del manual, sin errores de consola.
+- **Pendiente:** decidir si se corrige la posición del isotipo en el SVG oficial (sitio y caso).
