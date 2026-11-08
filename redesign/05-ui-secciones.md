@@ -2371,3 +2371,9 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **El hilo con la 08:** cada dirección tiene su QR real en la barra y cambia con las letras.
 - **La ficha** (titular, registro y enlace en vivo) ocupa el lugar de las cifras de la 08, y la columna mide lo mismo: el texto no salta al cambiar de sección.
 - **Verificado** a 1440 × 900 con rueda real, sin errores de consola. Los dos QR leídos con un lector.
+
+## Llegó Farma · Evidencia del sitio: la sección marcada a opacidad completa (8 nov 2026)
+
+- **El problema:** la caja que marca cada sección del sitio medía 0 de ancho, porque la variable `--w` estaba registrada como número en el hero de Llegó y rechazaba los píxeles. Sin hueco, el velo oscurecía toda la web.
+- **El arreglo:** esa variable del hero pasa a llamarse `--lf-gw`. La caja vuelve a abrir el hueco: lo marcado queda a opacidad completa y el resto sigue con el mismo velo.
+- **Verificado** a 1440 × 900 en las cuatro paradas con rueda real y sin errores de consola. El hero responde igual al cursor.
