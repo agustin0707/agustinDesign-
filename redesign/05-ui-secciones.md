@@ -2387,3 +2387,13 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **Copy corregido contra el sitio:** el guion decía que "el cierre" lleva al formulario, pero el cierre es el formulario. Lo que lleva a él son el botón del hero, el de la cabecera y, en celular, la barra fija.
 - **La sección provisional del sitio marcado** queda solo con las decisiones 11 y 13, hasta construirlas. La 09 alarga su pista para terminar antes de que suba la 10.
 - **Verificado** a 1920, 1440 y 1280 de ancho, y con rueda real a 1440 × 900, sin errores de consola. Al volver atrás el formulario se vacía.
+
+## Llegó Farma · Capítulo 03 rehecho: 5. Puente y decisión 11, La retícula del manual (8 nov 2026)
+
+- **El puente va dentro de la escena:** "El manual lo escribí en septiembre. En octubre me tocó cumplirlo.", junto a la portada del manual, que trae impreso septiembre 2026.
+- **El mismo cruce en dos soportes:** la cámara entra a un cruce de líneas de la portada y, en ese punto exacto de la pantalla, aparece el cruce de la web.
+- **Medido, no supuesto:** en el PDF cada tramo se detiene a 7,6 px del cruce; en la web el token es de 8 px. La escena muestra los dos valores.
+- **Primero la estructura:** al alejarse solo hay líneas, se miden las cuatro columnas de 336 px y recién entonces llega el contenido. Las fotos se marcan por columnas y filas a opacidad completa.
+- **La única excepción:** la cámara termina en un título, con Medium y Light marcados en la misma línea.
+- **La sección provisional del sitio marcado** queda solo con la decisión 13. La 10 alarga su pista para terminar antes de que suba la 11.
+- **Verificado** a 1920, 1440 y 1280 de ancho, y con rueda real a 1440 × 900, sin errores de consola.
