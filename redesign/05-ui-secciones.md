@@ -2377,3 +2377,13 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **El problema:** la caja que marca cada sección del sitio medía 0 de ancho, porque la variable `--w` estaba registrada como número en el hero de Llegó y rechazaba los píxeles. Sin hueco, el velo oscurecía toda la web.
 - **El arreglo:** esa variable del hero pasa a llamarse `--lf-gw`. La caja vuelve a abrir el hueco: lo marcado queda a opacidad completa y el resto sigue con el mismo velo.
 - **Verificado** a 1440 × 900 en las cuatro paradas con rueda real y sin errores de consola. El hero responde igual al cursor.
+
+## Llegó Farma · Capítulo 03 rehecho: 4. Decisión 10, Una página, una acción (8 nov 2026)
+
+- **Sube como hoja sobre la 09 con la misma ventana y el mismo hero:** al pasar solo cambia la columna de texto.
+- **El sitio real dentro:** el velo abre huecos a opacidad completa sobre lo que actúa (botón del hero y de la cabecera) y lo que navega (los tres atajos).
+- **La página baja entera** con el botón de la cabecera siempre marcado: el llamado acompaña cada sección.
+- **El formulario se llena solo:** la cámara se acerca, el velo se cierra, se escriben los seis campos con un contacto de ejemplo y aparece la confirmación real del sitio. Desde el caso no sale ningún envío.
+- **Copy corregido contra el sitio:** el guion decía que "el cierre" lleva al formulario, pero el cierre es el formulario. Lo que lleva a él son el botón del hero, el de la cabecera y, en celular, la barra fija.
+- **La sección provisional del sitio marcado** queda solo con las decisiones 11 y 13, hasta construirlas. La 09 alarga su pista para terminar antes de que suba la 10.
+- **Verificado** a 1920, 1440 y 1280 de ancho, y con rueda real a 1440 × 900, sin errores de consola. Al volver atrás el formulario se vacía.
