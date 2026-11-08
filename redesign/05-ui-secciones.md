@@ -2362,3 +2362,12 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **Sube como hoja** sobre la 08, con el mismo filo.
 - **Limpieza:** salen los restos de la portada antigua y la imagen del manual que quedaba bajo el sitio. El morado de la madre pasa a ser token de la página.
 - **Verificado** a 1440 × 900 con rueda real, sin errores de consola.
+
+## Llegó Farma · Capítulo 03 rehecho: 3b. Decisión 09 tras la auditoría (8 nov 2026)
+
+- **Una misma página, dos direcciones.** Se ve siempre el hero real del sitio: ya no hay pantalla vacía.
+- **El choque, visible:** con llego.cl/farma, Farma queda encerrada en una cabecera morada, un esquema que no imita el sitio de la madre. Ese momento se lleva la mayor parte del recorrido.
+- **El cambio:** se tacha, se borra, se escribe llegofarma.cl, carga y el morado se retira hasta que Farma llena la ventana.
+- **El hilo con la 08:** cada dirección tiene su QR real en la barra y cambia con las letras.
+- **La ficha** (titular, registro y enlace en vivo) ocupa el lugar de las cifras de la 08, y la columna mide lo mismo: el texto no salta al cambiar de sección.
+- **Verificado** a 1440 × 900 con rueda real, sin errores de consola. Los dos QR leídos con un lector.
