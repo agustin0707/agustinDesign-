@@ -2201,3 +2201,15 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - los enlaces del mapa a una decisión con filo llegan una pantalla más abajo, con la decisión ya arriba.
 - **Verificado** a 1440 × 900 (la familia completa antes de la ventana, el filo a media altura sobre las bandas, la 03 sin salto al terminar y el paso de la 01 a la 02 intacto) y a 390 × 844 (la 03 sube como hoja), sin errores de consola.
 - **Pendiente:** probarlo en el iPhone.
+
+## Llegó Farma · Paso a la portada del capítulo 02, tres versiones (exploración, 7 nov 2026)
+
+- **En `explorations/caso/portada-02/`:** la 03, la portada del capítulo 02 y la 04. Teclas 1 a 3 y R para ver el paso de nuevo.
+- **La portada del 02 pasa a ser como la del 01 (Índice):** el riel con su dato, el título, el 02 trazado, la retícula en los medianiles y el índice de sus cuatro decisiones (04 a 07). El dato sale de la ruta del resumen: del pitch (28 ago) al manual aprobado (23 sep), 26 días. Hoy la portada del 02 es una sección quieta, sin dato ni índice.
+- **La mecánica:** la 03 suma una pantalla al final de su pista (420, con `data-pasos-hasta="0.6875"`) y la portada sube sobre ella. Después, como en el 01, se traza el 02, crece la retícula, entra el título y en la pausa el índice. Al final la 04 sube encima como hoja y la portada se hunde. En celular y con movimiento reducido la portada sube como hoja, entera.
+- **Las tres versiones:**
+  - A, la hoja: la portada sube sobre la paleta quieta, que se apaga un poco debajo.
+  - B, el oscuro se abre (recomendada): el tono Oscuro de la paleta (#104E56, el del texto) se abre hasta la pantalla y se vuelve el fondo del capítulo.
+  - C, el nodo: como la portada del 01, un punto se llena en el tono Oscuro y crece hasta cubrir la pantalla.
+- **En llego.js:** la escena valores respeta `data-pasos-hasta`, como el taller. En el caso no cambia nada, porque la 03 no lo usa.
+- **Verificado** a 1440 × 900 (las tres versiones, sin salto al volver a sticky) y a 390 × 844 (la hoja), sin errores de consola.
