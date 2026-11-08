@@ -2311,3 +2311,15 @@ Agustín eligió A, con mejoras. Ya está en el caso y reemplaza la hoja de apro
 **Exploración:** cinco portadas en `explorations/caso/portada-web/`: Índice, La barra, Retícula viva, En variables y El QR (funciona, decodificado con el lector de macOS).
 
 **Elegida: Índice (8 nov 2026).** El 3 trazado mostraba líneas por dentro, porque en Manrope el 3 son tres piezas superpuestas y el trazo las dibuja todas. Corregido con una máscara: el trazo va al doble y la cifra llena borra la mitad interior y los cruces. Queda un solo contorno de 1 px, igual que el 01 y el 02. Falta llevarla al caso cuando se definan la sección 09 a 12 y el paso, porque el vuelo del manual aterriza hoy en el navegador que esta portada saca, y la decisión 08 necesita su propia pantalla.
+
+## Llegó Farma · Tres propuestas para la sección 09 a 12 (8 nov 2026)
+
+Exploración en `explorations/caso/sitio-vivo/`, un solo iframe con el sitio real y tres formas de mostrarlo (teclas 1 a 3, R recorre):
+
+- **1 · A sangre:** el sitio a tamaño real ocupa la pantalla y la decisión baja a una franja. El foco es una caja de línea, sin velo, y "Recórrelo tú" le entrega el cursor al sitio.
+- **2 · Regla, código, resultado:** riel a la izquierda; arriba el sitio y abajo la regla con las líneas reales del código. En la 09 la cámara entra ×3,2 a un cruce de la retícula y acota los dos cortes de 8 px.
+- **3 · Una escena por decisión:** la 09 traza la retícula y mide las fotos en columnas, la 10 separa Actuar y Navegar, la 11 deja el seguimiento solo y avanza con el scroll, la 12 escribe el formulario y termina en el "Gracias".
+
+**Seguridad:** el formulario de la copia local apunta a la cuenta real del cliente. La página bloquea el envío y los enlaces externos desde el iframe, en `window` y en captura; se montaba tarde si el iframe cargaba antes que el script, corregido y probado tres veces con `fetch` simulado. Al integrar al caso, este bloqueo va con la sección.
+
+**Verificado** a 1440 × 900, las cuatro paradas de las tres versiones, sin errores. Celular pendiente.
