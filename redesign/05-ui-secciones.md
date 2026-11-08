@@ -2354,3 +2354,11 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **La nota de la barra** sale cuando la barra del sitio está visible: la decide el propio sitio.
 - **En celular o con movimiento reducido** queda solo el teléfono con el sitio.
 - **Verificado** a 1440 × 900, sin errores de consola.
+
+## Llegó Farma · Capítulo 03 rehecho: 3. Decisión 09, Un dominio propio (8 nov 2026)
+
+- **La dirección es la protagonista:** la barra va a escala de titular y la decisión ocupa el mismo riel que las demás.
+- **La escena:** se escribe llego.cl/farma y carga el morado de la madre con su logotipo; se tacha y se borra; se escribe llegofarma.cl y carga el sitio. El porqué se ve antes de leerlo.
+- **Sube como hoja** sobre la 08, con el mismo filo.
+- **Limpieza:** salen los restos de la portada antigua y la imagen del manual que quedaba bajo el sitio. El morado de la madre pasa a ser token de la página.
+- **Verificado** a 1440 × 900 con rueda real, sin errores de consola.
