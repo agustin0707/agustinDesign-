@@ -2251,3 +2251,22 @@ La gráfica del lockup se había dibujado de memoria y no calzaba con el manual 
 - **El pie cambia la página del brandbook** con cada paso (03, 06, 08 y 09).
 - **Verificado** a 1440 × 900 y 390 × 844 contra las páginas del manual, sin errores de consola.
 - **Pendiente:** probarlo en el iPhone. El isotipo del sitio en vivo sigue 6 unidades más arriba que el manual.
+
+## Llegó Farma · El relato del capítulo 02, auditado y rehecho (8 nov 2026)
+
+**La auditoría (del área de protección al fin del capítulo):**
+- **El orden contaba el final antes que la decisión.** La 04 mostraba el logo terminado con Nodos y la 05 recién contaba cómo se eligió Nodos. Las especificaciones del logo, además, son del manual (15 al 23 sep), posteriores a la elección (9 sep).
+- **Faltaba el conflicto.** Ganado el pitch, la gerencia pidió una sola cosa: un isotipo que se leyera como salud sin explicarlo. El caso lo decía de pasada; la pieza partía directo en las formas.
+- **La pieza contradecía el texto.** "Declaré cuatro criterios antes de dibujar", pero los criterios aparecían en el tercer paso, después de las fotos.
+- **El manual repetía la 04.** Construcción y mínimos salían dos veces seguidas; la regla de "usos incorrectos" y la dirección fotográfica, que son el porqué de la 07 y la 06, no salían.
+- **La 06 mostraba fotos sin mostrar la regla,** y su porqué decía "nada de camiones pesados" sobre una tira que trae un camión.
+- **El capítulo no tenía desenlace.** Terminaba en la página del uniforme: ni la aprobación del 23 sep ni lo que vino después.
+
+**Lo que cambió:**
+- **La 04 ahora es Tres caminos y la 05 La madre no se toca.** El capítulo va del pedido a la respuesta: encargo, caminos, elección, logo especificado, fotos y manual. El mapa de la 01 y el índice de la portada apuntan a la nueva numeración.
+- **La 04 parte por el encargo** (paso nuevo): el pedido de la gerencia en grande y los cuatro criterios numerados, antes de cualquier forma. Después los tres caminos, sus aplicaciones, la comparación en adjetivos y Nodos elegido el 9 sep. Cinco pasos; el texto suma que la paleta, farma y el key visual se aprobaron tal cual y que del feedback a los caminos pasaron seis días.
+- **La 05 entra con el filo sobre Nodos elegido:** la línea descubre el logo ya compuesto. Su texto parte en "Con Nodos elegido"; el más contexto suma el isotipo escalado 1,5 veces y el módulo X. Las notas de la pieza dicen que la protección es la misma X y que los mínimos se exportaron y miraron al 100 %.
+- **La 06 muestra la regla antes que las fotos:** encuadre, sujeto, gesto, planos y luz, de la pág. 29 del brandbook. El porqué cuenta la corrección del packing por el courier y deja de hablar de camiones; el pie de la foto dice que se eligió entre cuatro direcciones.
+- **La 07 cambia construcción y mínimos por usos incorrectos (pág. 27) y dirección fotográfica (pág. 29),** y termina en una hoja de cierre: aprobado casi sin cambios el 23 sep, a un mes otros ya producían piezas, la cita de Pamela Vargas (cita por aprobar) y "1 oct · Pidieron la web", que lleva al capítulo 03.
+- **Verificado** a 1440 × 900, 1280 × 720 y 390 × 844, sin errores de consola.
+- **Pendiente:** probarlo en el iPhone. En celular, los lemas de los tres caminos quedan tapados por las fotos en columnas tan angostas (ya pasaba antes).
