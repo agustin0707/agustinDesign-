@@ -2281,3 +2281,13 @@ La gráfica del lockup se había dibujado de memoria y no calzaba con el manual 
   - **B · La retícula:** el resultado se compone en la retícula de tres por tres de la portada del manual; sus líneas se mueven hasta ser el marco del navegador.
   - **C · El nodo:** una página por día del 15 al 23 sep en un eje; el nodo del 1 oct (contorno) se llena, viaja y se vuelve el cursor que escribe el dominio.
 - **Verificado** a 1440 × 900, sin errores de consola. Falta elegir y llevar la elegida al caso; después, el iPhone.
+
+## Llegó Farma · Elegida A: el manual se vuelve la web (8 nov 2026)
+
+Agustín eligió A, con mejoras. Ya está en el caso y reemplaza la hoja de aprobación:
+- **El cierre:** en el décimo paso de la 07, las páginas se juntan bajo la portada como un mazo (en el primer 60 % del paso, así nada se pisa). Después la retícula del manual mide la pila, con sus datos en las esquinas, y abajo entran "Aprobado casi sin cambios", la cita (por aprobar) y el puente nuevo.
+- **El puente:** "1 oct · Pidieron la web →" vuelve como enlace al capítulo 03. Es la única parte del cierre que se puede tocar.
+- **El paso:** la 07 suma una pantalla a su pista y la portada del 03 sube encima con su panel fijo. Entran el degradado, el título y el marco del navegador, mientras la portada del manual sale de la pila y aterriza en la pantalla del navegador. Viaja en arco, levantándose 6vh, con una sombra que crece y se apaga como la de una hoja que se levanta. Después el dominio se escribe y el sitio se dibuja encima del manual.
+- **Fino:** la portada sale desde donde está en cada cuadro, así la inercia del manual nunca produce un salto. La del manual se esconde solo cuando el vuelo ya partió.
+- **Sin el paso** (celular o movimiento reducido), el cierre se arma igual y la portada del 03 sube como hoja. En celular el texto ocupa el ancho y los datos de las esquinas no salen.
+- **Verificado** a 1440 × 900 y 390 × 844, sin errores de consola. Pendiente: el iPhone.
