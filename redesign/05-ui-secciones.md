@@ -2198,7 +2198,6 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **En el código:**
   - la 02 pasa a pista 480 con `data-pasos-hasta="0.737"`, y la escena taller ahora respeta ese límite;
   - el mecanismo se generaliza: toda decisión con `.lf-filo-sec` sube 100lvh sobre la anterior (llego.css 8.1.6) y llego.js sección 6 lleva `--lf-filo` y `.lf-filo-on` por sección;
-  - los enlaces del mapa a una decisión con filo llegan una pantalla más abajo, con la decisión ya arriba.
 - **Verificado** a 1440 × 900 (la familia completa antes de la ventana, el filo a media altura sobre las bandas, la 03 sin salto al terminar y el paso de la 01 a la 02 intacto) y a 390 × 844 (la 03 sube como hoja), sin errores de consola.
 - **Pendiente:** probarlo en el iPhone.
 
@@ -2213,3 +2212,16 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
   - C, el nodo: como la portada del 01, un punto se llena en el tono Oscuro y crece hasta cubrir la pantalla.
 - **En llego.js:** la escena valores respeta `data-pasos-hasta`, como el taller. En el caso no cambia nada, porque la 03 no lo usa.
 - **Verificado** a 1440 × 900 (las tres versiones, sin salto al volver a sticky) y a 390 × 844 (la hoja), sin errores de consola.
+
+## Llegó Farma · La portada del capítulo 02 pasa al caso: el oscuro se abre (7 nov 2026)
+
+- **Elegida la B.** El tono Oscuro de la paleta (#104E56) se abre hasta la pantalla y se vuelve el fondo del capítulo. La portada del 02 queda como la del 01: riel con "26 días · Del pitch al manual aprobado", título, 02 trazado, retícula e índice de las decisiones 04 a 07.
+- **En el código:**
+  - la 03 pasa a pista 420 con `data-pasos-hasta="0.6875"`;
+  - la portada es una escena (`.lf-cap-2`, `data-escena="portada"`) que sube sobre la última pantalla de la 03, y la 04 sube como hoja sobre la última de la portada (llego.css 7.2);
+  - llego.js sección 7 alarga su pista con el paso (200 a 340), escribe la apertura y lo que entra, y decide la tinta de la barra;
+  - las reglas de layout de la portada del 01 pasan a `:is(.lf-cap-1, .lf-cap-2)`, y el círculo del nodo queda solo en la del 01;
+  - la 06 y la 07 ganan id (`dec-06`, `dec-07`) para el índice.
+- **Los enlaces:** el índice del resumen lleva a la portada con el índice ya entrado (`data-ancla`). Corregí un error del paso anterior: los enlaces a las decisiones con filo sumaban una pantalla de más y caían en su segundo paso. Ahora llegan con la decisión justo arriba.
+- **Verificado** a 1440 × 900 (apertura sin salto, portada completa, la 04 encima) y a 390 × 844 (la portada sube como hoja), sin errores de consola. Los enlaces al 02, la 02, la 03 y la 07 llegan donde deben.
+- **Pendiente:** probarlo en el iPhone.
