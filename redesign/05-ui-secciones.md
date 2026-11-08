@@ -2309,3 +2309,5 @@ Agustín eligió A, con mejoras. Ya está en el caso y reemplaza la hoja de apro
 - Cada parada es una pantalla quieta: cuatro decisiones repartidas en 520 de pista, y el código, que es el diferencial principal, recibe menos pieza que cualquier decisión de marca.
 
 **Exploración:** cinco portadas en `explorations/caso/portada-web/`: Índice, La barra, Retícula viva, En variables y El QR (funciona, decodificado con el lector de macOS).
+
+**Elegida: Índice (8 nov 2026).** El 3 trazado mostraba líneas por dentro, porque en Manrope el 3 son tres piezas superpuestas y el trazo las dibuja todas. Corregido con una máscara: el trazo va al doble y la cifra llena borra la mitad interior y los cruces. Queda un solo contorno de 1 px, igual que el 01 y el 02. Falta llevarla al caso cuando se definan la sección 09 a 12 y el paso, porque el vuelo del manual aterriza hoy en el navegador que esta portada saca, y la decisión 08 necesita su propia pantalla.
