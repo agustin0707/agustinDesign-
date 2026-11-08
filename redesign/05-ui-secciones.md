@@ -2225,3 +2225,18 @@ Ronda 4 de revisión del About, con preview de cuatro partes. Agustín eligió a
 - **Los enlaces:** el índice del resumen lleva a la portada con el índice ya entrado (`data-ancla`). Corregí un error del paso anterior: los enlaces a las decisiones con filo sumaban una pantalla de más y caían en su segundo paso. Ahora llegan con la decisión justo arriba.
 - **Verificado** a 1440 × 900 (apertura sin salto, portada completa, la 04 encima) y a 390 × 844 (la portada sube como hoja), sin errores de consola. Los enlaces al 02, la 02, la 03 y la 07 llegan donde deben.
 - **Pendiente:** probarlo en el iPhone.
+
+## Llegó Farma · Los pasos del capítulo 02, con el filo (8 nov 2026)
+
+- **El filo, también en el capítulo 02:**
+  - **04 a 05:** la 05 se descubre sobre el lockup quieto y la línea pasa por los tres isotipos ya puestos, como los diez valores de la 03.
+  - **05 a 06:** la línea descubre la foto a sangre en su lugar, sobre los caminos quietos.
+  - **06 a 07:** la 06 corre con el scroll y no tiene un panel quieto, así que la línea va en el borde de la 07 mientras sube (`.lf-filo-borde`). Sigue siendo la misma línea con el nombre, en la costura.
+- **El nombre va del lado del papel:** bajo la línea cuando el papel es el de la que entra (03 y 05, con `.lf-filo-bajo`) y sobre ella en los demás.
+- **En el código:**
+  - la 04 pasa a pista 460 (`data-pasos-hasta="0.7222"`) y la 05 a 500 (`0.75`), y las escenas lockup y caminos respetan ese límite;
+  - el panel que queda fijo puede ser el `.cs-fijo` de una escena o la foto a sangre (`.cs-pliego-sangre`);
+  - todo lo que sube sobre la anterior comparte el z-index 4: a igual nivel, la que viene después queda encima.
+- **En celular y con movimiento reducido** cada una sube como hoja.
+- **Verificado** a 1440 × 900 y 390 × 844, sin errores de consola.
+- **Pendiente:** el paso de la 07 a la portada del capítulo 03 y probarlo en el iPhone.
