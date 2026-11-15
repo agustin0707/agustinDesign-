@@ -2403,3 +2403,16 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **Números de la ficha invisibles.** `.lf-datos b` (blanco, pensado para fondo oscuro) le ganaba por orden a `.lf-rt-ficha b` con la misma especificidad. Ahora `.lf-datos.lf-rt-ficha b` los deja en `--lf-oscuro`.
 - **Título cortado por la derecha.** La cámara encuadraba solo la primera línea del título y el resto salía de la pantalla. Ahora encuadra las tres líneas completas (92 % del ancho de la escena, tope 60 % del alto); las cajas Medium y Light siguen marcando solo la primera.
 - Verificado a 1493 × 774 (el tamaño del artifact en Chrome) y a 1440 × 900.
+
+## Llegó Farma · Capítulo 03 rehecho: 5c. Ajustes antes de la 11 (15 nov 2026)
+
+- **QR del stand.** Más chico (máximo la mitad del alto de pantalla). El celular entra girando desde abajo, el visor desenfoca y enfoca el código, las esquinas de la mira se cierran, aparece el enlace y un toque abre la página como un círculo que crece desde el dedo.
+- **Barra del navegador.** Era casi el doble de alta que una real. Ahora mide como la de Safari o Chrome: campo de 32 px, texto de 14 px, candado y luces.
+- **Decisión 09.** La dirección deja de vivir en una barra gigante. La barra queda real y una lupa colgada de ella amplía la dirección mientras cambia de `llego.cl/farma` a `llegofarma.cl`; abajo a la izquierda, la placa del QR del stand cambia al mismo tiempo.
+- **Retícula de las portadas.** Las líneas se cortan 8 px antes del índice y del texto (antes los cruzaban), se quitó un hueco de 16 px sin línea arriba y los números grandes quedan a 8 px del borde en los tres capítulos.
+- **Pasos del capítulo 03.**
+  - 07 a la portada: la flecha se abre como una ventana de navegador que crece hasta la pantalla.
+  - 08 a 09: la pantalla del celular crece hasta la ventana de la 09.
+  - 09 a 10 y 10 a 11: la ventana no se mueve. La que entra aparece encima y después llega su texto.
+  - En 11, como cambia de oscuro a papel, la ventana llega vacía y el manual aparece después, para que no se mezclen dos páginas.
+- **Puente de la 11 fuera.** La pantalla "El manual lo escribí en septiembre…" se quitó; la frase pasa a abrir el texto de la 11. La portada del manual entra como una hoja sobre la mesa, completa dentro de la ventana.
