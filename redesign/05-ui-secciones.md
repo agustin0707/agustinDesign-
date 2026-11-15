@@ -2397,3 +2397,9 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **La única excepción:** la cámara termina en un título, con Medium y Light marcados en la misma línea.
 - **La sección provisional del sitio marcado** queda solo con la decisión 13. La 10 alarga su pista para terminar antes de que suba la 11.
 - **Verificado** a 1920, 1440 y 1280 de ancho, y con rueda real a 1440 × 900, sin errores de consola.
+
+## Llegó Farma · Capítulo 03 rehecho: 5b. Fallos de 11 vistos en Chrome (15 nov 2026)
+
+- **Números de la ficha invisibles.** `.lf-datos b` (blanco, pensado para fondo oscuro) le ganaba por orden a `.lf-rt-ficha b` con la misma especificidad. Ahora `.lf-datos.lf-rt-ficha b` los deja en `--lf-oscuro`.
+- **Título cortado por la derecha.** La cámara encuadraba solo la primera línea del título y el resto salía de la pantalla. Ahora encuadra las tres líneas completas (92 % del ancho de la escena, tope 60 % del alto); las cajas Medium y Light siguen marcando solo la primera.
+- Verificado a 1493 × 774 (el tamaño del artifact en Chrome) y a 1440 × 900.
