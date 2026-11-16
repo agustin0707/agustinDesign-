@@ -2466,3 +2466,20 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
   - Farma lleva una pestaña de carpeta en verde, "/farma", pegada a su borde, con una sombra que la separa del morado.
   - Al retirarse el morado, la cabecera y la pestaña se van en la primera mitad, antes de que la página crezca sobre ellas.
 - **Misma altura de pantalla en la 09 y la 10.** La barra de carga ya no resta 2 px a la pantalla de la 09.
+
+## Llegó Farma · 5h. Paso de la 10 a la 11 y relato de la 11 (16 nov 2026)
+
+- **Antes.**
+  - La 10 terminaba en una ventana oscura y la 11 partía en un marco claro con la portada del manual.
+  - El fundido entre fondos pasaba por un gris sucio.
+  - La portada quedaba quieta varios tramos antes de que pasara algo.
+- **Relevo, con la misma ventana.**
+  - La 11 hereda la ventana y el fondo de la 10, como el paso de la 09 a la 10. La decisión se va línea a línea y llega la nueva.
+  - En la barra, llegofarma.cl rueda a manual-llego-farma.pdf, con su ícono de documento, y corre la carga.
+  - Un visor de PDF sube dentro de la ventana como la hoja que entra, con un borde en verde claro, y tapa la confirmación de la 10 sin fundido. Tiene su barra, "Manual de marca · Llegó Farma" y "1 / 36", y la portada llega un poco después.
+- **El relato, sin tramos quietos.**
+  - Septiembre: el manual abierto. La cámara entra apenas la sección queda fija y la barra del visor se va.
+  - En el cruce de sus líneas mide "En el manual: 7,6 px".
+  - En ese mismo punto aparece el cruce de la web, la barra rueda de vuelta a llegofarma.cl y la medida pasa a "En la web: 8 px".
+  - Después se encienden las líneas, se miden las cuatro columnas, las fotos ocupan sus módulos y la cámara termina en el título, la única excepción.
+  - Los tiempos se reparten parejo de 0,03 a 0,87 de la pista. El velo de las marcas baja a 0,42 sobre el papel del sitio.
