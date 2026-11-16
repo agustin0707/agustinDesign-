@@ -2528,3 +2528,15 @@ Auditoría de la 13 con 16 hallazgos y tres direcciones para el paso a la cita, 
   - Sin el paso (celular o movimiento reducido) la cita queda puesta y encendida.
   - Sale del Resultado, que queda con las cifras, el link y los créditos. El nombre lleva tilde.
 - **Celular.** La bajada de la 13 entera, la ficha a la vista y más chica, la ventana más alta y la cámara que parte en el panel, sin vista de lejos ni marca del contador. Los rótulos que no caben se alinean a la derecha.
+
+## Llegó Farma · 5k. La cita sobre la retícula (16 nov 2026)
+
+Tres direcciones para la gráfica de la cita en un artifact; elegida la B, sobre la retícula del manual. Después, una auditoría cuadro a cuadro con siete mejoras más la versión celular, todas aprobadas, y una nota: destacar más "súper enriquecido".
+
+- **La retícula.** Cuatro módulos en los bordes de la grilla del caso (dos en celular), con horizontales arriba y en los dos bordes de la ficha. Cada línea se corta 8 px antes de cruzarse con otra y 8 px antes de la tinta, medida con las métricas reales de Manrope, como la cifra de las portadas.
+- **La hoja sube con la retícula impresa**, así nunca hay una hoja vacía. La 13 se va hacia arriba y se oscurece debajo, como antes.
+- **La comilla** en Manrope 200, solo el contorno en verde claro, alineada por su tinta con la primera línea. Se entinta de arriba abajo, primero la marca izquierda y después la derecha.
+- **La cita.** Cada corte se abre justo antes de que entre su línea: la retícula le hace lugar al texto en vez de quedar cruzada. "Verdad se ve algo" entra, hay una pausa corta y "súper" llega sola.
+- **"Súper enriquecido."** En Medium y marcado con la misma caja verde claro que nombra cada etapa en la 13: se barre de izquierda a derecha y deja el texto en negro. La caja va de la tilde al descendente y también corta la retícula.
+- **La ficha.** Su línea se dibuja de izquierda a derecha y cada celda entra cuando la línea pasa por su módulo: Cristián Barreaux, el logotipo de Llegó, "Sobre llegofarma.cl · Sitio final, 20 oct 2026" y "Cita por aprobar".
+- **Celular.** Dos módulos, la comilla chica sobre la cita, la cita a lo ancho y la ficha en dos filas de dos. Sin el paso (celular o movimiento reducido) todo queda puesto.
