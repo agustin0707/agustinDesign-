@@ -2504,3 +2504,27 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
 - **Copia en lenguaje de cliente.** "La sección Tecnología no tenía foto. En vez de la imagen de un panel, armé un seguimiento que avanza con el scroll…".
 - **Ficha.** 6 etapas · 0 fotos · 6 KB todo el panel. Medido en el código del sitio: 5,8 KB, contra 26 KB de la foto más liviana.
 - **Limpieza.** Sale el CSS de la evidencia provisional (`.lf-ev`). El ocultamiento del iframe durante el relevo queda solo para la 11.
+
+## Llegó Farma · 5j. Mejoras de la 13 y la cita a pantalla completa (16 nov 2026)
+
+Auditoría de la 13 con 16 hallazgos y tres direcciones para el paso a la cita, decididas en un artifact. Elegida la C, hoja oscura, con todas las mejoras.
+
+- **Vista de lejos.**
+  - El velo baja y tira al verde (16 % del Oscuro): sobre el papel del sitio ya no se ve gris sucio. El foco lo hacen las marcas.
+  - Las marcas entran enteras, sin crecer de lado, así ninguna línea cruza la lista ni el panel. Tienen 8 px más de aire.
+  - Primero "6 capacidades" y después "Un pedido", con una vista de lejos más larga antes del zoom.
+- **Zoom.** La lista, el título y la etiqueta del sitio se apagan mientras la cámara se acerca: no queda la franja clara al costado.
+- **Las seis etapas.**
+  - El tramo hacia la etapa siguiente se llena al ritmo del scroll.
+  - Ritmo que acelera: la 1 y la 2 duran más que las otras cuatro.
+  - Cada línea nueva del registro se enciende con una franja clara que se apaga y deja su borde.
+  - Una marca sobre "Etapa 01 / 06" dice "Avanza con el scroll" durante las dos primeras etapas.
+- **El cierre.** Tras "Registro completo", la cámara se aleja hasta el panel entero con las seis etapas encendidas y lo marca: "Todo el panel · 5,8 KB". Esa imagen es la que tapa la cita.
+- **Ficha.** Ahora 0 fotos · 6 etapas · 5,8 KB, "menos que la foto más liviana del sitio". Las fotos se encienden al verse la sección, las etapas con la sexta y el peso con su marca.
+- **Por qué.** "Un proceso se entiende mejor cuando avanza que en una foto", para no repetir la imagen de un panel de la bajada.
+- **La cita, a pantalla completa.**
+  - Sube como hoja oscura con el filo en verde claro, sobre la 13 quieta, que se va 70 px hacia arriba y se oscurece.
+  - "Que no quedara plana" en el riel. La cita entra línea a línea con el scroll, "plano" en gris, "súper enriquecido" se enciende en verde claro con su subrayado y al final firma Cristián Barreaux, con "Cita por aprobar".
+  - Sin el paso (celular o movimiento reducido) la cita queda puesta y encendida.
+  - Sale del Resultado, que queda con las cifras, el link y los créditos. El nombre lleva tilde.
+- **Celular.** La bajada de la 13 entera, la ficha a la vista y más chica, la ventana más alta y la cámara que parte en el panel, sin vista de lejos ni marca del contador. Los rótulos que no caben se alinean a la derecha.
