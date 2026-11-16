@@ -2583,3 +2583,15 @@ Nueva, entre la 11 y la 13, como relevo. Tres direcciones en un artifact; elegid
 - **La vuelta al sitio.** La barra rueda a llegofarma.cl y la hoja se recoge hacia arriba con un borde claro, sin fundido, dejando ver el sitio real en la misma sección. El titular publicado queda marcado con la caja de la 13: "10 · Nuevo, con palabras del cliente".
 - **Las cifras.** 56 cambios anotados, 23 textos nuevos y 0 inventados se encienden de a una, cada una cuando la escena la demuestra.
 - La escena es `texto` en llego.js y sus reglas viven en llego.css 9.4, con el prefijo `.lf-tx`. En ventanas angostas la hoja se ensancha y los globos se ocultan; con movimiento reducido todo queda puesto.
+
+## Llegó Farma · 5p. Decisión 14: Que nada dependa de mí (16 nov 2026)
+
+Nueva, entre la 13 y la cita, como relevo de la 13; la cita ahora sube sobre la 14, así la cita y el Resultado siguen pegados. Tres direcciones en un artifact (la carpeta y la guía, las llaves, el arreglo de después); elegida una mezcla de las dos primeras y aprobada en el artifact del caso.
+
+- **La pieza.** La barra rueda a "llegofarma.cl · carpeta entregada" y su panel sube con el borde claro del relevo, en dos columnas: "Durante el proyecto" y "En cuentas de Llegó", que ya tiene el dominio.
+- **La carpeta.** Los archivos entran uno a uno con lo que es cada uno y cuántos son: la página, la privacidad, LEEME.md, css, js, fonts e img, con el pie "58 archivos · 0,93 MB descarga un navegador".
+- **Las llaves.** El formulario cruza a la columna de Llegó; después la carpeta se recoge en una tarjeta, "Carpeta del sitio · 58 archivos + guía", y cruza también. Cada tarjeta mide su salida y su llegada en el lienzo y lleva el borde turquesa mientras cruza.
+- **La guía.** Con la carpeta aparecen los cuatro pasos de publicación y se marcan uno a uno: subir los archivos, apuntar el dominio, activar HTTPS y redirigir llego.cl/farma. Del LEEME solo esos pasos y su explicación corta.
+- **La vuelta al sitio.** La barra vuelve a llegofarma.cl, el panel se recoge hacia arriba como el Word de la 12 y queda el hero real con el titular marcado: "En su dominio y en sus cuentas".
+- **Las cifras.** 58 archivos entregados, 4 pasos para publicar y 0 librerías, cada una cuando la escena la muestra. La 14 queda quieta una pantalla mientras sube la cita (`data-pasos-hasta`).
+- La escena es `entrega` en llego.js y sus reglas viven en llego.css 10.1, con el prefijo `.lf-en`. En ventanas angostas la carpeta queda en nombre y archivos y la guía en sus títulos.
