@@ -2416,3 +2416,13 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
   - 09 a 10 y 10 a 11: la ventana no se mueve. La que entra aparece encima y después llega su texto.
   - En 11, como cambia de oscuro a papel, la ventana llega vacía y el manual aparece después, para que no se mezclen dos páginas.
 - **Puente de la 11 fuera.** La pantalla "El manual lo escribí en septiembre…" se quitó; la frase pasa a abrir el texto de la 11. La portada del manual entra como una hoja sobre la mesa, completa dentro de la ventana.
+
+## Llegó Farma · Capítulo 03 rehecho: 5d. Paso de la 07 a la portada del 03 (16 nov 2026)
+
+- Tres direcciones en `explorations/caso/paso-portada-03/`: la retícula pasa, ocho días después (la fecha avanza del 23 sep al 1 oct) y del impreso a la pantalla. Elegida la retícula, y después rehecha en cuatro tiempos. La exploración quedó como registro y ya no corre sobre el `llego.js` actual.
+- **En el caso:**
+  1. La 07 se apaga bajo las cuatro líneas de su cierre, que se encienden en verde claro, con marcas de corte a 8 px de cada esquina, como las del logo.
+  2. El marco se abre hasta la pantalla y su rótulo rueda de "Brandbook · 36 páginas" a "llegofarma.cl · 1 página"; las marcas de corte se van, porque la pantalla no se corta.
+  3. Las tres columnas interiores se dibujan de arriba abajo, una tras otra, como en las portadas 01 y 02.
+  4. Todo se asienta en el gris de la retícula, cortada 8 px antes del contenido; debajo aparece el degradado y se traza el 03.
+- Reemplaza la ventana de navegador que nacía de la flecha. `llego.js` sección 8 y `llego.css` 7.3; la capa del paso (`.lf-p3-`) vive fuera de la portada para quedar encima de ella.
