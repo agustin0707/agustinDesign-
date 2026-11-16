@@ -2553,3 +2553,14 @@ Antes, el Resultado partía como sección nueva: el brillo de la cita se cortaba
 - **Rótulos.** Resultado, En vivo y Créditos en el primer módulo; los tres créditos en los otros tres.
 - **Celular.** Dos módulos continuos con la cita: la retícula y la comilla ya no toman el área de la grilla (quedaban corridas 20 px). Cifras de dos en dos; el sitio y los créditos a lo ancho bajo su rótulo.
 - Las clases nuevas usan `.lf-fin`: `.lf-res` ya era el resumen del capítulo 01.
+
+## Llegó Farma · 5m. Paso de la 08 a la 09: el teléfono se vuelve la ventana (16 nov 2026)
+
+Antes era un fundido: el panel entero de la 09 aparecía encima del teléfono, la columna de texto quedaba vacía un tramo y la ventana se abría mostrando el hero de escritorio recortado. Antes y después en un artifact; aprobadas las cinco mejoras.
+
+- **Sin doble exposición.** El panel que sube (`.lf-funde`) queda transparente salvo su ventana, como en el relevo: el fondo es el mismo y no se toca.
+- **El texto se releva.** La 08 recibe `.lf-sale-on` y `--lf-sale` (llego.js sección 6): sube y se apaga línea a línea mientras la 09 entra desde abajo; el número rueda de 08 a 09.
+- **El teléfono se vuelve la ventana.** La ventana nace en la pantalla del teléfono, con sus esquinas, y la barra llego.cl/farma aparece donde estaba el sitio. El contenido del teléfono se apaga al empezar y el marco se suelta cuando la ventana ya lo cubre.
+- **La barra carga la dirección.** La línea verde corre bajo la barra mientras la ventana se abre, como en el paso a la 11.
+- **Primero la madre, después Farma.** El contenido llega por capas: el morado de la madre llena la ventana y después aparece el sitio adentro, así el recorte del principio nunca lo muestra a medias.
+- En celular no hay paso: las decisiones se leen una tras otra y no cambia nada.
