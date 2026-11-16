@@ -2454,3 +2454,15 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
   - Todo va sincronizado con la barra, que se borra y se reescribe con su cursor, y con el QR, que se va con la dirección vieja y se dibuja con la nueva. Después carga y el morado se retira como antes.
   - Mide en unidades de contenedor (`cqi`): se ve igual en cualquier ancho de ventana (`llego.css` 9.0, escena `dominio` en `llego.js`).
 - **Relevo de la 09 a la 10 sin cambio.** La ventana tenía fondo semitransparente y la 10 la traía sobre otro fondo, por eso la barra cambiaba de tono. Ahora el fondo es opaco y la ventana de la 09 al final es idéntica píxel a píxel a la de la 10 al empezar.
+
+## Llegó Farma · 5g. El estado morado de la 09, rehecho (16 nov 2026)
+
+- **La página de Farma, entera.**
+  - La captura anterior era más ancha que la ventana, y con `object-fit: cover` se cortaban los costados ("ogística", "CONVERSEM").
+  - Una captura nueva del sitio real, a 1440 × 1152, calza exacto con el cuadro que muestra el iframe de la 10. Ahora se ve completa y no salta cuando la reemplaza el sitio vivo.
+- **La madre como esquema, Farma como carpeta.**
+  - Sale la frase en mono "Una carpeta dentro del sitio morado".
+  - La cabecera morada queda en esquema: el logotipo y un menú de barras con su botón, sin inventar el sitio real de la madre.
+  - Farma lleva una pestaña de carpeta en verde, "/farma", pegada a su borde, con una sombra que la separa del morado.
+  - Al retirarse el morado, la cabecera y la pestaña se van en la primera mitad, antes de que la página crezca sobre ellas.
+- **Misma altura de pantalla en la 09 y la 10.** La barra de carga ya no resta 2 px a la pantalla de la 09.
