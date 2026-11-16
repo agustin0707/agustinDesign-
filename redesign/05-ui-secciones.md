@@ -2426,3 +2426,16 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
   3. Las tres columnas interiores se dibujan de arriba abajo, una tras otra, como en las portadas 01 y 02.
   4. Todo se asienta en el gris de la retícula, cortada 8 px antes del contenido; debajo aparece el degradado y se traza el 03.
 - Reemplaza la ventana de navegador que nacía de la flecha. `llego.js` sección 8 y `llego.css` 7.3; la capa del paso (`.lf-p3-`) vive fuera de la portada para quedar encima de ella.
+
+## Llegó Farma · 5e. Cifras de portada, tira de fotos, QR y paso de la 09 a la 10 (16 nov 2026)
+
+- **Cifras de las portadas.**
+  - El 01 y el 02 llevan la misma máscara que ya tenía el 03: las piezas superpuestas de Manrope (la esquina de abajo del 2) ya no dibujan trazo por dentro y queda solo el contorno.
+  - La línea de la retícula que cruza la cifra se interrumpe 8 px antes y después de su tinta, medida con las métricas reales de la fuente. La del borde, a 8 px de la cifra, sigue entera.
+  - El paso de la 07 a la portada del 03 dibuja sus líneas con el mismo corte.
+- **Tira "Siete fotos, una sola regla" con hover.** La foto señalada queda sola y las demás bajan a media luz. Aparecen marcas de corte a 10 px de sus esquinas, como las del logo, y su encuadre (1:1, 2,4:1, 3:4 o 4:1), que es la primera línea de la regla. Dentro de `@media (hover: hover)`.
+- **QR de la 08.** El QR de la pantalla del stand se apaga en el último tramo de la llegada del celular; desde ahí solo se ve el que muestra la cámara.
+- **Paso de la 09 a la 10, relevo.**
+  - Antes, la 10 se fundía encima con su texto vacío y quedaba un tramo muerto.
+  - Ahora la ventana y el fondo, que son los mismos, no se mueven: solo cambia la decisión.
+  - La 09 sube y se apaga línea a línea; la 10 llega desde abajo, con el número rodando de 09 a 10 como un contador (`.lf-relevo`, `.lf-sale-on`, `llego.js` sección 6).
