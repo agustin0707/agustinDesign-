@@ -2540,3 +2540,16 @@ Tres direcciones para la gráfica de la cita en un artifact; elegida la B, sobre
 - **"Súper enriquecido."** En Medium y marcado con la misma caja verde claro que nombra cada etapa en la 13: se barre de izquierda a derecha y deja el texto en negro. La caja va de la tilde al descendente y también corta la retícula.
 - **La ficha.** Su línea se dibuja de izquierda a derecha y cada celda entra cuando la línea pasa por su módulo: Cristián Barreaux, el logotipo de Llegó, "Sobre llegofarma.cl · Sitio final, 20 oct 2026" y "Cita por aprobar".
 - **Celular.** Dos módulos, la comilla chica sobre la cita, la cita a lo ancho y la ficha en dos filas de dos. Sin el paso (celular o movimiento reducido) todo queda puesto.
+
+## Llegó Farma · 5l. El Resultado como continuación de la cita (16 nov 2026)
+
+Antes, el Resultado partía como sección nueva: el brillo de la cita se cortaba contra un negro plano, la retícula desaparecía y las cifras, el link y los créditos quedaban sueltos. Antes y después en un artifact; aprobadas las seis mejoras y el celular.
+
+- **Fondo.** La misma elipse de la cita, con el centro 10 % de pantalla bajo el corte: el brillo cruza sin borde y se apaga hacia el negro antes del siguiente proyecto. Sale el brillo propio del fondo.
+- **Retícula.** Las cuatro verticales de la cita bajan por el Resultado y se cierran 8 px antes de la última línea, bajo los créditos. Mismas reglas de corte que la cita; la dibuja llego.js 5.2 con las ayudas compartidas (`restar`, `trazar`).
+- **Una fila de aire.** La primera línea cae en el corte; entre ella y la ficha queda una fila vacía del alto de la que hay arriba de la cita.
+- **Cifras.** Una por módulo, bajo la celda de la ficha que le corresponde, en Manrope 200 hasta 144 px y con la bajada al pie. Siguen contando al aparecer.
+- **En vivo.** "llegofarma.cl ↗" al cuerpo de la cita, con el punto verde y la flecha en verde claro; al pasar el mouse se subraya y la flecha avanza.
+- **Rótulos.** Resultado, En vivo y Créditos en el primer módulo; los tres créditos en los otros tres.
+- **Celular.** Dos módulos continuos con la cita: la retícula y la comilla ya no toman el área de la grilla (quedaban corridas 20 px). Cifras de dos en dos; el sitio y los créditos a lo ancho bajo su rótulo.
+- Las clases nuevas usan `.lf-fin`: `.lf-res` ya era el resumen del capítulo 01.
