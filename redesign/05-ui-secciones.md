@@ -2483,3 +2483,24 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
   - En ese mismo punto aparece el cruce de la web, la barra rueda de vuelta a llegofarma.cl y la medida pasa a "En la web: 8 px".
   - Después se encienden las líneas, se miden las cuatro columnas, las fotos ocupan sus módulos y la cámara termina en el título, la única excepción.
   - Los tiempos se reparten parejo de 0,03 a 0,87 de la pista. El velo de las marcas baja a 0,42 sobre el papel del sitio.
+
+## Llegó Farma · 5i. Decisión 13 reconstruida: la trazabilidad, en código (16 nov 2026)
+
+- **Auditoría de la provisional.**
+  - Era la plantilla del sitio marcado: ventana clara a la izquierda, texto a la derecha, un índice de un solo ítem con "13 / 14" y un botón muerto.
+  - Entraba en seco desde la 11.
+  - El seguimiento avanzaba solo, con un temporizador y en desorden, aunque el texto decía que avanza con el scroll.
+  - La cámara no se acercaba, el marco no calzaba con el panel y asomaba la sección siguiente.
+  - La copia hablaba de SVG y se perdía que las seis capacidades de la lista son las seis etapas de un pedido.
+- **Ahora, en el sistema del capítulo.**
+  - Relevo sobre la 11: la misma ventana y el mismo fondo, con la decisión a la izquierda, su número grande y su ficha.
+  - La sección Tecnología del sitio real sube dentro de la ventana como hoja, con borde en verde claro.
+- **El relato.**
+  1. La sección entera, con dos marcas: "6 capacidades" sobre la lista y "Un pedido" sobre el panel.
+  2. La cámara se acerca al panel con zoom natural.
+  3. El scroll lleva el pedido etapa por etapa, de Programada a Indicadores al día. Cada etapa se activa con el mismo evento que usa el cursor en el sitio, y su marca lleva el nombre de la capacidad que le corresponde ("01 · Planificación de rutas" y así hasta "06 · Dashboards y reportería").
+  4. Cierra con el registro completo marcado.
+  - Si el sitio cambia de etapa por su cuenta, la escena vuelve a imponer la del relato.
+- **Copia en lenguaje de cliente.** "La sección Tecnología no tenía foto. En vez de la imagen de un panel, armé un seguimiento que avanza con el scroll…".
+- **Ficha.** 6 etapas · 0 fotos · 6 KB todo el panel. Medido en el código del sitio: 5,8 KB, contra 26 KB de la foto más liviana.
+- **Limpieza.** Sale el CSS de la evidencia provisional (`.lf-ev`). El ocultamiento del iframe durante el relevo queda solo para la 11.
