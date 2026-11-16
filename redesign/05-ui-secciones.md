@@ -2439,3 +2439,18 @@ Guion con cuadros reales entregado como artifact privado. Pendiente tu visto bue
   - Antes, la 10 se fundía encima con su texto vacío y quedaba un tramo muerto.
   - Ahora la ventana y el fondo, que son los mismos, no se mueven: solo cambia la decisión.
   - La 09 sube y se apaga línea a línea; la 10 llega desde abajo, con el número rodando de 09 a 10 como un contador (`.lf-relevo`, `.lf-sale-on`, `llego.js` sección 6).
+
+## Llegó Farma · 5f. Hover suave, gráfica nueva de la 09 y relevo sin salto (16 nov 2026)
+
+- **Hover de la tira, sin golpe.**
+  - Curva de salida suave (`cubic-bezier(0.22, 1, 0.36, 1)`) con tiempos de 400 a 640 ms en lugar de 180 ms.
+  - Bajar a media luz es inmediato. Volver a plena luz espera 140 ms, así cruzar el medianil de una foto a otra no hace parpadear la tira.
+  - Las marcas de corte y el encuadre llegan un poco después que la luz, en ese orden.
+- **Gráfica de la 09 rehecha: la anatomía de la dirección.**
+  - Salen la lupa que colgaba de la barra y la placa del QR que asomaba por la esquina de la ventana.
+  - Dentro de la ventana, sobre un velo desenfocado que deja ver el morado de la madre, va la dirección a escala de titular. El QR del stand apunta a ella con una línea y un punto, el mismo lenguaje de las marcas de la 10.
+  - Unas llaves nombran sus partes: "Dominio de la madre" bajo llego.cl y "Una carpeta" bajo /farma.
+  - /farma se tacha; la palabra farma salta en arco sobre .cl y queda llegofarma.cl, con farma en verde. Una llave nueva la nombra: "Dominio propio · NIC Chile, a nombre de Llegó".
+  - Todo va sincronizado con la barra, que se borra y se reescribe con su cursor, y con el QR, que se va con la dirección vieja y se dibuja con la nueva. Después carga y el morado se retira como antes.
+  - Mide en unidades de contenedor (`cqi`): se ve igual en cualquier ancho de ventana (`llego.css` 9.0, escena `dominio` en `llego.js`).
+- **Relevo de la 09 a la 10 sin cambio.** La ventana tenía fondo semitransparente y la 10 la traía sobre otro fondo, por eso la barra cambiaba de tono. Ahora el fondo es opaco y la ventana de la 09 al final es idéntica píxel a píxel a la de la 10 al empezar.
