@@ -2595,3 +2595,15 @@ Nueva, entre la 13 y la cita, como relevo de la 13; la cita ahora sube sobre la 
 - **La vuelta al sitio.** La barra vuelve a llegofarma.cl, el panel se recoge hacia arriba como el Word de la 12 y queda el hero real con el titular marcado: "En su dominio y en sus cuentas".
 - **Las cifras.** 58 archivos entregados, 4 pasos para publicar y 0 librerías, cada una cuando la escena la muestra. La 14 queda quieta una pantalla mientras sube la cita (`data-pasos-hasta`).
 - La escena es `entrega` en llego.js y sus reglas viven en llego.css 10.1, con el prefijo `.lf-en`. En ventanas angostas la carpeta queda en nombre y archivos y la guía en sus títulos.
+
+## Llegó Farma · 5q. Cierre del capítulo 03: la feria (16 nov 2026)
+
+Nuevo, sin número: es el desenlace del capítulo, no una decisión. Va entre la 14 y la cita; la cita ahora sube sobre el cierre y sigue pegada al Resultado. Tres direcciones en un artifact (el calendario hasta la feria, el mismo QR en el stand, una fila en el Resultado); elegida la del calendario y aprobada en el artifact del caso.
+
+- **La pregunta que responde.** El capítulo abre con "Pidieron una sola página, para una feria" y no decía si llegó. El cierre lo cuenta con fechas: pedido el 1 de octubre, en línea el 20 y feria el 3 y 4 de noviembre.
+- **La pieza.** Sube como hoja oscura sobre la 14, con el filo claro. A la derecha, octubre y noviembre en un calendario de siete columnas; al entrar solo está marcado el 1 de octubre.
+- **El trabajo.** Con el scroll se llenan los días hasta el 20 con sus hitos (Pedido, Contenido, Feriado, Entrega, Carpeta, En línea) y el rótulo cuenta de 0 a 19 días.
+- **El margen.** Después los días hasta la feria se marcan en punteado y el rótulo cuenta los que faltan. Al final el 3 y 4 de noviembre se encienden en verde claro con el QR real de la 08 y el rótulo dice "En línea 14 días antes".
+- **Las cifras.** 19 días del pedido al sitio, 14 de margen y 2 de feria, cada una con su tramo. Los días se encienden enteros, sin suavizado. Queda quieto una pantalla mientras sube la cita (`data-pasos-hasta`).
+- **Sin inventar.** No hay fotos del stand ni cifras de visitas; el cierre trabaja solo con fechas y el QR real.
+- La escena es `feria` en llego.js y sus reglas viven en llego.css 11.1, con el prefijo `.lf-fe`. En celular el texto va entero arriba y el calendario a lo ancho, con las celdas solo con su número.
