@@ -2564,3 +2564,11 @@ Antes era un fundido: el panel entero de la 09 aparecía encima del teléfono, l
 - **La barra carga la dirección.** La línea verde corre bajo la barra mientras la ventana se abre, como en el paso a la 11.
 - **Primero la madre, después Farma.** El contenido llega por capas: el morado de la madre llena la ventana y después aparece el sitio adentro, así el recorte del principio nunca lo muestra a medias.
 - En celular no hay paso: las decisiones se leen una tras otra y no cambia nada.
+
+## Llegó Farma · 5n. Paso de la 08 a la 09, ronda 2 (16 nov 2026)
+
+Revisión cuadro a cuadro del paso aprobado en 5m; tres ajustes, aprobados en el artifact del caso.
+
+- **Sin tramo muerto.** La ventana empieza a abrirse apenas asoma la 09 (antes esperaba un 12 % del paso y el teléfono quedaba como una pantalla negra). El marco del teléfono se suelta antes y la barra carga llego.cl/farma en ese tramo.
+- **La madre se pinta de arriba abajo.** Al terminar la carga, el morado baja como una página que se dibuja (recorte del panel, no fundido); Farma aparece adentro un poco antes.
+- **El texto se releva línea por línea.** La 08 se va más rápido que en el relevo de la 09 a la 10 y la 09 entra antes: cada línea nueva llega justo cuando sale la que ocupaba su lugar, sin columna vacía ni textos cruzados.
