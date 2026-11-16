@@ -2572,3 +2572,14 @@ Revisión cuadro a cuadro del paso aprobado en 5m; tres ajustes, aprobados en el
 - **Sin tramo muerto.** La ventana empieza a abrirse apenas asoma la 09 (antes esperaba un 12 % del paso y el teléfono quedaba como una pantalla negra). El marco del teléfono se suelta antes y la barra carga llego.cl/farma en ese tramo.
 - **La madre se pinta de arriba abajo.** Al terminar la carga, el morado baja como una página que se dibuja (recorte del panel, no fundido); Farma aparece adentro un poco antes.
 - **El texto se releva línea por línea.** La 08 se va más rápido que en el relevo de la 09 a la 10 y la 09 entra antes: cada línea nueva llega justo cuando sale la que ocupaba su lugar, sin columna vacía ni textos cruzados.
+
+## Llegó Farma · 5o. Decisión 12: 56 cambios al texto, ninguno inventado (16 nov 2026)
+
+Nueva, entre la 11 y la 13, como relevo. Tres direcciones en un artifact; elegida A, el Word con control de cambios, y aprobada en el artifact del caso.
+
+- **La pieza.** La ventana de la 11 pasa a mostrar `contenido-llego-farma.docx`: una hoja de Word que sube con el borde claro del relevo. Solo fragmentos que ya están publicados en el sitio casi sin cambios; sin nombres ni notas internas del documento.
+- **Los cambios, al ritmo del scroll.** En el hero, el título se parte en tres líneas con su marca de párrafo, la bajada marca sus tres ideas clave en negrita, el punto final se tacha y el segundo párrafo se señala para pasar a Qué es. Cada cambio trae su globo al margen, con el número y el tipo del registro.
+- **El titular nuevo.** El documento baja a la Propuesta de valor, que no tenía titular: se iluminan las dos frases de origen y el titular se escribe con ellas, "Confiabilidad para operaciones de alta exigencia".
+- **La vuelta al sitio.** La barra rueda a llegofarma.cl y la hoja se recoge hacia arriba con un borde claro, sin fundido, dejando ver el sitio real en la misma sección. El titular publicado queda marcado con la caja de la 13: "10 · Nuevo, con palabras del cliente".
+- **Las cifras.** 56 cambios anotados, 23 textos nuevos y 0 inventados se encienden de a una, cada una cuando la escena la demuestra.
+- La escena es `texto` en llego.js y sus reglas viven en llego.css 9.4, con el prefijo `.lf-tx`. En ventanas angostas la hoja se ensancha y los globos se ocultan; con movimiento reducido todo queda puesto.
