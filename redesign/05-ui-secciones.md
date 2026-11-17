@@ -2658,3 +2658,17 @@ Auditoría automática en seis tamaños de iPad (820 × 1180, 768 × 1024, 1024 
 - **14.** "Tipografías, con licencia" y "Fotos AVIF y JPG, logos" se cortaban con puntos suspensivos en todo tamaño, escritorio incluido. Las columnas van medidas al nombre y al conteo más largos, y una descripción que no cabe baja de línea.
 - **Feria.** En celdas angostas (1024 × 768) la etiqueta baja un punto y se aprieta: "Contenido" y "En línea" caben.
 - **Toques.** "Más contexto" suma área táctil invisible en pantallas táctiles. "Proyectos" en la barra queda en 75 × 25: la barra es común a todos los casos y su animación de texto no admite margen.
+
+## Llegó Farma · 5w. Safari real en iPhone y iPad (18 nov 2026)
+
+Recorrido en Safari real, con los simuladores de iPhone 17 y de iPad Air 11 (vertical y horizontal), más un escaneo automático de cada escena fija al alto real del teléfono. Aprobado en el artifact del caso. Falta probarlo en un iPhone y un iPad reales.
+
+- **Alto real del teléfono.** En un iPhone 17, Safari deja 714 pt de alto con la barra a la vista y 754 pt sin ella; las auditorías anteriores usaban 874. Las decisiones y las láminas reservan esa diferencia (100lvh − 100svh, `--lf-tapa`) bajo la pieza, así la barra ya no tapa el final de once escenas. En escritorio vale 0.
+- **01 en celular.** En el paso 3 el logotipo y la paleta de la madre se recogen bajo su rótulo y el hallazgo cabe entero.
+- **02.** La trama sigue a la izquierda fuera de la mesa: con la lente cerca, en pantallas angostas, ese costado ya no queda vacío.
+- **09 a 14.** Una capa transparente sobre el sitio recibe el toque, como en el hero: en Safari el arrastre movía el sitio de adentro y no el caso.
+- **11.** Al encuadrar el título, la cámara ya no baja el sitio bajo el borde de la ventana: en tablet vertical quedaba una franja vacía arriba.
+- **Capítulos en pantallas bajas.** Con menos de 800 px de alto (iPad horizontal) la cifra se acota por el alto y ya no baja hasta el índice del 03. En 1440 × 900 no cambia.
+- **Hero en celular.** "llegofarma.cl ↗" cierra la columna derecha, alineado con "Marca, manual y web".
+- **Títulos de capítulo en celular y tablet vertical.** El trazo bajo de la p de "El pitch" ya no toca la bajada.
+- **Siguiente proyecto.** El rótulo y su línea siguen a la lámina mientras se abre y no tocan su borde (común a todos los casos).
