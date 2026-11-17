@@ -2697,3 +2697,12 @@ Recorrido de cada escena a 402 × 714, en seis o siete momentos del scroll. Apro
 - **13 · etapas en celular.** El rótulo de la etapa va bajo su disco y deja a la vista el título del estado, que es lo que cambia.
 - **14 · carpeta a lo angosto.** Filas más apretadas y el pie en dos líneas: la tarjeta del formulario entra entera antes de cruzar.
 - **Resultado en celular.** La columna izquierda guarda aire a los dos lados; su texto llegaba a la línea del centro.
+
+## Llegó Farma · 5z. Cierre de la 14 en celular y caso cerrado (18 nov 2026)
+
+Último ajuste antes de cerrar el caso. Aprobado en el artifact del caso. En escritorio y tablet no cambia nada.
+
+- **14 · cierre en celular.** El sitio en su dominio se ve en su versión de celular, como en la 09, la 10 y la 12; antes iba a 1440 de ancho y no se leía.
+- **14 · rótulo de la marca.** En lo angosto la etiqueta del hero se oculta dentro de la escena: el rótulo caía encima y la dejaba asomar cortada.
+- **Caso cerrado.** Queda probarlo en un iPhone y un iPad reales. Se dejan como están, por decisión: el final del hero en celular (es el aprobado), la bajada de la 11, el carrusel de la 07 atado al scroll y el paso automático a Tap In.
+
