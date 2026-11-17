@@ -2685,3 +2685,15 @@ Revisión en celular a 402 × 714 pedida por Agustín: las portadas estaban carg
 - **12 · comentarios.** En celular los globos al margen no caben: el vigente se lee en una nota al pie de la ventana, como el panel de comentarios de Word.
 - **12 · paso de hoja.** El salto se mide con los cambios ya puestos: medido antes, asomaba el final de la primera hoja sobre la segunda. Sin la franja gris de arriba en celular.
 - **12 · cierre en celular.** La sección publicada se ve en la versión de celular del sitio y se lee; antes iba a 1440 de ancho.
+
+## Llegó Farma · 5y. Auditoría de celular del resto del caso (18 nov 2026)
+
+Recorrido de cada escena a 402 × 714, en seis o siete momentos del scroll. Aprobado en el artifact del caso. Hero, resumen, 01, 03, 04, 06, 08, 11, feria, cita y créditos quedan como estaban.
+
+- **02 · trama.** Los puntos que caerían bajo una lectura (paso 2) o una nota (paso 3) se apagan mientras esa lectura está a la vista, con 14 px de aire. En celular cruzaban "Estructura molecular" y "trazabilidad"; vale también para escritorio.
+- **05 · notas y mínimos.** Una nota sale antes de que entre la otra, y el logotipo grande antes de los mínimos: a medio paso se leían dos frases encimadas.
+- **07 · cierre en celular.** Las verticales enmarcan la página y terminan antes del título; cruzaban el título y la cita.
+- **09 · llaves en celular.** "Una carpeta" baja una línea y su trazo se alarga: se pisaba con "Dominio de la madre".
+- **13 · etapas en celular.** El rótulo de la etapa va bajo su disco y deja a la vista el título del estado, que es lo que cambia.
+- **14 · carpeta a lo angosto.** Filas más apretadas y el pie en dos líneas: la tarjeta del formulario entra entera antes de cruzar.
+- **Resultado en celular.** La columna izquierda guarda aire a los dos lados; su texto llegaba a la línea del centro.
