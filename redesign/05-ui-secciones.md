@@ -2617,3 +2617,13 @@ La portada del siguiente proyecto al final de Llegó pasa a mostrar a Tap In com
 - **El marco.** "Siguiente proyecto" arriba y la bajada abajo, para no cruzarse con las letras gigantes. La bajada entra cuando el wordmark está armado: "Una startup de data intelligence que conecta comunidades en Chile y Perú." A la derecha, bajo el anillo, una lista mono numerada: Data intelligence, Tiempo real, Chile y Perú, Comunidades.
 - **El derrame.** El violeta se derrama desde el punto en un círculo que crece, y las letras pasan a blanco cuando la ola las cruza. Grano fino para que los degradados no hagan bandas.
 - La escena es `tapin` en caso-siguiente.js y sus reglas viven en caso-siguiente.css 2, con el prefijo `.sig-tp`. En celular el wordmark ocupa el ancho y la lista se guarda; con movimiento reducido queda la portada final quieta, con las manchas en su lugar.
+
+## Llegó Farma · 5s. Pasada de celular y iPad (16 nov 2026)
+
+Recorrido completo del caso en 390 × 844 y en iPad vertical (820 × 1180), con capturas cada media pantalla; aprobado en el artifact del caso. Falta probarlo en un iPhone real.
+
+- **Tablet vertical = celular, también en las reglas de escritorio.** El caso trata la tablet vertical como celular, pero las reglas de escritorio estaban en `min-width: 769px` y en iPad se sumaban a las de celular (en la 08 la escena del QR tapaba el texto). Todas pasan a `(min-width: 1101px), (min-width: 769px) and (orientation: landscape)`, igual que la condición del QR en llego.js. En escritorio no cambia nada.
+- **Capítulo 03 en celular.** De la 09 a la 14 la bajada va entera y la ventana del navegador toma todo el alto que queda bajo el texto, en vez de un 34 % fijo con un tercio vacío abajo. El margen inferior descuenta la barra del navegador (el panel mide 100lvh).
+- **La 09 con la captura móvil.** En celular y tablet vertical la ventana muestra la captura móvil real del sitio (la misma del teléfono de la 08), no la de escritorio recortada.
+- **Diez valores.** En celular el número y el código de cada banda van de pie, de abajo hacia arriba: ya no se cortan.
+- **Resumen en tablet vertical.** Se centra en el alto en vez de dejar media pantalla vacía.
