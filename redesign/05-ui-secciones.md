@@ -2607,3 +2607,13 @@ Nuevo, sin número: es el desenlace del capítulo, no una decisión. Va entre la
 - **Las cifras.** 19 días del pedido al sitio, 14 de margen y 2 de feria, cada una con su tramo. Los días se encienden enteros, sin suavizado. Queda quieto una pantalla mientras sube la cita (`data-pasos-hasta`).
 - **Sin inventar.** No hay fotos del stand ni cifras de visitas; el cierre trabaja solo con fechas y el QR real.
 - La escena es `feria` en llego.js y sus reglas viven en llego.css 11.1, con el prefijo `.lf-fe`. En celular el texto va entero arriba y el calendario a lo ancho, con las celdas solo con su número.
+
+## Llegó Farma · 5r. Siguiente proyecto: Tap In, Violeta vivo (16 nov 2026)
+
+La portada del siguiente proyecto al final de Llegó pasa a mostrar a Tap In como empresa, no un producto: ni el cerebro de Connect ni el tenedor y cuchillo de Campus. Dos rondas de propuestas (seis de empresa y seis más con la B mejorada); elegida I, Violeta vivo, auditada con nueve mejoras y aprobada en el artifact del caso.
+
+- **El comienzo.** El punto de la i a casi toda la pantalla, con una onda de su misma forma y el rótulo "El punto de la i", que se va con el primer avance.
+- **La cámara.** Se aleja en escala logarítmica desde el punto hasta armar "tap in"; el violeta vive dentro de las letras (manchas que se mueven con el scroll), con un halo detrás para que no flote en negro.
+- **El marco.** "Siguiente proyecto" arriba y la bajada abajo, para no cruzarse con las letras gigantes. La bajada entra cuando el wordmark está armado: "Una startup de data intelligence que conecta comunidades en Chile y Perú." A la derecha, bajo el anillo, una lista mono numerada: Data intelligence, Tiempo real, Chile y Perú, Comunidades.
+- **El derrame.** El violeta se derrama desde el punto en un círculo que crece, y las letras pasan a blanco cuando la ola las cruza. Grano fino para que los degradados no hagan bandas.
+- La escena es `tapin` en caso-siguiente.js y sus reglas viven en caso-siguiente.css 2, con el prefijo `.sig-tp`. En celular el wordmark ocupa el ancho y la lista se guarda; con movimiento reducido queda la portada final quieta, con las manchas en su lugar.
