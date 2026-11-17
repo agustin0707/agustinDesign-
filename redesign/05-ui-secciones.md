@@ -2644,5 +2644,5 @@ Auditoría automática en 390 × 844 (desbordes, texto cortado, texto fuera de p
 
 ## Llegó Farma · 5u. Cita aprobada y entrega confirmada (17 nov 2026)
 
-- **La cita de Cristián Barreaux queda aprobada.** Sale la celda "Cita por aprobar" de la ficha: firma, logotipo y "Sobre llegofarma.cl" ocupan tres módulos y el cuarto queda libre (en celular, dos por dos). La cita de la 07 sigue marcada por aprobar.
+- **La cita de Cristián Barreaux queda aprobada.** Sale la celda "Cita por aprobar" de la ficha: firma, logotipo y "Sobre llegofarma.cl" ocupan tres módulos y el cuarto queda libre (en celular, dos por dos). La cita de la 07, en el cierre del manual, también queda aprobada y sin etiqueta: el caso ya no tiene citas por aprobar.
 - **"Nada queda en mis cuentas" (decisión 14) es verdad.** Confirmado por ti; el texto queda como está.
