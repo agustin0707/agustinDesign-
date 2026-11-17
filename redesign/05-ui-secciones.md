@@ -2646,3 +2646,15 @@ Auditoría automática en 390 × 844 (desbordes, texto cortado, texto fuera de p
 
 - **La cita de Cristián Barreaux queda aprobada.** Sale la celda "Cita por aprobar" de la ficha: firma, logotipo y "Sobre llegofarma.cl" ocupan tres módulos y el cuarto queda libre (en celular, dos por dos). La cita de la 07, en el cierre del manual, también queda aprobada y sin etiqueta: el caso ya no tiene citas por aprobar.
 - **"Nada queda en mis cuentas" (decisión 14) es verdad.** Confirmado por ti; el texto queda como está.
+
+## Llegó Farma · 5v. Auditoría de iPad (18 nov 2026)
+
+Auditoría automática en seis tamaños de iPad (820 × 1180, 768 × 1024, 1024 × 1366 y sus horizontales) y recorrido visual completo en vertical y horizontal; verificado también en celular y escritorio. Aprobado en el artifact del caso. Falta probarlo en un iPad real.
+
+- **01 en tablet vertical.** El mapa toma todo el alto que queda bajo el texto, en vez de dejar un tercio vacío abajo; vuelven la bajada, la bajada y la tipografía de la madre, la paleta más alta y el primer párrafo del hallazgo. En celular sigue igual.
+- **03.** "15 %" ya no se parte en anchos medios (iPad horizontal): el tamaño de los porcentajes tiene un tope que sale de la franja más angosta. En 1440 no cambia.
+- **09.** La captura del sitio se ancla a la izquierda: cuando la ventana es más angosta que la captura, se recorta el lado derecho y el título conserva su margen.
+- **10 en tablet vertical.** La escena tomaba el sitio de escritorio y partía con la captura móvil: al cargar, saltaba de una a otra. Ahora sigue la regla del caso (tablet vertical = celular) y muestra el mismo sitio móvil que la 09, con la cámara campo por campo.
+- **14.** "Tipografías, con licencia" y "Fotos AVIF y JPG, logos" se cortaban con puntos suspensivos en todo tamaño, escritorio incluido. Las columnas van medidas al nombre y al conteo más largos, y una descripción que no cabe baja de línea.
+- **Feria.** En celdas angostas (1024 × 768) la etiqueta baja un punto y se aprieta: "Contenido" y "En línea" caben.
+- **Toques.** "Más contexto" suma área táctil invisible en pantallas táctiles. "Proyectos" en la barra queda en 75 × 25: la barra es común a todos los casos y su animación de texto no admite margen.
