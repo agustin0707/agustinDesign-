@@ -2672,3 +2672,16 @@ Recorrido en Safari real, con los simuladores de iPhone 17 y de iPad Air 11 (ver
 - **Hero en celular.** "llegofarma.cl ↗" cierra la columna derecha, alineado con "Marca, manual y web".
 - **Títulos de capítulo en celular y tablet vertical.** El trazo bajo de la p de "El pitch" ya no toca la bajada.
 - **Siguiente proyecto.** El rótulo y su línea siguen a la lámina mientras se abre y no tocan su borde (común a todos los casos).
+
+## Llegó Farma · 5x. Portadas, 10 y 12 en celular (18 nov 2026)
+
+Revisión en celular a 402 × 714 pedida por Agustín: las portadas estaban cargadas y la 10 y la 12 tenían cosas que no se veían. Aprobado en el artifact del caso. En escritorio y tablet no cambia nada salvo el paso de hoja de la 12.
+
+- **Portadas de capítulo.** En celular quedan el rótulo con las fechas, el título, la bajada y la cifra. El índice del capítulo sigue en escritorio, al lado del título; en celular se apilaba y en el 03 no cabía.
+- **Retícula de las portadas.** Las líneas se cortan 8 px antes del texto y alrededor de la cifra en todos los tamaños; en celular cruzaban la bajada.
+- **10 · botón del hero.** Quedaba bajo el borde de la ventana y su marca se dibujaba fuera de cuadro. El sitio baja lo justo para mostrarlo antes de marcarlo.
+- **10 · barra fija.** "Siempre a la vista" se marca cuando la barra entra, con el sitio oscurecido detrás mientras baja.
+- **10 · formulario.** La cabecera del sitio se oculta y ya no tapa la bajada; el velo es más firme y el campo anterior no asoma junto al rótulo. Enviado, la marca va al aviso y su rótulo queda a la vista.
+- **12 · comentarios.** En celular los globos al margen no caben: el vigente se lee en una nota al pie de la ventana, como el panel de comentarios de Word.
+- **12 · paso de hoja.** El salto se mide con los cambios ya puestos: medido antes, asomaba el final de la primera hoja sobre la segunda. Sin la franja gris de arriba en celular.
+- **12 · cierre en celular.** La sección publicada se ve en la versión de celular del sitio y se lee; antes iba a 1440 de ancho.
