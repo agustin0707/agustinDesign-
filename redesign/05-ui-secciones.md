@@ -2641,3 +2641,8 @@ Auditoría automática en 390 × 844 (desbordes, texto cortado, texto fuera de p
 - **03.** Los porcentajes van en una línea en las franjas anchas; en la angosta el signo baja bajo la cifra.
 - **Resumen y cierre.** El resumen se centra en el alto también en el teléfono, y el calendario de la feria toma todo el alto que queda bajo el texto.
 - **Toques.** "← Índice", llegofarma.cl (hero y resultado) y "Pidieron la web" suman área táctil invisible, sin mover el diseño.
+
+## Llegó Farma · 5u. Cita aprobada y entrega confirmada (17 nov 2026)
+
+- **La cita de Cristián Barreaux queda aprobada.** Sale la celda "Cita por aprobar" de la ficha: firma, logotipo y "Sobre llegofarma.cl" ocupan tres módulos y el cuarto queda libre (en celular, dos por dos). La cita de la 07 sigue marcada por aprobar.
+- **"Nada queda en mis cuentas" (decisión 14) es verdad.** Confirmado por ti; el texto queda como está.
