@@ -2627,3 +2627,17 @@ Recorrido completo del caso en 390 × 844 y en iPad vertical (820 × 1180), con 
 - **La 09 con la captura móvil.** En celular y tablet vertical la ventana muestra la captura móvil real del sitio (la misma del teléfono de la 08), no la de escritorio recortada.
 - **Diez valores.** En celular el número y el código de cada banda van de pie, de abajo hacia arriba: ya no se cortan.
 - **Resumen en tablet vertical.** Se centra en el alto en vez de dejar media pantalla vacía.
+
+## Llegó Farma · 5t. Auditoría de celular (17 nov 2026)
+
+Auditoría automática en 390 × 844 (desbordes, texto cortado, texto fuera de pantalla y toques chicos) más revisión visual sección por sección; verificado en 390, 375 × 667 (iPhone SE), iPad vertical y escritorio, que no cambia. Aprobado en el artifact del caso. Falta probarlo en un iPhone real.
+
+- **04, los tres caminos.** La tabla de criterios se salía por abajo y tapaba los lemas, y la etiqueta "Elegida · 9 sep" se salía de la pantalla. La etiqueta pasa bajo el nombre del camino, isotipo y lema suben y la tabla se compacta. En pantallas bajas (SE) la foto y la tabla toman un poco más de alto para que la primera fila no quede sobre el blanco.
+- **05.** Los dos rótulos del pie de la lámina se juntaban: ahora tienen aire entre ellos.
+- **08.** La bajada se cortaba en dos líneas con puntos suspensivos: se lee entera.
+- **10, el formulario.** En celular el formulario entero cabía en la ventana con letra ilegible. Ahora la cámara toma su ancho y baja siguiendo el campo que se escribe; la marca "Campo N de 6" va sobre ese campo y el velo deja el resto tenue, como contexto. En escritorio sigue igual.
+- **11.** "En el manual: 7,6 px" se salía de la ventana: va bajo su marca. Los rótulos de los módulos se parten dentro de su caja y ya no se montan.
+- **14.** El peso de la carpeta se cortaba con puntos suspensivos: se parte en líneas.
+- **03.** Los porcentajes van en una línea en las franjas anchas; en la angosta el signo baja bajo la cifra.
+- **Resumen y cierre.** El resumen se centra en el alto también en el teléfono, y el calendario de la feria toma todo el alto que queda bajo el texto.
+- **Toques.** "← Índice", llegofarma.cl (hero y resultado) y "Pidieron la web" suman área táctil invisible, sin mover el diseño.
