@@ -358,7 +358,7 @@ if (worksTrack && worksPrev && worksNext) {
 // MENSAJE DE CRÉDITOS (CONSOLE EGG)
 // ==========================================
 console.log(
-    "%c ¡Hola! 👋 \n%c Diseñé y programé este sitio desde cero con HTML, CSS y Vanilla JS. \n ¿Te gusta el código? Hablemos: agustin.avendano@uc.cl", 
+    "%c ¡Hola! 👋 \n%c Diseñé y programé este sitio desde cero con HTML, CSS y Vanilla JS. \n ¿Te gusta el código? Hablemos: agustin@agustindesign.cl", 
     "font-size: 24px; font-weight: bold; color: #666;", 
     "font-size: 14px; color: #666;"
 );

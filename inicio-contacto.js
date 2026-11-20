@@ -5,7 +5,7 @@
     const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
     /* Correo de contacto: el mensaje se arma en el correo de quien escribe y llega aquí */
-    const CORREO = 'agus.avendano@gmail.com';
+    const CORREO = 'agustin@agustindesign.cl';
     const brief = $('[data-brief]');
     if (!brief) return;
 
